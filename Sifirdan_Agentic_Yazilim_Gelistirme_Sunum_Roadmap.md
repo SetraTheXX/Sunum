@@ -78,11 +78,11 @@ TIMING QA
 
 Geçilmeden Phase 1’e girilmez:
 
-- [ ] Repo çalışıyor.
-- [ ] PRD / roadmap repoda.
-- [ ] Agent kuralları mevcut.
-- [ ] Temiz git status.
-- [ ] İlk commit var.
+- [x] Git deposu ve Phase 0 belgeleri erişilebilir; uygulama runtime’ı G2’de doğrulanır.
+- [x] PRD / roadmap repoda.
+- [x] Agent kuralları mevcut.
+- [x] Temiz git status.
+- [x] İlk commit var.
 
 ---
 
@@ -157,12 +157,16 @@ Geçiş:
 
 ## Gate G1 — Content Freeze
 
-- [ ] 30 dk bütün sahneler var.
-- [ ] Hiçbir sahne “sonra yazarız” değil.
-- [ ] Her sahnenin tek ana fikri var.
-- [ ] Sunumun başlangıcı ve finali yazılmış.
-- [ ] Vi3ecode geçiş cümlesi hazır.
-- [ ] 30 dk metin kaba prova ≤ 35 dk.
+- [x] 30 dk bütün sahneler var.
+- [x] Hiçbir sahne “sonra yazarız” değil.
+- [x] Her sahnenin tek ana fikri var.
+- [x] Sunumun başlangıcı ve finali yazılmış.
+- [x] Vi3ecode geçiş cümlesi hazır.
+- [x] 30 dk metin kaba prova ≤ 35 dk.
+
+**Durum: PASS — QA yeniden incelemesi, 27 Eylül 2026.** QA; PRD sırasındaki 12 sahneyi, her sahnedeki tek ana fikri, açılışı, Vi3ecode geçişini ve finali doğruladı. Yerel bağlantı kontrolünde kırık bağlantı bulunmadı; `git diff --check` başarılı.
+
+**Süre kanıtı:** 31:19, 125 kelime/dakika varsayımıyla hesaplanan kaba tahmindir ve G1'in 35 dakika sınırının altındadır. Kronometreli tam prova yapılmış değildir; zorunlu prova Phase 11'de kalır. QA, 7. sahnenin konuşma süresini sahne içi 2:45 konuşma bütçesinden yaklaşık 34 saniye uzun tahmin etti; bu fark Phase 11 zamanlama provasında ölçülmelidir.
 
 ---
 

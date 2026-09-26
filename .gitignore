@@ -1,0 +1,14 @@
+# Local Vi3ecode agent configuration and memory
+.vi3ecode/
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Generated application files
+node_modules/
+dist/
+coverage/
+.vite/
+*.log

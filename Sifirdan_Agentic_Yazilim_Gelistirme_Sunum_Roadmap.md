@@ -217,13 +217,17 @@ npm test
 
 ## Gate G2 — Skeleton PASS
 
-- [ ] `npm run build` PASS.
-- [ ] Tüm 30 dk sahneler geziliyor.
-- [ ] Klavye controls PASS.
-- [ ] Back / forward state bozulmuyor.
-- [ ] 30 mode optional sahneleri atlıyor.
-- [ ] Reload sonrası app açılıyor.
-- [ ] Console’da kritik error yok.
+- [x] `npm run build` PASS.
+- [x] Tüm 30 dk sahneler geziliyor.
+- [x] Klavye controls PASS.
+- [x] Back / forward state bozulmuyor.
+- [x] 30 mode optional sahneleri atlıyor.
+- [x] Reload sonrası app açılıyor.
+- [x] Console’da kritik error yok.
+
+**Durum: PASS — QA yeniden incelemesi, 27 Eylül 2026.** QA, localhost'ta 12 sahnenin indeksini, reveal ve geri/ileri davranışını, `→`, `←`, `Space`, `J`, `K`, `R` kısayollarını (odaktaki düğmeler dâhil), 30/45/60 mod seçimini ve reload sonrası URL/sahne/adım durumunu doğruladı. `npm run build` başarılı; etkileşim sırasında hata, unhandled rejection veya `console.error` yakalanmadı; harici kaynak isteği görülmedi.
+
+**Kapsam ve kanıt sınırları:** 30 dk rotasındaki 12 sahnenin tamamı `Must`; atlanacak `Optional` sahne yok, filtre davranışı mevcut içerik üzerinde boş küme olarak çalışıyor. Browser paneli screenshot alınmasına izin vermediği için piksel düzeyinde görsel kontrol yapılamadı. Doğrudan DevTools konsolu da erişilebilir değildi; hata kontrolü sayfa içi sinyallerle sınırlı kaldı. `package.json` test/lint komutu içermediğinden bu komutlar çalıştırılmadı.
 
 ---
 

@@ -1,6 +1,6 @@
 # Sıfırdan Agentic Yazılım Geliştirme — Sunum
 
-Bu depo, PRD ve Roadmap'te tanımlanan etkileşimli sunum projesidir. **Mevcut aşama Phase 1 — İçerik kilidi**; önce 30 dakikalık rota hazırlanıyor. Sunum uygulaması henüz oluşturulmadı.
+Bu depo, PRD ve Roadmap'te tanımlanan etkileşimli sunum projesidir. **Mevcut aşama Phase 2 — Teknik iskelet**; uygulama 30 dakikalık rotanın 12 sahnesiyle kuruluyor. 45/60 dakikalık ek içerikler Phase 12'ye bırakılmıştır.
 
 ## Kaynak belgeler
 
@@ -12,17 +12,18 @@ Bu depo, PRD ve Roadmap'te tanımlanan etkileşimli sunum projesidir. **Mevcut a
 
 ## Yerel kullanım
 
-### Phase 1: içerik belgelerini görüntüleme
+### Phase 2: yerel sunum iskeleti
 
-Markdown belgelerini editöründe açıp önizleyebilirsin. İstersen repo kökünde yerel dosya sunucusu başlat:
+Bağımlılıkları kur ve geliştirme sunucusunu başlat:
 
 ```powershell
-py -m http.server 8000
+npm install
+npm run dev
 ```
 
-Ardından `http://localhost:8000` adresini aç. `py` komutu yoksa `python -m http.server 8000` kullan. Sunucuyu `Ctrl+C` ile durdur.
+Vite'ın yazdırdığı localhost adresini aç. Üretim çıktısını doğrulamak için `npm run build` çalıştır; istersen `npm run preview` ile build'i yerel olarak görüntüle. Sunucuları `Ctrl+C` ile durdur.
 
-Bu komut yalnızca dosyaları yerel olarak sunar; sunum uygulamasını çalıştırmaz. Uygulama iskeleti Roadmap Phase 2'de kurulacak, runtime orada G2 kapsamında doğrulanacaktır.
+Sahne metinleri `scenes/` altındaki Phase 1 belgelerinden yerel olarak okunur. `/?mode=30` ana rotayı açar. 45/60 seçicileri bu iskelette görünür; yalnızca 30 dakikalık çekirdek sahneler hazırdır, uzun rota ekleri henüz yoktur. Sunum kontrolleri: `→`/`Space` adım veya sahne ilerletir, `←` geri alır; `J`/`K` sahne değiştirir, `R` geçerli sahneyi baştan açar. İndeks ve ekran kontrolleri de kullanılabilir.
 
 ## Klasörler
 
@@ -34,4 +35,4 @@ Bu komut yalnızca dosyaları yerel olarak sunar; sunum uygulamasını çalışt
 
 ## Kapsam
 
-Phase 1 yalnızca 30 dakikalık içerik rotasını kilitler. 45 ve 60 dakikalık genişletmeler, 30 dakikalık sürüm kalite kapısını geçmeden başlamaz. Bu fazda uygulama kodu, manifest veya görsel polish eklenmez. Çalışma kuralları için [AGENTS.md](AGENTS.md) dosyasına bak.
+Phase 2 yalnızca teknik iskelet ve 30 dakikalık rota gezinmesini kapsar. 45/60 dakikalık ek içerikler, illüstrasyonlar ve görsel polish daha sonraki fazlardadır. Çalışma kuralları için [AGENTS.md](AGENTS.md) dosyasına bak.

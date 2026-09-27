@@ -808,6 +808,10 @@ Run 1 otomatik gezinme smoke-check'idir; yüksek sesli insan anlatımı veya sü
 
 Production manifest seçenekleri yapılacak işlerin zorunlu listesi değildir; seçilmeyen türler dışarıda kalır. Authentic olmayan ürün ekranı/kanıtı üretilmez. Aşağıdaki Run 2/3 kriterleri ertelenmiş Phase 11B planıdır; şu anda prova yapılmıyor.
 
+### Final Visual & Interaction Audit — planlama paketi (2026-09-28)
+
+Bağımsız QA incelemesine sunulan taslaklar: [production manifest](sources/final-visual-audit/production-manifest.md), [asset register](sources/final-visual-audit/asset-register.md), [interaction/motion plan](sources/final-visual-audit/interaction-motion-plan.md) ve [capture/evidence plan](sources/final-visual-audit/capture-evidence-plan.md). Bu yalnızca envanter ve plandır: kod, sahne, asset veya screenshot değiştirilmedi; authentic Vi3ecode/Codex kanıtı oluşturulmadı veya varmış gibi kabul edilmedi. G4/G5 OPEN, G6 PARTIAL / BLOCKED, G7 OPEN ve G9 OPEN; QA incelemesi bekleniyor.
+
 ## Run 2 — tam 30 dk rehearsal (Phase 11B; ertelendi)
 
 Kronometre.

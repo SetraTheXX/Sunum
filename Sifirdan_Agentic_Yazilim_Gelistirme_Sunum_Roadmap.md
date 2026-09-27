@@ -787,6 +787,12 @@ Amaç:
 - sequence,
 - transitions.
 
+**Phase 11A — PASS / Phase 11B — PENDING (2026-09-28; Run 1 only).** Production `npm run build` başarılı; `npm run preview -- --host 127.0.0.1 --port 4173 --strictPort` ile sunulan sayfa paylaşılan browser panelinde canlı açıldı ve incelendi. İleri düğmesiyle 47 geçişte 12 sahnenin tüm reveal sırası izlendi; Scene 11 → Scene 12 geçişi ve Scene 12 son adımındaki disabled ileri düğmesi doğrulandı. Sentetik `keydown` olaylarıyla ArrowRight/Space/ArrowLeft/J/K/R, URL state, ilk sahne geri sınırı ve finalde Space/ArrowRight/J no-op davranışı kontrol edildi; bunlar fiziksel klavye provası değildir. Geri düğmesi finalin üç adımını tersine açıp Scene 11'in son adımına döndü. `?mode=30&scene=N&step=1` doğrudan reload'ları 12 sahnenin tamamında başlık/ilk adım/URL state'iyle eşleşti; başlangıçtaki browser panel rate limit'inden sonra kalan URL'ler kontrollü aralıkla yeniden denenip PASS aldı. Ayrıntı: [Run 1 navigation dry-run](sources/phase-11/run-1-navigation-dry-run-2026-09-28.md).
+
+Sahne kaynak tahminlerinin toplamı 29:45; kronometreli prova değildir. Planlanan süre dağılımı 26:45 target / 28:00 sahne hard max; böylece hedefte 3:15, hard max'ta 2:00 buffer kalır. Scene 11 4:15 target / 4:20 hard max; authentic demo wait eklenmez. Speaker-note risk denetimi ve 12 sahnelik süre dağılımı: [Phase 11A timing ve note audit](sources/phase-11/timing-budget-and-speaker-note-audit.md). Bariz duplicate olan Scene 11 “gerçek ürün arayüzü gösterdiğini iddia etmiyor” cümlesi önceki paragrafta aynı kanıt sınırı zaten açıklandığı için çıkarıldı; anlam, sahiplik/moderasyon açıklaması ve ana sıra korundu. [Rehearsal sheet](sources/phase-11/rehearsal-sheet.md) Run 2/3 gerçek süreleri için boş bırakıldı.
+
+Run 1 otomatik gezinme smoke-check'idir; yüksek sesli insan anlatımı veya süre ölçümü yapılmadı. Bu nedenle Phase 11A hazırlık ve otomasyon kısmı tamamlanmış olsa da **G9 OPEN** kalır. Phase 11B pending: kullanıcı gerçek Run 2 ve gerekli düzeltmelerden sonra Run 3'ü yüksek sesle, kesintisiz yapmalı; iki ardışık gerçek prova ≤28 dakika olmadan G9 geçmez. G4/G5 OPEN, G6 PARTIAL / BLOCKED ve G7 OPEN durumlarına dokunulmadı.
+
 ## Run 2 — tam 30 dk rehearsal
 
 Kronometre.

@@ -27,7 +27,7 @@ Gerçek workflow örneği — Vi3ecode
 
 Bu, her workflow'un doğru olduğu anlamına gelmez. Az önceki ilkeler hâlâ geçerli: kapsam net mi, değişiklik görünür mü, test sonucu var mı ve kim doğruladı? Vi3ecode bu sahnede bir workflow örneği; ana ders ise modelin çevresinde kurulan sistem.”
 
-“Bu bölüme ürün karşılaştırması ya da satın alma önerisi olarak değil, workflow örneği olarak bakalım. Bu sunumdaki akış kavramsal; gerçek ürün arayüzü gösterdiğini iddia etmiyor. Ürün ekranı ve çalıştırma kanıtı G4/G5 için ayrı authentic evidence olarak bekliyor; belirli bir UI veya test sonucu doğrulanmadan ürün özelliği diye anlatmayacağız.”
+“Bu bölüme ürün karşılaştırması ya da satın alma önerisi olarak değil, workflow örneği olarak bakalım. Ürün ekranı ve çalıştırma kanıtı G4/G5 için ayrı authentic evidence olarak bekliyor; belirli bir UI veya test sonucu doğrulanmadan ürün özelliği diye anlatmayacağız.”
 
 ## Geçiş
 

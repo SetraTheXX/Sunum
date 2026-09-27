@@ -97,7 +97,7 @@ export default function App() {
       const target = event.target;
       if (
         target instanceof HTMLElement &&
-        target.closest('input, select, textarea, summary, [contenteditable="true"]')
+        target.closest('button, a, input, select, textarea, summary, [role="button"], [contenteditable="true"]')
       ) {
         return;
       }

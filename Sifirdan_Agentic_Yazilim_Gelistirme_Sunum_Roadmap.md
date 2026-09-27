@@ -445,6 +445,13 @@ P0:
 - Do not mark Vi3ecode workflow scenes complete while their real screen evidence is missing; do not substitute the marketing simulation or generated screens.
 - By explicit user direction, Phase 6 scene batches that do not depend on the missing product captures may proceed in roadmap order, with their own implementation and QA gates. G4 does not block those batches; it remains a mandatory final presentation gate, and no Vi3ecode workflow is to be represented as authentically evidenced until real captures pass privacy QA.
 
+## Plan Delta — Phase 7.1–11 preparation; final visual/evidence sprint (2026-09-27)
+
+- The current scope is documentation-only preparation: record the Phase 7.1 demo plan, then prepare Phases 8–11 in roadmap order. This planning does not execute the demo or any offline, projector, content, or timing QA, and it does not pass a gate.
+- Execution remains at Phase 6, Batch E: Final is PASS, while Vi3ecode intro/workflow is open. Phase 7.1 is plan-only; Phases 8–11 have preparation notes only and are not executed.
+- Keep Phase 6 Vi3ecode intro/workflow open. G4 and G5 remain unchecked until authentic product evidence and the complete live/fallback demo criteria are actually verified. G6–G9 likewise require their own recorded test results against their existing gate criteria.
+- Defer any remaining visual refresh, authentic screenshot/video production, their integration into the presentation, and final placement/crop QA to a separate final sprint before the presentation. Do not create simulated/generated product UI or screenshots in this preparation pass.
+
 ---
 
 # PHASE 6 — Core scene implementation
@@ -555,6 +562,22 @@ Kriter:
 - QA meaningful.
 - Kişisel veri yok.
 
+### Phase 7.1 hazırlık kararı — PLAN ONLY (2026-09-27)
+
+**Seçilen demo görevi:** Sahne değişince etkin sahne başlığı ve sıra bilgisinin ekran okuyucuya tek, nazik bir duyuruyla iletilmesi. PRD §17 etkin bölüm başlığını ve klavye navigasyonunun odağı bozmamasını ister. Mevcut `src/App.tsx` içinde açılan adımlar için `aria-live` bölgesi var; sahne başlığı bu bölgenin dışında. Bu nedenle görev yeni bir hata varmış gibi sunulmayacak; uygulama sırasında önce desteklenen ekran okuyucuda mevcut duyuru davranışı kontrol edilecek. Zaten yeterliyse kusur uydurulmayacak ve gerçek, küçük bir erişilebilirlik işi seçilene kadar demo başlatılmayacak.
+
+**Sınır ve kabul ölçütleri:** Tek dosyalı, bağımlılık eklemeyen küçük değişiklik; sahne listesi, Geri/İleri ve J/K ile geçişte etkin sahne başlığı ve `n / 12` bilgisi bir kez duyurulur; klavye odağı yerinde kalır; adım açma gereksiz tekrar duyurusu üretmez; `npm run build` başarılı olur; QA gerçek ekran okuyucu/klavye etkileşimini doğrular. Kişisel veri veya harici servis gerekmez. Hedef toplam demo süresi 3–4 dakika, kesin üst sınır 5 dakikadır.
+
+**Demo scripti (Lead → Developer → QA → PASS/FAIL):**
+
+1. **0:00–0:30 Lead:** Görevi, kabul ölçütlerini ve tek dosya sınırını söyler; işi Developer’a devreder.
+2. **0:30–2:00 Developer:** Mevcut duyuru davranışını gösterir; gerekiyorsa küçük değişikliği yapar ve kapsamı aşmadığını açıklar.
+3. **2:00–3:00 Developer:** `npm run build` çalıştırır; sahne değiştirmeyi klavye ile gösterir.
+4. **3:00–4:00 QA:** Bağımsız olarak ekran okuyucu duyurusunu, odağın korunmasını ve adım tekrarlarını kontrol eder; build sonucunu doğrular.
+5. **PASS:** QA kanıtı ve değişen dosya/komut özetiyle kapatır. **FAIL:** Hatalı kabul ölçütünü Developer’a geri yollar; 5 dakikalık sınırda canlı denemeyi durdurup yerel fallback’e geçer.
+
+Bu script ve görev seçimi yalnızca hazırlıktır. Vi3ecode’da gerçek Agent Mode yürütümü, test sonucu, QA sonucu veya ürün ekranı kanıtı üretilmiş sayılmaz; G5 açık kalır.
+
 Örnek:
 - mobile menu bug
 - pricing UI
@@ -564,19 +587,19 @@ Kriter:
 
 ## 7.2 Plan A
 
-Canlı Vi3ecode.
+Canlı Vi3ecode Agent Mode: erişilebilir gerçek proje/branch, görev öncesi net kabul ölçütü ve gizli veri içermeyen kapsam gerekir. Lead görevi Developer’a verir; QA bağımsız kontrol yapar. Login/ağ/araç beklemesi 5 dakikalık demo sınırını aşarsa deneme kesilir ve yerel fallback’e geçilir; token veya kimlik bilgisi kayda alınmaz.
 
 ## 7.3 Plan B
 
-Daha önce tamamlanmış real thread.
+Kaynağı ve proje/branch bağlamı doğrulanabilen, gerçekten tamamlanmış Vi3ecode Agent Mode thread’i. Lead, Developer, handoff, test ve QA sonucu aynı gerçek thread’den seçilir; bu ChatGPT konuşması, pazarlama simülasyonu veya üretilmiş ekran yerine kullanılamaz.
 
 ## 7.4 Plan C
 
-Lokal 60–90 sn video.
+Gerçek Vi3ecode demo yürütümünden 60–90 saniyelik yerel MP4/WebM; son sprintte özel bilgiler temizlenir ve dosya sunum laptopunda internet kapalıyken oynatılarak doğrulanır. Bu hazırlık geçişinde video üretilmez.
 
 ## 7.5 Plan D
 
-Screenshot sequence.
+Gerçek Vi3ecode arayüzünden 5–7 karelik yerel sıra: görev, Lead, Developer, handoff, QA, test, PASS. Kaynak/oturum kaydı korunur; özel bilgi kırpılır veya bulanıklaştırılır; tek tuşla çevrimdışı açılabilir. Bu hazırlık geçişinde screenshot üretilmez.
 
 ## 7.6 Demo script
 
@@ -590,6 +613,10 @@ Sunucu ne söyleyecek:
 6. “QA kendi testini yapıyor.”
 7. “Fail olursa geri gidiyor.”
 8. “İşte agentic workflow.”
+
+## 7.7 Planlama durumu ve kanıt gereksinimi
+
+**Durum (2026-09-27):** 7.1 görev/script ve fallback gereksinimleri yazıldı; canlı demo, B/C/D fallback dosyaları ve süre/mahremiyet kontrolleri henüz yapılmadı. G5 açık. G5 için gerçek Plan A denemesi, B/C/D fallback’lerinin yerel ve çevrimdışı hazır oluşu, toplam sürenin 5 dakikanın altında kalması ve özel bilgi taraması kanıtlanmalı.
 
 ## Gate G5 — Demo PASS
 
@@ -605,6 +632,8 @@ Sunucu ne söyleyecek:
 # PHASE 8 — Offline / resilience test
 
 **Süre:** 1–1.5 saat
+
+**Hazırlık kaydı (2026-09-27):** Yalnız test sırası ve kanıt şablonu tanımlandı; ağ kesintisi testi yapılmadı, G6 açık.
 
 Bilgisayarı airplane/offline duruma getir.
 
@@ -628,15 +657,28 @@ Her kritik scene’de reload:
 - [ ] Vi3ecode
 - [ ] final
 
+## G6 için kanıt planı — test edilmedi
+
+1. QA test edilen commit’i ve production build sonucunu kaydeder; test sunucusunu loopback’te başlatıp internet bağlantısını işletim sistemi seviyesinde kapatır.
+2. Soğuk açılışta site, yerel font, CSS/JS, görseller ve hazır olduğunda yerel demo fallback’inin açıldığını doğrular.
+3. Cold Open, Agent Anatomy, Vi3ecode ve Final sahnelerini yeniden yükler; ardından 30 dakikalık rotayı tamamlar.
+4. Tarayıcı console/network kaydında uzak font, CDN, görsel veya beklenmeyen remote istek/hata olmadığını not eder.
+
+Kanıt kaydı: tarih, commit, build sonucu, işletim sistemi/tarayıcı, ağın kapalı olduğuna dair yöntem, kontrol başına PASS/FAIL, console/network gözlemi ve hata/çözüm. Screenshot/video kanıtı bu hazırlık turunda alınmaz; gerektiğinde son sprintte üretilir.
+
 ## Gate G6 — Offline PASS
 
 Hiç internet olmadan 30 dk route tamamlanabiliyor.
+
+**Durum (2026-09-27): AÇIK — hazırlık dışında test kanıtı yok.**
 
 ---
 
 # PHASE 9 — Projector / resolution QA
 
 **Süre:** 1–2 saat
+
+**Hazırlık kaydı (2026-09-27):** Hedef matris ve raporlama biçimi tanımlandı; gerçek browser/projektör incelemesi yapılmadı, G7 açık.
 
 ## 1920×1080
 
@@ -663,6 +705,12 @@ Hiç internet olmadan 30 dk route tamamlanabiliyor.
 - [ ] %100
 - [ ] %110 projector emergency
 
+## G7 için kanıt planı — test edilmedi
+
+QA her 12 sahne için 1920×1080 ve 1366×768; desteklenen Chromium/Chrome ve mümkünse Firefox; %100 ve %110 zoom matrisini doldurur. Her hücrede başlık/body/code/görsel okunurluğu, taşma, navigation çakışması, crop, kontrollü scroll, cursor/browser chrome ve fullscreen sonucu kaydedilir. Gerçek projektör kullanılamazsa bu sınırlama ayrıca belirtilir; PNG viewport kontrolü tek başına projektör PASS sayılmaz.
+
+Kanıt kaydı: build/commit, ekran ve tarayıcı boyutu, zoom, sahne, bulgu/önem, düzeltme ve tekrar kontrolü. Görsel kanıt gerekiyorsa yalnız gerçek uygulama görünümünden son sprintte alınır; simülasyon üretilmez.
+
 ## Gate G7 — Visual QA PASS
 
 - Kritik hiçbir bilgi küçük değil.
@@ -670,11 +718,15 @@ Hiç internet olmadan 30 dk route tamamlanabiliyor.
 - Cursor / browser chrome sunumu bozmuyor.
 - Fullscreen düzgün.
 
+**Durum (2026-09-27): AÇIK — hedef çözünürlük PNG’leri mevcut, fakat tam sahne/tarayıcı/zoom/projektör matrisi tamamlanmadı.**
+
 ---
 
 # PHASE 10 — İçerik QA
 
 **Süre:** 1–2 saat
+
+**Hazırlık kaydı (2026-09-27):** Claim-review yöntemi tanımlandı; claim audit yapılmadı, G8 açık.
 
 Her claim için:
 
@@ -698,15 +750,23 @@ Güncel sayı / fiyat gerekiyorsa:
 - doğrula,
 - yoksa çıkar.
 
+## G8 için kanıt planı — inceleme yapılmadı
+
+QA her iddia için şu kayıtları tutar: sahne/iddia, fact-opinion-product/model sınıfı, birincil kaynak ve erişim tarihi, güncellik bağımlılığı, doğrulama kararı ve yapılan düzeltme/çıkarma. Claude ≠ Claude Code, GPT ≠ Codex, Context, MCP, Skill, orchestration ve Vi3ecode adları özellikle kontrol edilir. Kaynak bulunamayan veya gereksiz güncel sayısal iddia kaldırılır; ürün terimleri için resmî/current kaynak kullanılır.
+
 ## Gate G8 — Content PASS
 
 Sunum ürün sürümlerine gereksiz şekilde bağımlı değil.
+
+**Durum (2026-09-27): AÇIK — claim register ve bağımsız içerik incelemesi henüz yok.**
 
 ---
 
 # PHASE 11 — Timing QA
 
 Bu aşama zorunlu.
+
+**Hazırlık kaydı (2026-09-27):** Rehearsal sırası ve kayıt şablonu tanımlandı; prova yapılmadı, G9 açık.
 
 ## Run 1 — konuşmadan tıklama
 
@@ -733,6 +793,15 @@ Scene / Actual / Problem
 
 Tekrar.
 
+## G9 için kanıt planı — prova yapılmadı
+
+- Run 1: kronometresiz tıklamalı geçiş; navigation, sıra ve transition sorunlarını not et.
+- Run 2: 30 dakikalık rotayı kesintisiz sun; her sahne için gerçek süre ve problem yaz; toplam hedef 26–28 dk.
+- Gerekli düzeltmeleri yaptıktan sonra Run 3’ü kesintisiz tekrar et.
+- Birbiri ardına iki tam prova ≤28 dakika olmadan G9 PASS verilmez; arada düzeltme varsa sayım yeniden başlar.
+
+Kanıt kaydı: tarih, commit, her sahnenin gerçek süresi, toplam süre, sorunlar ve düzeltmeler. Zaman ölçümü gerçek sunum provasıyla yapılır; tahmini süre veya statik storyboard kanıt sayılmaz.
+
 ### Eğer > 30 dk
 
 İlk kesilecekler:
@@ -756,6 +825,8 @@ Kesilmeyecekler:
 ## Gate G9 — Timing PASS
 
 İki arka arkaya rehearsal ≤ 28 dk.
+
+**Durum (2026-09-27): AÇIK — rehearsal kaydı yok.**
 
 ---
 

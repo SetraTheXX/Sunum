@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1420 760" role="img" aria-label="Model, context, tools, and skills contribute to software that is tested, reviewed, and accepted by a person">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M1 1 10 6 1 11" fill="none" stroke="#262720" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="#262720" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Model -->
+    <path d="M104 108h126v133H104z" fill="#ead8b7"/>
+    <path d="M128 132h78v85h-78z" fill="#fbf9f4" stroke-width="5"/>
+    <path d="M145 148h14v14h-14zM175 148h14v14h-14zM145 179h14v14h-14zM175 179h14v14h-14z" fill="#262720" stroke="none"/>
+    <!-- Context: relevant conversation, files, and rules -->
+    <path d="M404 113h150v130H404z" fill="#f7f3eb" stroke-width="5"/>
+    <path d="M425 133h62a11 11 0 0 1 11 11v27a11 11 0 0 1-11 11h-29l-16 13v-13h-17a11 11 0 0 1-11-11v-27a11 11 0 0 1 11-11z" fill="#fbf9f4" stroke-width="4"/>
+    <path d="M512 138h24l9 10v40h-33zM518 155h21M518 165h17" stroke="#77766f" stroke-width="4"/>
+    <path d="M424 211h108M424 223h76" stroke="#77766f" stroke-width="4"/>
+    <!-- Tools: terminal and hand tool -->
+    <path d="M702 126h125v86H702z" fill="#fbf9f4" stroke-width="5"/>
+    <path d="M702 148h125M720 166l11 10-11 10M745 187h35" stroke="#77766f" stroke-width="4"/>
+    <path d="M800 199a27 27 0 0 0 38-34l38 38-22 22-38-38a27 27 0 0 0-35-36l18 18-21 21-18-18a27 27 0 0 0 40 39z" fill="#e9d4aa" stroke-width="4"/>
+    <!-- Skill: reusable handbook -->
+    <path d="M1003 120c30-10 54-7 78 6v104c-24-13-48-16-78-6zM1081 126c24-13 48-16 78-6v104c-30-10-54-7-78 6z" fill="#fbf9f4" stroke-width="5"/>
+    <path d="M1078 127v103" stroke="#c28a35" stroke-width="5"/>
+    <!-- Inputs converge on the produced software -->
+    <path d="M167 245v61h455M479 244v62M765 244v62H622M1080 244v62H622" marker-end="url(#arrow)" stroke-width="5"/>
+    <!-- Working software output -->
+    <path d="M477 307h293v173H477z" fill="#fbf9f4" stroke-width="6"/>
+    <path d="M477 344h293M502 370h98v82h-98z" fill="#e9d4aa" stroke-width="5"/>
+    <path d="M620 371h122M620 394h105M620 418h115M502 464h240" stroke="#77766f" stroke-width="5"/>
+    <circle cx="500" cy="326" r="5" fill="#c28a35" stroke="none"/>
+    <circle cx="520" cy="326" r="5" fill="#77766f" stroke="none"/>
+    <circle cx="540" cy="326" r="5" fill="#77766f" stroke="none"/>
+    <!-- The result moves through evidence and human control -->
+    <path d="M622 480v71H270" marker-end="url(#arrow)" stroke-width="5"/>
+    <!-- Test -->
+    <path d="M177 548h153l25 25v121H177z" fill="#fbf9f4"/>
+    <path d="M330 548v28h25M199 591h18v18h-18zM199 628h18v18h-18zM233 600h74M233 637h74" stroke="#77766f" stroke-width="5"/>
+    <path d="m201 591 7 7 14-16m-21 46 7 7 14-16" stroke="#c28a35" stroke-width="4"/>
+    <path d="M358 609h108" marker-end="url(#arrow)" stroke-width="5"/>
+    <!-- Review -->
+    <path d="M491 557h128v103H491z" fill="#fbf9f4"/>
+    <path d="M511 580h78M511 601h61M511 622h47" stroke="#77766f" stroke-width="5"/>
+    <circle cx="619" cy="632" r="35" fill="#f7f3eb" stroke-width="6"/>
+    <path d="m644 657 34 34" stroke-width="8"/>
+    <path d="M680 609h104" marker-end="url(#arrow)" stroke-width="5"/>
+    <!-- Human oversight: eye, hand, and explicit acceptance -->
+    <path d="M811 594c42-42 96-42 138 0-42 42-96 42-138 0z" fill="#f7f3eb" stroke-width="5"/>
+    <circle cx="880" cy="594" r="18" fill="#e9d4aa" stroke-width="5"/>
+    <path d="M840 641c0 21 15 37 36 37h65c14 0 24-10 24-23 0-9-6-16-15-19l-24-8M839 653l-24-13" stroke-width="5"/>
+    <circle cx="1010" cy="610" r="43" fill="#e9d4aa" stroke-width="6"/>
+    <path d="m990 610 14 14 28-32" stroke-width="7"/>
+  </g>
+</svg>

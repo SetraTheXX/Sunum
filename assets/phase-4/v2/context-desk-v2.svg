@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Prompt and a tray of relevant information flow into a model, which produces an output">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M1 1 10 6 1 11" fill="none" stroke="#262720" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="#262720" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Prompt: one task sheet -->
+    <path d="M86 190h145l52 52v238H86z" fill="#fbf9f4"/>
+    <path d="M231 190v53h52"/>
+    <circle cx="126" cy="284" r="13" fill="#c28a35" stroke="none"/>
+    <path d="M158 284h78M112 328h124M112 368h105M112 408h83" stroke="#77766f" stroke-width="5"/>
+    <!-- Context tray: history, project files, instructions, tool output -->
+    <path d="M360 146h451v410H360z" fill="#f7f3eb" stroke-width="5"/>
+    <path d="M382 146v-18h407v18" stroke="#77766f" stroke-width="4"/>
+    <!-- Conversation history -->
+    <path d="M408 204h139a16 16 0 0 1 16 16v59a16 16 0 0 1-16 16h-81l-31 24v-24h-27a16 16 0 0 1-16-16v-59a16 16 0 0 1 16-16z" fill="#fbf9f4" stroke-width="5"/>
+    <path d="M431 231h79M431 253h57" stroke="#77766f" stroke-width="5"/>
+    <path d="M442 184h113a15 15 0 0 1 15 15v48" stroke="#c28a35" stroke-width="5"/>
+    <!-- Project files -->
+    <path d="M613 222h51l17 18h83v82H613z" fill="#e9d4aa" stroke-width="5"/>
+    <path d="M630 253h113M630 274h93" stroke="#77766f" stroke-width="5"/>
+    <!-- Instructions / rules -->
+    <path d="M412 366h142v136H412z" fill="#fbf9f4" stroke-width="5"/>
+    <path d="m431 397 8 8 15-18M467 400h67M431 437l8 8 15-18M467 440h67M431 477l8 8 15-18M467 480h49" stroke="#77766f" stroke-width="5"/>
+    <path d="m431 397 8 8 15-18" stroke="#c28a35" stroke-width="5"/>
+    <!-- Tool output -->
+    <path d="M617 375h145v119H617z" fill="#fbf9f4" stroke-width="5"/>
+    <path d="M617 401h145M637 424h27M637 445h60M637 467h44" stroke="#77766f" stroke-width="5"/>
+    <path d="m724 430 11 10-11 10M710 455l-8 8" stroke="#c28a35" stroke-width="5"/>
+    <!-- Inputs converge on a model chip -->
+    <path d="M283 237c155-120 421-137 624 45" marker-end="url(#arrow)" stroke-width="5"/>
+    <path d="M811 351h95" marker-end="url(#arrow)" stroke-width="5"/>
+    <!-- Model -->
+    <path d="M934 247h143v180H934z" fill="#ead8b7" stroke-width="6"/>
+    <path d="M962 275h87v124h-87z" fill="#fbf9f4" stroke-width="5"/>
+    <path d="M978 292h18v18h-18zM1015 292h18v18h-18zM978 329h18v18h-18zM1015 329h18v18h-18zM978 366h18v18h-18zM1015 366h18v18h-18z" fill="#262720" stroke="none"/>
+    <path d="M934 270h-18M934 306h-18M934 342h-18M934 378h-18M934 414h-18M1077 270h18M1077 306h18M1077 342h18M1077 378h18M1077 414h18" stroke-width="5"/>
+    <!-- Output -->
+    <path d="M1070 518h119l38 38v111h-157z" fill="#fbf9f4"/>
+    <path d="M1189 518v39h38M1093 575h85M1093 598h66" stroke="#77766f" stroke-width="5"/>
+    <path d="m1094 550 10 10 19-22" stroke="#c28a35" stroke-width="6"/>
+    <path d="M1050 421c8 48 34 77 67 91" marker-end="url(#arrow)" stroke-width="5"/>
+  </g>
+</svg>

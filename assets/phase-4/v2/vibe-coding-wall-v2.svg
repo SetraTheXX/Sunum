@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="A visible working screen is separate from file changes, tests, and review evidence">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M1 1 10 6 1 11" fill="none" stroke="#77766f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="#262720" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- A visible, attractive working page -->
+    <path d="M79 152h456v394H79z" fill="#fbf9f4"/>
+    <path d="M79 202h456" stroke-width="5"/>
+    <circle cx="111" cy="178" r="8" fill="#c28a35" stroke="none"/>
+    <circle cx="139" cy="178" r="8" fill="#77766f" stroke="none"/>
+    <circle cx="167" cy="178" r="8" fill="#77766f" stroke="none"/>
+    <path d="M220 178h245" stroke="#77766f" stroke-width="5"/>
+    <path d="M115 246h156M115 270h111" stroke="#77766f" stroke-width="5"/>
+    <path d="M115 300h171v134H115z" fill="#e9d4aa" stroke-width="5"/>
+    <circle cx="201" cy="366" r="35" fill="#fbf9f4" stroke-width="5"/>
+    <path d="M321 319h172M321 344h148M321 369h163M321 394h124" stroke="#77766f" stroke-width="5"/>
+    <path d="M115 462h378" stroke="#77766f" stroke-width="5"/>
+    <path d="M115 494h110" stroke="#c28a35" stroke-width="12"/>
+    <path d="m456 456 21 22-42 42-21-22z" fill="#e9d4aa" stroke-width="5"/>
+    <path d="m435 499-13 22 23-9" fill="#262720" stroke-width="4"/>
+    <!-- The verification evidence is a separate, unconnected set -->
+    <path d="M617 178c44 0 44 0 70 0M617 201c44 0 44 0 70 0" stroke="#77766f" stroke-width="4" stroke-dasharray="3 12"/>
+    <path d="M699 155v390" stroke="#d5d0c6" stroke-width="4"/>
+    <!-- File change / diff -->
+    <path d="M755 179h106l28 28v120H755z" stroke="#77766f" stroke-width="5" stroke-dasharray="10 10" fill="#fbf9f4"/>
+    <path d="M861 179v29h28M775 231h55M775 255h30M775 281h55" stroke="#77766f" stroke-width="5" stroke-dasharray="8 7"/>
+    <path d="M845 228v65M837 244h16M837 276h16" stroke="#c28a35" stroke-width="4" stroke-dasharray="6 6"/>
+    <!-- Test evidence -->
+    <path d="M936 193h112l22 22v113H936z" stroke="#77766f" stroke-width="5" stroke-dasharray="10 10" fill="#fbf9f4"/>
+    <path d="M1048 193v24h22M956 239h18v18h-18zM956 276h18v18h-18zM990 248h57M990 285h57" stroke="#77766f" stroke-width="5" stroke-dasharray="8 7"/>
+    <!-- Review evidence -->
+    <path d="M766 393h149v141H766z" stroke="#77766f" stroke-width="5" stroke-dasharray="10 10" fill="#fbf9f4"/>
+    <path d="M789 421h91M789 445h75M789 469h59" stroke="#77766f" stroke-width="5" stroke-dasharray="8 7"/>
+    <circle cx="914" cy="479" r="34" stroke="#77766f" stroke-width="6" stroke-dasharray="9 8"/>
+    <path d="m939 505 35 35" stroke="#77766f" stroke-width="8" stroke-dasharray="9 9"/>
+  </g>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" role="img" aria-label="Lead routes work directly or through an optional Analyst to Developer, then QA; pass is recorded and fail returns to Developer">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M1 1 10 6 1 11" fill="none" stroke="#262720" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrowMuted" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M1 1 10 6 1 11" fill="none" stroke="#77766f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="#262720" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Lead as a routing hub -->
+    <circle cx="148" cy="331" r="74" fill="#f7f3eb"/>
+    <circle cx="148" cy="331" r="20" fill="#e9d4aa"/>
+    <circle cx="148" cy="269" r="8" fill="#fbf9f4"/>
+    <circle cx="93" cy="365" r="8" fill="#fbf9f4"/>
+    <circle cx="203" cy="365" r="8" fill="#fbf9f4"/>
+    <path d="M148 311v-31M132 342l-27 17M164 342l27 17" stroke="#77766f" stroke-width="5"/>
+    <!-- Direct route from Lead to Developer (Analyst is optional) -->
+    <path d="M224 331h404" marker-end="url(#arrow)" stroke-width="5"/>
+    <!-- Optional Analyst detour above the direct route -->
+    <path d="M196 278c61-93 149-117 222-103M501 175c79 10 117 66 139 130" marker-end="url(#arrowMuted)" stroke="#77766f" stroke-width="5" stroke-dasharray="10 12"/>
+    <circle cx="457" cy="172" r="62" stroke="#77766f" stroke-width="5" stroke-dasharray="9 10" fill="#fbf9f4"/>
+    <path d="M432 144h43l17 17v48h-60z" stroke="#77766f" stroke-width="5"/>
+    <path d="M475 144v18h17M443 176h30" stroke="#77766f" stroke-width="4"/>
+    <circle cx="488" cy="205" r="17" stroke="#c28a35" stroke-width="5"/>
+    <path d="m500 217 17 17" stroke="#c28a35" stroke-width="6"/>
+    <!-- Developer: terminal and changed file -->
+    <path d="M626 263h205v139H626z" fill="#fbf9f4"/>
+    <path d="M626 296h205M653 325l15 14-15 14M685 353h45" stroke="#77766f" stroke-width="5"/>
+    <path d="M758 326h42v44h-42z" fill="#e9d4aa" stroke-width="4"/>
+    <path d="M766 338h25M766 351h18" stroke="#262720" stroke-width="4"/>
+    <!-- QA: review checklist and magnifier -->
+    <path d="M944 261h142l28 28v113H944z" fill="#fbf9f4"/>
+    <path d="M1086 261v31h28M970 320h14v14h-14zM970 351h14v14h-14zM1000 327h66M1000 358h48" stroke="#77766f" stroke-width="5"/>
+    <path d="m970 320 6 6 12-14m-18 39 6 6 12-14" stroke="#c28a35" stroke-width="4"/>
+    <path d="M831 331h113" marker-end="url(#arrow)" stroke-width="5"/>
+    <!-- PASS: completion and a Git record -->
+    <path d="M1114 280c38-64 61-96 94-110" marker-end="url(#arrow)" stroke-width="5"/>
+    <circle cx="1224" cy="151" r="34" fill="#e9d4aa"/>
+    <path d="m1208 151 11 11 22-26" stroke="#262720" stroke-width="6"/>
+    <path d="M1258 151h40" marker-end="url(#arrow)" stroke-width="5"/>
+    <path d="M1311 114v72M1311 128c0 22 30 10 30 28M1311 144c0 18-25 10-25 28" stroke-width="5"/>
+    <circle cx="1311" cy="112" r="7" fill="#c28a35"/><circle cx="1341" cy="156" r="7" fill="#fbf9f4"/><circle cx="1286" cy="176" r="7" fill="#fbf9f4"/>
+    <!-- FAIL: return to Developer -->
+    <path d="M1044 402c-8 123-78 183-200 183H728c-48 0-73-26-73-74v-109" marker-end="url(#arrowMuted)" stroke="#77766f" stroke-width="5"/>
+    <path d="m915 542 24 24m0-24-24 24" stroke="#262720" stroke-width="6"/>
+  </g>
+</svg>

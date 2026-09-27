@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { scenesForMode, type Scene } from './content';
+import SceneVisual from './SceneVisual';
 
 type Mode = 30 | 45 | 60;
 
@@ -211,7 +212,7 @@ export default function App() {
           <span style={{ width: `${progress}%` }} />
         </div>
 
-        <section className="scene-stage" key={currentScene.number}>
+        <section className={`scene-stage scene-stage--${String(currentScene.number).padStart(2, '0')}`} key={currentScene.number}>
           <div className="scene-meta">
             <span className="eyebrow">SAHNE {String(currentScene.number).padStart(2, '0')}</span>
             <span className="scene-duration">{currentScene.duration}</span>
@@ -224,14 +225,7 @@ export default function App() {
               <span className="eyebrow">EKRANDA</span>
               <span className="step-counter">{visibleSteps} / {currentScene.screenSteps.length} adım</span>
             </div>
-            <ol className="reveal-list">
-              {currentScene.screenSteps.slice(0, visibleSteps).map((step, index) => (
-                <li key={`${currentScene.number}-${index}`} className={index === visibleSteps - 1 ? 'is-current' : ''}>
-                  <span className="reveal-index">{String(index + 1).padStart(2, '0')}</span>
-                  <span>{step}</span>
-                </li>
-              ))}
-            </ol>
+            <SceneVisual scene={currentScene} visibleSteps={visibleSteps} />
             {visibleSteps < currentScene.screenSteps.length ? (
               <p className="next-hint">Devam etmek için <kbd>→</kbd> veya <kbd>Space</kbd></p>
             ) : sceneIndex < routeScenes.length - 1 ? (

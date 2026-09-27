@@ -633,33 +633,33 @@ Sunucu ne söyleyecek:
 
 **Süre:** 1–1.5 saat
 
-**Hazırlık kaydı (2026-09-27):** Yalnız test sırası ve kanıt şablonu tanımlandı; ağ kesintisi testi yapılmadı, G6 açık.
+**Hazırlık kaydı (2026-09-27):** İlk kayıt yalnız test sırası ve kanıt şablonuydu; aşağıdaki yürütme kaydı bu testi tamamlar.
 
 Bilgisayarı airplane/offline duruma getir.
 
 Kontrol:
 
-- [ ] Site açılıyor.
-- [ ] Font geliyor.
-- [ ] Görseller geliyor.
-- [ ] JS çalışıyor.
-- [ ] Animasyonlar çalışıyor.
-- [ ] Screenshotlar geliyor.
+- [x] Site açılıyor — production preview offline açıldı.
+- [x] Font geliyor — sistem font yığını kullanılıyor; uzak font isteği yok.
+- [x] Görseller geliyor — Scene 02/03 SVG çizimleri bundle içi `data:` kaynaklarından yüklendi.
+- [x] JS çalışıyor — 30 dk rota ve etkileşimler çalıştı.
+- [—] Animasyonlar — uygulamada CSS/JS animasyon akışı tanımlı değil; doğrulanacak animasyon yok.
+- [ ] Screenshotlar geliyor — core route içinde screenshot varlığı yok; fallback ekran dizisi de aynı authentic Vi3ecode kanıt blocker’ının parçası.
 - [ ] Demo fallback geliyor.
-- [ ] Console remote request spam yok.
+- [x] Uygulamadan remote istek yok; kaydedilen CDP HTTP/yükleme/runtime hata dizileri boş. Console hataları ayrı alanda saklanmadı.
 
 ## Reload test
 
 Her kritik scene’de reload:
 
-- [ ] cold open
-- [ ] agent anatomy
-- [ ] Vi3ecode
-- [ ] final
+- [x] cold open — `?mode=30&scene=1`
+- [x] agent anatomy — `?mode=30&scene=7`
+- [x] Vi3ecode — `?mode=30&scene=11`
+- [x] final — `?mode=30&scene=12`
 
-## G6 için kanıt planı — test edilmedi
+## G6 için kanıt planı ve yürütme kaydı
 
-1. QA test edilen commit’i ve production build sonucunu kaydeder; test sunucusunu loopback’te başlatıp internet bağlantısını işletim sistemi seviyesinde kapatır.
+1. QA test edilen commit’i ve production build sonucunu kaydeder; test sunucusunu loopback’te başlatır ve ya işletim sistemi ağını kapatır ya da yalnız loopback origin’ine izin veren, tüm dış HTTP/HTTPS trafiğini reddeden izole browser proxy’si kullanır.
 2. Soğuk açılışta site, yerel font, CSS/JS, görseller ve hazır olduğunda yerel demo fallback’inin açıldığını doğrular.
 3. Cold Open, Agent Anatomy, Vi3ecode ve Final sahnelerini yeniden yükler; ardından 30 dakikalık rotayı tamamlar.
 4. Tarayıcı console/network kaydında uzak font, CDN, görsel veya beklenmeyen remote istek/hata olmadığını not eder.
@@ -670,7 +670,11 @@ Kanıt kaydı: tarih, commit, build sonucu, işletim sistemi/tarayıcı, ağın 
 
 Hiç internet olmadan 30 dk route tamamlanabiliyor.
 
-**Durum (2026-09-27): AÇIK — hazırlık dışında test kanıtı yok.**
+**Phase 8 yürütme (2026-09-27): PARTIAL.** `npm run build` geçti. Production preview temiz, geçici headless Edge profiliyle açıldı; browser panelinde de production preview görüntülenip okundu. Offline testi, işletim sistemi ağını/firewall'ı değiştirmeden yapıldı: izole Edge profili için yerel proxy kuruldu; yalnız `http://127.0.0.1:4173` origin'ine izin verildi, diğer HTTP istekleri ve tüm HTTPS CONNECT istekleri 403 ile reddedildi. Ayrı `.invalid` CONNECT probe'u 403 döndü; dış ağa çıkış olmadığını doğruladı. Test başına 28/28 PASS: 30 dk modda 12 sahnenin tüm adımları ileri/geri gezildi, next/previous, Space, ArrowRight/ArrowLeft, J/K, R, `scene`/`step` URL durumu ve desteklenen fullscreen kontrol edildi. Dört kritik URL yeniden yüklendi. Uygulamanın page-network kaydında uzak istek yoktu. Kaydedilen HTTP hata, yükleme hatası ve Runtime exception dizileri boş; console hataları ayrı alanda saklanmadığından console için PASS iddiası yapılmıyor. Edge'in kendi arka plan trafiğinden 28 uzak istek proxy tarafından engellendi. JS/CSS loopback'ten, Scene 02/03 SVG'leri bundle içi data URI'den yüklendi; fontlar yerel sistem font yığını. Uygulamanın 30 dk rotasında screenshot/PNG kaynağı yok; animasyon akışı da tanımlı değil.
+
+Test sırasında tarayıcının varsayılan `/favicon.ico` isteği 404 verdi. `index.html`'e boş data favicon tanımı eklenip production build yenilendi; son offline koşusunda HTTP/asset hatası sıfırlandı. Ayrıntılı sonuç ve yöntem: [Phase 8 offline test kaydı](sources/phase-8/offline-resilience-2026-09-27.md). Geçici JSON raporundaki 28 istek `blockedEdgeBackgroundRequests` olarak etiketlendi; bunlar uygulamanın istekleri değildir. `package.json` yalnız `dev`, `build`, `preview` script'lerini içeriyor; test/lint script'i yok.
+
+**G6 durumu: PARTIAL / BLOCKED.** 30 dk core route offline PASS; tam G6 PASS değil. Tek blocker, authentic Vi3ecode demo fallback'inin (gerçek, privacy-reviewed yerel fallback) henüz bulunmaması/kurulmaması. Phase 6 Vi3ecode intro/workflow açık; G4 ve G5 açık kalır.
 
 ---
 

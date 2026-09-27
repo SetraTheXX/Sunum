@@ -1,7 +1,7 @@
 # Final Visual & Interaction Audit — production manifest
 
 - **Tarih:** 2026-09-28
-- **Durum:** Plan / QA incelemesi bekliyor. Bu belge uygulama veya asset üretimi değildir.
+- **Durum:** Plan; önceki bağımsız QA PASS yalnızca audit/manifest belgelerinin kapsam ve belge kalitesini kapsar. Asset üretimi/entegrasyonu veya G4/G5/G6/G7/G9 gate kapanışı anlamına gelmez. Aşağıdaki kayıt düzeltmeleri yeniden QA incelemesindedir.
 - **Kapsam:** 30 dakikalık route, Scene 01–12, 48 reveal beat. 45/60 dakika route'u ve Phase 12 kapsam dışıdır.
 - **Gözden geçirilen kod tabanı:** `main` / `origin/main` `2e4adc377f211bbf6d08e14b5fd9674581e84295`. Görsel kod son olarak `fd5cc915` içeren build'de gözlendi; sonraki HEAD farkı belge kayıtlarıdır.
 - **Kaynak sırası:** PRD ve Roadmap; her `scenes/01`–`12` dosyasındaki `Amaç`, `İzleyicinin...`, `Ekranda` ve `Konuşmacı`; mevcut `src/SceneVisual.tsx`, `src/styles.css`, `src/VisualPrimitives.tsx`; Phase 9 projector JSON'u ve Phase 11A Run 1 kaydı.
@@ -21,7 +21,7 @@
 - `sources/phase-9/projector-matrix-2026-09-27.json`, Edge 154 CDP'de 12 sahne × dört görünüm = **48 layout ölçümünü** içeriyor: 1920×1080 ve 1366×768, 100% ve 110% eşdeğer viewport. 110% gerçek toolbar zoom değildir. Başlık, header, progress, footer, sidebar çakışması ve genel page scroll alanlarında raporlanan başarısızlık yok; Scene 01/07/11 için 1366×768 110% eşdeğerinde sahne içi scroll vardır. Gerçek projektör mesafesi ve native browser chrome bu ölçümle doğrulanmadı (G7 açık).
 - Phase 11A Run 1 kaydı production preview'de 47 ilerleme geçişini, tüm 12 sahne/reveal sırasını, sınır davranışını, geri/ileri ve sentetik klavye/URL state kontrollerini PASS kaydeder. Bu gerçek fiziksel tuş veya insan provası değildir.
 - Phase 9 CDP kaydı loopback HTML/JS/CSS, data URI SVG ve scene URL'lerini listeliyor; Roadmap'de HTTP hata, loading failure ve Runtime exception dizilerinin boş, uygulama origin'i dışındaki HTTP(S) isteğinin 0 olduğu yazılı. Roadmap ham console kaydının saklanmadığını açıkça belirttiği için console hatası için sıfır/PASS iddiası yapılmıyor. Bu gözlem offline G6 PASS anlamına gelmez: authentic Vi3ecode fallback'i eksiktir, G6 PARTIAL / BLOCKED kalır.
-- Browser paneli screenshot kaydetmedi; Phase 9 screenshot kanıtı PNG olarak üretilmemiş, ölçüm JSON'u mevcut. Buradaki audit yeni görsel kanıt değildir.
+- `screenshots/phase-9/` altında 19 Phase 9 QA PNG render'ı mevcuttur: Scene 01/03/04/06/07/08/10/11/12 için 1366×768 ve 1920×1080 @100% ile Scene 11 için 1366×768 @110% eşdeğeri. Bunlar sunum sahnelerinin seçili QA render'larıdır; authentic Codex/Vi3ecode ürün kanıtı değildir ve tam 12×4 görsel matrisi kapsamaz. @110% CDP eşdeğeri native browser zoom doğrulaması değildir; PNG'ler de fiziksel projektör/ sınıf okunabilirliğini kanıtlamaz. Bu audit sırasında yeni screenshot üretilmedi. Dolayısıyla QA PASS asset üretildiğini veya G4/G5/G6/G7/G9'un kapandığını göstermez.
 
 ## Beat envanteri (48/48)
 

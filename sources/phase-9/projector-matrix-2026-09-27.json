@@ -1,0 +1,6117 @@
+{
+  "browser": "Edg/154.0.4258.37",
+  "method": "Real Edge headless CDP render. 110% emulated as CSS viewport W/H divided by 1.1 plus deviceScaleFactor=1.1; browser-toolbar zoom itself unavailable.",
+  "preview": "http://127.0.0.1:4173",
+  "matrix": [
+    {
+      "label": "scene-01-1920x1080-z100",
+      "initial": {
+        "counter": "01 / 12",
+        "title": "Cold Open: AI gerçekten uygulama yapabilir mi?",
+        "takeaway": "AI çalışan bir başlangıç üretebilir; tek başına çalışıyor görünmesi güvenilir olduğu anlamına gelmez.",
+        "step": "1 / 4 adım"
+      },
+      "full": {
+        "counter": "01 / 12",
+        "step": "4 / 4 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 1080,
+            "top": 0,
+            "right": 268,
+            "bottom": 1080,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1652,
+            "h": 1080,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1500,
+            "h": 66,
+            "top": 0,
+            "right": 1844,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1500,
+            "h": 2,
+            "top": 66,
+            "right": 1844,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 579,
+            "y": 68,
+            "w": 1030,
+            "h": 942,
+            "top": 68,
+            "right": 1609,
+            "bottom": 1010,
+            "left": 579
+          },
+          "footer": {
+            "x": 344,
+            "y": 1010,
+            "w": 1500,
+            "h": 70,
+            "top": 1010,
+            "right": 1844,
+            "bottom": 1080,
+            "left": 344
+          },
+          "title": {
+            "x": 579,
+            "y": 150,
+            "w": 900,
+            "h": 95.65625,
+            "top": 150,
+            "right": 1479,
+            "bottom": 245.65625,
+            "left": 579
+          }
+        },
+        "sizes": {
+          "title": 46,
+          "takeaway": 22,
+          "main": [
+            11,
+            17,
+            22,
+            22,
+            22
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 942,
+          "sceneScroll": 942
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-02-1920x1080-z100",
+      "initial": {
+        "counter": "02 / 12",
+        "title": "Nereden nereye?",
+        "takeaway": "Değişen yalnızca model değil; insanın modelle kurduğu çalışma biçimi de değişebilir.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "02 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 1080,
+            "top": 0,
+            "right": 268,
+            "bottom": 1080,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1652,
+            "h": 1080,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1500,
+            "h": 66,
+            "top": 0,
+            "right": 1844,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1500,
+            "h": 2,
+            "top": 66,
+            "right": 1844,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 579,
+            "y": 68,
+            "w": 1030,
+            "h": 942,
+            "top": 68,
+            "right": 1609,
+            "bottom": 1010,
+            "left": 579
+          },
+          "footer": {
+            "x": 344,
+            "y": 1010,
+            "w": 1500,
+            "h": 70,
+            "top": 1010,
+            "right": 1844,
+            "bottom": 1080,
+            "left": 344
+          },
+          "title": {
+            "x": 579,
+            "y": 150,
+            "w": 900,
+            "h": 66.546875,
+            "top": 150,
+            "right": 1479,
+            "bottom": 216.546875,
+            "left": 579
+          }
+        },
+        "sizes": {
+          "title": 64,
+          "takeaway": 22,
+          "main": [
+            11,
+            12,
+            12,
+            12,
+            12
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [
+          {
+            "src": "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201280%20680'%20role='img'%20aria-label='Search%20returns%20sources,%20asking%20returns%20an%20explanation,%20and%20delegating%20a%20task%20produces%20file%20and%20tool%20work'%3e%3cdefs%3e%3cmarker%20id='arrow'%20markerWidth='12'%20markerHeight='12'%20refX='9'%20refY='6'%20orient='auto'%3e%3cpath%20d='M1%201%2010%206%201%2011'%20fill='none'%20stroke='%23262720'%20stroke-width='2.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/marker%3e%3c/defs%3e%3cg%20fill='none'%20stroke='%23262720'%20stroke-width='6'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3c!--%20Search%20--%3e%3cpath%20d='M118%20161h174v190H118z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M143%20196h119M143%20220h91M143%20244h108'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M134%20287h157M134%20311h112'%20stroke='%2377766f'%20stroke-width='5'/%3e%3ccircle%20cx='286'%20cy='282'%20r='48'%20fill='%23e9d4aa'%20stroke-width='6'/%3e%3cpath%20d='m321%20318%2046%2046'%20stroke-width='9'/%3e%3cpath%20d='M163%20378v68'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Search%20output:%20found%20source%20pages%20--%3e%3cpath%20d='M111%20474h114l31%2031v107H111z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M225%20474v33h31M133%20527h94M133%20552h69M133%20577h81'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M145%20459h112l31%2031'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3c!--%20Transition%20--%3e%3cpath%20d='M390%20262h87'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Ask%20--%3e%3cpath%20d='M520%20185h190a20%2020%200%200%201%2020%2020v85a20%2020%200%200%201-20%2020h-91l-35%2031v-31h-64a20%2020%200%200%201-20-20v-85a20%2020%200%200%201%2020-20z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M551%20222h126M551%20250h96'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M575%20335h160a18%2018%200%200%201%2018%2018v48a18%2018%200%200%201-18%2018h-68l-26%2023v-23h-66a18%2018%200%200%201-18-18v-48a18%2018%200%200%201%2018-18z'%20fill='%23e9d4aa'/%3e%3cpath%20d='M599%20363h107M599%20387h78'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M616%20427v44'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Explanation%20output%20--%3e%3cpath%20d='M543%20490h172l34%2034v88H543z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M715%20490v36h34M566%20543h133M566%20567h111M566%20591h80'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M798%20262h87'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Delegate%20a%20task%20--%3e%3cpath%20d='M932%20178h142l32%2032v113H932z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M1074%20178v35h32M953%20230h95M953%20256h69M953%20281h85'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='m1028%20342%2057%2045'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Work%20output:%20project%20folder,%20terminal%20interaction,%20changed%20file%20--%3e%3cpath%20d='M889%20454h98l22%2020h103v100H889z'%20fill='%23e9d4aa'/%3e%3cpath%20d='M905%20492h191'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M946%20526h126v92H946z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M946%20548h126M965%20569h22M965%20589h74'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M1091%20543h85v75h-85z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M1108%20563h50M1108%20584h34M1152%20602h12'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3cpath%20d='M1072%20325v100'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Equal%20visual%20weight:%20a%20route%20between%20work%20modes,%20not%20a%20ranking%20--%3e%3cpath%20d='M86%20640h1107'%20stroke='%23d5d0c6'%20stroke-width='4'/%3e%3ccircle%20cx='196'%20cy='640'%20r='8'%20fill='%23c28a35'%20stroke='none'/%3e%3ccircle%20cx='640'%20cy='640'%20r='8'%20fill='%23c28a35'%20stroke='none'/%3e%3ccircle%20cx='1084'%20cy='640'%20r='8'%20fill='%23c28a35'%20stroke='none'/%3e%3c/g%3e%3c/svg%3e",
+            "ok": true
+          }
+        ],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 942,
+          "sceneScroll": 942
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-03-1920x1080-z100",
+      "initial": {
+        "counter": "03 / 12",
+        "title": "Model, Prompt, Context",
+        "takeaway": "Model isteği işler; prompt görevi söyler; context, bu görev sırasında modele sunulan ilgili bilgidir.",
+        "step": "1 / 5 adım"
+      },
+      "full": {
+        "counter": "03 / 12",
+        "step": "5 / 5 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 1080,
+            "top": 0,
+            "right": 268,
+            "bottom": 1080,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1652,
+            "h": 1080,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1500,
+            "h": 66,
+            "top": 0,
+            "right": 1844,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1500,
+            "h": 2,
+            "top": 66,
+            "right": 1844,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 579,
+            "y": 68,
+            "w": 1030,
+            "h": 942,
+            "top": 68,
+            "right": 1609,
+            "bottom": 1010,
+            "left": 579
+          },
+          "footer": {
+            "x": 344,
+            "y": 1010,
+            "w": 1500,
+            "h": 70,
+            "top": 1010,
+            "right": 1844,
+            "bottom": 1080,
+            "left": 344
+          },
+          "title": {
+            "x": 579,
+            "y": 150,
+            "w": 900,
+            "h": 66.546875,
+            "top": 150,
+            "right": 1479,
+            "bottom": 216.546875,
+            "left": 579
+          }
+        },
+        "sizes": {
+          "title": 64,
+          "takeaway": 22,
+          "main": [
+            11,
+            12,
+            12,
+            12,
+            12
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [
+          {
+            "src": "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201280%20720'%20role='img'%20aria-label='Prompt%20and%20a%20tray%20of%20relevant%20information%20flow%20into%20a%20model,%20which%20produces%20an%20output'%3e%3cdefs%3e%3cmarker%20id='arrow'%20markerWidth='12'%20markerHeight='12'%20refX='9'%20refY='6'%20orient='auto'%3e%3cpath%20d='M1%201%2010%206%201%2011'%20fill='none'%20stroke='%23262720'%20stroke-width='2.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/marker%3e%3c/defs%3e%3cg%20fill='none'%20stroke='%23262720'%20stroke-width='6'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3c!--%20Prompt:%20one%20task%20sheet%20--%3e%3cpath%20d='M86%20190h145l52%2052v238H86z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M231%20190v53h52'/%3e%3ccircle%20cx='126'%20cy='284'%20r='13'%20fill='%23c28a35'%20stroke='none'/%3e%3cpath%20d='M158%20284h78M112%20328h124M112%20368h105M112%20408h83'%20stroke='%2377766f'%20stroke-width='5'/%3e%3c!--%20Context%20tray:%20history,%20project%20files,%20instructions,%20tool%20output%20--%3e%3cpath%20d='M360%20146h451v410H360z'%20fill='%23f7f3eb'%20stroke-width='5'/%3e%3cpath%20d='M382%20146v-18h407v18'%20stroke='%2377766f'%20stroke-width='4'/%3e%3c!--%20Conversation%20history%20--%3e%3cpath%20d='M408%20204h139a16%2016%200%200%201%2016%2016v59a16%2016%200%200%201-16%2016h-81l-31%2024v-24h-27a16%2016%200%200%201-16-16v-59a16%2016%200%200%201%2016-16z'%20fill='%23fbf9f4'%20stroke-width='5'/%3e%3cpath%20d='M431%20231h79M431%20253h57'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M442%20184h113a15%2015%200%200%201%2015%2015v48'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3c!--%20Project%20files%20--%3e%3cpath%20d='M613%20222h51l17%2018h83v82H613z'%20fill='%23e9d4aa'%20stroke-width='5'/%3e%3cpath%20d='M630%20253h113M630%20274h93'%20stroke='%2377766f'%20stroke-width='5'/%3e%3c!--%20Instructions%20/%20rules%20--%3e%3cpath%20d='M412%20366h142v136H412z'%20fill='%23fbf9f4'%20stroke-width='5'/%3e%3cpath%20d='m431%20397%208%208%2015-18M467%20400h67M431%20437l8%208%2015-18M467%20440h67M431%20477l8%208%2015-18M467%20480h49'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='m431%20397%208%208%2015-18'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3c!--%20Tool%20output%20--%3e%3cpath%20d='M617%20375h145v119H617z'%20fill='%23fbf9f4'%20stroke-width='5'/%3e%3cpath%20d='M617%20401h145M637%20424h27M637%20445h60M637%20467h44'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='m724%20430%2011%2010-11%2010M710%20455l-8%208'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3c!--%20Inputs%20converge%20on%20a%20model%20chip%20--%3e%3cpath%20d='M283%20237c155-120%20421-137%20624%2045'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3cpath%20d='M811%20351h95'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Model%20--%3e%3cpath%20d='M934%20247h143v180H934z'%20fill='%23ead8b7'%20stroke-width='6'/%3e%3cpath%20d='M962%20275h87v124h-87z'%20fill='%23fbf9f4'%20stroke-width='5'/%3e%3cpath%20d='M978%20292h18v18h-18zM1015%20292h18v18h-18zM978%20329h18v18h-18zM1015%20329h18v18h-18zM978%20366h18v18h-18zM1015%20366h18v18h-18z'%20fill='%23262720'%20stroke='none'/%3e%3cpath%20d='M934%20270h-18M934%20306h-18M934%20342h-18M934%20378h-18M934%20414h-18M1077%20270h18M1077%20306h18M1077%20342h18M1077%20378h18M1077%20414h18'%20stroke-width='5'/%3e%3c!--%20Output%20--%3e%3cpath%20d='M1070%20518h119l38%2038v111h-157z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M1189%20518v39h38M1093%20575h85M1093%20598h66'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='m1094%20550%2010%2010%2019-22'%20stroke='%23c28a35'%20stroke-width='6'/%3e%3cpath%20d='M1050%20421c8%2048%2034%2077%2067%2091'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c/g%3e%3c/svg%3e",
+            "ok": true
+          }
+        ],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 942,
+          "sceneScroll": 942
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-04-1920x1080-z100",
+      "initial": {
+        "counter": "04 / 12",
+        "title": "Chatbot ve Coding Agent",
+        "takeaway": "Bu sunumda “coding agent”, modelin araç kullanıp sonuçları yeni adıma taşıdığı bir çalışma döngüsüdür.",
+        "step": "1 / 4 adım"
+      },
+      "full": {
+        "counter": "04 / 12",
+        "step": "4 / 4 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 1080,
+            "top": 0,
+            "right": 268,
+            "bottom": 1080,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1652,
+            "h": 1080,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1500,
+            "h": 66,
+            "top": 0,
+            "right": 1844,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1500,
+            "h": 2,
+            "top": 66,
+            "right": 1844,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 579,
+            "y": 68,
+            "w": 1030,
+            "h": 942,
+            "top": 68,
+            "right": 1609,
+            "bottom": 1010,
+            "left": 579
+          },
+          "footer": {
+            "x": 344,
+            "y": 1010,
+            "w": 1500,
+            "h": 70,
+            "top": 1010,
+            "right": 1844,
+            "bottom": 1080,
+            "left": 344
+          },
+          "title": {
+            "x": 579,
+            "y": 150,
+            "w": 900,
+            "h": 66.546875,
+            "top": 150,
+            "right": 1479,
+            "bottom": 216.546875,
+            "left": 579
+          }
+        },
+        "sizes": {
+          "title": 64,
+          "takeaway": 22,
+          "main": [
+            10,
+            10,
+            11,
+            12,
+            12
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 942,
+          "sceneScroll": 942
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-05-1920x1080-z100",
+      "initial": {
+        "counter": "05 / 12",
+        "title": "Vibe Coding",
+        "takeaway": "Doğal dille fikirden çalışan bir ilk sürüme hızlıca yaklaşmak mümkün ve bu güçlü bir başlangıçtır.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "05 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 1080,
+            "top": 0,
+            "right": 268,
+            "bottom": 1080,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1652,
+            "h": 1080,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1500,
+            "h": 66,
+            "top": 0,
+            "right": 1844,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1500,
+            "h": 2,
+            "top": 66,
+            "right": 1844,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 579,
+            "y": 68,
+            "w": 1030,
+            "h": 942,
+            "top": 68,
+            "right": 1609,
+            "bottom": 1010,
+            "left": 579
+          },
+          "footer": {
+            "x": 344,
+            "y": 1010,
+            "w": 1500,
+            "h": 70,
+            "top": 1010,
+            "right": 1844,
+            "bottom": 1080,
+            "left": 344
+          },
+          "title": {
+            "x": 579,
+            "y": 150,
+            "w": 900,
+            "h": 66.546875,
+            "top": 150,
+            "right": 1479,
+            "bottom": 216.546875,
+            "left": 579
+          }
+        },
+        "sizes": {
+          "title": 64,
+          "takeaway": 22,
+          "main": [
+            11,
+            12,
+            12,
+            12,
+            12
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 942,
+          "sceneScroll": 942
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-06-1920x1080-z100",
+      "initial": {
+        "counter": "06 / 12",
+        "title": "Vibe Coding'in duvarı",
+        "takeaway": "“Çalışıyor” gözlemi, tek başına doğru, güvenli veya sürdürülebilir olduğuna kanıt değildir.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "06 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 1080,
+            "top": 0,
+            "right": 268,
+            "bottom": 1080,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1652,
+            "h": 1080,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1500,
+            "h": 66,
+            "top": 0,
+            "right": 1844,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1500,
+            "h": 2,
+            "top": 66,
+            "right": 1844,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 579,
+            "y": 68,
+            "w": 1030,
+            "h": 942,
+            "top": 68,
+            "right": 1609,
+            "bottom": 1010,
+            "left": 579
+          },
+          "footer": {
+            "x": 344,
+            "y": 1010,
+            "w": 1500,
+            "h": 70,
+            "top": 1010,
+            "right": 1844,
+            "bottom": 1080,
+            "left": 344
+          },
+          "title": {
+            "x": 579,
+            "y": 150,
+            "w": 900,
+            "h": 66.546875,
+            "top": 150,
+            "right": 1479,
+            "bottom": 216.546875,
+            "left": 579
+          }
+        },
+        "sizes": {
+          "title": 64,
+          "takeaway": 22,
+          "main": [
+            11,
+            11,
+            11,
+            12,
+            12
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 942,
+          "sceneScroll": 942
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-07-1920x1080-z100",
+      "initial": {
+        "counter": "07 / 12",
+        "title": "Agent anatomisi",
+        "takeaway": "Bir coding agent'ın bileşenleri ürüne ve göreve göre değişir; Skill, MCP ve Git kullanılabilecek örneklerdir, her kurulumda zorunlu değildir.",
+        "step": "1 / 11 adım"
+      },
+      "full": {
+        "counter": "07 / 12",
+        "step": "11 / 11 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 1080,
+            "top": 0,
+            "right": 268,
+            "bottom": 1080,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1652,
+            "h": 1080,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1500,
+            "h": 66,
+            "top": 0,
+            "right": 1844,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1500,
+            "h": 2,
+            "top": 66,
+            "right": 1844,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 579,
+            "y": 68,
+            "w": 1030,
+            "h": 942,
+            "top": 68,
+            "right": 1609,
+            "bottom": 1010,
+            "left": 579
+          },
+          "footer": {
+            "x": 344,
+            "y": 1010,
+            "w": 1500,
+            "h": 70,
+            "top": 1010,
+            "right": 1844,
+            "bottom": 1080,
+            "left": 344
+          },
+          "title": {
+            "x": 579,
+            "y": 150,
+            "w": 900,
+            "h": 66.546875,
+            "top": 150,
+            "right": 1479,
+            "bottom": 216.546875,
+            "left": 579
+          }
+        },
+        "sizes": {
+          "title": 64,
+          "takeaway": 22,
+          "main": [
+            11,
+            12,
+            12,
+            12,
+            12
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 942,
+          "sceneScroll": 942
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-08-1920x1080-z100",
+      "initial": {
+        "counter": "08 / 12",
+        "title": "Agentic Engineering",
+        "takeaway": "Agentic engineering, bu sunumda hedefi context ve kontrollerle bir araya getiren çalışma yaklaşımıdır; “bitti” sözü kanıtın yerini tutmaz.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "08 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 1080,
+            "top": 0,
+            "right": 268,
+            "bottom": 1080,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1652,
+            "h": 1080,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1500,
+            "h": 66,
+            "top": 0,
+            "right": 1844,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1500,
+            "h": 2,
+            "top": 66,
+            "right": 1844,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 579,
+            "y": 68,
+            "w": 1030,
+            "h": 942,
+            "top": 68,
+            "right": 1609,
+            "bottom": 1010,
+            "left": 579
+          },
+          "footer": {
+            "x": 344,
+            "y": 1010,
+            "w": 1500,
+            "h": 70,
+            "top": 1010,
+            "right": 1844,
+            "bottom": 1080,
+            "left": 344
+          },
+          "title": {
+            "x": 579,
+            "y": 150,
+            "w": 900,
+            "h": 66.546875,
+            "top": 150,
+            "right": 1479,
+            "bottom": 216.546875,
+            "left": 579
+          }
+        },
+        "sizes": {
+          "title": 64,
+          "takeaway": 22,
+          "main": [
+            11,
+            16,
+            16,
+            16,
+            21
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 942,
+          "sceneScroll": 942
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-09-1920x1080-z100",
+      "initial": {
+        "counter": "09 / 12",
+        "title": "Tek agent sınırı",
+        "takeaway": "Tek agent çoğu iş için yeterli olabilir; uzmanlık veya bağımsız kontrol gerektiğinde görevleri ayırmayı düşünebiliriz.",
+        "step": "1 / 2 adım"
+      },
+      "full": {
+        "counter": "09 / 12",
+        "step": "2 / 2 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 1080,
+            "top": 0,
+            "right": 268,
+            "bottom": 1080,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1652,
+            "h": 1080,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1500,
+            "h": 66,
+            "top": 0,
+            "right": 1844,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1500,
+            "h": 2,
+            "top": 66,
+            "right": 1844,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 579,
+            "y": 68,
+            "w": 1030,
+            "h": 942,
+            "top": 68,
+            "right": 1609,
+            "bottom": 1010,
+            "left": 579
+          },
+          "footer": {
+            "x": 344,
+            "y": 1010,
+            "w": 1500,
+            "h": 70,
+            "top": 1010,
+            "right": 1844,
+            "bottom": 1080,
+            "left": 344
+          },
+          "title": {
+            "x": 579,
+            "y": 150,
+            "w": 900,
+            "h": 66.546875,
+            "top": 150,
+            "right": 1479,
+            "bottom": 216.546875,
+            "left": 579
+          }
+        },
+        "sizes": {
+          "title": 64,
+          "takeaway": 22,
+          "main": [
+            11,
+            19,
+            19
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 942,
+          "sceneScroll": 942
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-10-1920x1080-z100",
+      "initial": {
+        "counter": "10 / 12",
+        "title": "Orchestration",
+        "takeaway": "Orchestration, doğru işi doğru role yönlendirip sonucu kontrol noktalarından geçirmektir.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "10 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 1080,
+            "top": 0,
+            "right": 268,
+            "bottom": 1080,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1652,
+            "h": 1080,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1500,
+            "h": 66,
+            "top": 0,
+            "right": 1844,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1500,
+            "h": 2,
+            "top": 66,
+            "right": 1844,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 579,
+            "y": 68,
+            "w": 1030,
+            "h": 942,
+            "top": 68,
+            "right": 1609,
+            "bottom": 1010,
+            "left": 579
+          },
+          "footer": {
+            "x": 344,
+            "y": 1010,
+            "w": 1500,
+            "h": 70,
+            "top": 1010,
+            "right": 1844,
+            "bottom": 1080,
+            "left": 344
+          },
+          "title": {
+            "x": 579,
+            "y": 150,
+            "w": 900,
+            "h": 66.546875,
+            "top": 150,
+            "right": 1479,
+            "bottom": 216.546875,
+            "left": 579
+          }
+        },
+        "sizes": {
+          "title": 64,
+          "takeaway": 22,
+          "main": [
+            11,
+            12,
+            17,
+            17,
+            24
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 942,
+          "sceneScroll": 942
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-11-1920x1080-z100",
+      "initial": {
+        "counter": "11 / 12",
+        "title": "Vi3ecode",
+        "takeaway": "Bu bölümün değeri ürün tanıtımı değil; Lead, Analyst, Developer, QA ve handoff fikrinin gerçek bir workflow'da nasıl göründüğünü göstermektir.",
+        "step": "1 / 4 adım"
+      },
+      "full": {
+        "counter": "11 / 12",
+        "step": "4 / 4 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 1080,
+            "top": 0,
+            "right": 268,
+            "bottom": 1080,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1652,
+            "h": 1080,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1500,
+            "h": 66,
+            "top": 0,
+            "right": 1844,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1500,
+            "h": 2,
+            "top": 66,
+            "right": 1844,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 579,
+            "y": 68,
+            "w": 1030,
+            "h": 942,
+            "top": 68,
+            "right": 1609,
+            "bottom": 1010,
+            "left": 579
+          },
+          "footer": {
+            "x": 344,
+            "y": 1010,
+            "w": 1500,
+            "h": 70,
+            "top": 1010,
+            "right": 1844,
+            "bottom": 1080,
+            "left": 344
+          },
+          "title": {
+            "x": 579,
+            "y": 150,
+            "w": 900,
+            "h": 66.546875,
+            "top": 150,
+            "right": 1479,
+            "bottom": 216.546875,
+            "left": 579
+          }
+        },
+        "sizes": {
+          "title": 64,
+          "takeaway": 22,
+          "main": [
+            11,
+            19,
+            19,
+            19,
+            19
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 942,
+          "sceneScroll": 942
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-12-1920x1080-z100",
+      "initial": {
+        "counter": "12 / 12",
+        "title": "Final: Model değil, sistem",
+        "takeaway": "AI uygulama geliştirmeye yardım edebilir; güvenilir sonuç modelle birlikte çalışan sistem ve insan kontrolü ister.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "12 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 1080,
+            "top": 0,
+            "right": 268,
+            "bottom": 1080,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1652,
+            "h": 1080,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1500,
+            "h": 66,
+            "top": 0,
+            "right": 1844,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1500,
+            "h": 2,
+            "top": 66,
+            "right": 1844,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 579,
+            "y": 68,
+            "w": 1030,
+            "h": 942,
+            "top": 68,
+            "right": 1609,
+            "bottom": 1010,
+            "left": 579
+          },
+          "footer": {
+            "x": 344,
+            "y": 1010,
+            "w": 1500,
+            "h": 70,
+            "top": 1010,
+            "right": 1844,
+            "bottom": 1080,
+            "left": 344
+          },
+          "title": {
+            "x": 579,
+            "y": 145,
+            "w": 900,
+            "h": 41.59375,
+            "top": 145,
+            "right": 1479,
+            "bottom": 186.59375,
+            "left": 579
+          }
+        },
+        "sizes": {
+          "title": 40,
+          "takeaway": 22,
+          "main": [
+            11,
+            21,
+            21
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 942,
+          "sceneScroll": 942
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-01-1920x1080-z110",
+      "initial": {
+        "counter": "01 / 12",
+        "title": "Cold Open: AI gerçekten uygulama yapabilir mi?",
+        "takeaway": "AI çalışan bir başlangıç üretebilir; tek başına çalışıyor görünmesi güvenilir olduğu anlamına gelmez.",
+        "step": "1 / 4 adım"
+      },
+      "full": {
+        "counter": "01 / 12",
+        "step": "4 / 4 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 982,
+            "top": 0,
+            "right": 268,
+            "bottom": 982,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1477,
+            "h": 982,
+            "top": 0,
+            "right": 1745,
+            "bottom": 982,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1325,
+            "h": 66,
+            "top": 0,
+            "right": 1669,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1325,
+            "h": 2,
+            "top": 66,
+            "right": 1669,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 491.5,
+            "y": 68,
+            "w": 1030,
+            "h": 844,
+            "top": 68,
+            "right": 1521.5,
+            "bottom": 912,
+            "left": 491.5
+          },
+          "footer": {
+            "x": 344,
+            "y": 912,
+            "w": 1325,
+            "h": 70,
+            "top": 912,
+            "right": 1669,
+            "bottom": 982,
+            "left": 344
+          },
+          "title": {
+            "x": 491.5,
+            "y": 145.09375,
+            "w": 900,
+            "h": 95.65625,
+            "top": 145.09375,
+            "right": 1391.5,
+            "bottom": 240.75,
+            "left": 491.5
+          }
+        },
+        "sizes": {
+          "title": 46,
+          "takeaway": 22,
+          "main": [
+            11,
+            17,
+            22,
+            22,
+            22
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 844,
+          "sceneScroll": 844
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1745,
+          "height": 982
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-02-1920x1080-z110",
+      "initial": {
+        "counter": "02 / 12",
+        "title": "Nereden nereye?",
+        "takeaway": "Değişen yalnızca model değil; insanın modelle kurduğu çalışma biçimi de değişebilir.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "02 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 982,
+            "top": 0,
+            "right": 268,
+            "bottom": 982,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1477,
+            "h": 982,
+            "top": 0,
+            "right": 1745,
+            "bottom": 982,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1325,
+            "h": 66,
+            "top": 0,
+            "right": 1669,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1325,
+            "h": 2,
+            "top": 66,
+            "right": 1669,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 491.5,
+            "y": 68,
+            "w": 1030,
+            "h": 844,
+            "top": 68,
+            "right": 1521.5,
+            "bottom": 912,
+            "left": 491.5
+          },
+          "footer": {
+            "x": 344,
+            "y": 912,
+            "w": 1325,
+            "h": 70,
+            "top": 912,
+            "right": 1669,
+            "bottom": 982,
+            "left": 344
+          },
+          "title": {
+            "x": 491.5,
+            "y": 145.09375,
+            "w": 900,
+            "h": 66.546875,
+            "top": 145.09375,
+            "right": 1391.5,
+            "bottom": 211.640625,
+            "left": 491.5
+          }
+        },
+        "sizes": {
+          "title": 64,
+          "takeaway": 22,
+          "main": [
+            11,
+            12,
+            12,
+            12,
+            12
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [
+          {
+            "src": "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201280%20680'%20role='img'%20aria-label='Search%20returns%20sources,%20asking%20returns%20an%20explanation,%20and%20delegating%20a%20task%20produces%20file%20and%20tool%20work'%3e%3cdefs%3e%3cmarker%20id='arrow'%20markerWidth='12'%20markerHeight='12'%20refX='9'%20refY='6'%20orient='auto'%3e%3cpath%20d='M1%201%2010%206%201%2011'%20fill='none'%20stroke='%23262720'%20stroke-width='2.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/marker%3e%3c/defs%3e%3cg%20fill='none'%20stroke='%23262720'%20stroke-width='6'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3c!--%20Search%20--%3e%3cpath%20d='M118%20161h174v190H118z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M143%20196h119M143%20220h91M143%20244h108'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M134%20287h157M134%20311h112'%20stroke='%2377766f'%20stroke-width='5'/%3e%3ccircle%20cx='286'%20cy='282'%20r='48'%20fill='%23e9d4aa'%20stroke-width='6'/%3e%3cpath%20d='m321%20318%2046%2046'%20stroke-width='9'/%3e%3cpath%20d='M163%20378v68'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Search%20output:%20found%20source%20pages%20--%3e%3cpath%20d='M111%20474h114l31%2031v107H111z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M225%20474v33h31M133%20527h94M133%20552h69M133%20577h81'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M145%20459h112l31%2031'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3c!--%20Transition%20--%3e%3cpath%20d='M390%20262h87'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Ask%20--%3e%3cpath%20d='M520%20185h190a20%2020%200%200%201%2020%2020v85a20%2020%200%200%201-20%2020h-91l-35%2031v-31h-64a20%2020%200%200%201-20-20v-85a20%2020%200%200%201%2020-20z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M551%20222h126M551%20250h96'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M575%20335h160a18%2018%200%200%201%2018%2018v48a18%2018%200%200%201-18%2018h-68l-26%2023v-23h-66a18%2018%200%200%201-18-18v-48a18%2018%200%200%201%2018-18z'%20fill='%23e9d4aa'/%3e%3cpath%20d='M599%20363h107M599%20387h78'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M616%20427v44'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Explanation%20output%20--%3e%3cpath%20d='M543%20490h172l34%2034v88H543z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M715%20490v36h34M566%20543h133M566%20567h111M566%20591h80'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M798%20262h87'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Delegate%20a%20task%20--%3e%3cpath%20d='M932%20178h142l32%2032v113H932z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M1074%20178v35h32M953%20230h95M953%20256h69M953%20281h85'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='m1028%20342%2057%2045'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Work%20output:%20project%20folder,%20terminal%20interaction,%20changed%20file%20--%3e%3cpath%20d='M889%20454h98l22%2020h103v100H889z'%20fill='%23e9d4aa'/%3e%3cpath%20d='M905%20492h191'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M946%20526h126v92H946z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M946%20548h126M965%20569h22M965%20589h74'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M1091%20543h85v75h-85z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M1108%20563h50M1108%20584h34M1152%20602h12'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3cpath%20d='M1072%20325v100'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Equal%20visual%20weight:%20a%20route%20between%20work%20modes,%20not%20a%20ranking%20--%3e%3cpath%20d='M86%20640h1107'%20stroke='%23d5d0c6'%20stroke-width='4'/%3e%3ccircle%20cx='196'%20cy='640'%20r='8'%20fill='%23c28a35'%20stroke='none'/%3e%3ccircle%20cx='640'%20cy='640'%20r='8'%20fill='%23c28a35'%20stroke='none'/%3e%3ccircle%20cx='1084'%20cy='640'%20r='8'%20fill='%23c28a35'%20stroke='none'/%3e%3c/g%3e%3c/svg%3e",
+            "ok": true
+          }
+        ],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 844,
+          "sceneScroll": 844
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1745,
+          "height": 982
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-03-1920x1080-z110",
+      "initial": {
+        "counter": "03 / 12",
+        "title": "Model, Prompt, Context",
+        "takeaway": "Model isteği işler; prompt görevi söyler; context, bu görev sırasında modele sunulan ilgili bilgidir.",
+        "step": "1 / 5 adım"
+      },
+      "full": {
+        "counter": "03 / 12",
+        "step": "5 / 5 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 982,
+            "top": 0,
+            "right": 268,
+            "bottom": 982,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1477,
+            "h": 982,
+            "top": 0,
+            "right": 1745,
+            "bottom": 982,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1325,
+            "h": 66,
+            "top": 0,
+            "right": 1669,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1325,
+            "h": 2,
+            "top": 66,
+            "right": 1669,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 491.5,
+            "y": 68,
+            "w": 1030,
+            "h": 844,
+            "top": 68,
+            "right": 1521.5,
+            "bottom": 912,
+            "left": 491.5
+          },
+          "footer": {
+            "x": 344,
+            "y": 912,
+            "w": 1325,
+            "h": 70,
+            "top": 912,
+            "right": 1669,
+            "bottom": 982,
+            "left": 344
+          },
+          "title": {
+            "x": 491.5,
+            "y": 145.09375,
+            "w": 900,
+            "h": 66.546875,
+            "top": 145.09375,
+            "right": 1391.5,
+            "bottom": 211.640625,
+            "left": 491.5
+          }
+        },
+        "sizes": {
+          "title": 64,
+          "takeaway": 22,
+          "main": [
+            11,
+            12,
+            12,
+            12,
+            12
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [
+          {
+            "src": "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201280%20720'%20role='img'%20aria-label='Prompt%20and%20a%20tray%20of%20relevant%20information%20flow%20into%20a%20model,%20which%20produces%20an%20output'%3e%3cdefs%3e%3cmarker%20id='arrow'%20markerWidth='12'%20markerHeight='12'%20refX='9'%20refY='6'%20orient='auto'%3e%3cpath%20d='M1%201%2010%206%201%2011'%20fill='none'%20stroke='%23262720'%20stroke-width='2.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/marker%3e%3c/defs%3e%3cg%20fill='none'%20stroke='%23262720'%20stroke-width='6'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3c!--%20Prompt:%20one%20task%20sheet%20--%3e%3cpath%20d='M86%20190h145l52%2052v238H86z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M231%20190v53h52'/%3e%3ccircle%20cx='126'%20cy='284'%20r='13'%20fill='%23c28a35'%20stroke='none'/%3e%3cpath%20d='M158%20284h78M112%20328h124M112%20368h105M112%20408h83'%20stroke='%2377766f'%20stroke-width='5'/%3e%3c!--%20Context%20tray:%20history,%20project%20files,%20instructions,%20tool%20output%20--%3e%3cpath%20d='M360%20146h451v410H360z'%20fill='%23f7f3eb'%20stroke-width='5'/%3e%3cpath%20d='M382%20146v-18h407v18'%20stroke='%2377766f'%20stroke-width='4'/%3e%3c!--%20Conversation%20history%20--%3e%3cpath%20d='M408%20204h139a16%2016%200%200%201%2016%2016v59a16%2016%200%200%201-16%2016h-81l-31%2024v-24h-27a16%2016%200%200%201-16-16v-59a16%2016%200%200%201%2016-16z'%20fill='%23fbf9f4'%20stroke-width='5'/%3e%3cpath%20d='M431%20231h79M431%20253h57'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M442%20184h113a15%2015%200%200%201%2015%2015v48'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3c!--%20Project%20files%20--%3e%3cpath%20d='M613%20222h51l17%2018h83v82H613z'%20fill='%23e9d4aa'%20stroke-width='5'/%3e%3cpath%20d='M630%20253h113M630%20274h93'%20stroke='%2377766f'%20stroke-width='5'/%3e%3c!--%20Instructions%20/%20rules%20--%3e%3cpath%20d='M412%20366h142v136H412z'%20fill='%23fbf9f4'%20stroke-width='5'/%3e%3cpath%20d='m431%20397%208%208%2015-18M467%20400h67M431%20437l8%208%2015-18M467%20440h67M431%20477l8%208%2015-18M467%20480h49'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='m431%20397%208%208%2015-18'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3c!--%20Tool%20output%20--%3e%3cpath%20d='M617%20375h145v119H617z'%20fill='%23fbf9f4'%20stroke-width='5'/%3e%3cpath%20d='M617%20401h145M637%20424h27M637%20445h60M637%20467h44'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='m724%20430%2011%2010-11%2010M710%20455l-8%208'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3c!--%20Inputs%20converge%20on%20a%20model%20chip%20--%3e%3cpath%20d='M283%20237c155-120%20421-137%20624%2045'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3cpath%20d='M811%20351h95'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Model%20--%3e%3cpath%20d='M934%20247h143v180H934z'%20fill='%23ead8b7'%20stroke-width='6'/%3e%3cpath%20d='M962%20275h87v124h-87z'%20fill='%23fbf9f4'%20stroke-width='5'/%3e%3cpath%20d='M978%20292h18v18h-18zM1015%20292h18v18h-18zM978%20329h18v18h-18zM1015%20329h18v18h-18zM978%20366h18v18h-18zM1015%20366h18v18h-18z'%20fill='%23262720'%20stroke='none'/%3e%3cpath%20d='M934%20270h-18M934%20306h-18M934%20342h-18M934%20378h-18M934%20414h-18M1077%20270h18M1077%20306h18M1077%20342h18M1077%20378h18M1077%20414h18'%20stroke-width='5'/%3e%3c!--%20Output%20--%3e%3cpath%20d='M1070%20518h119l38%2038v111h-157z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M1189%20518v39h38M1093%20575h85M1093%20598h66'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='m1094%20550%2010%2010%2019-22'%20stroke='%23c28a35'%20stroke-width='6'/%3e%3cpath%20d='M1050%20421c8%2048%2034%2077%2067%2091'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c/g%3e%3c/svg%3e",
+            "ok": true
+          }
+        ],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 844,
+          "sceneScroll": 844
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1745,
+          "height": 982
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-04-1920x1080-z110",
+      "initial": {
+        "counter": "04 / 12",
+        "title": "Chatbot ve Coding Agent",
+        "takeaway": "Bu sunumda “coding agent”, modelin araç kullanıp sonuçları yeni adıma taşıdığı bir çalışma döngüsüdür.",
+        "step": "1 / 4 adım"
+      },
+      "full": {
+        "counter": "04 / 12",
+        "step": "4 / 4 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 982,
+            "top": 0,
+            "right": 268,
+            "bottom": 982,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1477,
+            "h": 982,
+            "top": 0,
+            "right": 1745,
+            "bottom": 982,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1325,
+            "h": 66,
+            "top": 0,
+            "right": 1669,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1325,
+            "h": 2,
+            "top": 66,
+            "right": 1669,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 491.5,
+            "y": 68,
+            "w": 1030,
+            "h": 844,
+            "top": 68,
+            "right": 1521.5,
+            "bottom": 912,
+            "left": 491.5
+          },
+          "footer": {
+            "x": 344,
+            "y": 912,
+            "w": 1325,
+            "h": 70,
+            "top": 912,
+            "right": 1669,
+            "bottom": 982,
+            "left": 344
+          },
+          "title": {
+            "x": 491.5,
+            "y": 145.09375,
+            "w": 900,
+            "h": 66.546875,
+            "top": 145.09375,
+            "right": 1391.5,
+            "bottom": 211.640625,
+            "left": 491.5
+          }
+        },
+        "sizes": {
+          "title": 64,
+          "takeaway": 22,
+          "main": [
+            10,
+            10,
+            11,
+            12,
+            12
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 844,
+          "sceneScroll": 844
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1745,
+          "height": 982
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-05-1920x1080-z110",
+      "initial": {
+        "counter": "05 / 12",
+        "title": "Vibe Coding",
+        "takeaway": "Doğal dille fikirden çalışan bir ilk sürüme hızlıca yaklaşmak mümkün ve bu güçlü bir başlangıçtır.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "05 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 982,
+            "top": 0,
+            "right": 268,
+            "bottom": 982,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1477,
+            "h": 982,
+            "top": 0,
+            "right": 1745,
+            "bottom": 982,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1325,
+            "h": 66,
+            "top": 0,
+            "right": 1669,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1325,
+            "h": 2,
+            "top": 66,
+            "right": 1669,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 491.5,
+            "y": 68,
+            "w": 1030,
+            "h": 844,
+            "top": 68,
+            "right": 1521.5,
+            "bottom": 912,
+            "left": 491.5
+          },
+          "footer": {
+            "x": 344,
+            "y": 912,
+            "w": 1325,
+            "h": 70,
+            "top": 912,
+            "right": 1669,
+            "bottom": 982,
+            "left": 344
+          },
+          "title": {
+            "x": 491.5,
+            "y": 145.09375,
+            "w": 900,
+            "h": 66.546875,
+            "top": 145.09375,
+            "right": 1391.5,
+            "bottom": 211.640625,
+            "left": 491.5
+          }
+        },
+        "sizes": {
+          "title": 64,
+          "takeaway": 22,
+          "main": [
+            11,
+            12,
+            12,
+            12,
+            12
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 844,
+          "sceneScroll": 844
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1745,
+          "height": 982
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-06-1920x1080-z110",
+      "initial": {
+        "counter": "06 / 12",
+        "title": "Vibe Coding'in duvarı",
+        "takeaway": "“Çalışıyor” gözlemi, tek başına doğru, güvenli veya sürdürülebilir olduğuna kanıt değildir.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "06 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 982,
+            "top": 0,
+            "right": 268,
+            "bottom": 982,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1477,
+            "h": 982,
+            "top": 0,
+            "right": 1745,
+            "bottom": 982,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1325,
+            "h": 66,
+            "top": 0,
+            "right": 1669,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1325,
+            "h": 2,
+            "top": 66,
+            "right": 1669,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 491.5,
+            "y": 68,
+            "w": 1030,
+            "h": 844,
+            "top": 68,
+            "right": 1521.5,
+            "bottom": 912,
+            "left": 491.5
+          },
+          "footer": {
+            "x": 344,
+            "y": 912,
+            "w": 1325,
+            "h": 70,
+            "top": 912,
+            "right": 1669,
+            "bottom": 982,
+            "left": 344
+          },
+          "title": {
+            "x": 491.5,
+            "y": 145.09375,
+            "w": 900,
+            "h": 66.546875,
+            "top": 145.09375,
+            "right": 1391.5,
+            "bottom": 211.640625,
+            "left": 491.5
+          }
+        },
+        "sizes": {
+          "title": 64,
+          "takeaway": 22,
+          "main": [
+            11,
+            11,
+            11,
+            12,
+            12
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 844,
+          "sceneScroll": 844
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1745,
+          "height": 982
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-07-1920x1080-z110",
+      "initial": {
+        "counter": "07 / 12",
+        "title": "Agent anatomisi",
+        "takeaway": "Bir coding agent'ın bileşenleri ürüne ve göreve göre değişir; Skill, MCP ve Git kullanılabilecek örneklerdir, her kurulumda zorunlu değildir.",
+        "step": "1 / 11 adım"
+      },
+      "full": {
+        "counter": "07 / 12",
+        "step": "11 / 11 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 982,
+            "top": 0,
+            "right": 268,
+            "bottom": 982,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1477,
+            "h": 982,
+            "top": 0,
+            "right": 1745,
+            "bottom": 982,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1325,
+            "h": 66,
+            "top": 0,
+            "right": 1669,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1325,
+            "h": 2,
+            "top": 66,
+            "right": 1669,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 491.5,
+            "y": 68,
+            "w": 1030,
+            "h": 844,
+            "top": 68,
+            "right": 1521.5,
+            "bottom": 912,
+            "left": 491.5
+          },
+          "footer": {
+            "x": 344,
+            "y": 912,
+            "w": 1325,
+            "h": 70,
+            "top": 912,
+            "right": 1669,
+            "bottom": 982,
+            "left": 344
+          },
+          "title": {
+            "x": 491.5,
+            "y": 145.09375,
+            "w": 900,
+            "h": 66.546875,
+            "top": 145.09375,
+            "right": 1391.5,
+            "bottom": 211.640625,
+            "left": 491.5
+          }
+        },
+        "sizes": {
+          "title": 64,
+          "takeaway": 22,
+          "main": [
+            11,
+            12,
+            12,
+            12,
+            12
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 844,
+          "sceneScroll": 844
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1745,
+          "height": 982
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-08-1920x1080-z110",
+      "initial": {
+        "counter": "08 / 12",
+        "title": "Agentic Engineering",
+        "takeaway": "Agentic engineering, bu sunumda hedefi context ve kontrollerle bir araya getiren çalışma yaklaşımıdır; “bitti” sözü kanıtın yerini tutmaz.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "08 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 982,
+            "top": 0,
+            "right": 268,
+            "bottom": 982,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1477,
+            "h": 982,
+            "top": 0,
+            "right": 1745,
+            "bottom": 982,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1325,
+            "h": 66,
+            "top": 0,
+            "right": 1669,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1325,
+            "h": 2,
+            "top": 66,
+            "right": 1669,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 491.5,
+            "y": 68,
+            "w": 1030,
+            "h": 844,
+            "top": 68,
+            "right": 1521.5,
+            "bottom": 912,
+            "left": 491.5
+          },
+          "footer": {
+            "x": 344,
+            "y": 912,
+            "w": 1325,
+            "h": 70,
+            "top": 912,
+            "right": 1669,
+            "bottom": 982,
+            "left": 344
+          },
+          "title": {
+            "x": 491.5,
+            "y": 145.09375,
+            "w": 900,
+            "h": 66.546875,
+            "top": 145.09375,
+            "right": 1391.5,
+            "bottom": 211.640625,
+            "left": 491.5
+          }
+        },
+        "sizes": {
+          "title": 64,
+          "takeaway": 22,
+          "main": [
+            11,
+            16,
+            16,
+            16,
+            21
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 844,
+          "sceneScroll": 844
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1745,
+          "height": 982
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-09-1920x1080-z110",
+      "initial": {
+        "counter": "09 / 12",
+        "title": "Tek agent sınırı",
+        "takeaway": "Tek agent çoğu iş için yeterli olabilir; uzmanlık veya bağımsız kontrol gerektiğinde görevleri ayırmayı düşünebiliriz.",
+        "step": "1 / 2 adım"
+      },
+      "full": {
+        "counter": "09 / 12",
+        "step": "2 / 2 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 982,
+            "top": 0,
+            "right": 268,
+            "bottom": 982,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1477,
+            "h": 982,
+            "top": 0,
+            "right": 1745,
+            "bottom": 982,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1325,
+            "h": 66,
+            "top": 0,
+            "right": 1669,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1325,
+            "h": 2,
+            "top": 66,
+            "right": 1669,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 491.5,
+            "y": 68,
+            "w": 1030,
+            "h": 844,
+            "top": 68,
+            "right": 1521.5,
+            "bottom": 912,
+            "left": 491.5
+          },
+          "footer": {
+            "x": 344,
+            "y": 912,
+            "w": 1325,
+            "h": 70,
+            "top": 912,
+            "right": 1669,
+            "bottom": 982,
+            "left": 344
+          },
+          "title": {
+            "x": 491.5,
+            "y": 145.09375,
+            "w": 900,
+            "h": 66.546875,
+            "top": 145.09375,
+            "right": 1391.5,
+            "bottom": 211.640625,
+            "left": 491.5
+          }
+        },
+        "sizes": {
+          "title": 64,
+          "takeaway": 22,
+          "main": [
+            11,
+            19,
+            19
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 844,
+          "sceneScroll": 844
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1745,
+          "height": 982
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-10-1920x1080-z110",
+      "initial": {
+        "counter": "10 / 12",
+        "title": "Orchestration",
+        "takeaway": "Orchestration, doğru işi doğru role yönlendirip sonucu kontrol noktalarından geçirmektir.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "10 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 982,
+            "top": 0,
+            "right": 268,
+            "bottom": 982,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1477,
+            "h": 982,
+            "top": 0,
+            "right": 1745,
+            "bottom": 982,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1325,
+            "h": 66,
+            "top": 0,
+            "right": 1669,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1325,
+            "h": 2,
+            "top": 66,
+            "right": 1669,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 491.5,
+            "y": 68,
+            "w": 1030,
+            "h": 844,
+            "top": 68,
+            "right": 1521.5,
+            "bottom": 912,
+            "left": 491.5
+          },
+          "footer": {
+            "x": 344,
+            "y": 912,
+            "w": 1325,
+            "h": 70,
+            "top": 912,
+            "right": 1669,
+            "bottom": 982,
+            "left": 344
+          },
+          "title": {
+            "x": 491.5,
+            "y": 145.09375,
+            "w": 900,
+            "h": 66.546875,
+            "top": 145.09375,
+            "right": 1391.5,
+            "bottom": 211.640625,
+            "left": 491.5
+          }
+        },
+        "sizes": {
+          "title": 64,
+          "takeaway": 22,
+          "main": [
+            11,
+            12,
+            17,
+            17,
+            24
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 844,
+          "sceneScroll": 844
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1745,
+          "height": 982
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-11-1920x1080-z110",
+      "initial": {
+        "counter": "11 / 12",
+        "title": "Vi3ecode",
+        "takeaway": "Bu bölümün değeri ürün tanıtımı değil; Lead, Analyst, Developer, QA ve handoff fikrinin gerçek bir workflow'da nasıl göründüğünü göstermektir.",
+        "step": "1 / 4 adım"
+      },
+      "full": {
+        "counter": "11 / 12",
+        "step": "4 / 4 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 982,
+            "top": 0,
+            "right": 268,
+            "bottom": 982,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1477,
+            "h": 982,
+            "top": 0,
+            "right": 1745,
+            "bottom": 982,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1325,
+            "h": 66,
+            "top": 0,
+            "right": 1669,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1325,
+            "h": 2,
+            "top": 66,
+            "right": 1669,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 491.5,
+            "y": 68,
+            "w": 1030,
+            "h": 844,
+            "top": 68,
+            "right": 1521.5,
+            "bottom": 912,
+            "left": 491.5
+          },
+          "footer": {
+            "x": 344,
+            "y": 912,
+            "w": 1325,
+            "h": 70,
+            "top": 912,
+            "right": 1669,
+            "bottom": 982,
+            "left": 344
+          },
+          "title": {
+            "x": 491.5,
+            "y": 145.09375,
+            "w": 900,
+            "h": 66.546875,
+            "top": 145.09375,
+            "right": 1391.5,
+            "bottom": 211.640625,
+            "left": 491.5
+          }
+        },
+        "sizes": {
+          "title": 64,
+          "takeaway": 22,
+          "main": [
+            11,
+            19,
+            19,
+            19,
+            19
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 844,
+          "sceneScroll": 844
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1745,
+          "height": 982
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-12-1920x1080-z110",
+      "initial": {
+        "counter": "12 / 12",
+        "title": "Final: Model değil, sistem",
+        "takeaway": "AI uygulama geliştirmeye yardım edebilir; güvenilir sonuç modelle birlikte çalışan sistem ve insan kontrolü ister.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "12 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 982,
+            "top": 0,
+            "right": 268,
+            "bottom": 982,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1477,
+            "h": 982,
+            "top": 0,
+            "right": 1745,
+            "bottom": 982,
+            "left": 268
+          },
+          "header": {
+            "x": 344,
+            "y": 0,
+            "w": 1325,
+            "h": 66,
+            "top": 0,
+            "right": 1669,
+            "bottom": 66,
+            "left": 344
+          },
+          "progress": {
+            "x": 344,
+            "y": 66,
+            "w": 1325,
+            "h": 2,
+            "top": 66,
+            "right": 1669,
+            "bottom": 68,
+            "left": 344
+          },
+          "scene": {
+            "x": 491.5,
+            "y": 68,
+            "w": 1030,
+            "h": 844,
+            "top": 68,
+            "right": 1521.5,
+            "bottom": 912,
+            "left": 491.5
+          },
+          "footer": {
+            "x": 344,
+            "y": 912,
+            "w": 1325,
+            "h": 70,
+            "top": 912,
+            "right": 1669,
+            "bottom": 982,
+            "left": 344
+          },
+          "title": {
+            "x": 491.5,
+            "y": 140.09375,
+            "w": 900,
+            "h": 41.59375,
+            "top": 140.09375,
+            "right": 1391.5,
+            "bottom": 181.6875,
+            "left": 491.5
+          }
+        },
+        "sizes": {
+          "title": 40,
+          "takeaway": 22,
+          "main": [
+            11,
+            21,
+            21
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 844,
+          "sceneScroll": 844
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1920,
+        "height": 1080,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1745,
+          "height": 982
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-01-1366x768-z100",
+      "initial": {
+        "counter": "01 / 12",
+        "title": "Cold Open: AI gerçekten uygulama yapabilir mi?",
+        "takeaway": "AI çalışan bir başlangıç üretebilir; tek başına çalışıyor görünmesi güvenilir olduğu anlamına gelmez.",
+        "step": "1 / 4 adım"
+      },
+      "full": {
+        "counter": "01 / 12",
+        "step": "4 / 4 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 768,
+            "top": 0,
+            "right": 268,
+            "bottom": 768,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1098,
+            "h": 768,
+            "top": 0,
+            "right": 1366,
+            "bottom": 768,
+            "left": 268
+          },
+          "header": {
+            "x": 336.296875,
+            "y": 0,
+            "w": 961.40625,
+            "h": 66,
+            "top": 0,
+            "right": 1297.703125,
+            "bottom": 66,
+            "left": 336.296875
+          },
+          "progress": {
+            "x": 336.296875,
+            "y": 66,
+            "w": 961.40625,
+            "h": 2,
+            "top": 66,
+            "right": 1297.703125,
+            "bottom": 68,
+            "left": 336.296875
+          },
+          "scene": {
+            "x": 336.296875,
+            "y": 68,
+            "w": 961.40625,
+            "h": 640,
+            "top": 68,
+            "right": 1297.703125,
+            "bottom": 708,
+            "left": 336.296875
+          },
+          "footer": {
+            "x": 336.296875,
+            "y": 708,
+            "w": 961.40625,
+            "h": 60,
+            "top": 708,
+            "right": 1297.703125,
+            "bottom": 768,
+            "left": 336.296875
+          },
+          "title": {
+            "x": 336.296875,
+            "y": 112,
+            "w": 900,
+            "h": 45.453125,
+            "top": 112,
+            "right": 1236.296875,
+            "bottom": 157.453125,
+            "left": 336.296875
+          }
+        },
+        "sizes": {
+          "title": 43.712,
+          "takeaway": 22,
+          "main": [
+            11,
+            17,
+            22,
+            22,
+            22
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 640,
+          "sceneScroll": 640
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-02-1366x768-z100",
+      "initial": {
+        "counter": "02 / 12",
+        "title": "Nereden nereye?",
+        "takeaway": "Değişen yalnızca model değil; insanın modelle kurduğu çalışma biçimi de değişebilir.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "02 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 768,
+            "top": 0,
+            "right": 268,
+            "bottom": 768,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1098,
+            "h": 768,
+            "top": 0,
+            "right": 1366,
+            "bottom": 768,
+            "left": 268
+          },
+          "header": {
+            "x": 336.296875,
+            "y": 0,
+            "w": 961.40625,
+            "h": 66,
+            "top": 0,
+            "right": 1297.703125,
+            "bottom": 66,
+            "left": 336.296875
+          },
+          "progress": {
+            "x": 336.296875,
+            "y": 66,
+            "w": 961.40625,
+            "h": 2,
+            "top": 66,
+            "right": 1297.703125,
+            "bottom": 68,
+            "left": 336.296875
+          },
+          "scene": {
+            "x": 336.296875,
+            "y": 68,
+            "w": 961.40625,
+            "h": 640,
+            "top": 68,
+            "right": 1297.703125,
+            "bottom": 708,
+            "left": 336.296875
+          },
+          "footer": {
+            "x": 336.296875,
+            "y": 708,
+            "w": 961.40625,
+            "h": 60,
+            "top": 708,
+            "right": 1297.703125,
+            "bottom": 768,
+            "left": 336.296875
+          },
+          "title": {
+            "x": 336.296875,
+            "y": 118,
+            "w": 900,
+            "h": 63.921875,
+            "top": 118,
+            "right": 1236.296875,
+            "bottom": 181.921875,
+            "left": 336.296875
+          }
+        },
+        "sizes": {
+          "title": 61.47,
+          "takeaway": 22,
+          "main": [
+            11,
+            12,
+            12,
+            12,
+            12
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [
+          {
+            "src": "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201280%20680'%20role='img'%20aria-label='Search%20returns%20sources,%20asking%20returns%20an%20explanation,%20and%20delegating%20a%20task%20produces%20file%20and%20tool%20work'%3e%3cdefs%3e%3cmarker%20id='arrow'%20markerWidth='12'%20markerHeight='12'%20refX='9'%20refY='6'%20orient='auto'%3e%3cpath%20d='M1%201%2010%206%201%2011'%20fill='none'%20stroke='%23262720'%20stroke-width='2.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/marker%3e%3c/defs%3e%3cg%20fill='none'%20stroke='%23262720'%20stroke-width='6'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3c!--%20Search%20--%3e%3cpath%20d='M118%20161h174v190H118z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M143%20196h119M143%20220h91M143%20244h108'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M134%20287h157M134%20311h112'%20stroke='%2377766f'%20stroke-width='5'/%3e%3ccircle%20cx='286'%20cy='282'%20r='48'%20fill='%23e9d4aa'%20stroke-width='6'/%3e%3cpath%20d='m321%20318%2046%2046'%20stroke-width='9'/%3e%3cpath%20d='M163%20378v68'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Search%20output:%20found%20source%20pages%20--%3e%3cpath%20d='M111%20474h114l31%2031v107H111z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M225%20474v33h31M133%20527h94M133%20552h69M133%20577h81'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M145%20459h112l31%2031'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3c!--%20Transition%20--%3e%3cpath%20d='M390%20262h87'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Ask%20--%3e%3cpath%20d='M520%20185h190a20%2020%200%200%201%2020%2020v85a20%2020%200%200%201-20%2020h-91l-35%2031v-31h-64a20%2020%200%200%201-20-20v-85a20%2020%200%200%201%2020-20z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M551%20222h126M551%20250h96'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M575%20335h160a18%2018%200%200%201%2018%2018v48a18%2018%200%200%201-18%2018h-68l-26%2023v-23h-66a18%2018%200%200%201-18-18v-48a18%2018%200%200%201%2018-18z'%20fill='%23e9d4aa'/%3e%3cpath%20d='M599%20363h107M599%20387h78'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M616%20427v44'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Explanation%20output%20--%3e%3cpath%20d='M543%20490h172l34%2034v88H543z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M715%20490v36h34M566%20543h133M566%20567h111M566%20591h80'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M798%20262h87'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Delegate%20a%20task%20--%3e%3cpath%20d='M932%20178h142l32%2032v113H932z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M1074%20178v35h32M953%20230h95M953%20256h69M953%20281h85'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='m1028%20342%2057%2045'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Work%20output:%20project%20folder,%20terminal%20interaction,%20changed%20file%20--%3e%3cpath%20d='M889%20454h98l22%2020h103v100H889z'%20fill='%23e9d4aa'/%3e%3cpath%20d='M905%20492h191'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M946%20526h126v92H946z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M946%20548h126M965%20569h22M965%20589h74'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M1091%20543h85v75h-85z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M1108%20563h50M1108%20584h34M1152%20602h12'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3cpath%20d='M1072%20325v100'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Equal%20visual%20weight:%20a%20route%20between%20work%20modes,%20not%20a%20ranking%20--%3e%3cpath%20d='M86%20640h1107'%20stroke='%23d5d0c6'%20stroke-width='4'/%3e%3ccircle%20cx='196'%20cy='640'%20r='8'%20fill='%23c28a35'%20stroke='none'/%3e%3ccircle%20cx='640'%20cy='640'%20r='8'%20fill='%23c28a35'%20stroke='none'/%3e%3ccircle%20cx='1084'%20cy='640'%20r='8'%20fill='%23c28a35'%20stroke='none'/%3e%3c/g%3e%3c/svg%3e",
+            "ok": true
+          }
+        ],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 640,
+          "sceneScroll": 640
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-03-1366x768-z100",
+      "initial": {
+        "counter": "03 / 12",
+        "title": "Model, Prompt, Context",
+        "takeaway": "Model isteği işler; prompt görevi söyler; context, bu görev sırasında modele sunulan ilgili bilgidir.",
+        "step": "1 / 5 adım"
+      },
+      "full": {
+        "counter": "03 / 12",
+        "step": "5 / 5 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 768,
+            "top": 0,
+            "right": 268,
+            "bottom": 768,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1098,
+            "h": 768,
+            "top": 0,
+            "right": 1366,
+            "bottom": 768,
+            "left": 268
+          },
+          "header": {
+            "x": 336.296875,
+            "y": 0,
+            "w": 961.40625,
+            "h": 66,
+            "top": 0,
+            "right": 1297.703125,
+            "bottom": 66,
+            "left": 336.296875
+          },
+          "progress": {
+            "x": 336.296875,
+            "y": 66,
+            "w": 961.40625,
+            "h": 2,
+            "top": 66,
+            "right": 1297.703125,
+            "bottom": 68,
+            "left": 336.296875
+          },
+          "scene": {
+            "x": 336.296875,
+            "y": 68,
+            "w": 961.40625,
+            "h": 640,
+            "top": 68,
+            "right": 1297.703125,
+            "bottom": 708,
+            "left": 336.296875
+          },
+          "footer": {
+            "x": 336.296875,
+            "y": 708,
+            "w": 961.40625,
+            "h": 60,
+            "top": 708,
+            "right": 1297.703125,
+            "bottom": 768,
+            "left": 336.296875
+          },
+          "title": {
+            "x": 336.296875,
+            "y": 112,
+            "w": 900,
+            "h": 45.453125,
+            "top": 112,
+            "right": 1236.296875,
+            "bottom": 157.453125,
+            "left": 336.296875
+          }
+        },
+        "sizes": {
+          "title": 43.712,
+          "takeaway": 17,
+          "main": [
+            11,
+            11,
+            11,
+            11,
+            11
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [
+          {
+            "src": "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201280%20720'%20role='img'%20aria-label='Prompt%20and%20a%20tray%20of%20relevant%20information%20flow%20into%20a%20model,%20which%20produces%20an%20output'%3e%3cdefs%3e%3cmarker%20id='arrow'%20markerWidth='12'%20markerHeight='12'%20refX='9'%20refY='6'%20orient='auto'%3e%3cpath%20d='M1%201%2010%206%201%2011'%20fill='none'%20stroke='%23262720'%20stroke-width='2.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/marker%3e%3c/defs%3e%3cg%20fill='none'%20stroke='%23262720'%20stroke-width='6'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3c!--%20Prompt:%20one%20task%20sheet%20--%3e%3cpath%20d='M86%20190h145l52%2052v238H86z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M231%20190v53h52'/%3e%3ccircle%20cx='126'%20cy='284'%20r='13'%20fill='%23c28a35'%20stroke='none'/%3e%3cpath%20d='M158%20284h78M112%20328h124M112%20368h105M112%20408h83'%20stroke='%2377766f'%20stroke-width='5'/%3e%3c!--%20Context%20tray:%20history,%20project%20files,%20instructions,%20tool%20output%20--%3e%3cpath%20d='M360%20146h451v410H360z'%20fill='%23f7f3eb'%20stroke-width='5'/%3e%3cpath%20d='M382%20146v-18h407v18'%20stroke='%2377766f'%20stroke-width='4'/%3e%3c!--%20Conversation%20history%20--%3e%3cpath%20d='M408%20204h139a16%2016%200%200%201%2016%2016v59a16%2016%200%200%201-16%2016h-81l-31%2024v-24h-27a16%2016%200%200%201-16-16v-59a16%2016%200%200%201%2016-16z'%20fill='%23fbf9f4'%20stroke-width='5'/%3e%3cpath%20d='M431%20231h79M431%20253h57'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M442%20184h113a15%2015%200%200%201%2015%2015v48'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3c!--%20Project%20files%20--%3e%3cpath%20d='M613%20222h51l17%2018h83v82H613z'%20fill='%23e9d4aa'%20stroke-width='5'/%3e%3cpath%20d='M630%20253h113M630%20274h93'%20stroke='%2377766f'%20stroke-width='5'/%3e%3c!--%20Instructions%20/%20rules%20--%3e%3cpath%20d='M412%20366h142v136H412z'%20fill='%23fbf9f4'%20stroke-width='5'/%3e%3cpath%20d='m431%20397%208%208%2015-18M467%20400h67M431%20437l8%208%2015-18M467%20440h67M431%20477l8%208%2015-18M467%20480h49'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='m431%20397%208%208%2015-18'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3c!--%20Tool%20output%20--%3e%3cpath%20d='M617%20375h145v119H617z'%20fill='%23fbf9f4'%20stroke-width='5'/%3e%3cpath%20d='M617%20401h145M637%20424h27M637%20445h60M637%20467h44'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='m724%20430%2011%2010-11%2010M710%20455l-8%208'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3c!--%20Inputs%20converge%20on%20a%20model%20chip%20--%3e%3cpath%20d='M283%20237c155-120%20421-137%20624%2045'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3cpath%20d='M811%20351h95'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Model%20--%3e%3cpath%20d='M934%20247h143v180H934z'%20fill='%23ead8b7'%20stroke-width='6'/%3e%3cpath%20d='M962%20275h87v124h-87z'%20fill='%23fbf9f4'%20stroke-width='5'/%3e%3cpath%20d='M978%20292h18v18h-18zM1015%20292h18v18h-18zM978%20329h18v18h-18zM1015%20329h18v18h-18zM978%20366h18v18h-18zM1015%20366h18v18h-18z'%20fill='%23262720'%20stroke='none'/%3e%3cpath%20d='M934%20270h-18M934%20306h-18M934%20342h-18M934%20378h-18M934%20414h-18M1077%20270h18M1077%20306h18M1077%20342h18M1077%20378h18M1077%20414h18'%20stroke-width='5'/%3e%3c!--%20Output%20--%3e%3cpath%20d='M1070%20518h119l38%2038v111h-157z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M1189%20518v39h38M1093%20575h85M1093%20598h66'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='m1094%20550%2010%2010%2019-22'%20stroke='%23c28a35'%20stroke-width='6'/%3e%3cpath%20d='M1050%20421c8%2048%2034%2077%2067%2091'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c/g%3e%3c/svg%3e",
+            "ok": true
+          }
+        ],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 640,
+          "sceneScroll": 640
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-04-1366x768-z100",
+      "initial": {
+        "counter": "04 / 12",
+        "title": "Chatbot ve Coding Agent",
+        "takeaway": "Bu sunumda “coding agent”, modelin araç kullanıp sonuçları yeni adıma taşıdığı bir çalışma döngüsüdür.",
+        "step": "1 / 4 adım"
+      },
+      "full": {
+        "counter": "04 / 12",
+        "step": "4 / 4 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 768,
+            "top": 0,
+            "right": 268,
+            "bottom": 768,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1098,
+            "h": 768,
+            "top": 0,
+            "right": 1366,
+            "bottom": 768,
+            "left": 268
+          },
+          "header": {
+            "x": 336.296875,
+            "y": 0,
+            "w": 961.40625,
+            "h": 66,
+            "top": 0,
+            "right": 1297.703125,
+            "bottom": 66,
+            "left": 336.296875
+          },
+          "progress": {
+            "x": 336.296875,
+            "y": 66,
+            "w": 961.40625,
+            "h": 2,
+            "top": 66,
+            "right": 1297.703125,
+            "bottom": 68,
+            "left": 336.296875
+          },
+          "scene": {
+            "x": 336.296875,
+            "y": 68,
+            "w": 961.40625,
+            "h": 640,
+            "top": 68,
+            "right": 1297.703125,
+            "bottom": 708,
+            "left": 336.296875
+          },
+          "footer": {
+            "x": 336.296875,
+            "y": 708,
+            "w": 961.40625,
+            "h": 60,
+            "top": 708,
+            "right": 1297.703125,
+            "bottom": 768,
+            "left": 336.296875
+          },
+          "title": {
+            "x": 336.296875,
+            "y": 112,
+            "w": 900,
+            "h": 43.671875,
+            "top": 112,
+            "right": 1236.296875,
+            "bottom": 155.671875,
+            "left": 336.296875
+          }
+        },
+        "sizes": {
+          "title": 42,
+          "takeaway": 16,
+          "main": [
+            10,
+            10,
+            11,
+            12,
+            12
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 640,
+          "sceneScroll": 640
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-05-1366x768-z100",
+      "initial": {
+        "counter": "05 / 12",
+        "title": "Vibe Coding",
+        "takeaway": "Doğal dille fikirden çalışan bir ilk sürüme hızlıca yaklaşmak mümkün ve bu güçlü bir başlangıçtır.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "05 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 768,
+            "top": 0,
+            "right": 268,
+            "bottom": 768,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1098,
+            "h": 768,
+            "top": 0,
+            "right": 1366,
+            "bottom": 768,
+            "left": 268
+          },
+          "header": {
+            "x": 336.296875,
+            "y": 0,
+            "w": 961.40625,
+            "h": 66,
+            "top": 0,
+            "right": 1297.703125,
+            "bottom": 66,
+            "left": 336.296875
+          },
+          "progress": {
+            "x": 336.296875,
+            "y": 66,
+            "w": 961.40625,
+            "h": 2,
+            "top": 66,
+            "right": 1297.703125,
+            "bottom": 68,
+            "left": 336.296875
+          },
+          "scene": {
+            "x": 336.296875,
+            "y": 68,
+            "w": 961.40625,
+            "h": 640,
+            "top": 68,
+            "right": 1297.703125,
+            "bottom": 708,
+            "left": 336.296875
+          },
+          "footer": {
+            "x": 336.296875,
+            "y": 708,
+            "w": 961.40625,
+            "h": 60,
+            "top": 708,
+            "right": 1297.703125,
+            "bottom": 768,
+            "left": 336.296875
+          },
+          "title": {
+            "x": 336.296875,
+            "y": 112,
+            "w": 900,
+            "h": 43.671875,
+            "top": 112,
+            "right": 1236.296875,
+            "bottom": 155.671875,
+            "left": 336.296875
+          }
+        },
+        "sizes": {
+          "title": 42,
+          "takeaway": 16,
+          "main": [
+            11,
+            11,
+            11,
+            11,
+            12
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 640,
+          "sceneScroll": 640
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-06-1366x768-z100",
+      "initial": {
+        "counter": "06 / 12",
+        "title": "Vibe Coding'in duvarı",
+        "takeaway": "“Çalışıyor” gözlemi, tek başına doğru, güvenli veya sürdürülebilir olduğuna kanıt değildir.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "06 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 768,
+            "top": 0,
+            "right": 268,
+            "bottom": 768,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1098,
+            "h": 768,
+            "top": 0,
+            "right": 1366,
+            "bottom": 768,
+            "left": 268
+          },
+          "header": {
+            "x": 336.296875,
+            "y": 0,
+            "w": 961.40625,
+            "h": 66,
+            "top": 0,
+            "right": 1297.703125,
+            "bottom": 66,
+            "left": 336.296875
+          },
+          "progress": {
+            "x": 336.296875,
+            "y": 66,
+            "w": 961.40625,
+            "h": 2,
+            "top": 66,
+            "right": 1297.703125,
+            "bottom": 68,
+            "left": 336.296875
+          },
+          "scene": {
+            "x": 336.296875,
+            "y": 68,
+            "w": 961.40625,
+            "h": 640,
+            "top": 68,
+            "right": 1297.703125,
+            "bottom": 708,
+            "left": 336.296875
+          },
+          "footer": {
+            "x": 336.296875,
+            "y": 708,
+            "w": 961.40625,
+            "h": 60,
+            "top": 708,
+            "right": 1297.703125,
+            "bottom": 768,
+            "left": 336.296875
+          },
+          "title": {
+            "x": 336.296875,
+            "y": 112,
+            "w": 900,
+            "h": 43.671875,
+            "top": 112,
+            "right": 1236.296875,
+            "bottom": 155.671875,
+            "left": 336.296875
+          }
+        },
+        "sizes": {
+          "title": 42,
+          "takeaway": 16,
+          "main": [
+            11,
+            11,
+            11,
+            11,
+            11
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 640,
+          "sceneScroll": 640
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-07-1366x768-z100",
+      "initial": {
+        "counter": "07 / 12",
+        "title": "Agent anatomisi",
+        "takeaway": "Bir coding agent'ın bileşenleri ürüne ve göreve göre değişir; Skill, MCP ve Git kullanılabilecek örneklerdir, her kurulumda zorunlu değildir.",
+        "step": "1 / 11 adım"
+      },
+      "full": {
+        "counter": "07 / 12",
+        "step": "11 / 11 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 768,
+            "top": 0,
+            "right": 268,
+            "bottom": 768,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1098,
+            "h": 768,
+            "top": 0,
+            "right": 1366,
+            "bottom": 768,
+            "left": 268
+          },
+          "header": {
+            "x": 336.296875,
+            "y": 0,
+            "w": 961.40625,
+            "h": 66,
+            "top": 0,
+            "right": 1297.703125,
+            "bottom": 66,
+            "left": 336.296875
+          },
+          "progress": {
+            "x": 336.296875,
+            "y": 66,
+            "w": 961.40625,
+            "h": 2,
+            "top": 66,
+            "right": 1297.703125,
+            "bottom": 68,
+            "left": 336.296875
+          },
+          "scene": {
+            "x": 336.296875,
+            "y": 68,
+            "w": 961.40625,
+            "h": 640,
+            "top": 68,
+            "right": 1297.703125,
+            "bottom": 708,
+            "left": 336.296875
+          },
+          "footer": {
+            "x": 336.296875,
+            "y": 708,
+            "w": 961.40625,
+            "h": 60,
+            "top": 708,
+            "right": 1297.703125,
+            "bottom": 768,
+            "left": 336.296875
+          },
+          "title": {
+            "x": 336.296875,
+            "y": 112,
+            "w": 900,
+            "h": 63.921875,
+            "top": 112,
+            "right": 1236.296875,
+            "bottom": 175.921875,
+            "left": 336.296875
+          }
+        },
+        "sizes": {
+          "title": 61.47,
+          "takeaway": 16,
+          "main": [
+            11,
+            11,
+            11,
+            11,
+            11
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 640,
+          "sceneScroll": 640
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-08-1366x768-z100",
+      "initial": {
+        "counter": "08 / 12",
+        "title": "Agentic Engineering",
+        "takeaway": "Agentic engineering, bu sunumda hedefi context ve kontrollerle bir araya getiren çalışma yaklaşımıdır; “bitti” sözü kanıtın yerini tutmaz.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "08 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 768,
+            "top": 0,
+            "right": 268,
+            "bottom": 768,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1098,
+            "h": 768,
+            "top": 0,
+            "right": 1366,
+            "bottom": 768,
+            "left": 268
+          },
+          "header": {
+            "x": 336.296875,
+            "y": 0,
+            "w": 961.40625,
+            "h": 66,
+            "top": 0,
+            "right": 1297.703125,
+            "bottom": 66,
+            "left": 336.296875
+          },
+          "progress": {
+            "x": 336.296875,
+            "y": 66,
+            "w": 961.40625,
+            "h": 2,
+            "top": 66,
+            "right": 1297.703125,
+            "bottom": 68,
+            "left": 336.296875
+          },
+          "scene": {
+            "x": 336.296875,
+            "y": 68,
+            "w": 961.40625,
+            "h": 640,
+            "top": 68,
+            "right": 1297.703125,
+            "bottom": 708,
+            "left": 336.296875
+          },
+          "footer": {
+            "x": 336.296875,
+            "y": 708,
+            "w": 961.40625,
+            "h": 60,
+            "top": 708,
+            "right": 1297.703125,
+            "bottom": 768,
+            "left": 336.296875
+          },
+          "title": {
+            "x": 336.296875,
+            "y": 112,
+            "w": 900,
+            "h": 43.671875,
+            "top": 112,
+            "right": 1236.296875,
+            "bottom": 155.671875,
+            "left": 336.296875
+          }
+        },
+        "sizes": {
+          "title": 42,
+          "takeaway": 16,
+          "main": [
+            11,
+            12,
+            12,
+            12,
+            19
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 640,
+          "sceneScroll": 640
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-09-1366x768-z100",
+      "initial": {
+        "counter": "09 / 12",
+        "title": "Tek agent sınırı",
+        "takeaway": "Tek agent çoğu iş için yeterli olabilir; uzmanlık veya bağımsız kontrol gerektiğinde görevleri ayırmayı düşünebiliriz.",
+        "step": "1 / 2 adım"
+      },
+      "full": {
+        "counter": "09 / 12",
+        "step": "2 / 2 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 768,
+            "top": 0,
+            "right": 268,
+            "bottom": 768,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1098,
+            "h": 768,
+            "top": 0,
+            "right": 1366,
+            "bottom": 768,
+            "left": 268
+          },
+          "header": {
+            "x": 336.296875,
+            "y": 0,
+            "w": 961.40625,
+            "h": 66,
+            "top": 0,
+            "right": 1297.703125,
+            "bottom": 66,
+            "left": 336.296875
+          },
+          "progress": {
+            "x": 336.296875,
+            "y": 66,
+            "w": 961.40625,
+            "h": 2,
+            "top": 66,
+            "right": 1297.703125,
+            "bottom": 68,
+            "left": 336.296875
+          },
+          "scene": {
+            "x": 336.296875,
+            "y": 68,
+            "w": 961.40625,
+            "h": 640,
+            "top": 68,
+            "right": 1297.703125,
+            "bottom": 708,
+            "left": 336.296875
+          },
+          "footer": {
+            "x": 336.296875,
+            "y": 708,
+            "w": 961.40625,
+            "h": 60,
+            "top": 708,
+            "right": 1297.703125,
+            "bottom": 768,
+            "left": 336.296875
+          },
+          "title": {
+            "x": 336.296875,
+            "y": 118,
+            "w": 900,
+            "h": 63.921875,
+            "top": 118,
+            "right": 1236.296875,
+            "bottom": 181.921875,
+            "left": 336.296875
+          }
+        },
+        "sizes": {
+          "title": 61.47,
+          "takeaway": 22,
+          "main": [
+            11,
+            19,
+            19
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 640,
+          "sceneScroll": 640
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-10-1366x768-z100",
+      "initial": {
+        "counter": "10 / 12",
+        "title": "Orchestration",
+        "takeaway": "Orchestration, doğru işi doğru role yönlendirip sonucu kontrol noktalarından geçirmektir.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "10 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 768,
+            "top": 0,
+            "right": 268,
+            "bottom": 768,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1098,
+            "h": 768,
+            "top": 0,
+            "right": 1366,
+            "bottom": 768,
+            "left": 268
+          },
+          "header": {
+            "x": 336.296875,
+            "y": 0,
+            "w": 961.40625,
+            "h": 66,
+            "top": 0,
+            "right": 1297.703125,
+            "bottom": 66,
+            "left": 336.296875
+          },
+          "progress": {
+            "x": 336.296875,
+            "y": 66,
+            "w": 961.40625,
+            "h": 2,
+            "top": 66,
+            "right": 1297.703125,
+            "bottom": 68,
+            "left": 336.296875
+          },
+          "scene": {
+            "x": 336.296875,
+            "y": 68,
+            "w": 961.40625,
+            "h": 640,
+            "top": 68,
+            "right": 1297.703125,
+            "bottom": 708,
+            "left": 336.296875
+          },
+          "footer": {
+            "x": 336.296875,
+            "y": 708,
+            "w": 961.40625,
+            "h": 60,
+            "top": 708,
+            "right": 1297.703125,
+            "bottom": 768,
+            "left": 336.296875
+          },
+          "title": {
+            "x": 336.296875,
+            "y": 112,
+            "w": 900,
+            "h": 43.671875,
+            "top": 112,
+            "right": 1236.296875,
+            "bottom": 155.671875,
+            "left": 336.296875
+          }
+        },
+        "sizes": {
+          "title": 42,
+          "takeaway": 16,
+          "main": [
+            11,
+            12,
+            14,
+            14,
+            21
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 640,
+          "sceneScroll": 640
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-11-1366x768-z100",
+      "initial": {
+        "counter": "11 / 12",
+        "title": "Vi3ecode",
+        "takeaway": "Bu bölümün değeri ürün tanıtımı değil; Lead, Analyst, Developer, QA ve handoff fikrinin gerçek bir workflow'da nasıl göründüğünü göstermektir.",
+        "step": "1 / 4 adım"
+      },
+      "full": {
+        "counter": "11 / 12",
+        "step": "4 / 4 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 768,
+            "top": 0,
+            "right": 268,
+            "bottom": 768,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1098,
+            "h": 768,
+            "top": 0,
+            "right": 1366,
+            "bottom": 768,
+            "left": 268
+          },
+          "header": {
+            "x": 336.296875,
+            "y": 0,
+            "w": 961.40625,
+            "h": 66,
+            "top": 0,
+            "right": 1297.703125,
+            "bottom": 66,
+            "left": 336.296875
+          },
+          "progress": {
+            "x": 336.296875,
+            "y": 66,
+            "w": 961.40625,
+            "h": 2,
+            "top": 66,
+            "right": 1297.703125,
+            "bottom": 68,
+            "left": 336.296875
+          },
+          "scene": {
+            "x": 336.296875,
+            "y": 68,
+            "w": 961.40625,
+            "h": 640,
+            "top": 68,
+            "right": 1297.703125,
+            "bottom": 708,
+            "left": 336.296875
+          },
+          "footer": {
+            "x": 336.296875,
+            "y": 708,
+            "w": 961.40625,
+            "h": 60,
+            "top": 708,
+            "right": 1297.703125,
+            "bottom": 768,
+            "left": 336.296875
+          },
+          "title": {
+            "x": 336.296875,
+            "y": 118,
+            "w": 900,
+            "h": 63.921875,
+            "top": 118,
+            "right": 1236.296875,
+            "bottom": 181.921875,
+            "left": 336.296875
+          }
+        },
+        "sizes": {
+          "title": 61.47,
+          "takeaway": 22,
+          "main": [
+            11,
+            19,
+            19,
+            19,
+            19
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 640,
+          "sceneScroll": 640
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-12-1366x768-z100",
+      "initial": {
+        "counter": "12 / 12",
+        "title": "Final: Model değil, sistem",
+        "takeaway": "AI uygulama geliştirmeye yardım edebilir; güvenilir sonuç modelle birlikte çalışan sistem ve insan kontrolü ister.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "12 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 768,
+            "top": 0,
+            "right": 268,
+            "bottom": 768,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 1098,
+            "h": 768,
+            "top": 0,
+            "right": 1366,
+            "bottom": 768,
+            "left": 268
+          },
+          "header": {
+            "x": 336.296875,
+            "y": 0,
+            "w": 961.40625,
+            "h": 66,
+            "top": 0,
+            "right": 1297.703125,
+            "bottom": 66,
+            "left": 336.296875
+          },
+          "progress": {
+            "x": 336.296875,
+            "y": 66,
+            "w": 961.40625,
+            "h": 2,
+            "top": 66,
+            "right": 1297.703125,
+            "bottom": 68,
+            "left": 336.296875
+          },
+          "scene": {
+            "x": 336.296875,
+            "y": 68,
+            "w": 961.40625,
+            "h": 640,
+            "top": 68,
+            "right": 1297.703125,
+            "bottom": 708,
+            "left": 336.296875
+          },
+          "footer": {
+            "x": 336.296875,
+            "y": 708,
+            "w": 961.40625,
+            "h": 60,
+            "top": 708,
+            "right": 1297.703125,
+            "bottom": 768,
+            "left": 336.296875
+          },
+          "title": {
+            "x": 336.296875,
+            "y": 113,
+            "w": 900,
+            "h": 41.59375,
+            "top": 113,
+            "right": 1236.296875,
+            "bottom": 154.59375,
+            "left": 336.296875
+          }
+        },
+        "sizes": {
+          "title": 40,
+          "takeaway": 22,
+          "main": [
+            11,
+            21,
+            21
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 640,
+          "sceneScroll": 640
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 100,
+        "cssViewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "deviceScaleFactor": 1
+      }
+    },
+    {
+      "label": "scene-01-1366x768-z110",
+      "initial": {
+        "counter": "01 / 12",
+        "title": "Cold Open: AI gerçekten uygulama yapabilir mi?",
+        "takeaway": "AI çalışan bir başlangıç üretebilir; tek başına çalışıyor görünmesi güvenilir olduğu anlamına gelmez.",
+        "step": "1 / 4 adım"
+      },
+      "full": {
+        "counter": "01 / 12",
+        "step": "4 / 4 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 698,
+            "top": 0,
+            "right": 268,
+            "bottom": 698,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 974,
+            "h": 698,
+            "top": 0,
+            "right": 1242,
+            "bottom": 698,
+            "left": 268
+          },
+          "header": {
+            "x": 330.09375,
+            "y": 0,
+            "w": 849.8125,
+            "h": 66,
+            "top": 0,
+            "right": 1179.90625,
+            "bottom": 66,
+            "left": 330.09375
+          },
+          "progress": {
+            "x": 330.09375,
+            "y": 66,
+            "w": 849.8125,
+            "h": 2,
+            "top": 66,
+            "right": 1179.90625,
+            "bottom": 68,
+            "left": 330.09375
+          },
+          "scene": {
+            "x": 330.09375,
+            "y": 68,
+            "w": 849.8125,
+            "h": 570,
+            "top": 68,
+            "right": 1179.90625,
+            "bottom": 638,
+            "left": 330.09375
+          },
+          "footer": {
+            "x": 330.09375,
+            "y": 638,
+            "w": 849.8125,
+            "h": 60,
+            "top": 638,
+            "right": 1179.90625,
+            "bottom": 698,
+            "left": 330.09375
+          },
+          "title": {
+            "x": 330.09375,
+            "y": 112,
+            "w": 834.8125,
+            "h": 41.328125,
+            "top": 112,
+            "right": 1164.90625,
+            "bottom": 153.328125,
+            "left": 330.09375
+          }
+        },
+        "sizes": {
+          "title": 39.744,
+          "takeaway": 22,
+          "main": [
+            11,
+            16.767,
+            21.114,
+            21.114,
+            21.114
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 5,
+          "sceneClient": 570,
+          "sceneScroll": 575
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1242,
+          "height": 698
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-02-1366x768-z110",
+      "initial": {
+        "counter": "02 / 12",
+        "title": "Nereden nereye?",
+        "takeaway": "Değişen yalnızca model değil; insanın modelle kurduğu çalışma biçimi de değişebilir.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "02 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 698,
+            "top": 0,
+            "right": 268,
+            "bottom": 698,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 974,
+            "h": 698,
+            "top": 0,
+            "right": 1242,
+            "bottom": 698,
+            "left": 268
+          },
+          "header": {
+            "x": 330.09375,
+            "y": 0,
+            "w": 849.8125,
+            "h": 66,
+            "top": 0,
+            "right": 1179.90625,
+            "bottom": 66,
+            "left": 330.09375
+          },
+          "progress": {
+            "x": 330.09375,
+            "y": 66,
+            "w": 849.8125,
+            "h": 2,
+            "top": 66,
+            "right": 1179.90625,
+            "bottom": 68,
+            "left": 330.09375
+          },
+          "scene": {
+            "x": 330.09375,
+            "y": 68,
+            "w": 849.8125,
+            "h": 570,
+            "top": 68,
+            "right": 1179.90625,
+            "bottom": 638,
+            "left": 330.09375
+          },
+          "footer": {
+            "x": 330.09375,
+            "y": 638,
+            "w": 849.8125,
+            "h": 60,
+            "top": 638,
+            "right": 1179.90625,
+            "bottom": 698,
+            "left": 330.09375
+          },
+          "title": {
+            "x": 330.09375,
+            "y": 118,
+            "w": 849.8125,
+            "h": 58.125,
+            "top": 118,
+            "right": 1179.90625,
+            "bottom": 176.125,
+            "left": 330.09375
+          }
+        },
+        "sizes": {
+          "title": 55.89,
+          "takeaway": 22,
+          "main": [
+            11,
+            12,
+            12,
+            12,
+            12
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [
+          {
+            "src": "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201280%20680'%20role='img'%20aria-label='Search%20returns%20sources,%20asking%20returns%20an%20explanation,%20and%20delegating%20a%20task%20produces%20file%20and%20tool%20work'%3e%3cdefs%3e%3cmarker%20id='arrow'%20markerWidth='12'%20markerHeight='12'%20refX='9'%20refY='6'%20orient='auto'%3e%3cpath%20d='M1%201%2010%206%201%2011'%20fill='none'%20stroke='%23262720'%20stroke-width='2.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/marker%3e%3c/defs%3e%3cg%20fill='none'%20stroke='%23262720'%20stroke-width='6'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3c!--%20Search%20--%3e%3cpath%20d='M118%20161h174v190H118z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M143%20196h119M143%20220h91M143%20244h108'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M134%20287h157M134%20311h112'%20stroke='%2377766f'%20stroke-width='5'/%3e%3ccircle%20cx='286'%20cy='282'%20r='48'%20fill='%23e9d4aa'%20stroke-width='6'/%3e%3cpath%20d='m321%20318%2046%2046'%20stroke-width='9'/%3e%3cpath%20d='M163%20378v68'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Search%20output:%20found%20source%20pages%20--%3e%3cpath%20d='M111%20474h114l31%2031v107H111z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M225%20474v33h31M133%20527h94M133%20552h69M133%20577h81'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M145%20459h112l31%2031'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3c!--%20Transition%20--%3e%3cpath%20d='M390%20262h87'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Ask%20--%3e%3cpath%20d='M520%20185h190a20%2020%200%200%201%2020%2020v85a20%2020%200%200%201-20%2020h-91l-35%2031v-31h-64a20%2020%200%200%201-20-20v-85a20%2020%200%200%201%2020-20z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M551%20222h126M551%20250h96'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M575%20335h160a18%2018%200%200%201%2018%2018v48a18%2018%200%200%201-18%2018h-68l-26%2023v-23h-66a18%2018%200%200%201-18-18v-48a18%2018%200%200%201%2018-18z'%20fill='%23e9d4aa'/%3e%3cpath%20d='M599%20363h107M599%20387h78'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M616%20427v44'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Explanation%20output%20--%3e%3cpath%20d='M543%20490h172l34%2034v88H543z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M715%20490v36h34M566%20543h133M566%20567h111M566%20591h80'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M798%20262h87'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Delegate%20a%20task%20--%3e%3cpath%20d='M932%20178h142l32%2032v113H932z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M1074%20178v35h32M953%20230h95M953%20256h69M953%20281h85'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='m1028%20342%2057%2045'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Work%20output:%20project%20folder,%20terminal%20interaction,%20changed%20file%20--%3e%3cpath%20d='M889%20454h98l22%2020h103v100H889z'%20fill='%23e9d4aa'/%3e%3cpath%20d='M905%20492h191'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M946%20526h126v92H946z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M946%20548h126M965%20569h22M965%20589h74'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M1091%20543h85v75h-85z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M1108%20563h50M1108%20584h34M1152%20602h12'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3cpath%20d='M1072%20325v100'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Equal%20visual%20weight:%20a%20route%20between%20work%20modes,%20not%20a%20ranking%20--%3e%3cpath%20d='M86%20640h1107'%20stroke='%23d5d0c6'%20stroke-width='4'/%3e%3ccircle%20cx='196'%20cy='640'%20r='8'%20fill='%23c28a35'%20stroke='none'/%3e%3ccircle%20cx='640'%20cy='640'%20r='8'%20fill='%23c28a35'%20stroke='none'/%3e%3ccircle%20cx='1084'%20cy='640'%20r='8'%20fill='%23c28a35'%20stroke='none'/%3e%3c/g%3e%3c/svg%3e",
+            "ok": true
+          }
+        ],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 570,
+          "sceneScroll": 570
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1242,
+          "height": 698
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-03-1366x768-z110",
+      "initial": {
+        "counter": "03 / 12",
+        "title": "Model, Prompt, Context",
+        "takeaway": "Model isteği işler; prompt görevi söyler; context, bu görev sırasında modele sunulan ilgili bilgidir.",
+        "step": "1 / 5 adım"
+      },
+      "full": {
+        "counter": "03 / 12",
+        "step": "5 / 5 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 698,
+            "top": 0,
+            "right": 268,
+            "bottom": 698,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 974,
+            "h": 698,
+            "top": 0,
+            "right": 1242,
+            "bottom": 698,
+            "left": 268
+          },
+          "header": {
+            "x": 330.09375,
+            "y": 0,
+            "w": 849.8125,
+            "h": 66,
+            "top": 0,
+            "right": 1179.90625,
+            "bottom": 66,
+            "left": 330.09375
+          },
+          "progress": {
+            "x": 330.09375,
+            "y": 66,
+            "w": 849.8125,
+            "h": 2,
+            "top": 66,
+            "right": 1179.90625,
+            "bottom": 68,
+            "left": 330.09375
+          },
+          "scene": {
+            "x": 330.09375,
+            "y": 68,
+            "w": 849.8125,
+            "h": 570,
+            "top": 68,
+            "right": 1179.90625,
+            "bottom": 638,
+            "left": 330.09375
+          },
+          "footer": {
+            "x": 330.09375,
+            "y": 638,
+            "w": 849.8125,
+            "h": 60,
+            "top": 638,
+            "right": 1179.90625,
+            "bottom": 698,
+            "left": 330.09375
+          },
+          "title": {
+            "x": 330.09375,
+            "y": 112,
+            "w": 849.8125,
+            "h": 41.328125,
+            "top": 112,
+            "right": 1179.90625,
+            "bottom": 153.328125,
+            "left": 330.09375
+          }
+        },
+        "sizes": {
+          "title": 39.744,
+          "takeaway": 17,
+          "main": [
+            11,
+            11,
+            11,
+            11,
+            11
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [
+          {
+            "src": "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201280%20720'%20role='img'%20aria-label='Prompt%20and%20a%20tray%20of%20relevant%20information%20flow%20into%20a%20model,%20which%20produces%20an%20output'%3e%3cdefs%3e%3cmarker%20id='arrow'%20markerWidth='12'%20markerHeight='12'%20refX='9'%20refY='6'%20orient='auto'%3e%3cpath%20d='M1%201%2010%206%201%2011'%20fill='none'%20stroke='%23262720'%20stroke-width='2.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/marker%3e%3c/defs%3e%3cg%20fill='none'%20stroke='%23262720'%20stroke-width='6'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3c!--%20Prompt:%20one%20task%20sheet%20--%3e%3cpath%20d='M86%20190h145l52%2052v238H86z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M231%20190v53h52'/%3e%3ccircle%20cx='126'%20cy='284'%20r='13'%20fill='%23c28a35'%20stroke='none'/%3e%3cpath%20d='M158%20284h78M112%20328h124M112%20368h105M112%20408h83'%20stroke='%2377766f'%20stroke-width='5'/%3e%3c!--%20Context%20tray:%20history,%20project%20files,%20instructions,%20tool%20output%20--%3e%3cpath%20d='M360%20146h451v410H360z'%20fill='%23f7f3eb'%20stroke-width='5'/%3e%3cpath%20d='M382%20146v-18h407v18'%20stroke='%2377766f'%20stroke-width='4'/%3e%3c!--%20Conversation%20history%20--%3e%3cpath%20d='M408%20204h139a16%2016%200%200%201%2016%2016v59a16%2016%200%200%201-16%2016h-81l-31%2024v-24h-27a16%2016%200%200%201-16-16v-59a16%2016%200%200%201%2016-16z'%20fill='%23fbf9f4'%20stroke-width='5'/%3e%3cpath%20d='M431%20231h79M431%20253h57'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M442%20184h113a15%2015%200%200%201%2015%2015v48'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3c!--%20Project%20files%20--%3e%3cpath%20d='M613%20222h51l17%2018h83v82H613z'%20fill='%23e9d4aa'%20stroke-width='5'/%3e%3cpath%20d='M630%20253h113M630%20274h93'%20stroke='%2377766f'%20stroke-width='5'/%3e%3c!--%20Instructions%20/%20rules%20--%3e%3cpath%20d='M412%20366h142v136H412z'%20fill='%23fbf9f4'%20stroke-width='5'/%3e%3cpath%20d='m431%20397%208%208%2015-18M467%20400h67M431%20437l8%208%2015-18M467%20440h67M431%20477l8%208%2015-18M467%20480h49'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='m431%20397%208%208%2015-18'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3c!--%20Tool%20output%20--%3e%3cpath%20d='M617%20375h145v119H617z'%20fill='%23fbf9f4'%20stroke-width='5'/%3e%3cpath%20d='M617%20401h145M637%20424h27M637%20445h60M637%20467h44'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='m724%20430%2011%2010-11%2010M710%20455l-8%208'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3c!--%20Inputs%20converge%20on%20a%20model%20chip%20--%3e%3cpath%20d='M283%20237c155-120%20421-137%20624%2045'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3cpath%20d='M811%20351h95'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Model%20--%3e%3cpath%20d='M934%20247h143v180H934z'%20fill='%23ead8b7'%20stroke-width='6'/%3e%3cpath%20d='M962%20275h87v124h-87z'%20fill='%23fbf9f4'%20stroke-width='5'/%3e%3cpath%20d='M978%20292h18v18h-18zM1015%20292h18v18h-18zM978%20329h18v18h-18zM1015%20329h18v18h-18zM978%20366h18v18h-18zM1015%20366h18v18h-18z'%20fill='%23262720'%20stroke='none'/%3e%3cpath%20d='M934%20270h-18M934%20306h-18M934%20342h-18M934%20378h-18M934%20414h-18M1077%20270h18M1077%20306h18M1077%20342h18M1077%20378h18M1077%20414h18'%20stroke-width='5'/%3e%3c!--%20Output%20--%3e%3cpath%20d='M1070%20518h119l38%2038v111h-157z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M1189%20518v39h38M1093%20575h85M1093%20598h66'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='m1094%20550%2010%2010%2019-22'%20stroke='%23c28a35'%20stroke-width='6'/%3e%3cpath%20d='M1050%20421c8%2048%2034%2077%2067%2091'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c/g%3e%3c/svg%3e",
+            "ok": true
+          }
+        ],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 570,
+          "sceneScroll": 570
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1242,
+          "height": 698
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-04-1366x768-z110",
+      "initial": {
+        "counter": "04 / 12",
+        "title": "Chatbot ve Coding Agent",
+        "takeaway": "Bu sunumda “coding agent”, modelin araç kullanıp sonuçları yeni adıma taşıdığı bir çalışma döngüsüdür.",
+        "step": "1 / 4 adım"
+      },
+      "full": {
+        "counter": "04 / 12",
+        "step": "4 / 4 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 698,
+            "top": 0,
+            "right": 268,
+            "bottom": 698,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 974,
+            "h": 698,
+            "top": 0,
+            "right": 1242,
+            "bottom": 698,
+            "left": 268
+          },
+          "header": {
+            "x": 330.09375,
+            "y": 0,
+            "w": 849.8125,
+            "h": 66,
+            "top": 0,
+            "right": 1179.90625,
+            "bottom": 66,
+            "left": 330.09375
+          },
+          "progress": {
+            "x": 330.09375,
+            "y": 66,
+            "w": 849.8125,
+            "h": 2,
+            "top": 66,
+            "right": 1179.90625,
+            "bottom": 68,
+            "left": 330.09375
+          },
+          "scene": {
+            "x": 330.09375,
+            "y": 68,
+            "w": 849.8125,
+            "h": 570,
+            "top": 68,
+            "right": 1179.90625,
+            "bottom": 638,
+            "left": 330.09375
+          },
+          "footer": {
+            "x": 330.09375,
+            "y": 638,
+            "w": 849.8125,
+            "h": 60,
+            "top": 638,
+            "right": 1179.90625,
+            "bottom": 698,
+            "left": 330.09375
+          },
+          "title": {
+            "x": 330.09375,
+            "y": 112,
+            "w": 849.8125,
+            "h": 40.03125,
+            "top": 112,
+            "right": 1179.90625,
+            "bottom": 152.03125,
+            "left": 330.09375
+          }
+        },
+        "sizes": {
+          "title": 38.502,
+          "takeaway": 16,
+          "main": [
+            10,
+            10,
+            11,
+            12,
+            12
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 570,
+          "sceneScroll": 570
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1242,
+          "height": 698
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-05-1366x768-z110",
+      "initial": {
+        "counter": "05 / 12",
+        "title": "Vibe Coding",
+        "takeaway": "Doğal dille fikirden çalışan bir ilk sürüme hızlıca yaklaşmak mümkün ve bu güçlü bir başlangıçtır.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "05 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 698,
+            "top": 0,
+            "right": 268,
+            "bottom": 698,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 974,
+            "h": 698,
+            "top": 0,
+            "right": 1242,
+            "bottom": 698,
+            "left": 268
+          },
+          "header": {
+            "x": 330.09375,
+            "y": 0,
+            "w": 849.8125,
+            "h": 66,
+            "top": 0,
+            "right": 1179.90625,
+            "bottom": 66,
+            "left": 330.09375
+          },
+          "progress": {
+            "x": 330.09375,
+            "y": 66,
+            "w": 849.8125,
+            "h": 2,
+            "top": 66,
+            "right": 1179.90625,
+            "bottom": 68,
+            "left": 330.09375
+          },
+          "scene": {
+            "x": 330.09375,
+            "y": 68,
+            "w": 849.8125,
+            "h": 570,
+            "top": 68,
+            "right": 1179.90625,
+            "bottom": 638,
+            "left": 330.09375
+          },
+          "footer": {
+            "x": 330.09375,
+            "y": 638,
+            "w": 849.8125,
+            "h": 60,
+            "top": 638,
+            "right": 1179.90625,
+            "bottom": 698,
+            "left": 330.09375
+          },
+          "title": {
+            "x": 330.09375,
+            "y": 112,
+            "w": 849.8125,
+            "h": 40.03125,
+            "top": 112,
+            "right": 1179.90625,
+            "bottom": 152.03125,
+            "left": 330.09375
+          }
+        },
+        "sizes": {
+          "title": 38.502,
+          "takeaway": 16,
+          "main": [
+            11,
+            11,
+            11,
+            11,
+            12
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 570,
+          "sceneScroll": 570
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1242,
+          "height": 698
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-06-1366x768-z110",
+      "initial": {
+        "counter": "06 / 12",
+        "title": "Vibe Coding'in duvarı",
+        "takeaway": "“Çalışıyor” gözlemi, tek başına doğru, güvenli veya sürdürülebilir olduğuna kanıt değildir.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "06 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 698,
+            "top": 0,
+            "right": 268,
+            "bottom": 698,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 974,
+            "h": 698,
+            "top": 0,
+            "right": 1242,
+            "bottom": 698,
+            "left": 268
+          },
+          "header": {
+            "x": 330.09375,
+            "y": 0,
+            "w": 849.8125,
+            "h": 66,
+            "top": 0,
+            "right": 1179.90625,
+            "bottom": 66,
+            "left": 330.09375
+          },
+          "progress": {
+            "x": 330.09375,
+            "y": 66,
+            "w": 849.8125,
+            "h": 2,
+            "top": 66,
+            "right": 1179.90625,
+            "bottom": 68,
+            "left": 330.09375
+          },
+          "scene": {
+            "x": 330.09375,
+            "y": 68,
+            "w": 849.8125,
+            "h": 570,
+            "top": 68,
+            "right": 1179.90625,
+            "bottom": 638,
+            "left": 330.09375
+          },
+          "footer": {
+            "x": 330.09375,
+            "y": 638,
+            "w": 849.8125,
+            "h": 60,
+            "top": 638,
+            "right": 1179.90625,
+            "bottom": 698,
+            "left": 330.09375
+          },
+          "title": {
+            "x": 330.09375,
+            "y": 112,
+            "w": 849.8125,
+            "h": 40.03125,
+            "top": 112,
+            "right": 1179.90625,
+            "bottom": 152.03125,
+            "left": 330.09375
+          }
+        },
+        "sizes": {
+          "title": 38.502,
+          "takeaway": 16,
+          "main": [
+            11,
+            11,
+            11,
+            11,
+            11
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 570,
+          "sceneScroll": 570
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1242,
+          "height": 698
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-07-1366x768-z110",
+      "initial": {
+        "counter": "07 / 12",
+        "title": "Agent anatomisi",
+        "takeaway": "Bir coding agent'ın bileşenleri ürüne ve göreve göre değişir; Skill, MCP ve Git kullanılabilecek örneklerdir, her kurulumda zorunlu değildir.",
+        "step": "1 / 11 adım"
+      },
+      "full": {
+        "counter": "07 / 12",
+        "step": "11 / 11 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 698,
+            "top": 0,
+            "right": 268,
+            "bottom": 698,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 974,
+            "h": 698,
+            "top": 0,
+            "right": 1242,
+            "bottom": 698,
+            "left": 268
+          },
+          "header": {
+            "x": 330.09375,
+            "y": 0,
+            "w": 849.8125,
+            "h": 66,
+            "top": 0,
+            "right": 1179.90625,
+            "bottom": 66,
+            "left": 330.09375
+          },
+          "progress": {
+            "x": 330.09375,
+            "y": 66,
+            "w": 849.8125,
+            "h": 2,
+            "top": 66,
+            "right": 1179.90625,
+            "bottom": 68,
+            "left": 330.09375
+          },
+          "scene": {
+            "x": 330.09375,
+            "y": 68,
+            "w": 849.8125,
+            "h": 570,
+            "top": 68,
+            "right": 1179.90625,
+            "bottom": 638,
+            "left": 330.09375
+          },
+          "footer": {
+            "x": 330.09375,
+            "y": 638,
+            "w": 849.8125,
+            "h": 60,
+            "top": 638,
+            "right": 1179.90625,
+            "bottom": 698,
+            "left": 330.09375
+          },
+          "title": {
+            "x": 330.09375,
+            "y": 112,
+            "w": 834.8125,
+            "h": 58.125,
+            "top": 112,
+            "right": 1164.90625,
+            "bottom": 170.125,
+            "left": 330.09375
+          }
+        },
+        "sizes": {
+          "title": 55.89,
+          "takeaway": 16,
+          "main": [
+            11,
+            11,
+            11,
+            11,
+            11
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 3,
+          "sceneClient": 570,
+          "sceneScroll": 573
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1242,
+          "height": 698
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-08-1366x768-z110",
+      "initial": {
+        "counter": "08 / 12",
+        "title": "Agentic Engineering",
+        "takeaway": "Agentic engineering, bu sunumda hedefi context ve kontrollerle bir araya getiren çalışma yaklaşımıdır; “bitti” sözü kanıtın yerini tutmaz.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "08 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 698,
+            "top": 0,
+            "right": 268,
+            "bottom": 698,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 974,
+            "h": 698,
+            "top": 0,
+            "right": 1242,
+            "bottom": 698,
+            "left": 268
+          },
+          "header": {
+            "x": 330.09375,
+            "y": 0,
+            "w": 849.8125,
+            "h": 66,
+            "top": 0,
+            "right": 1179.90625,
+            "bottom": 66,
+            "left": 330.09375
+          },
+          "progress": {
+            "x": 330.09375,
+            "y": 66,
+            "w": 849.8125,
+            "h": 2,
+            "top": 66,
+            "right": 1179.90625,
+            "bottom": 68,
+            "left": 330.09375
+          },
+          "scene": {
+            "x": 330.09375,
+            "y": 68,
+            "w": 849.8125,
+            "h": 570,
+            "top": 68,
+            "right": 1179.90625,
+            "bottom": 638,
+            "left": 330.09375
+          },
+          "footer": {
+            "x": 330.09375,
+            "y": 638,
+            "w": 849.8125,
+            "h": 60,
+            "top": 638,
+            "right": 1179.90625,
+            "bottom": 698,
+            "left": 330.09375
+          },
+          "title": {
+            "x": 330.09375,
+            "y": 112,
+            "w": 849.8125,
+            "h": 40.03125,
+            "top": 112,
+            "right": 1179.90625,
+            "bottom": 152.03125,
+            "left": 330.09375
+          }
+        },
+        "sizes": {
+          "title": 38.502,
+          "takeaway": 16,
+          "main": [
+            11,
+            12,
+            12,
+            12,
+            18.63
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 570,
+          "sceneScroll": 570
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1242,
+          "height": 698
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-09-1366x768-z110",
+      "initial": {
+        "counter": "09 / 12",
+        "title": "Tek agent sınırı",
+        "takeaway": "Tek agent çoğu iş için yeterli olabilir; uzmanlık veya bağımsız kontrol gerektiğinde görevleri ayırmayı düşünebiliriz.",
+        "step": "1 / 2 adım"
+      },
+      "full": {
+        "counter": "09 / 12",
+        "step": "2 / 2 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 698,
+            "top": 0,
+            "right": 268,
+            "bottom": 698,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 974,
+            "h": 698,
+            "top": 0,
+            "right": 1242,
+            "bottom": 698,
+            "left": 268
+          },
+          "header": {
+            "x": 330.09375,
+            "y": 0,
+            "w": 849.8125,
+            "h": 66,
+            "top": 0,
+            "right": 1179.90625,
+            "bottom": 66,
+            "left": 330.09375
+          },
+          "progress": {
+            "x": 330.09375,
+            "y": 66,
+            "w": 849.8125,
+            "h": 2,
+            "top": 66,
+            "right": 1179.90625,
+            "bottom": 68,
+            "left": 330.09375
+          },
+          "scene": {
+            "x": 330.09375,
+            "y": 68,
+            "w": 849.8125,
+            "h": 570,
+            "top": 68,
+            "right": 1179.90625,
+            "bottom": 638,
+            "left": 330.09375
+          },
+          "footer": {
+            "x": 330.09375,
+            "y": 638,
+            "w": 849.8125,
+            "h": 60,
+            "top": 638,
+            "right": 1179.90625,
+            "bottom": 698,
+            "left": 330.09375
+          },
+          "title": {
+            "x": 330.09375,
+            "y": 118,
+            "w": 849.8125,
+            "h": 58.125,
+            "top": 118,
+            "right": 1179.90625,
+            "bottom": 176.125,
+            "left": 330.09375
+          }
+        },
+        "sizes": {
+          "title": 55.89,
+          "takeaway": 22,
+          "main": [
+            11,
+            18.63,
+            18.63
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 570,
+          "sceneScroll": 570
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1242,
+          "height": 698
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-10-1366x768-z110",
+      "initial": {
+        "counter": "10 / 12",
+        "title": "Orchestration",
+        "takeaway": "Orchestration, doğru işi doğru role yönlendirip sonucu kontrol noktalarından geçirmektir.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "10 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 698,
+            "top": 0,
+            "right": 268,
+            "bottom": 698,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 974,
+            "h": 698,
+            "top": 0,
+            "right": 1242,
+            "bottom": 698,
+            "left": 268
+          },
+          "header": {
+            "x": 330.09375,
+            "y": 0,
+            "w": 849.8125,
+            "h": 66,
+            "top": 0,
+            "right": 1179.90625,
+            "bottom": 66,
+            "left": 330.09375
+          },
+          "progress": {
+            "x": 330.09375,
+            "y": 66,
+            "w": 849.8125,
+            "h": 2,
+            "top": 66,
+            "right": 1179.90625,
+            "bottom": 68,
+            "left": 330.09375
+          },
+          "scene": {
+            "x": 330.09375,
+            "y": 68,
+            "w": 849.8125,
+            "h": 570,
+            "top": 68,
+            "right": 1179.90625,
+            "bottom": 638,
+            "left": 330.09375
+          },
+          "footer": {
+            "x": 330.09375,
+            "y": 638,
+            "w": 849.8125,
+            "h": 60,
+            "top": 638,
+            "right": 1179.90625,
+            "bottom": 698,
+            "left": 330.09375
+          },
+          "title": {
+            "x": 330.09375,
+            "y": 112,
+            "w": 849.8125,
+            "h": 40.03125,
+            "top": 112,
+            "right": 1179.90625,
+            "bottom": 152.03125,
+            "left": 330.09375
+          }
+        },
+        "sizes": {
+          "title": 38.502,
+          "takeaway": 16,
+          "main": [
+            11,
+            12,
+            14,
+            14,
+            20.493
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 570,
+          "sceneScroll": 570
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1242,
+          "height": 698
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-11-1366x768-z110",
+      "initial": {
+        "counter": "11 / 12",
+        "title": "Vi3ecode",
+        "takeaway": "Bu bölümün değeri ürün tanıtımı değil; Lead, Analyst, Developer, QA ve handoff fikrinin gerçek bir workflow'da nasıl göründüğünü göstermektir.",
+        "step": "1 / 4 adım"
+      },
+      "full": {
+        "counter": "11 / 12",
+        "step": "4 / 4 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 698,
+            "top": 0,
+            "right": 268,
+            "bottom": 698,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 974,
+            "h": 698,
+            "top": 0,
+            "right": 1242,
+            "bottom": 698,
+            "left": 268
+          },
+          "header": {
+            "x": 330.09375,
+            "y": 0,
+            "w": 849.8125,
+            "h": 66,
+            "top": 0,
+            "right": 1179.90625,
+            "bottom": 66,
+            "left": 330.09375
+          },
+          "progress": {
+            "x": 330.09375,
+            "y": 66,
+            "w": 849.8125,
+            "h": 2,
+            "top": 66,
+            "right": 1179.90625,
+            "bottom": 68,
+            "left": 330.09375
+          },
+          "scene": {
+            "x": 330.09375,
+            "y": 68,
+            "w": 849.8125,
+            "h": 570,
+            "top": 68,
+            "right": 1179.90625,
+            "bottom": 638,
+            "left": 330.09375
+          },
+          "footer": {
+            "x": 330.09375,
+            "y": 638,
+            "w": 849.8125,
+            "h": 60,
+            "top": 638,
+            "right": 1179.90625,
+            "bottom": 698,
+            "left": 330.09375
+          },
+          "title": {
+            "x": 330.09375,
+            "y": 118,
+            "w": 834.8125,
+            "h": 58.125,
+            "top": 118,
+            "right": 1164.90625,
+            "bottom": 176.125,
+            "left": 330.09375
+          }
+        },
+        "sizes": {
+          "title": 55.89,
+          "takeaway": 22,
+          "main": [
+            11,
+            18.63,
+            18.63,
+            18.63,
+            18.63
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 43,
+          "sceneClient": 570,
+          "sceneScroll": 613
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1242,
+          "height": 698
+        },
+        "deviceScaleFactor": 1.1
+      }
+    },
+    {
+      "label": "scene-12-1366x768-z110",
+      "initial": {
+        "counter": "12 / 12",
+        "title": "Final: Model değil, sistem",
+        "takeaway": "AI uygulama geliştirmeye yardım edebilir; güvenilir sonuç modelle birlikte çalışan sistem ve insan kontrolü ister.",
+        "step": "1 / 3 adım"
+      },
+      "full": {
+        "counter": "12 / 12",
+        "step": "3 / 3 adım",
+        "boxes": {
+          "rail": {
+            "x": 0,
+            "y": 0,
+            "w": 268,
+            "h": 698,
+            "top": 0,
+            "right": 268,
+            "bottom": 698,
+            "left": 0
+          },
+          "stage": {
+            "x": 268,
+            "y": 0,
+            "w": 974,
+            "h": 698,
+            "top": 0,
+            "right": 1242,
+            "bottom": 698,
+            "left": 268
+          },
+          "header": {
+            "x": 330.09375,
+            "y": 0,
+            "w": 849.8125,
+            "h": 66,
+            "top": 0,
+            "right": 1179.90625,
+            "bottom": 66,
+            "left": 330.09375
+          },
+          "progress": {
+            "x": 330.09375,
+            "y": 66,
+            "w": 849.8125,
+            "h": 2,
+            "top": 66,
+            "right": 1179.90625,
+            "bottom": 68,
+            "left": 330.09375
+          },
+          "scene": {
+            "x": 330.09375,
+            "y": 68,
+            "w": 849.8125,
+            "h": 570,
+            "top": 68,
+            "right": 1179.90625,
+            "bottom": 638,
+            "left": 330.09375
+          },
+          "footer": {
+            "x": 330.09375,
+            "y": 638,
+            "w": 849.8125,
+            "h": 60,
+            "top": 638,
+            "right": 1179.90625,
+            "bottom": 698,
+            "left": 330.09375
+          },
+          "title": {
+            "x": 330.09375,
+            "y": 113,
+            "w": 849.8125,
+            "h": 38.75,
+            "top": 113,
+            "right": 1179.90625,
+            "bottom": 151.75,
+            "left": 330.09375
+          }
+        },
+        "sizes": {
+          "title": 37.26,
+          "takeaway": 22,
+          "main": [
+            11,
+            21,
+            21
+          ]
+        },
+        "fonts": "loaded",
+        "svg": 0,
+        "images": [],
+        "scroll": {
+          "docX": 0,
+          "docY": 0,
+          "sceneY": 0,
+          "sceneClient": 570,
+          "sceneScroll": 570
+        },
+        "titleVisible": true,
+        "headerVisible": true,
+        "progressVisible": true,
+        "footerVisible": true,
+        "sidebarOverlap": false
+      },
+      "layoutJump": {
+        "sceneBoxSame": true,
+        "headerBoxSame": true,
+        "footerBoxSame": true
+      },
+      "config": {
+        "width": 1366,
+        "height": 768,
+        "zoomPercent": 110,
+        "cssViewport": {
+          "width": 1242,
+          "height": 698
+        },
+        "deviceScaleFactor": 1.1
+      }
+    }
+  ],
+  "network": {
+    "urls": [
+      "http://127.0.0.1:4173/?mode=30&scene=1&step=1",
+      "http://127.0.0.1:4173/assets/index-rRjNYh3R.js",
+      "http://127.0.0.1:4173/assets/index-DthRosz5.css",
+      "http://127.0.0.1:4173/?mode=30&scene=2&step=1",
+      "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201280%20680'%20role='img'%20aria-label='Search%20returns%20sources,%20asking%20returns%20an%20explanation,%20and%20delegating%20a%20task%20produces%20file%20and%20tool%20work'%3e%3cdefs%3e%3cmarker%20id='arrow'%20markerWidth='12'%20markerHeight='12'%20refX='9'%20refY='6'%20orient='auto'%3e%3cpath%20d='M1%201%2010%206%201%2011'%20fill='none'%20stroke='%23262720'%20stroke-width='2.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/marker%3e%3c/defs%3e%3cg%20fill='none'%20stroke='%23262720'%20stroke-width='6'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3c!--%20Search%20--%3e%3cpath%20d='M118%20161h174v190H118z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M143%20196h119M143%20220h91M143%20244h108'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M134%20287h157M134%20311h112'%20stroke='%2377766f'%20stroke-width='5'/%3e%3ccircle%20cx='286'%20cy='282'%20r='48'%20fill='%23e9d4aa'%20stroke-width='6'/%3e%3cpath%20d='m321%20318%2046%2046'%20stroke-width='9'/%3e%3cpath%20d='M163%20378v68'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Search%20output:%20found%20source%20pages%20--%3e%3cpath%20d='M111%20474h114l31%2031v107H111z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M225%20474v33h31M133%20527h94M133%20552h69M133%20577h81'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M145%20459h112l31%2031'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3c!--%20Transition%20--%3e%3cpath%20d='M390%20262h87'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Ask%20--%3e%3cpath%20d='M520%20185h190a20%2020%200%200%201%2020%2020v85a20%2020%200%200%201-20%2020h-91l-35%2031v-31h-64a20%2020%200%200%201-20-20v-85a20%2020%200%200%201%2020-20z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M551%20222h126M551%20250h96'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M575%20335h160a18%2018%200%200%201%2018%2018v48a18%2018%200%200%201-18%2018h-68l-26%2023v-23h-66a18%2018%200%200%201-18-18v-48a18%2018%200%200%201%2018-18z'%20fill='%23e9d4aa'/%3e%3cpath%20d='M599%20363h107M599%20387h78'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M616%20427v44'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Explanation%20output%20--%3e%3cpath%20d='M543%20490h172l34%2034v88H543z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M715%20490v36h34M566%20543h133M566%20567h111M566%20591h80'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M798%20262h87'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Delegate%20a%20task%20--%3e%3cpath%20d='M932%20178h142l32%2032v113H932z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M1074%20178v35h32M953%20230h95M953%20256h69M953%20281h85'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='m1028%20342%2057%2045'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Work%20output:%20project%20folder,%20terminal%20interaction,%20changed%20file%20--%3e%3cpath%20d='M889%20454h98l22%2020h103v100H889z'%20fill='%23e9d4aa'/%3e%3cpath%20d='M905%20492h191'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M946%20526h126v92H946z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M946%20548h126M965%20569h22M965%20589h74'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M1091%20543h85v75h-85z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M1108%20563h50M1108%20584h34M1152%20602h12'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3cpath%20d='M1072%20325v100'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Equal%20visual%20weight:%20a%20route%20between%20work%20modes,%20not%20a%20ranking%20--%3e%3cpath%20d='M86%20640h1107'%20stroke='%23d5d0c6'%20stroke-width='4'/%3e%3ccircle%20cx='196'%20cy='640'%20r='8'%20fill='%23c28a35'%20stroke='none'/%3e%3ccircle%20cx='640'%20cy='640'%20r='8'%20fill='%23c28a35'%20stroke='none'/%3e%3ccircle%20cx='1084'%20cy='640'%20r='8'%20fill='%23c28a35'%20stroke='none'/%3e%3c/g%3e%3c/svg%3e",
+      "http://127.0.0.1:4173/?mode=30&scene=3&step=1",
+      "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201280%20720'%20role='img'%20aria-label='Prompt%20and%20a%20tray%20of%20relevant%20information%20flow%20into%20a%20model,%20which%20produces%20an%20output'%3e%3cdefs%3e%3cmarker%20id='arrow'%20markerWidth='12'%20markerHeight='12'%20refX='9'%20refY='6'%20orient='auto'%3e%3cpath%20d='M1%201%2010%206%201%2011'%20fill='none'%20stroke='%23262720'%20stroke-width='2.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/marker%3e%3c/defs%3e%3cg%20fill='none'%20stroke='%23262720'%20stroke-width='6'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3c!--%20Prompt:%20one%20task%20sheet%20--%3e%3cpath%20d='M86%20190h145l52%2052v238H86z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M231%20190v53h52'/%3e%3ccircle%20cx='126'%20cy='284'%20r='13'%20fill='%23c28a35'%20stroke='none'/%3e%3cpath%20d='M158%20284h78M112%20328h124M112%20368h105M112%20408h83'%20stroke='%2377766f'%20stroke-width='5'/%3e%3c!--%20Context%20tray:%20history,%20project%20files,%20instructions,%20tool%20output%20--%3e%3cpath%20d='M360%20146h451v410H360z'%20fill='%23f7f3eb'%20stroke-width='5'/%3e%3cpath%20d='M382%20146v-18h407v18'%20stroke='%2377766f'%20stroke-width='4'/%3e%3c!--%20Conversation%20history%20--%3e%3cpath%20d='M408%20204h139a16%2016%200%200%201%2016%2016v59a16%2016%200%200%201-16%2016h-81l-31%2024v-24h-27a16%2016%200%200%201-16-16v-59a16%2016%200%200%201%2016-16z'%20fill='%23fbf9f4'%20stroke-width='5'/%3e%3cpath%20d='M431%20231h79M431%20253h57'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='M442%20184h113a15%2015%200%200%201%2015%2015v48'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3c!--%20Project%20files%20--%3e%3cpath%20d='M613%20222h51l17%2018h83v82H613z'%20fill='%23e9d4aa'%20stroke-width='5'/%3e%3cpath%20d='M630%20253h113M630%20274h93'%20stroke='%2377766f'%20stroke-width='5'/%3e%3c!--%20Instructions%20/%20rules%20--%3e%3cpath%20d='M412%20366h142v136H412z'%20fill='%23fbf9f4'%20stroke-width='5'/%3e%3cpath%20d='m431%20397%208%208%2015-18M467%20400h67M431%20437l8%208%2015-18M467%20440h67M431%20477l8%208%2015-18M467%20480h49'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='m431%20397%208%208%2015-18'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3c!--%20Tool%20output%20--%3e%3cpath%20d='M617%20375h145v119H617z'%20fill='%23fbf9f4'%20stroke-width='5'/%3e%3cpath%20d='M617%20401h145M637%20424h27M637%20445h60M637%20467h44'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='m724%20430%2011%2010-11%2010M710%20455l-8%208'%20stroke='%23c28a35'%20stroke-width='5'/%3e%3c!--%20Inputs%20converge%20on%20a%20model%20chip%20--%3e%3cpath%20d='M283%20237c155-120%20421-137%20624%2045'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3cpath%20d='M811%20351h95'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c!--%20Model%20--%3e%3cpath%20d='M934%20247h143v180H934z'%20fill='%23ead8b7'%20stroke-width='6'/%3e%3cpath%20d='M962%20275h87v124h-87z'%20fill='%23fbf9f4'%20stroke-width='5'/%3e%3cpath%20d='M978%20292h18v18h-18zM1015%20292h18v18h-18zM978%20329h18v18h-18zM1015%20329h18v18h-18zM978%20366h18v18h-18zM1015%20366h18v18h-18z'%20fill='%23262720'%20stroke='none'/%3e%3cpath%20d='M934%20270h-18M934%20306h-18M934%20342h-18M934%20378h-18M934%20414h-18M1077%20270h18M1077%20306h18M1077%20342h18M1077%20378h18M1077%20414h18'%20stroke-width='5'/%3e%3c!--%20Output%20--%3e%3cpath%20d='M1070%20518h119l38%2038v111h-157z'%20fill='%23fbf9f4'/%3e%3cpath%20d='M1189%20518v39h38M1093%20575h85M1093%20598h66'%20stroke='%2377766f'%20stroke-width='5'/%3e%3cpath%20d='m1094%20550%2010%2010%2019-22'%20stroke='%23c28a35'%20stroke-width='6'/%3e%3cpath%20d='M1050%20421c8%2048%2034%2077%2067%2091'%20marker-end='url(%23arrow)'%20stroke-width='5'/%3e%3c/g%3e%3c/svg%3e",
+      "http://127.0.0.1:4173/?mode=30&scene=4&step=1",
+      "http://127.0.0.1:4173/?mode=30&scene=5&step=1",
+      "http://127.0.0.1:4173/?mode=30&scene=6&step=1",
+      "http://127.0.0.1:4173/?mode=30&scene=7&step=1",
+      "http://127.0.0.1:4173/?mode=30&scene=8&step=1",
+      "http://127.0.0.1:4173/?mode=30&scene=9&step=1",
+      "http://127.0.0.1:4173/?mode=30&scene=10&step=1",
+      "http://127.0.0.1:4173/?mode=30&scene=11&step=1",
+      "http://127.0.0.1:4173/?mode=30&scene=12&step=1"
+    ],
+    "external": [],
+    "failures": [],
+    "httpErrors": [],
+    "runtimeErrors": [],
+    "consoleErrors": [],
+    "count": 16
+  },
+  "interaction": {
+    "keyboardArrowRightChanged": true,
+    "before": "01 / 12|1 / 4 adım",
+    "after": "01 / 12|2 / 4 adım",
+    "method": "CDP key event; not physical keyboard"
+  },
+  "events": {
+    "consoleErrorCount": 0,
+    "httpErrorCount": 0,
+    "loadingFailureCount": 0,
+    "runtimeExceptionCount": 0
+  }
+}

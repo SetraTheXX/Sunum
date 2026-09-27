@@ -682,34 +682,40 @@ Test sırasında tarayıcının varsayılan `/favicon.ico` isteği 404 verdi. `i
 
 **Süre:** 1–2 saat
 
-**Hazırlık kaydı (2026-09-27):** Hedef matris ve raporlama biçimi tanımlandı; gerçek browser/projektör incelemesi yapılmadı, G7 açık.
+**Hazırlık kaydı (2026-09-27):** Hedef matris ve raporlama biçimi tanımlandı.
+
+**Yürütme kaydı (2026-09-27): PARTIAL — G7 açık.** `npm run build` başarılı. Production preview Edge 154.0.4258.37 headless/CDP ile açıldı. 30 dk rotadaki 12 sahnenin tamamı doğrudan `?mode=30&scene=N&step=1` URL’siyle açıldı; her sahnede bütün adımlar açılarak dört görünümün her birinde toplam 48 render ölçüldü: 1920×1080 ve 1366×768, %100 ve %110 eşdeğeri. %110 görünümü gerçek Edge araç çubuğu zoom’u ile ayarlanamadı; CDP’de CSS viewport hedef boyutun 1.1’e bölünmüş değeri ve deviceScaleFactor 1.1 ile render edildi. Bu yöntem ve ölçümler [ham JSON kaydında](sources/phase-9/projector-matrix-2026-09-27.json).
+
+JSON’daki 48 render ölçümünde page yatay/dikey scroll farkı 0; `.scene-stage`, header ve footer ölçüleri adımlar açılırken sabit; kaydedilen title/header/progress/footer visibility alanları true ve sidebar-stage çakışma alanı false. Bu sayaçlar her içerik öğesinin/diagramın kırpılmasını otomatik olarak ölçmez. Görsel olarak incelenen kritik sahneler (01/03/04/06/07/08/10/11/12) için yalnızca %100’deki 18 PNG ve Scene 11’in %110 eşdeğer PNG’si vardır. 1366×768/%110 eşdeğerinde Scene 01 için 5px, Scene 07 için 3px ve Scene 11 için 43px kontrollü iç sahne kaydırması ölçüldü; Scene 11’in dört adımı ve footer’ı görünür kaldı. Sidebar listesi kısa yükseklikte kendi alanında kayıyor. Kaydedilen CDP HTTP hata, yükleme başarısızlığı ve Runtime exception dizileri boş; uygulama origin’i dışındaki HTTP(S) isteği 0. Ham console kaydı saklanmadığından console için PASS/zero-error iddiası yapılmıyor. JS/CSS loopback’ten, Scene 02/03 SVG’leri inline `data:` kaynağından geldi; uzak font isteği yok ve sistem font yığını yüklendi. Temsilî PNG kanıtları: [Scene 01 — 1920×1080](screenshots/phase-9/scene-01-1920x1080-z100.png), [Scene 01 — 1366×768](screenshots/phase-9/scene-01-1366x768-z100.png), [Scene 07 — 1920×1080](screenshots/phase-9/scene-07-1920x1080-z100.png), [Scene 07 — 1366×768](screenshots/phase-9/scene-07-1366x768-z100.png), [Scene 11 — 1366×768/%110 eşdeğeri](screenshots/phase-9/scene-11-1366x768-z110.png), [Scene 12 — 1920×1080](screenshots/phase-9/scene-12-1920x1080-z100.png). Diğer seçili kritik sahnelerin 100% iki çözünürlük PNG’leri aynı klasördedir.
+
+Paylaşılan browser panelinde ayrıca 613×872 viewport’ta Scene 01 ve Scene 11 gerçek render olarak görüntülendi. Paneldeki tam ekran düğmesine gerçek tıklama sonrası `document.fullscreenElement` doğru oldu; bu panelin fullscreen API sonucudur, F11/native browser chrome kontrolü değildir. Firefox PATH’te kurulu bulunmadı. Kod/layout düzeltmesi yapılmadı. Headless/CDP çıktısı ve panel görüntüsü projektörün gerçek fiziksel uzaklığını, gerçek tarayıcı zoom kontrolünü, native browser chrome/cursor’ı veya sınıf ekranı kontrastını doğrulamaz; bu nedenle bu kısmi inceleme G7 PASS değildir.
 
 ## 1920×1080
 
-- [ ] header
-- [ ] body
-- [ ] code
-- [ ] screenshots
-- [ ] diagrams
+- [x] header / progress / footer visibility — 12 scenes, both zoom equivalents
+- [ ] body / every diagram containment — JSON her içerik öğesinin sınırını ölçmüyor; yalnız seçili kritik sahneler PNG üzerinden incelendi
+- [ ] code — core 30 dk rotada code sample yok
+- [ ] screenshots — authentic Vi3ecode screenshot eksik; Scene 11 açık
+- [x] diagrams — seçili kritik sahnelerin %100 PNG incelemesinde kırpılmıyor; tüm scene/zoom içerikleri için tam görsel audit değil
 
 ## 1366×768
 
-- [ ] overflow
-- [ ] tiny text
-- [ ] nav collision
-- [ ] screenshot crop
+- [x] page overflow — yatay/dikey page scroll yok; Scene 01/07/11’de %110 eşdeğerinde kontrollü iç scroll en çok 43px
+- [ ] tiny text — ikincil açıklamalar 10–12 CSS px; gerçek projektör mesafesinde değerlendirilmedi
+- [x] nav collision — scene rail ile stage çakışmıyor; header/progress/footer görünür
+- [ ] screenshot crop — core route’ta authentic ürün screenshot’ı yok; Vi3ecode Scene 11 blocker’ı sürüyor
 
 ## Tarayıcı
 
-- [ ] Chrome/Chromium
-- [ ] Firefox — mümkünse
+- [x] Edge 154 Chromium — headless/CDP gerçek browser render’ı
+- [ ] Firefox — PATH’te executable bulunamadı
 
 ## Zoom
 
-- [ ] %100
-- [ ] %110 projector emergency
+- [x] %100 — CDP viewport 1:1
+- [~] %110 eşdeğeri — CDP CSS viewport hedefin 1.1’e bölümü + deviceScaleFactor 1.1; Edge toolbar zoom’u değil
 
-## G7 için kanıt planı — test edilmedi
+## G7 için kanıt planı ve kalan kontroller
 
 QA her 12 sahne için 1920×1080 ve 1366×768; desteklenen Chromium/Chrome ve mümkünse Firefox; %100 ve %110 zoom matrisini doldurur. Her hücrede başlık/body/code/görsel okunurluğu, taşma, navigation çakışması, crop, kontrollü scroll, cursor/browser chrome ve fullscreen sonucu kaydedilir. Gerçek projektör kullanılamazsa bu sınırlama ayrıca belirtilir; PNG viewport kontrolü tek başına projektör PASS sayılmaz.
 
@@ -722,7 +728,7 @@ Kanıt kaydı: build/commit, ekran ve tarayıcı boyutu, zoom, sahne, bulgu/öne
 - Cursor / browser chrome sunumu bozmuyor.
 - Fullscreen düzgün.
 
-**Durum (2026-09-27): AÇIK — hedef çözünürlük PNG’leri mevcut, fakat tam sahne/tarayıcı/zoom/projektör matrisi tamamlanmadı.**
+**G7 durumu (2026-09-27): AÇIK — Phase 9 kısmi.** 12 sahne için Edge headless/CDP matris render’ı yapıldı; fakat gerçek toolbar zoom, native browser chrome/F11 ve fiziksel projektör/uzaktan okunabilirlik incelemesi yapılamadı. Scene 11 yalnızca mevcut placeholder’ın teknik yerleşimiyle kontrol edildi; authentic Vi3ecode evidence yok ve bu içerik blocker’ı G4/G5/G6’da değişmedi. QA’nın bağımsız incelemesi bekleniyor. `package.json` içinde test/lint betiği yok; yalnız `dev`, `build`, `preview` mevcut.
 
 ---
 

@@ -293,13 +293,24 @@ Bu dört sahne bütün sitenin visual contract’ını belirler.
 
 ## Gate G3 — Visual Contract
 
-- [ ] 4 kritik sahne aynı ailede.
-- [ ] 1920×1080 okunuyor.
-- [ ] 1366×768 taşma yok.
-- [ ] Başlıklar projector boyutunda.
-- [ ] Görsel dil Avenox kopyası değil.
-- [ ] AI SaaS hissi yok.
-- [ ] Accent sayısı kontrol altında.
+- [x] 4 kritik sahne aynı ailede.
+- [x] 1920×1080 okunuyor.
+- [x] 1366×768 taşma yok.
+- [x] Başlıklar projector boyutunda.
+- [x] Görsel dil Avenox kopyası değil.
+- [x] AI SaaS hissi yok.
+- [x] Accent sayısı kontrol altında.
+
+**G3 QA kanıtı (2026-09-27):** QA sekiz PNG'yi açtı, gerçek piksel ölçülerini doğruladı ve dört sahnenin okunabilirliğini inceledi. 1366×768'de Cold Open ile Agent anatomy alt gezinmesi viewport içinde; metin kesilmiyor. Dört sahnenin tamamında 1920×1080 görünümü okunaklı. `npm run build` ve `git diff --check` başarılı; test/lint betiği bulunmuyor.
+
+| Sahne | 1366×768 | 1920×1080 |
+|---|---|---|
+| Cold Open | [PNG](screenshots/g3/cold-open-1366x768.png) | [PNG](screenshots/g3/cold-open-1920x1080.png) |
+| Chat vs Agent | [PNG](screenshots/g3/chat-vs-agent-1366x768.png) | [PNG](screenshots/g3/chat-vs-agent-1920x1080.png) |
+| Agent anatomy | [PNG](screenshots/g3/agent-anatomy-1366x768.png) | [PNG](screenshots/g3/agent-anatomy-1920x1080.png) |
+| Final | [PNG](screenshots/g3/final-1366x768.png) | [PNG](screenshots/g3/final-1920x1080.png) |
+
+**Sınırlama:** Depoda Avenox referans ekran görüntüsü bulunmadığından yan yana karşılaştırma yapılamadı. QA görünür logo/limon karakteri kopyası veya AI SaaS görünümü saptamadı; G3 değerlendirmesi bu gözlemle kaydedildi.
 
 ---
 
@@ -313,14 +324,14 @@ Bu dört sahne bütün sitenin visual contract’ını belirler.
 Öncelik sırası:
 
 ### P0
-- [ ] Context masası
-- [ ] Vibe Coding duvarı
-- [ ] Orchestration / şef metaforu
+- [x] [Context masası v2](assets/phase-4/v2/context-desk-v2.svg)
+- [x] [Vibe Coding duvarı v2](assets/phase-4/v2/vibe-coding-wall-v2.svg)
+- [x] [Orchestration akışı v2](assets/phase-4/v2/orchestration-v2.svg)
 
 ### P1
-- [ ] Journey
-- [ ] Agent anatomy yardımcı illustration
-- [ ] Final illustration
+- [x] [Journey v2](assets/phase-4/v2/journey-v2.svg)
+- [x] [Agent anatomy v2](assets/phase-4/v2/agent-anatomy-v2.svg)
+- [x] [Final system v2](assets/phase-4/v2/final-system-v2.svg)
 
 ## 4.2 AI image generation kuralı
 
@@ -347,14 +358,38 @@ Layout site içinde yapılır.
 
 Her asset için:
 
-- [ ] AI cliche?
-- [ ] Gereksiz detay?
-- [ ] Metin var mı?
-- [ ] Sunuma gerçekten bilgi katıyor mu?
-- [ ] 5 saniyede okunuyor mu?
-- [ ] Stil tutarlı mı?
+- [x] AI cliche?
+- [x] Gereksiz detay?
+- [x] Metin var mı?
+- [x] Sunuma gerçekten bilgi katıyor mu?
+- [x] 5 saniyede okunuyor mu?
+- [x] Stil tutarlı mı?
 
-PASS değilse asset kullanılmaz.
+PASS değilse asset kullanılmaz. İnceleme, altı ölçütün yanında sahneyle doğrudan içerik eşleşmesini de kontrol eder.
+
+**V1 reddi ve Phase 4'ün yeniden açılması (2026-09-27):** Kullanıcı v1 görsellerini sunum konusuyla ilgisiz buldu. İlk QA dosya biçimi ve görsel aileyi kontrol etmiş, ancak sahne mesajlarıyla semantik eşleşmeyi yeterince sınamamıştı. İlk PASS kararı geri çekildi. V1 dosyaları silinmeden `assets/phase-4/` altında arşivde tutuluyor ve kabul edilen asset sayılmıyor.
+
+| V1 asset | İçerik uyuşmazlığı | Durum |
+|---|---|---|
+| [Context masası](assets/phase-4/context-desk.png) | Model, prompt ve context ayrımını; konuşma geçmişi, dosyalar, kurallar ve araç çıktılarını göstermiyor. | Kullanıcı reddi; arşivde |
+| [Vibe Coding duvarı](assets/phase-4/vibe-coding-wall.png) | Görünen çalışan sonuç ile dosya/test/review kanıtı arasındaki farkı kurmuyor. | Kullanıcı reddi; arşivde |
+| [Orchestration](assets/phase-4/orchestration-conductor.png) | Lead → gerektiğinde Analyst → Developer → QA akışını, PASS bitişini ve FAIL dönüşünü göstermiyor. | Kullanıcı reddi; arşivde |
+| [Journey](assets/phase-4/journey.png) | Ara → Sor → Görev ver adımlarını ve her adımın somut çıktısını eşleştirmiyor. | Kullanıcı reddi; arşivde |
+| [Agent anatomy](assets/phase-4/agent-anatomy.png) | Model, context, proje dosyaları, talimatlar, tools ve terminal ilişkisini; Skill/MCP/Git'in opsiyonel olduğunu anlatmıyor. | Kullanıcı reddi; arşivde |
+| [Final illustration](assets/phase-4/final-system.png) | Model + context + tools + skills + test + review + insan kontrolü birleşimini göstermiyor. | Kullanıcı reddi; arşivde |
+
+**Phase 4 v2 asset QA — PASS (2026-09-27):** QA altı SVG'yi sahne metinleriyle eşleştirip içerik, hızlı okuma ve görsel ilkeler açısından tek tek inceledi. Her asset PASS aldı. XML doğrulamasında görünür `<text>`, gömülü `<image>` veya dış bağlantı bulunmadı; AI klişesi, ağır doku ya da parıltı saptanmadı.
+
+| V2 asset | Eşleşen sahne | QA sonucu |
+|---|---|---|
+| [Context masası](assets/phase-4/v2/context-desk-v2.svg) | 03 — Model, Prompt, Context | PASS |
+| [Vibe Coding duvarı](assets/phase-4/v2/vibe-coding-wall-v2.svg) | 06 — Vibe Coding'in duvarı | PASS |
+| [Journey](assets/phase-4/v2/journey-v2.svg) | 02 — Nereden nereye? | PASS |
+| [Agent anatomy](assets/phase-4/v2/agent-anatomy-v2.svg) | 07 — Agent anatomisi | PASS |
+| [Orchestration](assets/phase-4/v2/orchestration-v2.svg) | 10 — Orchestration | PASS |
+| [Final system](assets/phase-4/v2/final-system-v2.svg) | 12 — Final: Model değil, sistem | PASS |
+
+**Sınır / sonraki kontrol:** Phase 4 asset QA önizlemesi tarayıcı panelinde 357×832 boyutundaydı; o aşamada hedef sunum ölçeği ve uygulama entegrasyonu incelenmemişti. Phase 6 Batch A'da Scene 02 Journey v2'yi, Scene 03 Context Desk v2'yi kullanıyor; iki sahne 1366×768 ve 1920×1080'de QA'dan geçti. Vibe Coding wall, Orchestration, Agent Anatomy ve Final System v2 asset'leri henüz uygulamaya entegre edilmedi; yerleşim, etiket ve kırpma kontrolleri entegrasyon sonrası yapılmalı.
 
 ---
 
@@ -403,6 +438,13 @@ P0:
 - [ ] Vi3ecode bölümü screenshotlarla tek başına anlatılabiliyor.
 - [ ] Kullanıcı mail/token/path gibi özel bilgi yok.
 
+## Plan Delta — Phase 5 evidence deferred to final gate (2026-09-27)
+
+- Real Codex / Vi3ecode product-screen capture and recording work is deferred to the final evidence stage before the final presentation. The existing Anthropic Claude Code checklist image remains a sourced product example only; it is not a live project session.
+- G4 remains unchecked and mandatory before the final presentation. Codex and Vi3ecode evidence gaps must be closed with authentic, privacy-reviewed captures before that gate passes.
+- Do not mark Vi3ecode workflow scenes complete while their real screen evidence is missing; do not substitute the marketing simulation or generated screens.
+- By explicit user direction, Phase 6 scene batches that do not depend on the missing product captures may proceed in roadmap order, with their own implementation and QA gates. G4 does not block those batches; it remains a mandatory final presentation gate, and no Vi3ecode workflow is to be represented as authentically evidenced until real captures pass privacy QA.
+
 ---
 
 # PHASE 6 — Core scene implementation
@@ -414,44 +456,78 @@ Sıra:
 
 ## Batch A — Açılış
 
-- [ ] Cold Open
-- [ ] Evolution
-- [ ] Model / Context
+- [x] Cold Open
+- [x] Evolution
+- [x] Model / Context
 
 Test.
+
+**Batch A QA — PASS (2026-09-27):** Independent QA reviewed all six Edge headless previews against the scene text at 1366×768 and 1920×1080. Cold Open was retained; Evolution and Model / Context use the approved local Journey / Context Desk v2 SVGs. All six PNG dimensions match their filenames, text and footer fit, and `npm run build` passed. The live browser panel could not be used for target-size inspection; no test or lint script is defined in `package.json`.
+
+| Scene | 1366×768 | 1920×1080 |
+|---|---|---|
+| Cold Open | [PNG](screenshots/phase-6/batch-a/scene-01-cold-open-1366x768.png) | [PNG](screenshots/phase-6/batch-a/scene-01-cold-open-1920x1080.png) |
+| Evolution | [PNG](screenshots/phase-6/batch-a/scene-02-evolution-1366x768.png) | [PNG](screenshots/phase-6/batch-a/scene-02-evolution-1920x1080.png) |
+| Model / Context | [PNG](screenshots/phase-6/batch-a/scene-03-model-context-1366x768.png) | [PNG](screenshots/phase-6/batch-a/scene-03-model-context-1920x1080.png) |
 
 ## Batch B — Vibe
 
-- [ ] Chat vs Agent
-- [ ] Vibe Coding
-- [ ] Vibe wall
+- [x] Chat vs Agent
+- [x] Vibe Coding
+- [x] Vibe wall
 
-Test.
+**Batch B QA kapısı — PASS (2026-09-27):** QA üç sahneyi ilgili kaynak metinlerle eşleştirip 1366×768 ve 1920×1080 PNG'lerini inceledi; içerik okunaklı, alt gezinme görünür, taşma ve sahte ürün arayüzü yok. `npm run build` başarılı; test/lint betiği tanımlı değil. Browser paneli `ERR_CONNECTION_REFUSED` verdiğinden QA canlı panel yerine kayıtlı PNG'leri inceledi. G4 açık ve final sunum öncesi zorunlu kalır.
+
+| Scene | 1366×768 | 1920×1080 |
+|---|---|---|
+| Chat vs Agent | [PNG](screenshots/phase-6/batch-b/chat-vs-agent-1366x768.png) | [PNG](screenshots/phase-6/batch-b/chat-vs-agent-1920x1080.png) |
+| Vibe Coding | [PNG](screenshots/phase-6/batch-b/vibe-coding-1366x768.png) | [PNG](screenshots/phase-6/batch-b/vibe-coding-1920x1080.png) |
+| Vibe wall | [PNG](screenshots/phase-6/batch-b/vibe-wall-1366x768.png) | [PNG](screenshots/phase-6/batch-b/vibe-wall-1920x1080.png) |
 
 ## Batch C — Architecture
 
-- [ ] Agent anatomy
-- [ ] Skill
-- [ ] MCP
-- [ ] Git / tool
+- [x] Agent anatomy
+- [x] Skill
+- [x] MCP
+- [x] Git / tool
 
-Test.
+Test — PASS.
+
+**Batch C QA — PASS (2026-09-27):** All four items—Agent anatomy, Skill, MCP, and Git/tool—are covered by Scene 07 ([source](scenes/07-agent-anatomisi.md#L17)). QA confirmed all nine components, the optional status of Skill/MCP/Git, and no clipping at both target resolutions. `npm run build` passed; `package.json` has no test or lint script. Browser-panel inspection failed (“the page loaded, but the browser panel could not be shown”), and readability from projector distance was not evaluated. G4 remains open and mandatory before the final presentation.
+
+| Scene | 1366×768 | 1920×1080 |
+|---|---|---|
+| Agent anatomy | [PNG](screenshots/phase-6/batch-c/scene-07-agent-anatomy-1366x768.png) | [PNG](screenshots/phase-6/batch-c/scene-07-agent-anatomy-1920x1080.png) |
 
 ## Batch D — Engineering
 
-- [ ] Agentic Engineering
-- [ ] test / review / verify
-- [ ] orchestration
+- [x] Agentic Engineering — Scene 08
+- [x] test / review / verify — Scene 08
+- [x] orchestration — Scene 10
+- [x] Batch D QA / test — PASS (2026-09-27)
 
-Test.
+**Batch D QA — PASS (2026-09-27):** Independent QA matched both scenes to their source text and reviewed all four Edge headless PNGs. Scene 08 shows the full Hedef → Context → Plan → Implement → Test → Review → Verify → Git flow and its file, test, and review evidence points. Scene 10 marks Analyst as conditional, shows QA PASS completion and FAIL return to Developer, and includes the Git checkpoint. No clipping or fabricated product interface was found. `npm run build` passed; `package.json` defines no test or lint script. The live browser panel could not be shown, so QA reviewed the saved PNGs. G4 remains open and mandatory before the final presentation.
+
+| Scene | 1366×768 | 1920×1080 |
+|---|---|---|
+| Agentic Engineering — 08 | [PNG](screenshots/phase-6/batch-d/scene-08-agentic-engineering-1366x768.png) | [PNG](screenshots/phase-6/batch-d/scene-08-agentic-engineering-1920x1080.png) |
+| Orchestration — 10 | [PNG](screenshots/phase-6/batch-d/scene-10-orchestration-1366x768.png) | [PNG](screenshots/phase-6/batch-d/scene-10-orchestration-1920x1080.png) |
 
 ## Batch E — Final
 
 - [ ] Vi3ecode intro
 - [ ] Vi3ecode workflow
-- [ ] final
+- [x] Final — Scene 12 QA PASS (2026-09-27)
 
 Test.
+
+**Final scene QA — PASS (2026-09-27):** QA reviewed the saved Edge headless captures at both target resolutions. Scene 12 includes the opening question with “EVET”, the reliable-software components, and the dominant “MODEL DEĞİL, SİSTEM.” closing; content and navigation are not clipped. `npm run build` passed; no test or lint script is defined. The live browser panel could not be shown, so QA inspected the saved PNGs. PRD describes the component summary below the main message, while these captures place it above the closing statement; the scene source ordering is preserved and this placement difference remains recorded.
+
+| Scene | 1366×768 | 1920×1080 |
+|---|---|---|
+| Final — 12 | [PNG](screenshots/phase-6/batch-e/final-1366x768.png) | [PNG](screenshots/phase-6/batch-e/final-1920x1080.png) |
+
+Vi3ecode intro/workflow remain open pending authentic product-screen evidence. G4 remains open and mandatory before the final presentation.
 
 Her batch sonrası:
 

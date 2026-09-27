@@ -1,6 +1,6 @@
 # Sıfırdan Agentic Yazılım Geliştirme — Sunum
 
-Bu depo, PRD ve Roadmap'te tanımlanan etkileşimli sunum projesidir. **Mevcut aşama Phase 2 — Teknik iskelet**; uygulama 30 dakikalık rotanın 12 sahnesiyle kuruluyor. 45/60 dakikalık ek içerikler Phase 12'ye bırakılmıştır.
+Bu depo, PRD ve Roadmap'te tanımlanan etkileşimli sunum projesidir. **Güncel faz, tamamlanan işler ve kalite kapıları [Roadmap](Sifirdan_Agentic_Yazilim_Gelistirme_Sunum_Roadmap.md) üzerinden izlenir.** 45/60 dakikalık ek içerikler Phase 12'ye bırakılmıştır.
 
 ## Kaynak belgeler
 
@@ -12,7 +12,7 @@ Bu depo, PRD ve Roadmap'te tanımlanan etkileşimli sunum projesidir. **Mevcut a
 
 ## Yerel kullanım
 
-### Phase 2: yerel sunum iskeleti
+### Yerel sunum uygulaması
 
 Bağımlılıkları kur ve geliştirme sunucusunu başlat:
 
@@ -35,4 +35,4 @@ Sahne metinleri `scenes/` altındaki Phase 1 belgelerinden yerel olarak okunur. 
 
 ## Kapsam
 
-Phase 2 yalnızca teknik iskelet ve 30 dakikalık rota gezinmesini kapsar. 45/60 dakikalık ek içerikler, illüstrasyonlar ve görsel polish daha sonraki fazlardadır. Çalışma kuralları için [AGENTS.md](AGENTS.md) dosyasına bak.
+Güncel kapsam ve tamamlanma durumu [Roadmap](Sifirdan_Agentic_Yazilim_Gelistirme_Sunum_Roadmap.md) içinde tutulur. 45/60 dakikalık ek içerikler Phase 12'ye bırakılmıştır. Çalışma kuralları için [AGENTS.md](AGENTS.md) dosyasına bak.

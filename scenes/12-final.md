@@ -15,12 +15,12 @@ AI uygulama geliştirmeye yardım edebilir; güvenilir sonuç modelle birlikte �
 ## Ekranda
 
 1. “AI ile uygulama yapılabilir mi?” — EVET.
-2. “Güvenilir yazılım için?” — Model + Context + Tools + Skills + Test + Review + İnsan
+2. “Güvenilir yazılım için?” — Context + Tools + Skills + Test + Review + İnsan
 3. Final: “MODEL DEĞİL, SİSTEM.”
 
 ## Konuşmacı
 
-“Baştaki soruya dönelim: AI ile uygulama yapılabilir mi? Evet. Peki güvenilir yazılım yalnızca bir modelden mi çıkar? Hayır. Model önemlidir; ama context, araçlar, tekrar kullanılabilir yöntemler, test, review ve insan kontrolü de sonucun parçasıdır. Yazılım geliştirme ortadan kalkmadı; bizim kurduğumuz iş akışı değişti. Bir isteğin ne olduğunu söylemek, doğru bilginin modele ulaşmasını sağlamak, araç kullanımına sınır çizmek ve sonucu kontrol etmek birlikte çalışır. Bazen görev için tek bir model yeterlidir; bazen doğru araçlar veya birkaç uzman rolü sürece yardım eder. Her durumda işin kabul edilip edilmeyeceğine dair insan sorumluluğu sürer. Sadece çıktının etkisi büyüdükçe kontrolün de görünür olması gerekir. Ana mesaj şu:”
+“Baştaki soruya dönelim: AI ile uygulama yapılabilir mi? Evet. Peki güvenilir yazılım yalnızca bir modelden mi çıkar? Hayır. Bu sunumun zihinsel modeli, modelin çevresinde doğru context'i, araçları, tekrar kullanılabilir yöntemleri, test ve review'u, insan kontrolünü birlikte düşünmek. Yazılım geliştirme bitmedi; bu anlatımın bugüne dair öğretici çerçevesiyle, soyutlama seviyesi yükseliyor. Bunu geleceğe ilişkin kesin bir tahmin olarak değil, burada anlattığımız iş akışının özeti olarak söylüyorum. Bir isteğin ne olduğunu söylemek, gerekli bilginin modele ulaşmasını sağlamak, araç kullanımına sınır çizmek ve sonucu kontrol etmek birlikte çalışır. Bazen görev için tek bir model yeterlidir; bazen doğru araçlar veya birkaç uzman rolü sürece yardım eder. Her durumda işin kabul edilip edilmeyeceğine dair insan sorumluluğu sürer. Çıktının etkisi büyüdükçe kontrolün de görünür olması gerekir. Ana mesaj şu:”
 
 ## Geçiş
 

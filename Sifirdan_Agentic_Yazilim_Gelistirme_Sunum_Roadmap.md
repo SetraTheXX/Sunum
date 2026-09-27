@@ -740,27 +740,27 @@ Kanıt kaydı: build/commit, ekran ve tarayıcı boyutu, zoom, sahne, bulgu/öne
 
 Her claim için:
 
-- [ ] Kaynağı var mı?
-- [ ] Güncelliğe bağımlı mı?
-- [ ] Gereksiz iddialı mı?
-- [ ] Model / ürün karışmış mı?
-- [ ] Opinion, fact gibi mi sunulmuş?
+- [x] Kaynağı var mı?
+- [x] Güncelliğe bağımlı mı?
+- [x] Gereksiz iddialı mı?
+- [x] Model / ürün karışmış mı?
+- [x] Opinion, fact gibi mi sunulmuş?
 
 Özellikle:
 
-- [ ] Claude ≠ Claude Code
-- [ ] GPT ≠ Codex
-- [ ] Context tanımı
-- [ ] MCP tanımı
-- [ ] Skill tanımı
-- [ ] Orchestration açıklaması
-- [ ] Vi3ecode özellik adı
+- [x] Claude ≠ Claude Code
+- [x] GPT ≠ Codex
+- [x] Context tanımı
+- [x] MCP tanımı
+- [x] Skill tanımı
+- [x] Orchestration açıklaması
+- [x] Vi3ecode özellik adı
 
 Güncel sayı / fiyat gerekiyorsa:
 - doğrula,
 - yoksa çıkar.
 
-## G8 için kanıt planı — inceleme yapılmadı
+## G8 için kanıt
 
 QA her iddia için şu kayıtları tutar: sahne/iddia, fact-opinion-product/model sınıfı, birincil kaynak ve erişim tarihi, güncellik bağımlılığı, doğrulama kararı ve yapılan düzeltme/çıkarma. Claude ≠ Claude Code, GPT ≠ Codex, Context, MCP, Skill, orchestration ve Vi3ecode adları özellikle kontrol edilir. Kaynak bulunamayan veya gereksiz güncel sayısal iddia kaldırılır; ürün terimleri için resmî/current kaynak kullanılır.
 
@@ -768,7 +768,9 @@ QA her iddia için şu kayıtları tutar: sahne/iddia, fact-opinion-product/mode
 
 Sunum ürün sürümlerine gereksiz şekilde bağımlı değil.
 
-**Durum (2026-09-27): AÇIK — claim register ve bağımsız içerik incelemesi henüz yok.**
+**Durum (2026-09-28): PASS — register ve izinli copy düzeltmeleri bağımsız içerik QA'sından geçti.**
+
+**Yürütme kaydı (2026-09-28):** [30 dk claim register](sources/phase-10/content-claim-register-2026-09-27.md) 23 iddiayı kaydediyor: 7 VERIFIED, 3 REPHRASED, 1 REMOVED, 11 TEACHING FRAME, 1 PENDING EVIDENCE. Kaynak tablosunda istenen dosya tarihi `2026-09-27` korunurken resmi web kaynakları gerçekten açılıp kontrol edildiği tarih `2026-09-28` olarak yazıldı. Scene 03/04/06/07/10/11/12 kopyası sınırlandırıldı; 30 dk sıra korundu. Scene 11 başlığı “Agent'tan agent takımına”, kicker “Gerçek workflow örneği — Vi3ecode”; adım listesi kavramsal Lead → gerektiğinde Analyst → Developer → Tools/Terminal/değişiklik → QA → FAIL dönüşü veya PASS/Git akışıdır. Gerçek ürün UI'sı veya çalıştırma kanıtı iddia edilmez; konuşmacı notu ürün sahipliği, topluluk/moderasyon rolü ve bu örneğin kişisel gerçek workflow olduğu bilgisini içerir. OpenAI, Anthropic, resmi MCP ve Pro Git kaynakları kullanıldı; Vi3ecode ana sayfasındaki “Live interface · simulation” yalnızca simülasyon uyarısını doğrulamak için görüldü, authentic demo kanıtı sayılmadı. Production build başarılı; `127.0.0.1:4173` preview'i paylaşılan browser panelinde açıldı; Scene 11 (`?mode=30&scene=11&step=4`), Scene 03 (`?mode=30&scene=3&step=5`) ve Scene 12 (`?mode=30&scene=12&step=3`) doğrudan URL smoke-check'leri doğru başlık/adımları gösterdi. Ekran görüntüsü üretilmedi. `package.json` yalnız `dev`, `build`, `preview` betiklerini tanımlar. Bağımsız QA G8'i PASS için uygun buldu. G4/G5 AÇIK, G6 PARTIAL / BLOCKED, G7 AÇIK olarak değişmeden kalır. Phase 8/9 kayıtları ve Phase 11 değiştirilmedi.
 
 ---
 

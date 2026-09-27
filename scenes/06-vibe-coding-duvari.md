@@ -24,7 +24,7 @@ Prototipten güvenilir yazılıma geçerken görünür çalışan ekranın cevap
 
 Bunlar her prototipte mutlaka bir sorun var demek değil. Sadece çalışan bir ekranın bize verdiği kanıt sınırlı demek. Bir feature eklerken login bozulabilir; bir form yalnızca boş olmayan alanlarda çalışabilir; eklenen paket projeye gereksiz yük getirebilir. Bu sorular örnek risklerdir, burada gerçek bir projede yaşanmış bug iddiası yok. Birisi ‘bitti’ dediğinde, hangi kontrolleri yaptığını sormak bu yüzden değerli.
 
-Vibe coding'in hızı hâlâ bizimle. Fakat değişikliklerin görünür, sınanmış ve gözden geçirilebilir olması gerekir. İşte bu noktada konu yalnızca modele daha uzun bir istek yazmak olmaktan çıkıp bir geliştirme sistemine dönüşüyor.”
+Vibe coding'in fikirleri hızlıca görünür kılma gücü değerli; her prototipi ağır bir sürece sokmak gerekmiyor. İş güvenilirlik, bakım veya daha geniş kullanım gerektirmeye başladığında değişiklikleri görünür kılacak ve riske uygun biçimde sınayacak kontroller ekleriz. Böylece vibe coding'i kötü ilan etmeden, ilk hızını daha güvenilir geliştirmeye bağlarız.”
 
 “Duvara çarpmak illa büyük bir felaketle karşılaşmak değildir. Bazen yalnızca ekranda görünmeyen bir durumdur: menü klavyeyle açılıyor mu, form boş girişte ne yapıyor, yeni görünüm küçük ekranda taşıyor mu? Bu soruları sormak, testlerin ve review'un işe yaradığı yerleri gösterir. Her cevap için test otomasyonu kurmak şart olmayabilir; bazılarını elle kontrol ederiz, bazıları için otomatik test yazarız. Ama kontrol yöntemini seçtiğimizi bilmek gerekir.
 

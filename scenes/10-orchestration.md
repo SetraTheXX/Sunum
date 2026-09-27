@@ -20,11 +20,11 @@ Orchestration, doğru işi doğru role yönlendirip sonucu kontrol noktalarında
 
 ## Konuşmacı
 
-“Lead hedefi ve kapsamı netleştirir. Bilinmeyen bir konu varsa Analyst araştırıp belirsizliği azaltır. Developer değişikliği yapar. QA ise sonucu ve kanıtı ayrı gözle inceler: geçerse tamamlanır, eksikse geri döner. Bu düzen sihirli biçimde hata önlemez; kimin neyi yaptığını ve neyin kontrol edildiğini görünür kılar. QA'nın onayı da ancak gerçek test ve review kanıtına dayanıyorsa anlamlıdır. Bu akışın değeri, geçişlerin iz bırakmasında.”
+“Bu sahnedeki Lead → gerektiğinde Analyst → Developer → QA, anlatım için seçtiğimiz örnek orchestration akışıdır; her ürün veya ekip aynı rol adlarını ve sıralamayı kullanmaz. Lead hedefi ve kapsamı netleştirir. Bilinmeyen bir konu varsa Analyst araştırıp belirsizliği azaltır. Developer değişikliği yapar. QA ise sonucu ve kanıtı ayrı gözle inceler: geçerse tamamlanır, eksikse geri döner. Bu düzen sihirli biçimde hata önlemez; kimin neyi yaptığını ve neyin kontrol edildiğini görünür kılar. QA'nın onayı da ancak gerçek test ve review kanıtına dayanıyorsa anlamlıdır. Bu akışın değeri, geçişlerin iz bırakmasında.”
 
 ## Geçiş
 
-“Peki bu rolleri ve handoff'ları kullandığımız gerçek bir çalışma ortamında görsek nasıl olur?”
+“Peki bu rolleri tek bir gerçek workflow örneğinde bir araya getirsek nasıl olur?”
 
 ## 30 dk
 

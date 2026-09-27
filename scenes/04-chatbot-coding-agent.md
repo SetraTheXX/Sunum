@@ -17,15 +17,15 @@ Bu sunumda “coding agent”, modelin araç kullanıp sonuçları yeni adıma t
 - Chatbot: Sen → Model → Cevap
 - Coding agent: Sen → Agent/Harness → Model → Araç → Sonuç → tekrar değerlendirme
 - Araç örnekleri: dosya oku/değiştir, terminal komutu çalıştır
-- Alt not: “Model ≠ onu projede çalıştıran ortam”
+- Alt not: “Model ≠ onu projede çalıştıran coding-agent ortamı”
 
 ## Konuşmacı
 
 “Chatbot'ta tipik akış şudur: Bir soru gönderirim, model bir yanıt üretir. Bu çok kullanışlıdır; kod önerebilir veya ne yapmam gerektiğini anlatabilir. Coding agent dediğimiz düzende, modelden gelen karar araçlara aktarılabilir. Agent projedeki dosyaları okuyabilir, izin verilen bir değişikliği yapabilir, terminalde komut çalıştırabilir ve sonucu tekrar context'e alabilir. Model de yeni sonucu görüp devam edip etmeyeceğine karar verir.
 
-Bu sunumda coding agent'ı böyle bir araç döngüsü etrafında tanımlıyorum. Ürünler bu terimleri ve sınırları farklı adlandırabilir; model ile çalışma ortamını ayırma fikri ise burada önemli. Ortamın dosya erişimi, terminali ve talimatları vardır; bunlar hangi işlerin yapılabildiğini ve hangi sınırların geçerli olduğunu belirler. Bu çevreyi açıklarken “harness” sözcüğünü kullanacağız. Model bir parça; agent çalışma döngüsü, context, araçlar ve kuralların birlikte çalıştığı düzendir.
+Bu sunumda coding agent'ı böyle bir araç döngüsü etrafında tanımlıyorum. Ürünler bu terimleri ve sınırları farklı adlandırabilir; model ile çalışma ortamını ayırma fikri ise burada önemli. Ortamın dosya erişimi, terminali ve talimatları vardır; bunlar hangi işlerin yapılabildiğini ve hangi sınırların geçerli olduğunu belirler. Bu çevreyi açıklarken “harness” sözcüğünü kullanacağız: burada modelin çevresindeki çalışma, araç ve agent ortamı için kullandığımız pratik bir terim; her ürün için tek ve resmî bir kategori iddiası değil. Model bir parça; agent çalışma döngüsü, context, araçlar ve kuralların birlikte çalıştığı düzendir.
 
-Örnek olarak Claude model ailesinin adı, Claude Code ise agentic coding tool'dur; GPT model ailesini, Codex de coding-agent ürününü anlatır. İsimler birleşik model adlarında yan yana da geçebildiği için bunu katı bir marka sınıflandırması gibi ezberlemeyelim. Önemli olan burada hangi parçanın model, hangisinin projede çalışan ortam olduğunu sormak. Bugün marka yarıştırmayacağız; ortak çalışma biçimine odaklanacağız.”
+Örnek olarak Claude model ailesinin adı, Claude Code ise agentic coding tool'dur; GPT bir model ailesini, Codex ise kod üzerinde çalışan agent ürün ve araçlarını anlatır. Codex adı model adlarında da geçebildiği için bunu katı bir marka sınıflandırması gibi ezberlemeyelim. Önemli olan burada hangi parçanın model, hangisinin projede çalışan ortam olduğunu sormak. Bugün marka yarıştırmayacağız; ortak çalışma biçimine odaklanacağız.”
 
 “Şemadaki okları takip edelim. Kullanıcı hedef verir; çalışma ortamı projeyi hazırlar ve modele gerekli bağlamı iletir. Model bir cevap ya da araç çağrısı üretir. Bir araç çağrısı varsa ortam onu çalıştırır ve sonucu geri iletir. Sonuç, bir sonraki kararın girdisi olur. Döngü görev tamamlanana, sınırına ulaşana veya insan müdahalesi gerekene kadar sürebilir. Bir sohbet arayüzünde de arka planda araçlar bulunabilir; belirleyici olan düğmenin adı değil, bu döngünün nasıl kurulduğudur.
 

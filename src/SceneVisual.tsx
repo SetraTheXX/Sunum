@@ -1285,47 +1285,56 @@ function FinalVisual({ steps, audienceMode }: { steps: string[]; audienceMode: b
   const [firstLine, secondLine] = finalText?.split(', ') ?? [];
 
   if (audienceMode) {
-    const systemParts = trust ? trust.slice(1).join(' — ').split(/\s*\+\s*/).filter(Boolean) : [];
     const reveal = steps.length;
-    // One ring, six parts, the model inside; the final reveal keeps only a faint trace of the ring behind the thesis.
-    const ring = [
-      { x: 600, y: 58, lx: 600, ly: 34, anchor: 'middle' },
-      { x: 740, y: 139, lx: 770, ly: 150, anchor: 'start' },
-      { x: 740, y: 301, lx: 770, ly: 312, anchor: 'start' },
-      { x: 600, y: 382, lx: 600, ly: 428, anchor: 'middle' },
-      { x: 460, y: 301, lx: 430, ly: 312, anchor: 'end' },
-      { x: 460, y: 139, lx: 430, ly: 150, anchor: 'end' },
-    ] as const;
+    const question = answer ? unquote(answer[0]) : '';
+    const rawAnswer = answer ? answer.slice(1).join(' — ') : '';
+    const shortAnswer = rawAnswer ? rawAnswer.charAt(0) + rawAnswer.slice(1).toLocaleLowerCase('tr-TR') : '';
+    // Audience brief: the model core with Context, Tools, Test, Review and İnsan; Skills stays in the PRD/presenter text.
+    const sourceParts = trust ? trust.slice(1).join(' — ').split(/\s*\+\s*/).filter(Boolean) : [];
+    const pick = (name: string) => sourceParts.find((part) => part === name) ?? name;
+    const parts = [
+      { name: pick('Context'), note: 'sunulan bilgi', x: 230, y: 70, edge: 'M538 177 L400 102' },
+      { name: pick('Tools'), note: 'işlem yapar', x: 800, y: 70, edge: 'M662 177 L800 102' },
+      { name: pick('Review'), note: 'ikinci göz', x: 230, y: 320, edge: 'M538 243 L400 352' },
+      { name: pick('Test'), note: 'kanıt üretir', x: 800, y: 320, edge: 'M662 243 L800 352' },
+      { name: pick('İnsan'), note: 'hedef · onay', x: 515, y: 330, edge: 'M600 280 V330' },
+    ];
     return (
       <div className={`final-audience final-audience--${reveal}`} data-reveal={reveal}>
-        {answer && reveal < 3 && (
-          <div className="final-audience-answer">
-            <span className="primitive-label">{unquote(answer[0])}</span>
-            <strong>{answer.slice(1).join(' — ')}</strong>
-          </div>
-        )}
-        {trust && (
-          <svg className="final-audience-system" viewBox="0 0 1200 440" role="img" aria-label={reveal >= 3 ? '' : `${unquote(trust[0])} ${systemParts.join(', ')} ile model tek bir sistemde birleşir.`} aria-hidden={reveal >= 3 ? true : undefined}>
-            <circle className="final-audience-ring" cx="600" cy="220" r="162" />
-            <text x="600" y="230" className="final-audience-model">MODEL</text>
-            {reveal < 3 && <text x="600" y="258" className="final-audience-question">{unquote(trust[0])}</text>}
-            {reveal < 3 && systemParts.slice(0, ring.length).map((part, index) => {
-              const { x, y, lx, ly, anchor } = ring[index];
-              return (
-                <g className="final-audience-part" key={part}>
-                  <circle cx={x} cy={y} r="9" />
-                  <text x={lx} y={ly} textAnchor={anchor}>{part}</text>
+        <p className="final-audience-recap" aria-hidden={reveal === 2 ? undefined : true}>
+          {question} <strong>{shortAnswer}</strong>
+        </p>
+        <div className="final-audience-stage">
+          {reveal === 1 && (
+            <div className="final-audience-answer">
+              <p>{question}</p>
+              <strong>{shortAnswer}</strong>
+            </div>
+          )}
+          {reveal >= 2 && (
+            <svg className="final-audience-system" viewBox="0 0 1200 420" role="img" aria-hidden={reveal >= 3 ? true : undefined} aria-label={reveal >= 3 ? undefined : `Tek sistem: merkezde model; ${parts.map(({ name }) => name).join(', ')} ona bağlanır.`}>
+              <rect className="final-audience-boundary" x="150" y="20" width="900" height="386" rx="24" />
+              <rect className="final-audience-legend" x="166" y="6" width="112" height="28" />
+              <text x="180" y="27" className="final-audience-kicker">SİSTEM</text>
+              {parts.map(({ name, edge }) => <path key={`${name}-edge`} className="final-audience-link" d={edge} />)}
+              <circle className="final-audience-core" cx="600" cy="210" r="70" />
+              <text x="600" y="218" className="final-audience-core-name">MODEL</text>
+              {parts.map(({ name, note, x, y }) => (
+                <g key={name} className="final-audience-part">
+                  <rect x={x} y={y} width="170" height="64" rx="12" />
+                  <text x={x + 85} y={y + 29} className="final-audience-part-name">{name}</text>
+                  <text x={x + 85} y={y + 51} className="final-audience-part-note">{note}</text>
                 </g>
-              );
-            })}
-          </svg>
-        )}
-        {finalText && (
-          <div className="final-audience-thesis" aria-label={finalText}>
-            <span>{firstLine},</span>
-            <strong>{secondLine}</strong>
-          </div>
-        )}
+              ))}
+            </svg>
+          )}
+          {reveal >= 3 && finalText && (
+            <div className="final-audience-thesis" aria-label={finalText}>
+              <p><span>{firstLine},</span><strong>{secondLine}</strong></p>
+              <small>Güvenilir sonuç, modelden çok sistemi ister.</small>
+            </div>
+          )}
+        </div>
       </div>
     );
   }

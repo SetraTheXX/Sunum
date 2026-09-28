@@ -1,9 +1,9 @@
 # Final Visual & Interaction Audit — production manifest
 
 - **Tarih:** 2026-09-28
-- **Durum:** Plan. Dört audit belgesine ait önceki bağımsız QA PASS yalnızca audit/manifest kapsamı ve belge kalitesini kapsar; V2 Plan Delta'sını, asset üretimi/entegrasyonunu veya G4/G5/G6/G7/G9 gate kapanışını onaylamaz. Sonraki açıklama düzeltmeleri ve V2 ile ilgili bu QA-scope notu bağımsız belge incelemesini bekler.
+- **Durum:** Plan. Visual Contract V2 ve ilgili Roadmap/manifest durum metinlerinin belge düzeyi QA'sı PASS aldı. Ayrı Sprint 1 uygulama QA'sı da yalnızca global shell/token katmanı için PASS aldı; bu sonuç bu manifestin tamamının yürütüldüğünü, final asset üretimi/entegrasyonunu veya G4/G5/G6/G7/G9 gate kapanışını göstermez. Manifest kapsamındaki scene-specific visual production ve yeni final asset/capture üretimi başlamadı.
 - **Kapsam:** 30 dakikalık route, Scene 01–12, 48 reveal beat. 45/60 dakika route'u ve Phase 12 kapsam dışıdır.
-- **Gözden geçirilen kod tabanı:** `main` / `origin/main` `2e4adc377f211bbf6d08e14b5fd9674581e84295`. Görsel kod son olarak `fd5cc915` içeren build'de gözlendi; sonraki HEAD farkı belge kayıtlarıdır.
+- **Manifest audit baseline'ı:** `main` / `origin/main` `2e4adc377f211bbf6d08e14b5fd9674581e84295`; o planlama incelemesinde görsel kod `fd5cc915` içeren build'de gözlendi. Bu tarihsel baseline'dır; Sprint 1 follow-up kanıtı aşağıdadır.
 - **Kaynak sırası:** PRD ve Roadmap; her `scenes/01`–`12` dosyasındaki `Amaç`, `İzleyicinin...`, `Ekranda` ve `Konuşmacı`; mevcut `src/SceneVisual.tsx`, `src/styles.css`, `src/VisualPrimitives.tsx`; Phase 9 projector JSON'u ve Phase 11A Run 1 kaydı.
 - **Analyst girdisi:** Bu çalışma dizininde ayrı bir Analyst 48-beat envanter dosyası yoktu. Pedagojik alanlar sahne kaynaklarının kendi amacı ve çıkış ölçütlerinden çıkarıldı; ayrı bir Analyst onayı gibi sunulmuyor. Önceki görsel değerlendirmeden alınan doğrulanabilir temel: React/CSS sahne bileşenleri, altı onaylı yerel v2 SVG (ikisi bağlı, dördü henüz kullanılmıyor), Scene 11'in kanıtsız placeholder'ı ve authentic capture eksikliği.
 
@@ -22,6 +22,12 @@
 - Phase 11A Run 1 kaydı production preview'de 47 ilerleme geçişini, tüm 12 sahne/reveal sırasını, sınır davranışını, geri/ileri ve sentetik klavye/URL state kontrollerini PASS kaydeder. Bu gerçek fiziksel tuş veya insan provası değildir.
 - Phase 9 CDP kaydı loopback HTML/JS/CSS, data URI SVG ve scene URL'lerini listeliyor; Roadmap'de HTTP hata, loading failure ve Runtime exception dizilerinin boş, uygulama origin'i dışındaki HTTP(S) isteğinin 0 olduğu yazılı. Roadmap ham console kaydının saklanmadığını açıkça belirttiği için console hatası için sıfır/PASS iddiası yapılmıyor. Bu gözlem offline G6 PASS anlamına gelmez: authentic Vi3ecode fallback'i eksiktir, G6 PARTIAL / BLOCKED kalır.
 - `screenshots/phase-9/` altında 19 Phase 9 QA PNG render'ı mevcuttur: Scene 01/03/04/06/07/08/10/11/12 için 1366×768 ve 1920×1080 @100% ile Scene 11 için 1366×768 @110% eşdeğeri. Bunlar sunum sahnelerinin seçili QA render'larıdır; authentic Codex/Vi3ecode ürün kanıtı değildir ve tam 12×4 görsel matrisi kapsamaz. @110% CDP eşdeğeri native browser zoom doğrulaması değildir; PNG'ler de fiziksel projektör/ sınıf okunabilirliğini kanıtlamaz. Bu audit sırasında yeni screenshot üretilmedi. Dolayısıyla QA PASS asset üretildiğini veya G4/G5/G6/G7/G9'un kapandığını göstermez.
+
+### Sprint 1 — Global shell / token implementation (2026-09-28)
+
+- `8b893650d3ed5d6e7e84395a7aac55662e82f762` global shell ve V2 tokenlarını `src/styles.css`'e, canvas theme-color değerini `index.html`'e uyguladı. Scene component/content, diagrams, local assets, authentic capture/video ve motion değiştirilmedi; final visual sprint'in asset production'ı başlamadı.
+- `npm run build` PASS; production preview `http://127.0.0.1:4173/` HTTP 200 verdi. Chromium production-render regression'ı 1920×1080 ve 1366×768'de Scene 01–12'nin tamamını son reveal durumunda taradı (**24/24 PASS**): viewport boyutu, sayfa/scene overflow, title/footer görünürlüğü ve page runtime error kontrol edildi. QA bağımsız olarak global-shell/token kapsamını ve seçili render'ları PASS olarak inceledi. Geçici test render'ları repo dışında `%TEMP%\sunum-v2-preview-check` altında kaldı; Phase 9 PNG setine veya final sunum asset'lerine eklenmedi.
+- Bu QA PASS yalnız Sprint 1 global shell/token değişikliğini ve belirtilen regression kapsamını onaylar; tüm V2 scene-family/diagram planını, gerçek Edge toolbar zoom'unu, browser panelinde görünür incelemeyi, fiziksel projektör koşulunu veya production asset/capture üretimini onaylamaz. G4/G5 OPEN, G6 PARTIAL / BLOCKED, G7 OPEN ve G9 OPEN değişmedi.
 
 ## Beat envanteri (48/48)
 

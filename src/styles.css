@@ -929,16 +929,24 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
 .engineering-audience-statement { min-height: calc(1.2 * clamp(26px, 2.5vw, 42px) + 13px); margin: 0; padding-top: 12px; border-top: var(--rule-accent); color: var(--color-text); font-family: var(--font-display); font-size: clamp(26px, 2.5vw, 42px); font-weight: 700; letter-spacing: -.02em; line-height: 1.2; text-align: center; }
 .engineering-audience-statement:empty { border-top-color: transparent; }
 
-/* S09 — one responsibility loop, with coordination as a considered choice. */
-.boundary-audience { display: grid; gap: clamp(26px, 5vh, 50px); margin-top: clamp(24px, 4vh, 42px); }
-.boundary-audience-question { max-width: 1100px; margin: 0; color: var(--color-text); font-family: var(--font-display); font-size: clamp(35px, 4.3vw, 68px); font-weight: 600; letter-spacing: -.035em; line-height: 1.08; }
-.boundary-audience-single { max-width: 1100px; }
-.boundary-audience-single > .primitive-label { color: var(--color-accent); }
-.boundary-audience-single .audience-route { gap: 0 clamp(22px, 4vw, 54px); }
-.boundary-audience-single .audience-route li { min-height: 98px; }
-.boundary-audience-single .audience-route-name { font-size: clamp(23px, 2.5vw, 39px); }
-.boundary-audience-note { width: fit-content; max-width: 760px; margin: 0 0 0 auto; padding: 12px 0 0 18px; border-top: var(--rule-accent); border-left: var(--rule-accent); color: var(--color-muted); font-size: clamp(19px, 1.7vw, 26px); line-height: 1.35; }
-.boundary-audience--1 .boundary-audience-single .audience-route li.is-current { border-top: var(--rule-accent); }
+/* S09 — one agent carries plan, change and its own check; balance follows. Deliberately sparse. */
+.boundary-audience { display: grid; gap: clamp(8px, 1.6vh, 18px); margin-top: clamp(12px, 2.2vh, 26px); }
+.boundary-audience-question { max-width: 1500px; margin: 0; color: var(--color-text); font-family: var(--font-display); font-size: clamp(28px, 2.9vw, 48px); font-weight: 650; letter-spacing: -.025em; line-height: 1.1; }
+.boundary-audience-system { display: block; width: 100%; max-height: min(42vh, 460px); margin-inline: auto; overflow: visible; }
+.boundary-audience-system text { fill: var(--color-text); font-family: var(--font-display); }
+.boundary-audience-load circle { fill: none; stroke: var(--color-accent); stroke-width: 2; }
+.boundary-audience-load circle:nth-child(1) { opacity: .35; }
+.boundary-audience-load circle:nth-child(2) { opacity: .6; }
+.boundary-audience-agent { fill: var(--color-surface); stroke: var(--color-text); stroke-width: 3; }
+.boundary-audience-system .boundary-audience-agent-name { font-size: 28px; font-weight: 750; letter-spacing: .03em; text-anchor: middle; }
+.boundary-audience-flow { fill: none; stroke: var(--color-text); stroke-width: 3; }
+.boundary-audience-self { fill: none; stroke: var(--color-oxide); stroke-width: 3; }
+.boundary-audience-system .boundary-audience-role { font-size: 27px; font-weight: 700; }
+.boundary-audience-system .boundary-audience-role.is-end { text-anchor: end; }
+.boundary-audience-system .boundary-audience-role.is-middle { fill: var(--color-oxide); text-anchor: middle; }
+.boundary-audience-system .boundary-audience-limit { fill: var(--color-muted); font-size: 20px; text-anchor: middle; }
+.boundary-audience-balance { min-height: calc(1.2 * clamp(28px, 2.7vw, 46px) + 13px); margin: 0; padding-top: 12px; border-top: var(--rule-accent); color: var(--color-text); font-family: var(--font-display); font-size: clamp(28px, 2.7vw, 46px); font-weight: 700; letter-spacing: -.02em; line-height: 1.2; text-align: center; }
+.boundary-audience-balance:empty { border-top-color: transparent; }
 
 /* S10 — role handoffs branch at QA, then converge on a Git checkpoint. */
 .orchestration-audience { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(250px, .85fr); grid-template-areas: "roles roles" "outcomes git"; gap: clamp(22px, 4vh, 40px) clamp(24px, 4vw, 58px); align-items: center; margin-top: clamp(19px, 3vh, 30px); }

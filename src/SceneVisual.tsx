@@ -888,19 +888,32 @@ function BoundaryAudienceVisual({ steps }: { steps: string[] }) {
   const questionStep = steps.find((step) => step.startsWith('Soru:'));
   const noteStep = steps.find((step) => step.startsWith('Alt not:'));
   const question = questionStep ? unquote(removeLabel(questionStep, 'Soru')) : '';
-  const note = noteStep ? unquote(removeLabel(noteStep, 'Alt not')) : '';
-  const responsibilities = question.match(/Planlayan, yapan ve doğrulayan/u)?.[0].split(/,\s*|\s+ve\s+/u) ?? [];
+  const reveal = steps.length;
+  // One agent carries all three jobs; the checking loop returns to the same agent. Kept deliberately sparse.
+  const balance = noteStep ? 'Her işe çok agent gerekmez.' : '';
 
   return (
-    <div className={`boundary-audience boundary-audience--${steps.length}`} data-reveal={steps.length}>
+    <div className={`boundary-audience boundary-audience--${reveal}`} data-reveal={reveal}>
       {question && <blockquote className="boundary-audience-question">{question}</blockquote>}
-      {responsibilities.length > 0 && (
-        <section className="boundary-audience-single" aria-label="Tek agent ile planlama, yapma ve doğrulama sorusu">
-          <span className="primitive-label">AYNI İŞ ÇEVRİMİ</span>
-          <AudienceRoute items={responsibilities} label="Planlayan, yapan ve doğrulayan" activeIndex={steps.length === 1 ? 1 : -1} />
-        </section>
-      )}
-      {note && <aside className="boundary-audience-note">{note}</aside>}
+      <svg className="boundary-audience-system" viewBox="0 0 1200 380" role="img" aria-label="Tek agent planlar, uygular ve kendi işini doğrular; üç iş aynı agent'ta toplanır. Görev büyüdükçe bağımsız kontrol sınırlı kalabilir.">
+        <g className="boundary-audience-load">
+          <circle cx="600" cy="150" r="112" />
+          <circle cx="600" cy="150" r="98" />
+          <circle cx="600" cy="150" r="84" />
+        </g>
+        <circle className="boundary-audience-agent" cx="600" cy="150" r="70" />
+        <text x="600" y="158" className="boundary-audience-agent-name">AGENT</text>
+
+        <path className="boundary-audience-flow" d="M330 150 H480 M480 150 l-13 -7 m13 7 l-13 7" />
+        <text x="310" y="158" className="boundary-audience-role is-end">planlar</text>
+        <path className="boundary-audience-flow" d="M720 150 H870 M870 150 l-13 -7 m13 7 l-13 7" />
+        <text x="890" y="158" className="boundary-audience-role">uygular</text>
+
+        <path className="boundary-audience-self" d="M672 228 C740 318 460 318 528 228 M528 228 l2 15 m-2 -15 l13 7" />
+        <text x="600" y="330" className="boundary-audience-role is-middle">kendi işini doğrular</text>
+        <text x="600" y="366" className="boundary-audience-limit">Görev büyüdükçe bağımsız kontrol sınırlı kalabilir.</text>
+      </svg>
+      <p className="boundary-audience-balance" aria-hidden={balance ? undefined : true}>{balance}</p>
     </div>
   );
 }

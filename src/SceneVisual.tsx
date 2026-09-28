@@ -393,6 +393,367 @@ function OrchestrationVisual({ steps }: { steps: string[] }) {
   );
 }
 
+function AudienceRoute({
+  items,
+  activeIndex = -1,
+  className = '',
+  label,
+}: {
+  items: string[];
+  activeIndex?: number;
+  className?: string;
+  label: string;
+}) {
+  return (
+    <ol className={`audience-route audience-route--${items.length}${className ? ` ${className}` : ''}`} aria-label={label}>
+      {items.map((item, index) => (
+        <li className={index === activeIndex ? 'is-current' : ''} key={`${item}-${index}`}>
+          <span className="audience-route-index">{String(index + 1).padStart(2, '0')}</span>
+          <span className="audience-route-name">{item}</span>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+function JourneyAudienceVisual({ steps }: { steps: string[] }) {
+  const headingStep = steps.find((step) => step.startsWith('Üç başlık:'));
+  const outputStep = steps.find((step) => step.startsWith('Alt satırlar:'));
+  const noteStep = steps.find((step) => step.startsWith('Not:'));
+  const stages = headingStep ? removeLabel(headingStep, 'Üç başlık').split(/\s*→\s*/).filter(Boolean) : [];
+  const outputs = outputStep ? removeLabel(outputStep, 'Alt satırlar').split(/\s*→\s*/).filter(Boolean) : [];
+  const note = noteStep ? removeLabel(noteStep, 'Not') : '';
+
+  return (
+    <div className={`journey-audience journey-audience--${steps.length}`} data-reveal={steps.length}>
+      {stages.length > 0 && (
+        <ol className="journey-audience-stages" aria-label="Ara, sor ve görev ver çalışma biçimleri">
+          {stages.map((stage, index) => (
+            <li className={steps.length === 1 && index === 0 ? 'is-current' : ''} key={stage}>
+              <span className="journey-audience-index">{String(index + 1).padStart(2, '0')}</span>
+              <h2>{stage}</h2>
+              {outputs[index] && <p>{outputs[index]}</p>}
+            </li>
+          ))}
+        </ol>
+      )}
+      {outputs.length > 0 && (
+        <figure className="journey-audience-artwork">
+          <img src={journeyArtwork} alt="Ara, sohbet ve görev temelli çalışma biçimlerinin görsel özeti." />
+        </figure>
+      )}
+      {note && (
+        <aside className="journey-audience-note">
+          <span className="primitive-label">BUGÜN</span>
+          <p>{note}</p>
+        </aside>
+      )}
+    </div>
+  );
+}
+
+function ContextAudienceVisual({ steps }: { steps: string[] }) {
+  const definitions = [
+    { label: 'MODEL', prefix: 'Model' },
+    { label: 'PROMPT', prefix: 'Prompt' },
+    { label: 'CONTEXT', prefix: 'Context' },
+  ].flatMap(({ label, prefix }) => {
+    const step = steps.find((candidate) => candidate.startsWith(`${prefix}:`));
+    return step ? [{ label, description: unquote(removeLabel(step, prefix)) }] : [];
+  });
+  const sourceStep = steps.find((step) => step.startsWith('Context masası:'));
+  const sources = sourceStep ? removeLabel(sourceStep, 'Context masası').split(/\s*\+\s*/).filter(Boolean) : [];
+  const limitStep = steps.find((step) => step.startsWith('Alt cümle:'));
+  const limit = limitStep ? unquote(removeLabel(limitStep, 'Alt cümle')) : '';
+
+  return (
+    <div className={`context-audience context-audience--${steps.length}`} data-reveal={steps.length}>
+      {definitions.length > 0 && (
+        <ol className="context-audience-definitions" aria-label="Model, prompt ve context ayrımı">
+          {definitions.map(({ label, description }, index) => (
+            <li className={index === definitions.length - 1 ? 'is-current' : ''} key={label}>
+              <span className="primitive-label">{label}</span>
+              <p>{description}</p>
+            </li>
+          ))}
+        </ol>
+      )}
+      {sources.length > 0 && (
+        <section className="context-audience-workbench" aria-label="Context masasına giren kaynaklar">
+          <figure><img src={contextDeskArtwork} alt="İlgili bilgilerin çalışma masasına eklenmesini gösteren kavramsal çizim." /></figure>
+          <div className="context-audience-sources">
+            <span className="primitive-label">CONTEXT MASASI</span>
+            <ul>{sources.map((source, index) => <li key={`${source}-${index}`}>{source}</li>)}</ul>
+          </div>
+        </section>
+      )}
+      {limit && (
+        <blockquote className="context-audience-limit">
+          <span className="primitive-label">ALT CÜMLE</span>
+          <p>{limit}</p>
+        </blockquote>
+      )}
+    </div>
+  );
+}
+
+function ComparisonAudienceVisual({ steps }: { steps: string[] }) {
+  const chatbotStep = steps.find((step) => step.startsWith('Chatbot:'));
+  const agentStep = steps.find((step) => step.startsWith('Coding agent:'));
+  const toolsStep = steps.find((step) => step.startsWith('Araç örnekleri:'));
+  const noteStep = steps.find((step) => step.startsWith('Alt not:'));
+  const chatbot = chatbotStep ? removeLabel(chatbotStep, 'Chatbot').split(/\s*→\s*/).filter(Boolean) : [];
+  const agent = agentStep ? removeLabel(agentStep, 'Coding agent').split(/\s*→\s*/).filter(Boolean) : [];
+  const tools = toolsStep ? removeLabel(toolsStep, 'Araç örnekleri').split(/\s*,\s*/).filter(Boolean) : [];
+  const note = noteStep ? unquote(removeLabel(noteStep, 'Alt not')) : '';
+
+  return (
+    <div className={`comparison-audience comparison-audience--${steps.length}`} data-reveal={steps.length}>
+      {chatbot.length > 0 && (
+        <section className="comparison-audience-chatbot" aria-label="Chatbot akışı">
+          <span className="primitive-label">CHATBOT</span>
+          <AudienceRoute items={chatbot} label="Kullanıcıdan modele ve cevaba" />
+        </section>
+      )}
+      {agent.length > 0 && (
+        <section className="comparison-audience-agent" aria-label="Coding agent araç döngüsü">
+          <span className="primitive-label">CODING AGENT</span>
+          <AudienceRoute items={agent} label="Agent ve araç döngüsü" />
+          {agent.length >= 6 && <span className="comparison-audience-return" aria-hidden="true">SONUÇ ↶ MODEL</span>}
+        </section>
+      )}
+      {tools.length > 0 && (
+        <aside className="comparison-audience-tools">
+          <span className="primitive-label">ARAÇ ÖRNEKLERİ</span>
+          <ul>{tools.map((tool) => <li key={tool}>{tool}</li>)}</ul>
+        </aside>
+      )}
+      {note && (
+        <blockquote className="comparison-audience-note">
+          <span className="primitive-label">AYRIM</span>
+          <p>{note}</p>
+        </blockquote>
+      )}
+    </div>
+  );
+}
+
+function VibeCodingAudienceVisual({ steps }: { steps: string[] }) {
+  const requestStep = steps.find((step) => step.startsWith('Örnek istekler:'));
+  const requests = requestStep ? removeLabel(requestStep, 'Örnek istekler').split(/\s*→\s*/).map(unquote) : [];
+  const resultsVisible = steps.some((step) => step.startsWith('Her istekten sonra'));
+  const noteStep = steps.find((step) => step.startsWith('Etiket:'));
+  const note = noteStep ? unquote(removeLabel(noteStep, 'Etiket')) : '';
+  const resultLabels = ['İlk sürüm görünür olur', 'Koyu tema görünür olur', 'Mobil düzen görünür olur'];
+  const visibleRequests = resultsVisible ? requests : requests.slice(0, 1);
+
+  return (
+    <div className={`vibe-coding-audience vibe-coding-audience--${steps.length}`} data-reveal={steps.length}>
+      {visibleRequests.length > 0 && (
+        <ol className="vibe-coding-audience-prompts" aria-label="Üç örnek istek ve görünür değişiklik">
+          {visibleRequests.map((request, index) => (
+            <li key={`${request}-${index}`}>
+              <span className="vibe-coding-audience-index">{String(index + 1).padStart(2, '0')}</span>
+              <blockquote>{request}</blockquote>
+              {resultsVisible && (
+                <p className="vibe-coding-audience-result">
+                  <span className="primitive-label">GÖRÜNÜR DEĞİŞİKLİK</span>
+                  {resultLabels[index]}
+                </p>
+              )}
+            </li>
+          ))}
+        </ol>
+      )}
+      {note && <p className="vibe-coding-audience-note">{note}</p>}
+    </div>
+  );
+}
+
+function VibeWallAudienceVisual({ steps }: { steps: string[] }) {
+  const headlineStep = steps.find((step) => step.startsWith('Büyük ifade:'));
+  const questionsStep = steps.find((step) => step.startsWith('Sorular:'));
+  const signalsStep = steps.find((step) => step.startsWith('İki ayrı işaret:'));
+  const headline = headlineStep ? unquote(removeLabel(headlineStep, 'Büyük ifade')) : '';
+  const [working, assurance] = headline.split(/\s*≠\s*/u);
+  const questions = questionsStep ? removeLabel(questionsStep, 'Sorular').split(/(?<=\?)\s*/u).filter(Boolean) : [];
+  const signals = signalsStep ? removeLabel(signalsStep, 'İki ayrı işaret').split(/\s*\/\s*/u).map(unquote) : [];
+
+  return (
+    <div className={`vibe-wall-audience vibe-wall-audience--${steps.length}`} data-reveal={steps.length}>
+      {headline && (
+        <div className="vibe-wall-audience-thesis" aria-label={headline}>
+          <strong>{working}</strong><span>≠</span><strong>{assurance}</strong>
+        </div>
+      )}
+      {questions.length > 0 && (
+        <ol className="vibe-wall-audience-questions" aria-label="Görünen sonucun yanıtlamadığı sorular">
+          {questions.map((question, index) => (
+            <li key={`${question}-${index}`}><span>{String(index + 1).padStart(2, '0')}</span><p>{question}</p></li>
+          ))}
+        </ol>
+      )}
+      {signals.length > 0 && (
+        <div className="vibe-wall-audience-signals" aria-label="Görünen sonuç ve doğrulama kanıtı">
+          <section>
+            <span className="primitive-label">GÖZLEM</span>
+            <h3>{signals[0]}</h3>
+            <p>Ekranın açılması, tek başına değişikliğin doğruluğunu göstermez.</p>
+          </section>
+          <section>
+            <span className="primitive-label">KONTROL</span>
+            <h3>{signals[1]}</h3>
+            <p>Dosya farkı, test sonucu ve review birlikte daha iyi kanıt oluşturur.</p>
+          </section>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function EngineeringAudienceVisual({ steps }: { steps: string[] }) {
+  const flowStep = steps.find((step) => step.startsWith('Akış:'));
+  const evidenceStep = steps.find((step) => step.startsWith('Üç kanıt noktası:'));
+  const statementStep = steps.find((step) => step.startsWith('Son cümle:'));
+  const flow = flowStep ? removeLabel(flowStep, 'Akış').split(/\s*→\s*/).filter(Boolean) : [];
+  const evidence = evidenceStep ? removeLabel(evidenceStep, 'Üç kanıt noktası').split(/\s*,\s*/).filter(Boolean) : [];
+  const statement = statementStep ? unquote(removeLabel(statementStep, 'Son cümle')) : '';
+  const [formula, result] = statement.split(/\s*=\s*/u);
+  const [change, proof] = (result ?? '').split(/\s*\+\s*/u);
+
+  return (
+    <div className={`engineering-audience engineering-audience--${steps.length}`} data-reveal={steps.length}>
+      {flow.length > 0 && (
+        <section aria-label="Hedeften Git'e çalışma akışı">
+          <span className="primitive-label">ÇALIŞMA AKIŞI</span>
+          <AudienceRoute items={flow} label="Hedeften Git'e sekiz adım" className="engineering-audience-route" />
+        </section>
+      )}
+      {evidence.length > 0 && (
+        <section className="engineering-audience-evidence" aria-label="Değişen dosyalar, test ve review kanıtı">
+          <span className="primitive-label">KANIT NOKTALARI</span>
+          <ol>{evidence.map((point, index) => <li key={point}><span>{String(index + 1).padStart(2, '0')}</span>{point}</li>)}</ol>
+        </section>
+      )}
+      {statement && (
+        <div className="engineering-audience-equation" aria-label={statement}>
+          <strong>{formula}</strong><span>=</span><span>{change}</span><span>+</span><strong>{proof}</strong>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function BoundaryAudienceVisual({ steps }: { steps: string[] }) {
+  const questionStep = steps.find((step) => step.startsWith('Soru:'));
+  const noteStep = steps.find((step) => step.startsWith('Alt not:'));
+  const question = questionStep ? unquote(removeLabel(questionStep, 'Soru')) : '';
+  const note = noteStep ? unquote(removeLabel(noteStep, 'Alt not')) : '';
+  const responsibilities = question.match(/Planlayan, yapan ve doğrulayan/u)?.[0].split(/,\s*|\s+ve\s+/u) ?? [];
+
+  return (
+    <div className={`boundary-audience boundary-audience--${steps.length}`} data-reveal={steps.length}>
+      {question && <blockquote className="boundary-audience-question">{question}</blockquote>}
+      {responsibilities.length > 0 && (
+        <section className="boundary-audience-single" aria-label="Tek agent ile planlama, yapma ve doğrulama sorusu">
+          <span className="primitive-label">AYNI İŞ ÇEVRİMİ</span>
+          <AudienceRoute items={responsibilities} label="Planlayan, yapan ve doğrulayan" activeIndex={steps.length === 1 ? 1 : -1} />
+        </section>
+      )}
+      {note && <aside className="boundary-audience-note">{note}</aside>}
+    </div>
+  );
+}
+
+function OrchestrationAudienceVisual({ steps }: { steps: string[] }) {
+  const flowStep = steps.find((step) => step.startsWith('Akış:'));
+  const qaStep = steps.find((step) => step.startsWith('QA sonucu:'));
+  const gitStep = steps.find((step) => step.startsWith('Git:'));
+  const roles = flowStep ? removeLabel(flowStep, 'Akış').split(/\s*→\s*/).filter(Boolean) : [];
+  const outcomes = qaStep
+    ? removeLabel(qaStep, 'QA sonucu').split(/\s*\/\s*/u).map((outcome) => {
+      const [status, ...target] = outcome.split(/\s*→\s*/u);
+      return { status, target: target.join(' → '), failed: status?.startsWith('FAIL') ?? false };
+    })
+    : [];
+  const git = gitStep ? removeLabel(gitStep, 'Git') : '';
+
+  return (
+    <div className={`orchestration-audience orchestration-audience--${steps.length}`} data-reveal={steps.length}>
+      {roles.length > 0 && (
+        <section aria-label="Lead, Analyst, Developer ve QA handoff sırası">
+          <span className="primitive-label">HANDOFF SIRASI</span>
+          <AudienceRoute items={roles} label="Handoff rolleri" className="orchestration-audience-route" />
+        </section>
+      )}
+      {outcomes.length > 0 && (
+        <section className="orchestration-audience-outcomes" aria-label="QA sonucuna göre iki yol">
+          <span className="primitive-label">QA SONUCU</span>
+          <ul>{outcomes.map(({ status, target, failed }) => (
+            <li className={failed ? 'is-fail' : 'is-pass'} key={status}>
+              <strong>{status}</strong><span aria-hidden="true">{failed ? '↶' : '→'}</span><p>{target}</p>
+            </li>
+          ))}</ul>
+        </section>
+      )}
+      {git && (
+        <aside className="orchestration-audience-git">
+          <span className="primitive-label">GIT</span><p>{git}</p>
+        </aside>
+      )}
+    </div>
+  );
+}
+
+function ConceptualWorkflowAudienceVisual({ steps }: { steps: string[] }) {
+  const questionStep = steps.find((step) => step.startsWith('Soru:'));
+  const flowStep = steps.find((step) => step.startsWith('Görev →'));
+  const toolsStep = steps.find((step) => step.startsWith('Tools /'));
+  const outcomesStep = steps.find((step) => step.startsWith('FAIL →'));
+  const question = questionStep ? unquote(removeLabel(questionStep, 'Soru')) : '';
+  const roles = flowStep ? flowStep.split(/\s*→\s*/u).filter(Boolean) : [];
+  const [toolNames = '', qaName = ''] = toolsStep ? toolsStep.split(/\s*→\s*/u) : [];
+  const tools = toolNames.split(/\s*\/\s*/u).filter(Boolean);
+  const outcomes = outcomesStep ? outcomesStep.split(/\s*\|\s*/u).map((outcome) => {
+    const [status, ...target] = outcome.split(/\s*→\s*/u);
+    return { status, target: target.join(' → '), failed: status?.startsWith('FAIL') ?? false };
+  }) : [];
+
+  return (
+    <div className={`workflow-audience workflow-audience--${steps.length}`} data-reveal={steps.length}>
+      <div className="workflow-audience-concept-label" role="note">
+        <span>KAVRAMSAL WORKFLOW</span>
+        <strong>AUTHENTIC Vİ3ECODE EVIDENCE YOK</strong>
+      </div>
+      {question && <blockquote className="workflow-audience-question">{question}</blockquote>}
+      {roles.length > 0 && (
+        <section className="workflow-audience-roles" aria-label="Görev ve rol akışı">
+          <span className="primitive-label">ROL AKIŞI · KAVRAMSAL ŞEMA</span>
+          <AudienceRoute items={roles} label="Görevden Developer'a rol akışı" />
+        </section>
+      )}
+      {tools.length > 0 && (
+        <section className="workflow-audience-tools" aria-label="Kavramsal Tools, Terminal, değişiklik ve QA aşaması">
+          <span className="primitive-label">ÇALIŞMA ADIMI · KAVRAMSAL</span>
+          <ol>{tools.map((tool, index) => <li key={tool}><span>{String(index + 1).padStart(2, '0')}</span>{tool}</li>)}</ol>
+          <span className="workflow-audience-tools-arrow" aria-hidden="true">→</span>
+          <strong>{qaName}</strong>
+        </section>
+      )}
+      {outcomes.length > 0 && (
+        <section className="workflow-audience-outcomes" aria-label="Kavramsal QA dönüşleri">
+          <span className="primitive-label">KAVRAMSAL QA DÖNÜŞÜ</span>
+          <ul>{outcomes.map(({ status, target, failed }) => (
+            <li className={failed ? 'is-fail' : 'is-pass'} key={status}>
+              <strong>{status}</strong><span aria-hidden="true">{failed ? '↶' : '→'}</span><p>{target}</p>
+            </li>
+          ))}</ul>
+        </section>
+      )}
+    </div>
+  );
+}
+
 const anatomyStageNodes = [
   { name: 'Model', x: 350, y: 240, width: 210, height: 76, optional: false },
   { name: 'Context', x: 350, y: 95, width: 210, height: 76, optional: false },
@@ -653,21 +1014,25 @@ export default function SceneVisual({ scene, visibleSteps, audienceMode }: Scene
     case 1:
       return <OpeningVisual steps={steps} audienceMode={audienceMode} />;
     case 2:
-      return <EvolutionVisual steps={steps} />;
+      return audienceMode ? <JourneyAudienceVisual steps={steps} /> : <EvolutionVisual steps={steps} />;
     case 3:
-      return <ModelContextVisual steps={steps} />;
+      return audienceMode ? <ContextAudienceVisual steps={steps} /> : <ModelContextVisual steps={steps} />;
     case 4:
-      return <ComparisonVisual steps={steps} />;
+      return audienceMode ? <ComparisonAudienceVisual steps={steps} /> : <ComparisonVisual steps={steps} />;
     case 5:
-      return <VibeCodingVisual steps={steps} />;
+      return audienceMode ? <VibeCodingAudienceVisual steps={steps} /> : <VibeCodingVisual steps={steps} />;
     case 6:
-      return <VibeWallVisual steps={steps} />;
+      return audienceMode ? <VibeWallAudienceVisual steps={steps} /> : <VibeWallVisual steps={steps} />;
     case 7:
       return <AnatomyVisual steps={steps} audienceMode={audienceMode} />;
     case 8:
-      return <EngineeringVisual steps={steps} />;
+      return audienceMode ? <EngineeringAudienceVisual steps={steps} /> : <EngineeringVisual steps={steps} />;
+    case 9:
+      return audienceMode ? <BoundaryAudienceVisual steps={steps} /> : <GenericVisual steps={steps} />;
     case 10:
-      return <OrchestrationVisual steps={steps} />;
+      return audienceMode ? <OrchestrationAudienceVisual steps={steps} /> : <OrchestrationVisual steps={steps} />;
+    case 11:
+      return audienceMode ? <ConceptualWorkflowAudienceVisual steps={steps} /> : <GenericVisual steps={steps} />;
     case 12:
       return <FinalVisual steps={steps} audienceMode={audienceMode} />;
     default:

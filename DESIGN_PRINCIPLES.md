@@ -27,3 +27,105 @@ Sunum; editoryal dergi, etkileşimli ders kitabı ve teknik demo arasında durur
 - Parlak 3D ikonlar, hologramlar, stok geliştirici fotoğrafları ve yapay zekâ beyni klişesi
 - Gerçek olmayan dashboard metrikleri ve gereksiz grafikler
 - Her öğeyi hareket ettiren dekoratif animasyonlar
+
+---
+
+## Visual Contract V2 — Engineering Field Manual / Systems Lab
+
+**Durum:** Kullanıcının yönlendirdiği görsel Plan Delta; bu belge uygulama, redesign veya asset üretimi değildir. Bu yön sonraki Final Visual & Interaction Audit sprintinin görsel hedefidir. Önceki dört audit belgesinin QA PASS'ı V2'yi, asset üretimini ya da herhangi bir gate kapanışını kapsamaz; bu ek bağımsız belge QA'sına açıktır.
+
+### Plan Delta ve öncelik
+
+PRD §11'in mevcut yönü “editoryal dergi + etkileşimli ders kitabı + teknik demo”; büyük ve karakterli başlıklar, güçlü tipografik hiyerarşi, boşluk, ince ayraçlar, tek vurgu rengi, kontrollü koyu/açık sahneler ve baskı/çizim hissi veren illüstrasyonlardır. PRD başlıkların Georgia olmasını veya serif yazı tipini şart koşmaz. Mevcut CSS ise Georgia display başlığı, sıcak kâğıt, koyu mürekkep ve amber vurgu kullanır; bunlar mevcut uygulama kararlarıdır, PRD font şartı değildir. V2 görsel yönü **Engineering Field Manual / Systems Lab** tarafına taşır: sans-serif ve sayısal bölüm hiyerarşisi, düzenli saha notları, süreç/bağlantı şemaları ve ölçüm izi. Süslü el çizimi yerine mevcut, yerel ve onaylı varlıklar ile açıkça şematik diyagramlar tercih edilir.
+
+Bu kullanıcı tarafından istenen Plan Delta yalnızca görsel dile ve audience-facing navigasyon sunumuna uygulanır. PRD içerik kaynağı olmaya devam eder: 30 dakikalık rota, 12 sahnenin sırası, 48 beat'in anlamı, iddia sınırları, Scene 11'in ürün değil gerçek workflow örneği olması ve “MODEL DEĞİL, SİSTEM.” finali değişmez. Roadmap faz sırası ve gate kriterlerinde üstündür; V2 hiçbir gate'i kapatmaz. V1 ilkeleri tarihsel baseline olarak saklanır; sonraki görsel uygulamada eski mood/illüstrasyon yönü ve mevcut CSS serif uygulamasıyla çelişen tercihlerde V2 kullanılır. No SaaS dashboard, başka ürün/marka kopyası, neon, gradient mesh, glass, her öğeye kart veya dekoratif animasyon.
+
+### V2 tokenları
+
+Bu değerler uygulanabilir hedef tokenlardır; şu anki CSS'e yazılmamışlardır. Açık ve koyu yüzey yalnızca anlatı geçişi gerekiyorsa kullanılır. Her sahnede bir ana vurgu seçilir; durum renkleri yalnızca PASS/attention/FAIL anlamı için eklenir.
+
+| Rol | Açık / field | Koyu / lab | Kullanım |
+|---|---|---|---|
+| Canvas | `#F2F1E9` | `#17262D` | Mat, düz ana yüzey; doku/gradient yok. |
+| Surface | `#FAF9F4` | `#24363C` | Yalnızca bir içeriği gruplamak gerektiğinde; tüm içeriği karta çevirmeyin. |
+| Ink / primary text | `#17262D` | `#F4F1E8` | Başlık ve gövde. |
+| Muted / secondary text | `#4D5F64` | `#C1CBC8` | İkincil açıklama; bilgi taşırsa kontrast hedefini karşılamalı. |
+| Rule / diagram grid | `#BCC8C5` | `#53666B` | Ayraç ve dekoratif olmayan şema çizgisi; tek başına anlam kodlamaz. |
+| Systems teal | `#176B64` | `#78CFC0` | Ana ilişki, akış ya da aktif nokta. |
+| Trace oxide | `#96401F` | `#F2AA80` | Kanıt/iz veya ikincil vurgu; tek başına durum göstergesi değil. |
+| Attention ochre | `#75500A` | `#F3CF78` | Soru, not, bekleme. |
+| PASS | `#286044` | `#95D5A8` | PASS metni ve aynı anlamı veren etiket/simge. |
+| FAIL | `#983D34` | `#F1A19A` | FAIL metni ve aynı anlamı veren etiket/simge. |
+
+Ölçülen metin/yüzey kontrastları: açıkta ink 13.71:1, muted 5.91:1, teal 5.58:1, oxide 6.08:1, ochre 6.37:1; koyuda ink 13.76:1, muted 9.35:1, teal 8.50:1, oxide 8.02:1, ochre 10.36:1. V2 kabul hedefi normal metinde en az 4.5:1, büyük başlıkta en az 3:1'dir; yüzeyler arası durum/bağlantılar renk yanında etiket, çizgi türü veya simgeyle de ayrılır. Rule rengi metin yerine kullanılmaz.
+
+### Tipografi
+
+| Token | Değer | Kullanım |
+|---|---|---|
+| `--v2-font-display` | `Bahnschrift, "Segoe UI", Arial, sans-serif` | Sans-first, kompakt bölüm ve sahne başlığı; dosya indirme yok. |
+| `--v2-font-body` | `"Segoe UI", Arial, sans-serif` | Açıklama ve audience-facing controls. |
+| `--v2-font-mono` | `ui-monospace, Consolas, "Liberation Mono", monospace` | Kısa sıra numarası, kısayol ve gerçek kaynakta varsa kod. |
+| `--v2-type-title` | `clamp(2.5rem, 4vw, 4.5rem)` | Sahne başlığı; Türkçe uzun başlığa göre satır kırılımı. |
+| `--v2-type-section` | `clamp(1.75rem, 2.5vw, 2.25rem)` | Diyagram bölümü/ana alt başlık. |
+| `--v2-type-body` | `clamp(1.125rem, 1.45vw, 1.375rem)` | Ana mesaj; hedef çözünürlüklerde 18–22 px aralığının altına düşürmeyin. |
+| `--v2-type-detail` | `clamp(1rem, 1.1vw, 1.125rem)` | Diyagram ikincil açıklaması; 16 px altına inmeyin. |
+| `--v2-type-label` | `0.875rem` | Eyebrow, scene index ve kısa kontrol etiketi; kritik bilgi için daha küçük metin kullanmayın. |
+
+Başlık line-height 1.05–1.15, gövde 1.45–1.6, diyagram 1.25–1.4. Metin önceliği sans ve ağırlıkla kurulur; uzun metni harf aralığıyla sıkıştırmayın. Speaker notes normal audience görünümünde açılmaz.
+
+### Spacing, ölçü ve radius
+
+| Token ailesi | Değerler |
+|---|---|
+| Spacing | `4, 8, 12, 16, 24, 32, 48, 64, 80px` |
+| Sahne güvenli kenarı | 1366×768'de en az `40px`; 1920×1080'de en az `56px`; gerçek zoom'da ayrıca doğrulanır. |
+| Okuma ölçüsü | Gövde satırı en çok `68ch`; başlık/metin blokları şemayı itmeyecek genişlikte. |
+| Rule | `1px` normal, en fazla `2px` etkin bağlantı; dekoratif kutu gölgesi yok. |
+| Radius | Ana stage ve diyagram çerçevesi `0px`; küçük kontrol `3px`; gerekirse grup yüzeyi en çok `6px`; pill ve cam yüzey yok. |
+| Focus | En az `3px` yüksek kontrastlı `:focus-visible` outline ve `3px` offset; klavye odağı renk dışında biçimle görünür. |
+
+### Diyagram dili
+
+- Saha defteri numaraları, sabit hizalama çizgisi, açık başlangıç/bitiş, yön oku ve koşullu dal kullanın. Düğümler düz, kareye yakın ve kısa etiketli olsun; her kavramı bağımsız karta çevirmeyin.
+- Ana düğüm metni en az 18 px, ikincil etiket 16 px; tam cümleleri düğümlere sıkıştırmayın. Gerekirse mevcut beat'i sırayla açın; yeni beat veya iddia eklemeyin.
+- Akış ana çizgisi 2 px'e kadar, yardımcı kural 1 px; teal birincil ilişki, oxide kanıt izi, ochre bekleme/uyarı içindir. FAIL dönüşü, PASS çıkışı gibi yollar etiket ve ok biçimiyle de anlaşılmalıdır.
+- `Scene 03` workbench/context ilişkisi, `04` karşılaştırmalı iki akış, `07` numaralı sistem anatomisi, `08` doğrulama hattı ve `10` rol/geri dönüş akışı şema ailesidir. Bunlar gerçek uygulama ekranı taklidi değildir.
+
+### Scene aileleri ve kompozisyon
+
+| Scenes | Aile / kompozisyon | Görsel sınır |
+|---|---|---|
+| 01–02 | **Briefing page:** açılış sorusu, sonra kısa rota/evrim izi. | Tek odak ve net bölüm indeksi; açılış ürün demosuna dönüşmez. |
+| 03–04 | **Concept bench:** Model/Prompt/Context masası ve Chatbot/Coding Agent akış karşılaştırması. | Kavram şeması; vendor UI veya genellenmiş ürün iddiası yok. |
+| 05–06 | **Experiment → verification:** hızlı istek/değişim sekansı, sonra sonuç/kanıt ayrımı. | Vibe coding küçümsenmez; mock ürün ekranı veya sahte test çıktısı yok. |
+| 07–08 | **System map → field procedure:** agent parçaları, ardından hedeften Git'e süreç. | Sıralı, okunabilir şema; optional bileşenler isteğe bağlı görünür. |
+| 09–10 | **Decision → team flow:** tek agent sınırı sorusu, ardından orchestration ve QA dönüşü. | Karar ve koşullu yollar etiketli; PASS/FAIL dekoratif rozet değildir. |
+| 11 | **Authentic workflow evidence:** gerçek Vi3ecode workflow capture'ı varsa onun kaynağa bağlı sunumu. | Capture yoksa yalnız “kavramsal workflow” olarak açıkça işaretli şema kalır; placeholder ürün UI'sı değildir. G4/G5/G6 açık kalır. |
+| 12 | **Closeout:** zihinsel model özeti ve baskın final cümlesi. | “MODEL DEĞİL, SİSTEM.” en güçlü hiyerarşik öğe kalır; yeni sonuç/claim yok. |
+
+Bu aileler içerik/reveal sırasını değiştirmez; tam sıra Scene 01 → 12 olarak kalır.
+
+### Audience-facing navigation
+
+- Her karede `Sahne NN/12`, kısa güncel sahne başlığı ve ince toplam ilerleme izi gösterin. İlerleme yalnız renge bağlı olmasın.
+- Alt gezinmede görünür “Önceki” ve “Sonraki” metni, klavye ipucu ve net disabled sınırı olsun. Klavye kısayolları düğmenin yerini almaz; `focus-visible` hiçbir reveal durumunda kaybolmaz.
+- Sahne indeksi yardımcı gezinme olarak açılıp kapanabilir; ana sahne alanını, başlığı veya footer'ı örtmez. Presenter-only notlar/teknik kontroller projection view'da varsayılan olarak kapalıdır.
+- Debug, dosya yolu, URL parametresi ve üretici bilgisi audience ekranına sızmaz. Scene/step URL state'i kullanıcıya görünür bir teknik UI'ya dönüşmeden reload'ı korur.
+
+### Projector ve offline kabul kuralları
+
+- Her 12 sahne ve bütün reveal'lar gerçek render'da 1366×768 ile 1920×1080; %100 ve gerçek browser toolbar %110 zoom'da test edilir. Fullscreen/native chrome ayrı kaydedilir. Emüle viewport PNG'si native zoom veya fiziksel sınıf/projektör testi yerine geçmez.
+- Başlık, kritik gövde, diyagram, footer ve kontroller kırpılmaz; page-level istemsiz scroll olmaz. Gerekli metin min boyutları yukarıdaki tokenlardır; kritik bilgi dipnota taşınmaz. Her sahne ailesi için en yoğun reveal ayrıca kontrol edilir.
+- CSS/JS, font (sistem font fallback'i dahil), SVG/PNG ve kabul edilen video yerel paketlenir. CDN, Google Fonts/runtime font, remote image, analytics/telemetry ve ağ gerektiren player yoktur. Video varsa autoplay yok; codec/oynatma başarısızlığında aynı authentic kaynaktan privacy-reviewed yerel still fallback veya açıkça “kavramsal anlatım / kanıt yok” seçilir.
+- Reveal ve scene navigation kullanıcı kontrollüdür. V2 başlangıçta motion eklemez. Sonradan önerilen her motion için Purpose, Trigger, Duration, Fallback ve reduced-motion davranışı yazılır; offline ve navigation QA geçmeden eklenmez.
+
+### Authentic capture, privacy ve kanıt sınırı
+
+- Ürün iddiasını destekleyen capture gerçek Codex/Vi3ecode arayüzünden, gerçek oturum/iş akışından alınır; kaynak, tarih, görünen ürün sürümü/tarayıcı ve ilgili scene claim'i kaydedilir. UI'ı HTML/CSS/SVG ile taklit etmek, AI ile üretmek, outcome/label değiştirmek veya promo/simulation sayfasını gerçek workflow diye göstermek yasaktır.
+- Capture öncesi izin ve kapsam doğrulanır. Token, credential, e-posta, kişi/kurum/branch/repo özel bilgisi, müşteri verisi, özel dosya yolu, bildirim ve ilgisiz sekmeler kırpılır/bulanıklaştırılır. Redakte edilmiş kopya gözle incelenir, yerel tutulur ve offline açılma/oynama denetiminden geçer; hassas orijinal public evidence paketine alınmaz.
+- Sunumun Phase 9 QA PNG'leri sunum render'ı kanıtıdır; authentic ürün kanıtı değildir. Bunlar tek başına G4/G5/G6'yı ve emüle ölçümler G7'yi kapatmaz. Scene 11'de capture/fallback yoksa içerik kavramsal olarak işaretlenir ve ilgili gate'ler açık kalır.
+
+### Öncelik ve uygulama kapısı
+
+DESIGN_PRINCIPLES V2, sonraki görsel sprint için yönlendirme sözleşmesidir; mevcut kod, sahne, asset veya screenshot'ı değiştirme talimatı değildir. Roadmap sırası içinde manifest kabulü, authentic evidence ve görsel entegrasyon, projector/browser QA ve ilgili gate'ler ayrı kanıtla tamamlanır. Bu belgede yazılı hex/token değerleri üretilmiş tasarım, QA PASS veya gate sonucu olarak raporlanamaz.

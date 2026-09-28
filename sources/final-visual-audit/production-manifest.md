@@ -1,7 +1,7 @@
 # Final Visual & Interaction Audit — production manifest
 
 - **Tarih:** 2026-09-28
-- **Durum:** Plan; önceki bağımsız QA PASS yalnızca audit/manifest belgelerinin kapsam ve belge kalitesini kapsar. Asset üretimi/entegrasyonu veya G4/G5/G6/G7/G9 gate kapanışı anlamına gelmez. Aşağıdaki kayıt düzeltmeleri yeniden QA incelemesindedir.
+- **Durum:** Plan. Dört audit belgesine ait önceki bağımsız QA PASS yalnızca audit/manifest kapsamı ve belge kalitesini kapsar; V2 Plan Delta'sını, asset üretimi/entegrasyonunu veya G4/G5/G6/G7/G9 gate kapanışını onaylamaz. Sonraki açıklama düzeltmeleri ve V2 ile ilgili bu QA-scope notu bağımsız belge incelemesini bekler.
 - **Kapsam:** 30 dakikalık route, Scene 01–12, 48 reveal beat. 45/60 dakika route'u ve Phase 12 kapsam dışıdır.
 - **Gözden geçirilen kod tabanı:** `main` / `origin/main` `2e4adc377f211bbf6d08e14b5fd9674581e84295`. Görsel kod son olarak `fd5cc915` içeren build'de gözlendi; sonraki HEAD farkı belge kayıtlarıdır.
 - **Kaynak sırası:** PRD ve Roadmap; her `scenes/01`–`12` dosyasındaki `Amaç`, `İzleyicinin...`, `Ekranda` ve `Konuşmacı`; mevcut `src/SceneVisual.tsx`, `src/styles.css`, `src/VisualPrimitives.tsx`; Phase 9 projector JSON'u ve Phase 11A Run 1 kaydı.

@@ -923,37 +923,82 @@ function OrchestrationAudienceVisual({ steps }: { steps: string[] }) {
   const qaStep = steps.find((step) => step.startsWith('QA sonucu:'));
   const gitStep = steps.find((step) => step.startsWith('Git:'));
   const roles = flowStep ? removeLabel(flowStep, 'Akış').split(/\s*→\s*/).filter(Boolean) : [];
-  const outcomes = qaStep
-    ? removeLabel(qaStep, 'QA sonucu').split(/\s*\/\s*/u).map((outcome) => {
-      const [status, ...target] = outcome.split(/\s*→\s*/u);
-      return { status, target: target.join(' → '), failed: status?.startsWith('FAIL') ?? false };
-    })
-    : [];
+  const outcomes = qaStep ? removeLabel(qaStep, 'QA sonucu').split(/\s*\/\s*/u) : [];
   const git = gitStep ? removeLabel(gitStep, 'Git') : '';
+  const reveal = steps.length;
+  // One task travels a track; Analyst is an optional siding; QA opens two conditional routes; Git is the last stop.
+  const [lead = 'Lead', analystStep = 'Analyst (gerektiğinde)', developer = 'Developer', qa = 'QA'] = roles;
+  const analyst = analystStep.replace(/\s*\(.*\)\s*/u, '');
+  const pass = outcomes.find((outcome) => outcome.startsWith('PASS')) ?? 'PASS → tamamla';
+  const fail = outcomes.find((outcome) => outcome.startsWith('FAIL')) ?? "FAIL → Developer'a geri dön";
+  const active = reveal >= 3 ? 'git' : reveal === 2 ? 'qa' : 'lead';
+  const track = (traveled: boolean) => `orchestration-audience-track${traveled ? ' is-traveled' : ''}`;
+  const station = (key: string) => `orchestration-audience-station${active === key ? ' is-active' : ''}`;
+  const caption = reveal >= 3
+    ? `Git — ${git}`
+    : reveal === 2
+      ? 'QA iki olası yolu ayırır; burada gerçek bir sonuç gösterilmiyor.'
+      : `${lead} yönlendirir · ${developer} uygular · ${qa} bağımsız kontrol eder`;
 
   return (
-    <div className={`orchestration-audience orchestration-audience--${steps.length}`} data-reveal={steps.length}>
-      {roles.length > 0 && (
-        <section aria-label="Lead, Analyst, Developer ve QA handoff sırası">
-          <span className="primitive-label">HANDOFF SIRASI</span>
-          <AudienceRoute items={roles} label="Handoff rolleri" className="orchestration-audience-route" />
-        </section>
-      )}
-      {outcomes.length > 0 && (
-        <section className="orchestration-audience-outcomes" aria-label="QA sonucuna göre iki yol">
-          <span className="primitive-label">QA SONUCU</span>
-          <ul>{outcomes.map(({ status, target, failed }) => (
-            <li className={failed ? 'is-fail' : 'is-pass'} key={status}>
-              <strong>{status}</strong><span aria-hidden="true">{failed ? '↶' : '→'}</span><p>{target}</p>
-            </li>
-          ))}</ul>
-        </section>
-      )}
-      {git && (
-        <aside className="orchestration-audience-git">
-          <span className="primitive-label">GIT</span><p>{git}</p>
-        </aside>
-      )}
+    <div className={`orchestration-audience orchestration-audience--${reveal}`} data-reveal={reveal}>
+      <svg className="orchestration-audience-map" viewBox="0 0 1200 440" role="img" aria-label={`Aynı mobil menü görevi rollerden geçer: ${lead} işi yönlendirip devreder; ${analyst} yalnız gerektiğinde araştırma veya inceleme için yan yoldan girer; ${developer} değişikliği uygular; ${qa} bağımsız kontrol eder. ${reveal >= 2 ? `Koşullu iki yol: ${pass}; ${fail}. ` : ''}${reveal >= 3 ? `${pass.split(/\s*→\s*/u)[0]} yolu Git'e bağlanır: ${git}.` : ''}`}>
+        <g className="orchestration-audience-siding">
+          <path d="M330 218 C345 150 370 110 400 110 M570 110 C600 110 615 165 615 208 M615 212 l-7 -12 m7 12 l7 -12" />
+          <rect x="400" y="80" width="170" height="60" rx="30" />
+          <text x="485" y="117" className="orchestration-audience-name">{analyst.toLocaleUpperCase('tr-TR')}</text>
+          <text x="485" y="62" className="orchestration-audience-kicker">GEREKTİĞİNDE</text>
+          <text x="485" y="168" className="orchestration-audience-note">araştırma / inceleme</text>
+        </g>
+
+        <path className={track(true)} d="M170 250 H205" />
+        <path className={track(true)} d="M365 250 H560" />
+        <text x="462" y="236" className="orchestration-audience-edge">devreder</text>
+        <path className={track(reveal >= 2)} d="M720 250 H830" />
+
+        {reveal >= 2 && (
+          <g className={`orchestration-audience-fail${reveal >= 3 ? ' is-settled' : ''}`}>
+            <path d="M870 282 V386 H700 V292 M700 290 l-7 12 m7 -12 l7 12" />
+            <text x="785" y="414">{fail}</text>
+          </g>
+        )}
+        {reveal >= 2 && (
+          <g className={`orchestration-audience-pass${reveal >= 3 ? ' is-traveled' : ''}`}>
+            <path d="M950 250 H1034 M1034 250 l-12 -8 m12 8 l-12 8" />
+            <text x="995" y="234">{pass.split(/\s*→\s*/u)[0]}</text>
+          </g>
+        )}
+        {reveal === 2 && <text x="995" y="276" className="orchestration-audience-kicker is-condition">KOŞULLU</text>}
+
+        <g className="orchestration-audience-task">
+          <rect x="30" y="228" width="140" height="44" rx="22" />
+          <text x="100" y="256">GÖREV</text>
+          <text x="100" y="298" className="orchestration-audience-note">mobil menü</text>
+        </g>
+        <g className={station('lead')}>
+          <rect x="205" y="218" width="160" height="64" rx="32" />
+          <text x="285" y="258" className="orchestration-audience-name">{lead.toLocaleUpperCase('tr-TR')}</text>
+          <text x="285" y="314" className="orchestration-audience-note">yönlendirir · devreder</text>
+        </g>
+        <g className={station('developer')}>
+          <rect x="560" y="218" width="160" height="64" rx="32" />
+          <text x="640" y="258" className="orchestration-audience-name">{developer.toLocaleUpperCase('tr-TR')}</text>
+          <text x="640" y="314" className="orchestration-audience-note">uygular</text>
+        </g>
+        <g className={station('qa')}>
+          <rect x="830" y="218" width="120" height="64" rx="32" />
+          <text x="890" y="258" className="orchestration-audience-name">{qa.toLocaleUpperCase('tr-TR')}</text>
+          <text x="890" y="200" className="orchestration-audience-note">bağımsız kontrol</text>
+        </g>
+        {reveal >= 2 && (
+          <g className={`${station('git')} is-end`}>
+            <rect x="1040" y="218" width="140" height="64" rx="32" />
+            <text x="1110" y="258" className="orchestration-audience-name">{reveal >= 3 ? 'GIT' : (pass.split(/\s*→\s*/u)[1] ?? 'tamamla').toLocaleUpperCase('tr-TR')}</text>
+            {reveal >= 3 && <text x="1110" y="314" className="orchestration-audience-note">son kayıt noktası</text>}
+          </g>
+        )}
+      </svg>
+      <p className="orchestration-audience-caption">{caption}</p>
     </div>
   );
 }

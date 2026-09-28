@@ -948,37 +948,41 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
 .boundary-audience-balance { min-height: calc(1.2 * clamp(28px, 2.7vw, 46px) + 13px); margin: 0; padding-top: 12px; border-top: var(--rule-accent); color: var(--color-text); font-family: var(--font-display); font-size: clamp(28px, 2.7vw, 46px); font-weight: 700; letter-spacing: -.02em; line-height: 1.2; text-align: center; }
 .boundary-audience-balance:empty { border-top-color: transparent; }
 
-/* S10 — role handoffs branch at QA, then converge on a Git checkpoint. */
-.orchestration-audience { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(250px, .85fr); grid-template-areas: "roles roles" "outcomes git"; gap: clamp(22px, 4vh, 40px) clamp(24px, 4vw, 58px); align-items: center; margin-top: clamp(19px, 3vh, 30px); }
-.orchestration-audience > section:first-child { grid-area: roles; }
-.orchestration-audience > section:first-child > .primitive-label { color: var(--color-accent); }
-.orchestration-audience-route { max-width: 1280px; }
-.orchestration-audience-route li { min-height: 90px; }
-.orchestration-audience-route .audience-route-name { font-size: clamp(20px, 2vw, 31px); }
-.orchestration-audience-outcomes { grid-area: outcomes; min-width: 0; }
-.orchestration-audience-outcomes > .primitive-label { color: var(--color-oxide); }
-.orchestration-audience-outcomes ul,
+/* S10 — one task rides a track; Analyst is an optional siding; QA opens two conditional routes; Git is the last stop. */
+.orchestration-audience { display: grid; gap: clamp(8px, 1.5vh, 16px); margin-top: clamp(14px, 2.4vh, 28px); }
+.orchestration-audience-map { display: block; width: 100%; max-height: min(52vh, 580px); margin-inline: auto; overflow: visible; }
+.orchestration-audience-map text { fill: var(--color-text); font-family: var(--font-display); text-anchor: middle; }
+.orchestration-audience-track { fill: none; stroke: var(--color-rule); stroke-width: 6; stroke-linecap: round; }
+.orchestration-audience-track.is-traveled { stroke: var(--color-accent); }
+.orchestration-audience-map .orchestration-audience-edge { fill: var(--color-accent); font-size: 17px; font-weight: 600; }
+.orchestration-audience-station rect { fill: var(--color-surface); stroke: var(--color-text); stroke-width: 2.5; }
+.orchestration-audience-station.is-active rect { fill: var(--color-accent); stroke: var(--color-accent); }
+.orchestration-audience-map .orchestration-audience-station.is-active .orchestration-audience-name { fill: var(--color-accent-ink); }
+.orchestration-audience-station.is-end:not(.is-active) rect { stroke: var(--color-accent); stroke-dasharray: 7 6; }
+.orchestration-audience-map .orchestration-audience-name { font-size: 21px; font-weight: 750; letter-spacing: .04em; }
+.orchestration-audience-map .orchestration-audience-note { fill: var(--color-muted); font-size: 18px; }
+.orchestration-audience-map .orchestration-audience-kicker { fill: var(--color-accent); font-family: var(--font-mono); font-size: 15px; font-weight: 700; letter-spacing: .14em; }
+.orchestration-audience-map .orchestration-audience-kicker.is-condition { fill: var(--color-muted); }
+.orchestration-audience-task rect { fill: var(--color-text); }
+.orchestration-audience-map .orchestration-audience-task > text:first-of-type { fill: var(--color-surface); font-family: var(--font-mono); font-size: 17px; font-weight: 700; letter-spacing: .12em; }
+.orchestration-audience-siding path { fill: none; stroke: var(--color-muted); stroke-width: 2.5; stroke-dasharray: 7 7; }
+.orchestration-audience-siding rect { fill: var(--color-background); stroke: var(--color-muted); stroke-width: 2; stroke-dasharray: 7 6; }
+.orchestration-audience-map .orchestration-audience-siding .orchestration-audience-name { fill: var(--color-muted); }
+.orchestration-audience-fail path { fill: none; stroke: var(--color-oxide); stroke-width: 3.5; stroke-dasharray: 9 7; }
+.orchestration-audience-map .orchestration-audience-fail text { fill: var(--color-oxide); font-size: 19px; font-weight: 700; }
+.orchestration-audience-fail.is-settled { opacity: .55; }
+.orchestration-audience-pass path { fill: none; stroke: var(--color-accent); stroke-width: 3.5; stroke-dasharray: 9 7; }
+.orchestration-audience-pass.is-traveled path { stroke-width: 6; stroke-dasharray: none; }
+.orchestration-audience-map .orchestration-audience-pass text { fill: var(--color-accent); font-family: var(--font-mono); font-size: 16px; font-weight: 700; letter-spacing: .1em; }
+.orchestration-audience-caption { min-height: calc(1.3 * clamp(18px, 1.4vw, 23px) + 12px); margin: 0; padding-top: 12px; border-top: var(--rule-accent); color: var(--color-text); font-size: clamp(18px, 1.4vw, 23px); font-weight: 600; line-height: 1.3; text-align: center; }
+/* S11 — shared QA outcome list for the conceptual workflow scene. */
 .workflow-audience-outcomes ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(14px, 2vw, 28px); margin: 10px 0 0; padding: 0; list-style: none; }
-.orchestration-audience-outcomes li,
 .workflow-audience-outcomes li { display: grid; grid-template-columns: auto 24px minmax(0, 1fr); gap: 10px; align-items: baseline; min-width: 0; padding: 10px 0 0; border-top: var(--rule); }
-.orchestration-audience-outcomes li.is-pass,
 .workflow-audience-outcomes li.is-pass { border-top-color: var(--color-accent); }
-.orchestration-audience-outcomes strong,
 .workflow-audience-outcomes strong { color: var(--color-text); font-family: var(--font-mono); font-size: 16px; }
-.orchestration-audience-outcomes li.is-fail > span,
 .workflow-audience-outcomes li.is-fail > span { color: var(--color-oxide); }
-.orchestration-audience-outcomes li.is-pass > span,
 .workflow-audience-outcomes li.is-pass > span { color: var(--color-accent); }
-.orchestration-audience-outcomes p,
 .workflow-audience-outcomes p { margin: 0; color: var(--color-muted); font-size: clamp(18px, 1.25vw, 20px); line-height: 1.3; }
-.orchestration-audience-git { grid-area: git; min-width: 0; padding: 12px 0 0 18px; border-top: var(--rule-accent); border-left: var(--rule-accent); }
-.orchestration-audience-git .primitive-label { color: var(--color-accent); }
-.orchestration-audience-git p { margin: 8px 0 0; color: var(--color-text); font-family: var(--font-display); font-size: clamp(19px, 1.65vw, 25px); font-weight: 600; line-height: 1.3; }
-.orchestration-audience--1 { grid-template-columns: minmax(0, 1fr); grid-template-areas: "roles"; }
-.orchestration-audience--1 .orchestration-audience-route li.is-current { border-top: var(--rule-accent); }
-.orchestration-audience--2 { grid-template-areas: "roles roles" "outcomes outcomes"; }
-.orchestration-audience--2 .orchestration-audience-route li:nth-child(2) { border-top-style: dashed; }
-.orchestration-audience--2 .orchestration-audience-git { display: none; }
 
 /* S11 — the full workflow remains unmistakably conceptual until authentic evidence arrives. */
 .is-audience-mode .scene-stage--11 .scene-takeaway { display: none; }
@@ -1019,11 +1023,6 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
   .audience-route--5,
   .audience-route--6 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .audience-route--8 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .orchestration-audience,
-  .orchestration-audience--1,
-  .orchestration-audience--2 { grid-template-columns: minmax(0, 1fr); grid-template-areas: "roles" "outcomes" "git"; }
-  .orchestration-audience--1 { grid-template-areas: "roles"; }
-  .orchestration-audience--2 { grid-template-areas: "roles" "outcomes"; }
   .workflow-audience { grid-template-columns: minmax(0, 1fr); grid-template-areas: "badge" "question" "roles" "tools" "outcomes"; }
   .workflow-audience--1 { grid-template-areas: "badge" "question"; }
   .workflow-audience--2 { grid-template-areas: "badge" "question" "roles"; }

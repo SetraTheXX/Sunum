@@ -591,76 +591,51 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
 }
 .audience-exit:hover { border-color: var(--color-accent); color: var(--color-text); }
 
-/* S01 — four presenter-paced compositions: question, request, process, verification. */
-.opening-audience {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr);
-  grid-template-areas: "question request" "sequence verify";
-  gap: clamp(24px, 4vh, 48px) clamp(28px, 5vw, 76px);
-  align-content: center;
-  min-height: min(70vh, 720px);
-}
-.opening-audience-question { grid-area: question; align-self: end; width: 100%; margin: 0; }
+/* S01 — one abstract construction form changes with the four authored reveals. */
+.opening-audience { display: grid; grid-template-rows: minmax(0, 1fr) auto; width: 100%; height: clamp(490px, 70vh, 630px); margin-top: clamp(6px, 1.5vh, 18px); }
+.opening-audience-main { display: grid; grid-template-columns: minmax(0, .93fr) minmax(0, 1.07fr); gap: clamp(10px, 2vw, 34px); align-items: center; min-height: 0; }
+.opening-audience-story { display: grid; align-content: center; gap: clamp(20px, 3vh, 34px); min-width: 0; height: 100%; }
+.opening-audience-question { width: 100%; margin: 0; }
 .opening-audience-question .primitive-label,
-.opening-audience-request .primitive-label,
-.opening-audience-sequence > .primitive-label,
-.opening-audience-check > .primitive-label { color: var(--color-accent); }
-.opening-audience-question p {
-  margin: 12px 0 0;
-  color: var(--color-text);
-  font-family: var(--font-display);
-  font-size: clamp(44px, 5.7vw, 96px);
-  font-weight: 600;
-  letter-spacing: -.04em;
-  line-height: 1.02;
-  text-wrap: balance;
-}
-.opening-audience-request { grid-area: request; align-self: center; padding: 7px 0 7px 20px; border-left: var(--rule-accent); }
-.opening-audience-request blockquote {
-  margin: 12px 0 0;
-  color: var(--color-text);
-  font-family: var(--font-display);
-  font-size: clamp(26px, 3vw, 48px);
-  letter-spacing: -.025em;
-  line-height: 1.15;
-}
-.opening-audience-sequence { grid-area: sequence; align-self: center; }
-.opening-audience-sequence ol { display: flex; align-items: stretch; gap: 28px; margin: 14px 0 0; padding: 0; list-style: none; }
-.opening-audience-sequence li {
-  position: relative;
-  display: grid;
-  flex: 1 1 0;
-  align-content: start;
-  gap: 8px;
-  min-width: 0;
-  min-height: 94px;
-  padding: 11px 0 0;
-  border-top: var(--rule);
-  color: var(--color-muted);
-  font-family: var(--font-display);
-  font-size: clamp(21px, 2.1vw, 34px);
-  font-weight: 600;
-  line-height: 1.15;
-}
-.opening-audience-sequence li + li::before { content: "→"; position: absolute; top: 26px; left: -23px; color: var(--color-rule); font-family: var(--font-body); font-size: 22px; }
-.opening-audience-sequence li.is-current { border-top: var(--rule-accent); color: var(--color-text); }
-.opening-audience-index { color: var(--color-muted); font-family: var(--font-mono); font-size: 14px; font-weight: 500; }
-.opening-audience-check { grid-area: verify; align-self: center; padding: 7px 0 0 20px; border-left: var(--rule-accent); }
-.opening-audience-check > div { display: grid; gap: 10px; margin-top: 10px; }
-.opening-audience-check p { margin: 0; color: var(--color-text); font-size: clamp(18px, 1.8vw, 26px); line-height: 1.25; }
-.opening-audience-separation { display: block; margin-top: 10px; color: var(--color-muted); font-size: var(--type-detail); }
-.opening-audience--1 { display: flex; min-height: min(72vh, 760px); align-items: center; justify-content: center; }
-.opening-audience--1 .opening-audience-question { max-width: min(100%, 980px); text-align: center; }
-.opening-audience--1 .opening-audience-question p { font-size: clamp(54px, 7vw, 116px); }
-.opening-audience--2 { grid-template-areas: "question request"; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr); }
-.opening-audience--2 .opening-audience-question p { font-size: clamp(42px, 5vw, 82px); }
-.opening-audience--3 { grid-template-areas: "question request" "sequence sequence"; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); }
-.opening-audience--3 .opening-audience-question p { font-size: clamp(30px, 3.5vw, 54px); }
-.opening-audience--3 .opening-audience-request blockquote { font-size: clamp(22px, 2.5vw, 38px); }
-.opening-audience--3 .opening-audience-sequence li { min-height: 128px; font-size: clamp(25px, 2.8vw, 42px); }
-.opening-audience--4 { grid-template-columns: minmax(0, 1.15fr) minmax(290px, .85fr); }
-.opening-audience--4 .opening-audience-question p { font-size: clamp(28px, 3.1vw, 46px); }
-.opening-audience--4 .opening-audience-request blockquote { font-size: clamp(22px, 2.4vw, 34px); }
+.opening-audience-request .primitive-label { color: var(--color-accent); }
+.opening-audience-question p { max-width: 12ch; margin: 11px 0 0; color: var(--color-text); font-family: var(--font-display); font-size: clamp(56px, 5.4vw, 92px); font-weight: 600; letter-spacing: -.045em; line-height: 1.02; text-wrap: balance; }
+.opening-audience-request { padding-top: 12px; border-top: var(--rule-accent); }
+.opening-audience-request p { max-width: 13ch; margin: 10px 0 0; color: var(--color-text); font-family: var(--font-display); font-size: clamp(43px, 4.3vw, 70px); font-weight: 600; letter-spacing: -.035em; line-height: 1.05; }
+.opening-audience-form { display: block; width: 100%; height: 100%; min-height: 0; overflow: visible; }
+.opening-form-guides path { stroke: var(--color-rule); stroke-width: 1.5; }
+.opening-form-faces path { stroke: none; }
+.opening-form-top { fill: var(--color-surface); }
+.opening-form-left { fill: var(--color-background); }
+.opening-form-front { fill: var(--color-surface); }
+.opening-form-outline path { stroke: var(--color-text); stroke-linecap: square; stroke-linejoin: miter; }
+.opening-form-outline path:first-child { stroke-width: 3.5; }
+.opening-form-outline path:nth-child(2) { stroke-width: 2.5; }
+.opening-form-outline path:last-child { stroke: var(--color-rule); stroke-width: 1.5; }
+.opening-form-input path { fill: none; stroke: var(--color-accent); stroke-width: 4; }
+.opening-form-input circle { fill: var(--color-accent); }
+.opening-form-built-face { fill: var(--color-accent); fill-opacity: .12; }
+.opening-form-built-ribs { fill: none; stroke: var(--color-accent); stroke-opacity: .75; stroke-width: 7; }
+.opening-form-built-base { fill: none; stroke: var(--color-accent); stroke-width: 4; }
+.opening-form-result { fill: var(--color-accent); }
+.opening-form-questions path,
+.opening-form-questions circle { stroke-width: 2.5; }
+.opening-form-question-first { stroke: var(--color-accent); }
+.opening-form-question-second { stroke: var(--color-oxide); stroke-dasharray: 6 6; }
+.opening-audience-axis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 44px); padding: 13px 0 0; border-top: var(--rule); }
+.opening-audience-axis span { display: grid; gap: 6px; min-width: 0; color: var(--color-muted); font-family: var(--font-display); font-size: clamp(20px, 2vw, 31px); font-weight: 600; line-height: 1.1; }
+.opening-audience-axis span.is-result { color: var(--color-accent); }
+.opening-audience-axis small { color: var(--color-muted); font-family: var(--font-mono); font-size: 14px; font-weight: 400; }
+.opening-audience--2 .opening-audience-question p { max-width: 23ch; font-size: clamp(24px, 2.35vw, 37px); line-height: 1.13; }
+.opening-audience--3 .opening-audience-question p,
+.opening-audience--4 .opening-audience-question p { max-width: 26ch; font-size: clamp(23px, 2.15vw, 35px); line-height: 1.15; }
+.opening-audience--3 .opening-audience-request p { font-size: clamp(33px, 3.25vw, 51px); }
+.opening-audience--4 .opening-audience-request { padding-top: 9px; }
+.opening-audience--4 .opening-audience-request p { margin-top: 6px; font-size: clamp(26px, 2.65vw, 42px); }
+.opening-audience-check { display: grid; gap: 8px; padding-top: 10px; border-top: var(--rule); }
+.opening-audience-check-item { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 12px; align-items: baseline; }
+.opening-audience-check-item > span { color: var(--color-accent); font-family: var(--font-mono); font-size: 14px; }
+.opening-audience-check-item:last-child > span { color: var(--color-oxide); }
+.opening-audience-check-item p { margin: 0; color: var(--color-text); font-family: var(--font-display); font-size: clamp(22px, 2.15vw, 34px); font-weight: 600; line-height: 1.18; }
 
 /* S07 — one field map grows with its beat; only the current component carries copy. */
 .anatomy-audience { display: flex; flex-direction: column; gap: clamp(15px, 2.5vh, 26px); }
@@ -727,15 +702,12 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
 @media (max-width: 820px) {
   .is-audience-mode .stage { padding-inline: 24px; }
   .is-audience-mode .scene-stage { padding-block: 48px; }
-  .opening-audience,
-  .opening-audience--2,
-  .opening-audience--3,
-  .opening-audience--4 { grid-template-columns: minmax(0, 1fr); grid-template-areas: "question" "request" "sequence" "verify"; }
-  .opening-audience--1 { display: flex; }
-  .opening-audience-question { max-width: 18ch; }
-  .opening-audience-sequence ol { gap: 18px; }
-  .opening-audience-sequence li { font-size: 18px; }
-  .opening-audience-check { min-height: 0; }
+  .opening-audience { height: auto; min-height: 0; }
+  .opening-audience-main { grid-template-columns: minmax(0, 1fr); }
+  .opening-audience-story { height: auto; }
+  .opening-audience-question p { max-width: 20ch; font-size: clamp(42px, 8vw, 68px); }
+  .opening-audience-form { max-height: 40vh; }
+  .opening-audience-axis { margin-top: 12px; }
   .anatomy-audience-layout { grid-template-columns: minmax(0, 1fr); }
   .anatomy-audience-map { max-height: 42vh; }
   .anatomy-audience-focus { padding-left: 16px; }

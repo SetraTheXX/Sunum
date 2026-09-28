@@ -49,45 +49,86 @@ function OpeningVisual({ steps, audienceMode }: { steps: string[]; audienceMode:
     const requestText = request ? quotedText(removeLabel(request, 'Ardından tek istek')) : '';
     const sequenceParts = sequence ? removeLabel(sequence, 'Basit sıra').split(/\s*→\s*/).filter(Boolean) : [];
     const cautionText = caution ? removeLabel(caution, 'Alt mesaj') : '';
-    const [executionQuestion, reliabilityQuestion] = cautionText.split(' ile ');
-    const separation = reliabilityQuestion?.match(/(.+?)\s+(ayrı sorulardır\.?$)/u);
+    const cautionQuestions = [...cautionText.matchAll(/[“"](.+?)[”"]/gu)].map((match) => match[1]);
 
     return (
       <div className={`opening-audience opening-audience--${steps.length}`} data-reveal={steps.length}>
-        {questionText && (
-          <blockquote className="opening-audience-question">
-            <span className="primitive-label">AÇILIŞ SORUSU</span>
-            <p>{questionText}</p>
-          </blockquote>
-        )}
-        {requestText && (
-          <div className="opening-audience-request">
-            <span className="primitive-label">İSTEK ÖRNEĞİ</span>
-            <blockquote>{requestText}</blockquote>
+        <div className="opening-audience-main">
+          <div className="opening-audience-story">
+            {questionText && (
+              <blockquote className="opening-audience-question">
+                <span className="primitive-label">AÇILIŞ SORUSU</span>
+                <p>{questionText}</p>
+              </blockquote>
+            )}
+            {requestText && (
+              <div className="opening-audience-request">
+                <span className="primitive-label">İSTEK</span>
+                <p>{requestText}</p>
+              </div>
+            )}
+            {cautionQuestions.length === 2 && (
+              <div className="opening-audience-check" aria-label="Çalışma sonucu ve güvenilirliği için iki ayrı soru">
+                {cautionQuestions.map((text, index) => (
+                  <div className="opening-audience-check-item" key={text}>
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                    <p>{text.charAt(0).toLocaleUpperCase('tr-TR') + text.slice(1)}</p>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
-        )}
-        {sequenceParts.length > 0 && (
-          <section className="opening-audience-sequence" aria-label="İstekten çalışan sonuca örnek sıra">
-            <span className="primitive-label">ÇALIŞMA SIRASI</span>
-            <ol>
-              {sequenceParts.map((part, index) => (
-                <li key={`${part}-${index}`} className={index === sequenceParts.length - 1 ? 'is-current' : ''}>
-                  <span className="opening-audience-index">{String(index + 1).padStart(2, '0')}</span>
-                  <span>{part}</span>
-                </li>
-              ))}
-            </ol>
-          </section>
-        )}
-        {cautionText && (
-          <aside className="opening-audience-check" aria-label={cautionText}>
-            <span className="primitive-label">AYRI SORULAR</span>
-            <div>
-              <p>{executionQuestion}</p>
-              <p>{separation?.[1] ? `${separation[1].charAt(0).toUpperCase()}${separation[1].slice(1)}` : reliabilityQuestion}</p>
-            </div>
-            <span className="opening-audience-separation">{separation?.[2] ?? ''}</span>
-          </aside>
+          <svg className="opening-audience-form" viewBox="0 0 600 520" role="img" aria-labelledby="opening-form-title opening-form-description">
+            <title id="opening-form-title">Kavramsal yapım iskeleti</title>
+            <desc id="opening-form-description">Bir isteğin çalışan bir başlangıca dönüşmesini anlatan soyut yapı. Gerçek ürün ekranı veya doğrulama kanıtı değildir.</desc>
+            <g className="opening-form-guides" fill="none" aria-hidden="true">
+              <path d="M42 462H574M72 82V454M536 79V454" />
+              <path d="M52 92h40M52 112h24M522 92h40M542 112h20M52 440h20M544 440h20" />
+            </g>
+            <g className="opening-form-faces" aria-hidden="true">
+              <path className="opening-form-top" d="M74 158 338 82 532 184 268 262Z" />
+              <path className="opening-form-left" d="M74 158 268 262v190L74 344Z" />
+              <path className="opening-form-front" d="m268 262 264-78v198l-264 70Z" />
+            </g>
+            {steps.length >= 2 && (
+              <g className="opening-form-input" aria-hidden="true">
+                <path d="M26 271h74l57-49" />
+                <circle cx="26" cy="271" r="9" />
+                <path d="M155 220 268 262v190" />
+              </g>
+            )}
+            {steps.length >= 3 && (
+              <g className="opening-form-built" aria-hidden="true">
+                <path className="opening-form-built-face" d="m268 262 264-78v198l-264 70Z" />
+                <path className="opening-form-built-ribs" d="M322 246v192m54-208v194m53-210v196m53-212v198" />
+                <path className="opening-form-built-base" d="m268 452 264-70" />
+                <circle className="opening-form-result" cx="532" cy="382" r="13" />
+              </g>
+            )}
+            <g className="opening-form-outline" fill="none" aria-hidden="true">
+              <path d="M74 158 338 82l194 102v198l-264 70L74 344Z" />
+              <path d="m74 158 194 104 264-78M268 262v190" />
+              <path d="M130 174v198m65-217v256M338 82v204" />
+            </g>
+            {steps.length >= 4 && (
+              <g className="opening-form-questions" fill="none" aria-hidden="true">
+                <path className="opening-form-question-first" d="M535 382h20l24-53" />
+                <path className="opening-form-question-second" d="M535 382h20l24 70" />
+                <circle className="opening-form-question-first" cx="580" cy="328" r="9" />
+                <circle className="opening-form-question-second" cx="580" cy="452" r="9" />
+              </g>
+            )}
+          </svg>
+        </div>
+        {sequenceParts.length === 3 && (
+          <div className="opening-audience-axis" aria-label={sequenceParts.join(' → ')}>
+            {sequenceParts.map((part, index) => (
+              <span className={index === 2 ? 'is-result' : ''} key={part}>
+                <small>{String(index + 1).padStart(2, '0')}</small>
+                {index === 1 ? 'değişiklik' : part}
+              </span>
+            ))}
+          </div>
         )}
       </div>
     );

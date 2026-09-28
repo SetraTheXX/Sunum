@@ -572,42 +572,70 @@ function ContextAudienceVisual({ steps }: { steps: string[] }) {
 }
 
 function ComparisonAudienceVisual({ steps }: { steps: string[] }) {
-  const chatbotStep = steps.find((step) => step.startsWith('Chatbot:'));
-  const agentStep = steps.find((step) => step.startsWith('Coding agent:'));
   const toolsStep = steps.find((step) => step.startsWith('Araç örnekleri:'));
   const noteStep = steps.find((step) => step.startsWith('Alt not:'));
-  const chatbot = chatbotStep ? removeLabel(chatbotStep, 'Chatbot').split(/\s*→\s*/).filter(Boolean) : [];
-  const agent = agentStep ? removeLabel(agentStep, 'Coding agent').split(/\s*→\s*/).filter(Boolean) : [];
   const tools = toolsStep ? removeLabel(toolsStep, 'Araç örnekleri').split(/\s*,\s*/).filter(Boolean) : [];
   const note = noteStep ? unquote(removeLabel(noteStep, 'Alt not')) : '';
+  const reveal = steps.length;
+  // Solid ink paths are carried by the person; accent paths are carried by permitted tools.
 
   return (
-    <div className={`comparison-audience comparison-audience--${steps.length}`} data-reveal={steps.length}>
-      {chatbot.length > 0 && (
-        <section className="comparison-audience-chatbot" aria-label="Chatbot akışı">
-          <span className="primitive-label">CHATBOT</span>
-          <AudienceRoute items={chatbot} label="Kullanıcıdan modele ve cevaba" />
-        </section>
-      )}
-      {agent.length > 0 && (
-        <section className="comparison-audience-agent" aria-label="Coding agent araç döngüsü">
-          <span className="primitive-label">CODING AGENT</span>
-          <AudienceRoute items={agent} label="Agent ve araç döngüsü" />
-          {agent.length >= 6 && <span className="comparison-audience-return" aria-hidden="true">SONUÇ ↶ MODEL</span>}
-        </section>
-      )}
-      {tools.length > 0 && (
-        <aside className="comparison-audience-tools">
-          <span className="primitive-label">ARAÇ ÖRNEKLERİ</span>
-          <ul>{tools.map((tool) => <li key={tool}>{tool}</li>)}</ul>
-        </aside>
-      )}
-      {note && (
-        <blockquote className="comparison-audience-note">
-          <span className="primitive-label">AYRIM</span>
-          <p>{note}</p>
-        </blockquote>
-      )}
+    <div className={`comparison-audience comparison-audience--${reveal}`} data-reveal={reveal}>
+      <svg className="comparison-audience-system" viewBox="0 0 1200 470" role="img" aria-label={`Aynı istek iki çalışma biçiminde. Chatbot: istek modele gider, cevap sana döner; kopyalayıp projeye uygulayan sensin. ${reveal >= 2 ? 'Coding agent: istek agent ortamına gider; model araç çağırır, izinli araç projede değişiklik yapar, sonuç modele dönüp tekrar değerlendirilir. Hedef, izin ve son kontrol sende kalır. ' : ''}${tools.length ? `İzinli araç örnekleri: ${tools.join(', ')}. ` : ''}${reveal >= 4 ? 'Model aynı; onu projede çalıştıran ortam farklı.' : ''}`}>
+        <g className="comparison-audience-lane">
+          <text x="40" y="30" className="comparison-audience-kicker">CHATBOT</text>
+          <rect className="comparison-audience-person" x="40" y="52" width="120" height="64" rx="10" />
+          <text x="100" y="92" className="comparison-audience-node">SEN</text>
+          <path className="comparison-audience-flow" d="M160 72 H376 M376 72 l-13 -7 m13 7 l-13 7" />
+          <text x="268" y="60" className="comparison-audience-label">istek</text>
+          <circle className="comparison-audience-model" cx="430" cy="84" r="48" />
+          <text x="430" y="92" className="comparison-audience-node">MODEL</text>
+          <path className="comparison-audience-flow" d="M384 98 H166 M166 98 l13 -7 m-13 7 l13 7" />
+          <text x="275" y="124" className="comparison-audience-label">cevap sana döner</text>
+          <path className="comparison-audience-hand" d="M100 116 V168 H1024 M1024 168 l-15 -9 m15 9 l-15 9" />
+          <text x="720" y="154" className="comparison-audience-label comparison-audience-owner">sen kopyalar, uygularsın</text>
+          <rect className="comparison-audience-project" x="1030" y="134" width="130" height="68" rx="10" />
+          <text x="1095" y="175" className="comparison-audience-node">PROJE</text>
+        </g>
+        {reveal >= 2 && (
+          <g className="comparison-audience-lane">
+            <path className="comparison-audience-divider" d="M40 226 H1160" />
+            <text x="40" y="262" className="comparison-audience-kicker">CODING AGENT</text>
+            <rect className="comparison-audience-person" x="40" y="300" width="120" height="64" rx="10" />
+            <text x="100" y="340" className="comparison-audience-node">SEN</text>
+            <text x="100" y="392" className="comparison-audience-small">hedef, izin ve</text>
+            <text x="100" y="416" className="comparison-audience-small">son kontrol sende</text>
+            <rect className={`comparison-audience-harness${reveal >= 4 ? ' is-emphasized' : ''}`} x="296" y="276" width="484" height="166" rx="14" />
+            <text x="316" y="302" className="comparison-audience-kicker comparison-audience-harness-name">AGENT / HARNESS</text>
+            <path className="comparison-audience-flow" d="M160 332 H384 M384 332 l-13 -7 m13 7 l-13 7" />
+            <text x="228" y="320" className="comparison-audience-label">istek</text>
+            <circle className="comparison-audience-model" cx="430" cy="352" r="48" />
+            <text x="430" y="360" className="comparison-audience-node">MODEL</text>
+            <path className="comparison-audience-flow" d="M477 338 H596 M596 338 l-13 -7 m13 7 l-13 7" />
+            <rect className="comparison-audience-tool" x="600" y="320" width="130" height="64" rx="10" />
+            <text x="665" y="359" className="comparison-audience-node">ARAÇ</text>
+            <path className="comparison-audience-flow is-return" d="M600 368 H478" />
+            <path className="comparison-audience-flow" d="M478 368 l13 -7 m-13 7 l13 7" />
+            <text x="540" y="424" className="comparison-audience-label">sonuç → tekrar değerlendirme</text>
+            <path className="comparison-audience-agent-path" d="M730 336 H1024 M1024 336 l-15 -9 m15 9 l-15 9" />
+            <text x="935" y="322" className="comparison-audience-label comparison-audience-agent-owner">izinli değişiklik</text>
+            <path className="comparison-audience-agent-path is-return" d="M1030 368 H736" />
+            <path className="comparison-audience-agent-path is-head" d="M736 368 l13 -7 m-13 7 l13 7" />
+            <rect className="comparison-audience-project" x="1030" y="318" width="130" height="68" rx="10" />
+            <text x="1095" y="359" className="comparison-audience-node">PROJE</text>
+          </g>
+        )}
+        {tools.length > 0 && (
+          <g className="comparison-audience-permission">
+            <path d="M842 300 V396" />
+            <text x="842" y="290" className="comparison-audience-kicker">İZİN</text>
+            {tools.slice(0, 2).map((tool, index) => (
+              <text key={tool} x="935" y={420 + index * 26} className="comparison-audience-small">{tool}</text>
+            ))}
+          </g>
+        )}
+      </svg>
+      <p className="comparison-audience-note" aria-hidden={note ? undefined : true}>{note}</p>
     </div>
   );
 }

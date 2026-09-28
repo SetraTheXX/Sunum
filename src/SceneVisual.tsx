@@ -1286,26 +1286,39 @@ function FinalVisual({ steps, audienceMode }: { steps: string[]; audienceMode: b
 
   if (audienceMode) {
     const systemParts = trust ? trust.slice(1).join(' — ').split(/\s*\+\s*/).filter(Boolean) : [];
+    const reveal = steps.length;
+    // One ring, six parts, the model inside; the final reveal keeps only a faint trace of the ring behind the thesis.
+    const ring = [
+      { x: 600, y: 58, lx: 600, ly: 34, anchor: 'middle' },
+      { x: 740, y: 139, lx: 770, ly: 150, anchor: 'start' },
+      { x: 740, y: 301, lx: 770, ly: 312, anchor: 'start' },
+      { x: 600, y: 382, lx: 600, ly: 428, anchor: 'middle' },
+      { x: 460, y: 301, lx: 430, ly: 312, anchor: 'end' },
+      { x: 460, y: 139, lx: 430, ly: 150, anchor: 'end' },
+    ] as const;
     return (
-      <div className={`final-audience final-audience--${steps.length}`} data-reveal={steps.length}>
-        {answer && (
+      <div className={`final-audience final-audience--${reveal}`} data-reveal={reveal}>
+        {answer && reveal < 3 && (
           <div className="final-audience-answer">
             <span className="primitive-label">{unquote(answer[0])}</span>
             <strong>{answer.slice(1).join(' — ')}</strong>
           </div>
         )}
         {trust && (
-          <section className="final-audience-system" aria-label={trust.join(' ')}>
-            <span className="primitive-label">{unquote(trust[0])}</span>
-            <ol>
-              {systemParts.map((part, index) => (
-                <li key={`${part}-${index}`}>
-                  {index > 0 && <span className="final-audience-plus" aria-hidden="true">+</span>}
-                  <span>{part}</span>
-                </li>
-              ))}
-            </ol>
-          </section>
+          <svg className="final-audience-system" viewBox="0 0 1200 440" role="img" aria-label={reveal >= 3 ? '' : `${unquote(trust[0])} ${systemParts.join(', ')} ile model tek bir sistemde birleşir.`} aria-hidden={reveal >= 3 ? true : undefined}>
+            <circle className="final-audience-ring" cx="600" cy="220" r="162" />
+            <text x="600" y="230" className="final-audience-model">MODEL</text>
+            {reveal < 3 && <text x="600" y="258" className="final-audience-question">{unquote(trust[0])}</text>}
+            {reveal < 3 && systemParts.slice(0, ring.length).map((part, index) => {
+              const { x, y, lx, ly, anchor } = ring[index];
+              return (
+                <g className="final-audience-part" key={part}>
+                  <circle cx={x} cy={y} r="9" />
+                  <text x={lx} y={ly} textAnchor={anchor}>{part}</text>
+                </g>
+              );
+            })}
+          </svg>
         )}
         {finalText && (
           <div className="final-audience-thesis" aria-label={finalText}>

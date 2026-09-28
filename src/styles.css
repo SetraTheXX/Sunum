@@ -860,43 +860,38 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
 .vibe-app-muted { fill: var(--app-muted); }
 .vibe-app-tile { fill: var(--app-tile); }
 .vibe-app-button { fill: var(--app-button); }
-.vibe-coding-audience-system .vibe-app-ink { fill: var(--app-ink); }
-.vibe-coding-audience-system .vibe-app-button-text { fill: var(--app-button-ink); font-size: 18px; font-weight: 700; text-anchor: middle; }
-.vibe-coding-audience-system .vibe-app-tag { fill: var(--app-ink); font-family: var(--font-mono); font-size: 14px; font-weight: 700; letter-spacing: .1em; text-anchor: middle; opacity: .75; }
-.vibe-coding-audience-system .vibe-app-tag-end { text-anchor: end; }
+.vibe-coding-audience-system .vibe-app-ink, .vibe-wall-audience-system .vibe-app-ink { fill: var(--app-ink); }
+.vibe-coding-audience-system .vibe-app-button-text, .vibe-wall-audience-system .vibe-app-button-text { fill: var(--app-button-ink); font-size: 18px; font-weight: 700; text-anchor: middle; }
+.vibe-coding-audience-system .vibe-app-tag, .vibe-wall-audience-system .vibe-app-tag { fill: var(--app-ink); font-family: var(--font-mono); font-size: 14px; font-weight: 700; letter-spacing: .1em; text-anchor: middle; opacity: .75; }
+.vibe-coding-audience-system .vibe-app-tag-end, .vibe-wall-audience-system .vibe-app-tag-end { text-anchor: end; }
 .vibe-app-brand { font-size: 22px; font-weight: 750; }
 .vibe-app-title { font-size: 42px; font-weight: 750; letter-spacing: -.02em; }
 .vibe-app-title-small { font-size: 26px; font-weight: 750; }
 .vibe-app-tile-label { font-size: 17px; font-weight: 600; }
-.vibe-coding-audience-system .vibe-app-button-small { font-size: 16px; }
+.vibe-coding-audience-system .vibe-app-button-small, .vibe-wall-audience-system .vibe-app-button-small { font-size: 16px; }
 .vibe-app-menu { fill: none; stroke: var(--app-ink); stroke-width: 3; stroke-linecap: round; }
 .vibe-app-ghost { fill: none; stroke: var(--color-rule); stroke-width: 2; stroke-dasharray: 7 8; }
-.vibe-coding-audience-system .vibe-app-ghost-label { fill: var(--color-muted); font-size: 17px; }
+.vibe-coding-audience-system .vibe-app-ghost-label, .vibe-wall-audience-system .vibe-app-ghost-label { fill: var(--color-muted); font-size: 17px; }
 .vibe-coding-audience-note { min-height: calc(1.4em + 11px); margin: 0; padding-top: 10px; border-top: var(--rule); color: var(--color-muted); font-family: var(--font-mono); font-size: 15px; line-height: 1.4; text-align: center; }
 .vibe-coding-audience-note:empty { border-top-color: transparent; }
 
-/* S06 — a visible result is separated from the questions and the evidence. */
-.vibe-wall-audience { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(20px, 3.5vh, 36px); margin-top: clamp(20px, 3.5vh, 34px); }
-.vibe-wall-audience-thesis { display: flex; flex-wrap: wrap; align-items: baseline; gap: clamp(12px, 2vw, 28px); color: var(--color-text); font-family: var(--font-display); font-size: clamp(58px, 7.1vw, 112px); font-weight: 600; letter-spacing: -.05em; line-height: .98; }
-.vibe-wall-audience-thesis span { color: var(--color-oxide); }
-.vibe-wall-audience-questions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(24px, 4vw, 56px); margin: 0; padding: 0; list-style: none; }
-.vibe-wall-audience-questions li { display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 11px; align-items: start; min-width: 0; padding: 9px 0; border-top: var(--rule); }
-.vibe-wall-audience-questions li span { padding-top: 2px; color: var(--color-accent); font-family: var(--font-mono); font-size: 13px; }
-.vibe-wall-audience-questions p { margin: 0; color: var(--color-text); font-size: clamp(18px, 1.35vw, 21px); line-height: 1.3; }
-.vibe-wall-audience-signals { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(24px, 4vw, 60px); }
-.vibe-wall-audience-signals section { min-width: 0; padding: 12px 0 0; border-top: var(--rule); }
-.vibe-wall-audience-signals section:last-child { border-top: var(--rule-accent); }
-.vibe-wall-audience-signals .primitive-label { color: var(--color-accent); }
-.vibe-wall-audience-signals h3 { margin: 10px 0 0; color: var(--color-text); font-family: var(--font-display); font-size: clamp(25px, 2.5vw, 38px); line-height: 1.1; }
-.vibe-wall-audience-signals p { max-width: 44ch; margin: 8px 0 0; color: var(--color-muted); font-size: clamp(18px, 1.25vw, 20px); line-height: 1.35; }
-.vibe-wall-audience--1 { align-content: center; min-height: min(46vh, 420px); }
-.vibe-wall-audience--1 .vibe-wall-audience-thesis { justify-content: center; text-align: center; }
-.vibe-wall-audience--2 .vibe-wall-audience-questions { grid-template-columns: minmax(0, 1fr); max-width: 980px; margin-inline: auto; }
-.vibe-wall-audience--3 { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
-.vibe-wall-audience--3 .vibe-wall-audience-thesis { grid-column: 1 / -1; font-size: clamp(48px, 5.4vw, 82px); }
-.vibe-wall-audience--3 .vibe-wall-audience-questions { grid-template-columns: minmax(0, 1fr); }
-.vibe-wall-audience--3 .vibe-wall-audience-signals { grid-template-columns: minmax(0, 1fr); gap: 13px; }
-.vibe-wall-audience--3 .vibe-wall-audience-signals p { max-width: 54ch; }
+/* S06 — the representative working result stays; open questions and the missing evidence layer surround it. */
+.vibe-wall-audience { display: grid; gap: clamp(8px, 1.5vh, 16px); margin-top: clamp(12px, 2vh, 22px); }
+.vibe-wall-audience-system { display: block; width: 100%; max-height: min(52vh, 580px); margin-inline: auto; overflow: visible; }
+.vibe-wall-audience-system text { fill: var(--color-text); font-family: var(--font-display); }
+.vibe-wall-audience-kicker { fill: var(--color-oxide) !important; font-family: var(--font-mono) !important; font-size: 19px; font-weight: 700; letter-spacing: .12em; }
+.vibe-wall-audience-small { fill: var(--color-muted) !important; font-size: 19px; }
+.vibe-wall-audience-left { text-anchor: start; }
+.vibe-wall-audience-evidence rect:first-child { fill: none; stroke: var(--color-oxide); stroke-width: 2.5; stroke-dasharray: 8 9; }
+.vibe-wall-audience-legend { fill: var(--color-background); }
+.vibe-wall-audience-evidence text { paint-order: stroke; stroke: var(--color-background); stroke-width: 14px; stroke-linejoin: round; }
+.vibe-wall-audience-result rect { fill: var(--color-accent); }
+.vibe-wall-audience-system .vibe-wall-audience-result-name { fill: var(--color-accent-ink); font-family: var(--font-mono); font-size: 16px; font-weight: 700; letter-spacing: .1em; text-anchor: middle; }
+.vibe-wall-audience-questions path { fill: none; stroke: var(--color-oxide); stroke-width: 2; stroke-dasharray: 5 6; }
+.vibe-wall-audience-questions circle { fill: var(--color-background); stroke: var(--color-oxide); stroke-width: 2.5; }
+.vibe-wall-audience-questions text { font-size: 24px; font-weight: 650; }
+.vibe-wall-audience-statement { min-height: calc(1.2em + 13px); margin: 0; padding-top: 12px; border-top: var(--rule-accent); color: var(--color-text); font-family: var(--font-display); font-size: clamp(26px, 2.5vw, 42px); font-weight: 700; letter-spacing: -.02em; line-height: 1.2; text-align: center; }
+.vibe-wall-audience-statement:empty { border-top-color: transparent; }
 
 /* S08 — an eight-stage engineering route anchors evidence and its conclusion. */
 .engineering-audience { display: grid; gap: clamp(22px, 3.5vh, 38px); margin-top: clamp(20px, 3vh, 30px); }
@@ -996,9 +991,6 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
   .audience-route--5,
   .audience-route--6 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .audience-route--8 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .vibe-wall-audience--3 { grid-template-columns: minmax(0, 1fr); }
-  .vibe-wall-audience--3 .vibe-wall-audience-thesis { grid-column: auto; }
-  .vibe-wall-audience-signals { grid-template-columns: minmax(0, 1fr); }
   .engineering-audience-evidence ol { grid-template-columns: minmax(0, 1fr); }
   .orchestration-audience,
   .orchestration-audience--1,

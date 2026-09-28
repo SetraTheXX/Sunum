@@ -726,41 +726,74 @@ function VibeCodingAudienceVisual({ steps }: { steps: string[] }) {
 
 function VibeWallAudienceVisual({ steps }: { steps: string[] }) {
   const headlineStep = steps.find((step) => step.startsWith('Büyük ifade:'));
-  const questionsStep = steps.find((step) => step.startsWith('Sorular:'));
   const signalsStep = steps.find((step) => step.startsWith('İki ayrı işaret:'));
   const headline = headlineStep ? unquote(removeLabel(headlineStep, 'Büyük ifade')) : '';
-  const [working, assurance] = headline.split(/\s*≠\s*/u);
-  const questions = questionsStep ? removeLabel(questionsStep, 'Sorular').split(/(?<=\?)\s*/u).filter(Boolean) : [];
+  const [working] = headline.split(/\s*≠\s*/u);
   const signals = signalsStep ? removeLabel(signalsStep, 'İki ayrı işaret').split(/\s*\/\s*/u).map(unquote) : [];
+  const reveal = steps.length;
+  // Scene 05's representative result stays in the middle; open questions and the missing evidence layer surround it.
+  const questions = [
+    { lines: ['Güvenli mi?'], text: [400, 209], anchor: [497, 203], side: 'end' },
+    { lines: ['Başka bir yeri', 'bozdu mu?'], text: [400, 332], anchor: [497, 338], side: 'end' },
+    { lines: ['Yapılan değişiklik gerçekten', 'istenen şey mi?'], text: [790, 136], anchor: [725, 128], side: 'start' },
+    { lines: ['Test edildi mi?'], text: [790, 276], anchor: [725, 270], side: 'start' },
+    { lines: ['Review edildi mi?'], text: [790, 396], anchor: [725, 390], side: 'start' },
+  ] as const;
+  const statement = reveal >= 3 ? 'Çalışıyor olması, doğru yapıldığı anlamına gelmez.' : '';
 
   return (
-    <div className={`vibe-wall-audience vibe-wall-audience--${steps.length}`} data-reveal={steps.length}>
-      {headline && (
-        <div className="vibe-wall-audience-thesis" aria-label={headline}>
-          <strong>{working}</strong><span>≠</span><strong>{assurance}</strong>
-        </div>
-      )}
-      {questions.length > 0 && (
-        <ol className="vibe-wall-audience-questions" aria-label="Görünen sonucun yanıtlamadığı sorular">
-          {questions.map((question, index) => (
-            <li key={`${question}-${index}`}><span>{String(index + 1).padStart(2, '0')}</span><p>{question}</p></li>
+    <div className={`vibe-wall-audience vibe-wall-audience--${reveal}`} data-reveal={reveal}>
+      <svg className="vibe-wall-audience-system" viewBox="0 0 1200 490" role="img" aria-label={`Temsili örnek uygulama açılıyor ve çalışıyor görünüyor; bu görünen sonuçtur. ${reveal >= 2 ? `Cevaplanmamış sorular: ${questions.map(({ lines }) => lines.join(' ')).join(' ')} ` : ''}${reveal >= 3 ? `${signals[1] ?? 'Doğrulama kanıtı'} bu örnekte sunulmadı.` : ''}`}>
+        {reveal >= 3 && (
+          <g className="vibe-wall-audience-evidence">
+            <rect x="30" y="14" width="1140" height="470" rx="22" />
+            <rect className="vibe-wall-audience-legend" x="44" y="0" width="472" height="28" />
+            <text x="56" y="21">
+              <tspan className="vibe-wall-audience-kicker">{(signals[1] ?? 'Doğrulama kanıtı').toLocaleUpperCase('tr-TR')}</tspan>
+              <tspan className="vibe-wall-audience-small" dx="12">bu örnekte sunulmadı</tspan>
+            </text>
+          </g>
+        )}
+        <g className="vibe-app is-dark">
+          <rect className="vibe-app-bg" x="475" y="26" width="250" height="432" rx="30" />
+          <text x="600" y="52" className="vibe-app-tag">TEMSİLİ ÖRNEK</text>
+          <text x="497" y="94" className="vibe-app-ink vibe-app-brand">Portfolyo</text>
+          <path className="vibe-app-menu" d="M681 80 H705 M681 87 H705 M681 94 H705" />
+          <text x="497" y="140" className="vibe-app-ink vibe-app-title-small">Tasarım ve kod</text>
+          <rect className="vibe-app-muted" x="497" y="156" width="200" height="9" rx="4.5" />
+          <rect className="vibe-app-muted" x="497" y="172" width="150" height="9" rx="4.5" />
+          <rect className="vibe-app-button" x="497" y="192" width="120" height="34" rx="17" />
+          <text x="557" y="214" className="vibe-app-button-text vibe-app-button-small">İletişim</text>
+          {[244, 314, 384].map((y, index) => (
+            <g key={y}>
+              <rect className="vibe-app-tile" x="497" y={y} width="206" height="60" rx="8" />
+              <text x="513" y={y + 37} className="vibe-app-ink vibe-app-tile-label">Proje {index + 1}</text>
+            </g>
           ))}
-        </ol>
-      )}
-      {signals.length > 0 && (
-        <div className="vibe-wall-audience-signals" aria-label="Görünen sonuç ve doğrulama kanıtı">
-          <section>
-            <span className="primitive-label">GÖZLEM</span>
-            <h3>{signals[0]}</h3>
-            <p>Ekranın açılması, tek başına değişikliğin doğruluğunu göstermez.</p>
-          </section>
-          <section>
-            <span className="primitive-label">KONTROL</span>
-            <h3>{signals[1]}</h3>
-            <p>Dosya farkı, test sonucu ve review birlikte daha iyi kanıt oluşturur.</p>
-          </section>
-        </div>
-      )}
+        </g>
+        <g className="vibe-wall-audience-result">
+          <rect x="745" y="40" width="150" height="36" rx="18" />
+          <text x="820" y="64" className="vibe-wall-audience-result-name">{(working || 'Çalışıyor').toLocaleUpperCase('tr-TR')}</text>
+          <text x="905" y="64" className="vibe-wall-audience-small vibe-wall-audience-left">{(signals[0] ?? 'Görünen sonuç').toLocaleLowerCase('tr-TR')}</text>
+        </g>
+        {reveal >= 2 && (
+          <g className="vibe-wall-audience-questions">
+            {questions.map(({ lines, text, anchor, side }) => {
+              const lineStart = side === 'end' ? text[0] + 14 : text[0] - 14;
+              return (
+                <g key={lines.join(' ')}>
+                  <path d={`M${lineStart} ${text[1] - 7} L${anchor[0]} ${anchor[1]}`} />
+                  <circle cx={anchor[0]} cy={anchor[1]} r="6" />
+                  <text x={text[0]} y={text[1]} textAnchor={side}>
+                    {lines.map((line, index) => <tspan key={line} x={text[0]} dy={index === 0 ? 0 : 27}>{line}</tspan>)}
+                  </text>
+                </g>
+              );
+            })}
+          </g>
+        )}
+      </svg>
+      <p className="vibe-wall-audience-statement" aria-hidden={statement ? undefined : true}>{statement}</p>
     </div>
   );
 }

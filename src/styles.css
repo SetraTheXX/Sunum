@@ -766,34 +766,26 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
   word-break: normal;
 }
 
-/* S02 — the same three working modes become a field sequence with outcomes. */
-.journey-audience { display: grid; gap: clamp(18px, 3vh, 30px); margin-top: clamp(18px, 3vh, 30px); }
-.journey-audience-stages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(18px, 3vw, 42px); margin: 0; padding: 0; list-style: none; }
-.journey-audience-stages li { min-width: 0; padding-top: 12px; border-top: var(--rule); color: var(--color-muted); }
-.journey-audience-stages li.is-current { border-top: var(--rule-accent); color: var(--color-text); }
+/* S02 — one task, three different divisions of work. */
+.journey-audience { display: grid; gap: clamp(15px, 2.4vh, 25px); margin-top: clamp(16px, 2.5vh, 26px); }
+.journey-audience-task { display: flex; gap: clamp(20px, 3vw, 48px); align-items: baseline; border-bottom: var(--rule); padding-bottom: clamp(14px, 2vh, 22px); }
+.journey-audience-task .primitive-label { flex: 0 0 auto; color: var(--color-accent); }
+.journey-audience-task p { margin: 0; color: var(--color-text); font-family: var(--font-display); font-size: clamp(27px, 2.8vw, 46px); font-weight: 500; letter-spacing: -.035em; line-height: 1.1; }
+.journey-audience-task strong { font-weight: 700; }
+.journey-audience-stages { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.journey-audience-stage { display: grid; grid-template-columns: minmax(150px, .2fr) minmax(0, .6fr) minmax(190px, .2fr); gap: clamp(18px, 2.5vw, 38px); align-items: center; min-width: 0; padding: clamp(12px, 2vh, 22px) 0; border-bottom: var(--rule); }
+.journey-audience-name { display: flex; gap: 14px; align-items: baseline; }
 .journey-audience-index { color: var(--color-accent); font-family: var(--font-mono); font-size: 13px; }
-.journey-audience-stages h2 { margin: 11px 0 0; color: inherit; font-family: var(--font-display); font-size: clamp(30px, 3.25vw, 52px); font-weight: 600; letter-spacing: -.035em; line-height: 1; }
-.journey-audience-stages p { margin: 8px 0 0; color: var(--color-muted); font-size: clamp(18px, 1.35vw, 21px); line-height: 1.28; }
-.journey-audience-artwork { display: flex; align-items: center; justify-content: center; min-width: 0; margin: 0; }
-.journey-audience-artwork img { display: block; width: 100%; max-height: 210px; object-fit: contain; }
-.journey-audience-note { display: flex; gap: 14px; align-items: baseline; padding: 12px 0 0; border-top: var(--rule); }
-.journey-audience-note .primitive-label { flex: 0 0 auto; color: var(--color-accent); }
-.journey-audience-note p { margin: 0; color: var(--color-muted); font-size: clamp(18px, 1.35vw, 21px); line-height: 1.35; }
-.journey-audience--1 .journey-audience-stages li { min-height: 180px; }
-.journey-audience--1 .journey-audience-stages h2 { font-size: clamp(42px, 5.2vw, 82px); }
-.journey-audience--2,
-.journey-audience--3 { grid-template-columns: minmax(0, 1.12fr) minmax(280px, .88fr); align-items: center; }
-.journey-audience--2 .journey-audience-stages,
-.journey-audience--3 .journey-audience-stages { grid-row: 1; grid-column: 1; grid-template-columns: minmax(0, 1fr); gap: 8px; }
-.journey-audience--2 .journey-audience-stages li,
-.journey-audience--3 .journey-audience-stages li { display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 0 12px; min-height: 0; padding: 9px 0 10px; }
-.journey-audience--2 .journey-audience-index,
-.journey-audience--3 .journey-audience-index { grid-row: span 2; padding-top: 5px; }
-.journey-audience--2 .journey-audience-stages h2,
-.journey-audience--3 .journey-audience-stages h2 { margin: 0; font-size: clamp(27px, 2.5vw, 38px); }
-.journey-audience--2 .journey-audience-artwork,
-.journey-audience--3 .journey-audience-artwork { grid-row: 1; grid-column: 2; }
-.journey-audience--3 .journey-audience-note { grid-row: 2; grid-column: 1 / -1; }
+.journey-audience-name h2 { margin: 0; color: var(--color-text); font-family: var(--font-display); font-size: clamp(31px, 3vw, 49px); font-weight: 650; letter-spacing: -.045em; line-height: 1; }
+.journey-audience-work { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(12px, 1.8vw, 28px); min-width: 0; }
+.journey-audience-work > div { min-width: 0; padding-left: 13px; border-left: var(--rule); }
+.journey-audience-work span { color: var(--color-muted); font-family: var(--font-mono); font-size: clamp(11px, .8vw, 13px); letter-spacing: .08em; }
+.journey-audience-work p { margin: 7px 0 0; color: var(--color-text); font-size: clamp(17px, 1.25vw, 21px); line-height: 1.27; }
+.journey-audience-result { margin: 0; padding-left: 14px; border-left: var(--rule-accent); color: var(--color-accent); font-family: var(--font-display); font-size: clamp(18px, 1.35vw, 23px); font-weight: 600; line-height: 1.23; }
+.journey-audience-stage--1 .journey-audience-work { grid-template-columns: .38fr .62fr; }
+.journey-audience-stage--2 .journey-audience-work { grid-template-columns: .52fr .48fr; }
+.journey-audience-stage--3 .journey-audience-work { grid-template-columns: .66fr .34fr; }
+.journey-audience-note p { margin: 0; color: var(--color-muted); font-size: clamp(16px, 1.15vw, 19px); line-height: 1.35; }
 
 /* S03 — definitions lead into a local context desk, then its visibility limit. */
 .context-audience { display: grid; gap: clamp(14px, 2.4vh, 24px); margin-top: clamp(17px, 2.6vh, 28px); }
@@ -960,10 +952,10 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
 }
 
 @media (max-width: 760px) {
-  .journey-audience--2,
-  .journey-audience--3 { grid-template-columns: minmax(0, 1fr); }
-  .journey-audience--2 .journey-audience-artwork,
-  .journey-audience--3 .journey-audience-artwork { grid-row: auto; grid-column: 1; }
+  .journey-audience-task { display: block; }
+  .journey-audience-task p { margin-top: 8px; }
+  .journey-audience-stage { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .journey-audience-result { margin-left: 13px; }
   .context-audience-definitions { grid-template-columns: minmax(0, 1fr); }
   .context-audience-workbench { grid-template-columns: minmax(0, 1fr); }
   .context-audience-limit { display: block; }

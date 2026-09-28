@@ -459,33 +459,38 @@ function AudienceRoute({
 
 function JourneyAudienceVisual({ steps }: { steps: string[] }) {
   const headingStep = steps.find((step) => step.startsWith('Üç başlık:'));
-  const outputStep = steps.find((step) => step.startsWith('Alt satırlar:'));
   const noteStep = steps.find((step) => step.startsWith('Not:'));
   const stages = headingStep ? removeLabel(headingStep, 'Üç başlık').split(/\s*→\s*/).filter(Boolean) : [];
-  const outputs = outputStep ? removeLabel(outputStep, 'Alt satırlar').split(/\s*→\s*/).filter(Boolean) : [];
   const note = noteStep ? removeLabel(noteStep, 'Not') : '';
+  const work = [
+    { tool: 'Benzer örnekleri ve kaynakları bulur.', human: 'Kaynağı seçer, dosyayı açar ve başlığı değiştirirsin.', result: 'Elinde kaynaklar var.' },
+    { tool: 'Model hangi satırın nasıl değişeceğini açıklar.', human: 'Öneriyi dosyana uygularsın.', result: 'Elinde bir açıklama var.' },
+    { tool: 'Agent ilgili dosyayı bulur, değiştirir ve farkı gösterir.', human: 'Değişikliği inceler, kabul eder veya düzeltirsin.', result: 'Elinde incelenecek bir değişiklik var.' },
+  ];
 
   return (
     <div className={`journey-audience journey-audience--${steps.length}`} data-reveal={steps.length}>
-      {stages.length > 0 && (
-        <ol className="journey-audience-stages" aria-label="Ara, sor ve görev ver çalışma biçimleri">
-          {stages.map((stage, index) => (
-            <li className={steps.length === 1 && index === 0 ? 'is-current' : ''} key={stage}>
+      <header className="journey-audience-task">
+        <span className="primitive-label">AYNI KÜÇÜK GÖREV</span>
+        <p>Bir web sayfasının <strong>başlığını değiştir.</strong></p>
+      </header>
+      <ol className="journey-audience-stages" aria-label="Aynı görevde üç çalışma biçimi">
+        {stages.slice(0, steps.length).map((stage, index) => (
+          <li className={`journey-audience-stage journey-audience-stage--${index + 1}`} key={stage}>
+            <div className="journey-audience-name">
               <span className="journey-audience-index">{String(index + 1).padStart(2, '0')}</span>
               <h2>{stage}</h2>
-              {outputs[index] && <p>{outputs[index]}</p>}
-            </li>
-          ))}
-        </ol>
-      )}
-      {outputs.length > 0 && (
-        <figure className="journey-audience-artwork">
-          <img src={journeyArtwork} alt="Ara, sohbet ve görev temelli çalışma biçimlerinin görsel özeti." />
-        </figure>
-      )}
+            </div>
+            <div className="journey-audience-work">
+              <div className="journey-audience-tool"><span>ARAÇTAN GELEN</span><p>{work[index].tool}</p></div>
+              <div className="journey-audience-human"><span>SENİN ADIMIN</span><p>{work[index].human}</p></div>
+            </div>
+            <p className="journey-audience-result">{work[index].result}</p>
+          </li>
+        ))}
+      </ol>
       {note && (
         <aside className="journey-audience-note">
-          <span className="primitive-label">BUGÜN</span>
           <p>{note}</p>
         </aside>
       )}

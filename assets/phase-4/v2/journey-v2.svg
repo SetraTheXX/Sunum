@@ -1,49 +1,49 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 680" role="img" aria-label="Search returns sources, asking returns an explanation, and delegating a task produces file and tool work">
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
-      <path d="M1 1 10 6 1 11" fill="none" stroke="#262720" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M1 1 10 6 1 11" fill="none" stroke="#17262D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
     </marker>
   </defs>
-  <g fill="none" stroke="#262720" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g fill="none" stroke="#17262D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
     <!-- Search -->
-    <path d="M118 161h174v190H118z" fill="#fbf9f4"/>
-    <path d="M143 196h119M143 220h91M143 244h108" stroke="#77766f" stroke-width="5"/>
-    <path d="M134 287h157M134 311h112" stroke="#77766f" stroke-width="5"/>
-    <circle cx="286" cy="282" r="48" fill="#e9d4aa" stroke-width="6"/>
+    <path d="M118 161h174v190H118z" fill="#FAF9F4"/>
+    <path d="M143 196h119M143 220h91M143 244h108" stroke="#4D5F64" stroke-width="5"/>
+    <path d="M134 287h157M134 311h112" stroke="#4D5F64" stroke-width="5"/>
+    <circle cx="286" cy="282" r="48" fill="#FAF9F4" stroke-width="6"/>
     <path d="m321 318 46 46" stroke-width="9"/>
     <path d="M163 378v68" marker-end="url(#arrow)" stroke-width="5"/>
     <!-- Search output: found source pages -->
-    <path d="M111 474h114l31 31v107H111z" fill="#fbf9f4"/>
-    <path d="M225 474v33h31M133 527h94M133 552h69M133 577h81" stroke="#77766f" stroke-width="5"/>
-    <path d="M145 459h112l31 31" stroke="#c28a35" stroke-width="5"/>
+    <path d="M111 474h114l31 31v107H111z" fill="#FAF9F4"/>
+    <path d="M225 474v33h31M133 527h94M133 552h69M133 577h81" stroke="#4D5F64" stroke-width="5"/>
+    <path d="M145 459h112l31 31" stroke="#176B64" stroke-width="5"/>
     <!-- Transition -->
     <path d="M390 262h87" marker-end="url(#arrow)" stroke-width="5"/>
     <!-- Ask -->
-    <path d="M520 185h190a20 20 0 0 1 20 20v85a20 20 0 0 1-20 20h-91l-35 31v-31h-64a20 20 0 0 1-20-20v-85a20 20 0 0 1 20-20z" fill="#fbf9f4"/>
-    <path d="M551 222h126M551 250h96" stroke="#77766f" stroke-width="5"/>
-    <path d="M575 335h160a18 18 0 0 1 18 18v48a18 18 0 0 1-18 18h-68l-26 23v-23h-66a18 18 0 0 1-18-18v-48a18 18 0 0 1 18-18z" fill="#e9d4aa"/>
-    <path d="M599 363h107M599 387h78" stroke="#77766f" stroke-width="5"/>
+    <path d="M520 185h190a20 20 0 0 1 20 20v85a20 20 0 0 1-20 20h-91l-35 31v-31h-64a20 20 0 0 1-20-20v-85a20 20 0 0 1 20-20z" fill="#FAF9F4"/>
+    <path d="M551 222h126M551 250h96" stroke="#4D5F64" stroke-width="5"/>
+    <path d="M575 335h160a18 18 0 0 1 18 18v48a18 18 0 0 1-18 18h-68l-26 23v-23h-66a18 18 0 0 1-18-18v-48a18 18 0 0 1 18-18z" fill="#FAF9F4"/>
+    <path d="M599 363h107M599 387h78" stroke="#4D5F64" stroke-width="5"/>
     <path d="M616 427v44" marker-end="url(#arrow)" stroke-width="5"/>
     <!-- Explanation output -->
-    <path d="M543 490h172l34 34v88H543z" fill="#fbf9f4"/>
-    <path d="M715 490v36h34M566 543h133M566 567h111M566 591h80" stroke="#77766f" stroke-width="5"/>
+    <path d="M543 490h172l34 34v88H543z" fill="#FAF9F4"/>
+    <path d="M715 490v36h34M566 543h133M566 567h111M566 591h80" stroke="#4D5F64" stroke-width="5"/>
     <path d="M798 262h87" marker-end="url(#arrow)" stroke-width="5"/>
     <!-- Delegate a task -->
-    <path d="M932 178h142l32 32v113H932z" fill="#fbf9f4"/>
-    <path d="M1074 178v35h32M953 230h95M953 256h69M953 281h85" stroke="#77766f" stroke-width="5"/>
+    <path d="M932 178h142l32 32v113H932z" fill="#FAF9F4"/>
+    <path d="M1074 178v35h32M953 230h95M953 256h69M953 281h85" stroke="#4D5F64" stroke-width="5"/>
     <path d="m1028 342 57 45" marker-end="url(#arrow)" stroke-width="5"/>
     <!-- Work output: project folder, terminal interaction, changed file -->
-    <path d="M889 454h98l22 20h103v100H889z" fill="#e9d4aa"/>
-    <path d="M905 492h191" stroke="#77766f" stroke-width="5"/>
-    <path d="M946 526h126v92H946z" fill="#fbf9f4"/>
-    <path d="M946 548h126M965 569h22M965 589h74" stroke="#77766f" stroke-width="5"/>
-    <path d="M1091 543h85v75h-85z" fill="#fbf9f4"/>
-    <path d="M1108 563h50M1108 584h34M1152 602h12" stroke="#c28a35" stroke-width="5"/>
+    <path d="M889 454h98l22 20h103v100H889z" fill="#FAF9F4"/>
+    <path d="M905 492h191" stroke="#4D5F64" stroke-width="5"/>
+    <path d="M946 526h126v92H946z" fill="#FAF9F4"/>
+    <path d="M946 548h126M965 569h22M965 589h74" stroke="#4D5F64" stroke-width="5"/>
+    <path d="M1091 543h85v75h-85z" fill="#FAF9F4"/>
+    <path d="M1108 563h50M1108 584h34M1152 602h12" stroke="#176B64" stroke-width="5"/>
     <path d="M1072 325v100" marker-end="url(#arrow)" stroke-width="5"/>
     <!-- Equal visual weight: a route between work modes, not a ranking -->
-    <path d="M86 640h1107" stroke="#d5d0c6" stroke-width="4"/>
-    <circle cx="196" cy="640" r="8" fill="#c28a35" stroke="none"/>
-    <circle cx="640" cy="640" r="8" fill="#c28a35" stroke="none"/>
-    <circle cx="1084" cy="640" r="8" fill="#c28a35" stroke="none"/>
+    <path d="M86 640h1107" stroke="#BCC8C5" stroke-width="4"/>
+    <circle cx="196" cy="640" r="8" fill="#176B64" stroke="none"/>
+    <circle cx="640" cy="640" r="8" fill="#176B64" stroke="none"/>
+    <circle cx="1084" cy="640" r="8" fill="#176B64" stroke="none"/>
   </g>
 </svg>

@@ -1,49 +1,49 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 760" role="img" aria-label="Project files and instructions inform context for a model that uses tools and a terminal; skills, MCP, and Git are optional">
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
-      <path d="M1 1 10 6 1 11" fill="none" stroke="#262720" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M1 1 10 6 1 11" fill="none" stroke="#17262D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
     </marker>
   </defs>
-  <g fill="none" stroke="#262720" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <g fill="none" stroke="#17262D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
     <!-- Project files -->
-    <path d="M78 173h74l22 24h120v105H78z" fill="#e9d4aa"/>
-    <path d="M101 232h164M101 255h125" stroke="#77766f" stroke-width="5"/>
+    <path d="M78 173h74l22 24h120v105H78z" fill="#FAF9F4"/>
+    <path d="M101 232h164M101 255h125" stroke="#4D5F64" stroke-width="5"/>
     <!-- Instructions -->
-    <path d="M92 379h174l30 30v133H92z" fill="#fbf9f4"/>
-    <path d="M266 379v33h30M116 432l8 8 15-18M153 435h85M116 470l8 8 15-18M153 473h85M116 508l8 8 15-18M153 511h61" stroke="#77766f" stroke-width="5"/>
-    <path d="m116 432 8 8 15-18" stroke="#c28a35" stroke-width="5"/>
+    <path d="M92 379h174l30 30v133H92z" fill="#FAF9F4"/>
+    <path d="M266 379v33h30M116 432l8 8 15-18M153 435h85M116 470l8 8 15-18M153 473h85M116 508l8 8 15-18M153 511h61" stroke="#4D5F64" stroke-width="5"/>
+    <path d="m116 432 8 8 15-18" stroke="#176B64" stroke-width="5"/>
     <!-- Context is a working bundle, receiving project material and tool results -->
-    <path d="M382 176h236v326H382z" fill="#f7f3eb" stroke-width="5"/>
-    <path d="M408 222h128a15 15 0 0 1 15 15v53a15 15 0 0 1-15 15h-74l-30 22v-22h-24a15 15 0 0 1-15-15v-53a15 15 0 0 1 15-15z" fill="#fbf9f4" stroke-width="5"/>
-    <path d="M433 248h83M433 271h59" stroke="#77766f" stroke-width="5"/>
-    <path d="M422 362h147v99H422z" fill="#fbf9f4" stroke-width="5"/>
-    <path d="M422 385h147M443 408h36M443 433h89" stroke="#77766f" stroke-width="5"/>
+    <path d="M382 176h236v326H382z" fill="#F2F1E9" stroke-width="5"/>
+    <path d="M408 222h128a15 15 0 0 1 15 15v53a15 15 0 0 1-15 15h-74l-30 22v-22h-24a15 15 0 0 1-15-15v-53a15 15 0 0 1 15-15z" fill="#FAF9F4" stroke-width="5"/>
+    <path d="M433 248h83M433 271h59" stroke="#4D5F64" stroke-width="5"/>
+    <path d="M422 362h147v99H422z" fill="#FAF9F4" stroke-width="5"/>
+    <path d="M422 385h147M443 408h36M443 433h89" stroke="#4D5F64" stroke-width="5"/>
     <path d="M267 228c40 0 60 20 103 46M296 454c44 0 53-30 86-49" marker-end="url(#arrow)" stroke-width="5"/>
     <!-- Model -->
-    <path d="M691 255h158v176H691z" fill="#ead8b7"/>
-    <path d="M721 284h98v118h-98z" fill="#fbf9f4" stroke-width="5"/>
-    <path d="M741 304h17v17h-17zM781 304h17v17h-17zM741 344h17v17h-17zM781 344h17v17h-17zM741 384h17v17h-17zM781 384h17v17h-17z" fill="#262720" stroke="none"/>
+    <path d="M691 255h158v176H691z" fill="#FAF9F4"/>
+    <path d="M721 284h98v118h-98z" fill="#FAF9F4" stroke-width="5"/>
+    <path d="M741 304h17v17h-17zM781 304h17v17h-17zM741 344h17v17h-17zM781 344h17v17h-17zM741 384h17v17h-17zM781 384h17v17h-17z" fill="#17262D" stroke="none"/>
     <path d="M691 276h-17M691 312h-17M691 348h-17M691 384h-17M691 420h-17M849 276h17M849 312h17M849 348h17M849 384h17M849 420h17" stroke-width="5"/>
     <path d="M618 338h69" marker-end="url(#arrow)" stroke-width="5"/>
     <!-- Tools -->
-    <path d="M954 201a51 51 0 0 0 69 65l72 72-41 41-72-72a51 51 0 0 0-65-70l35 34-38 38-34-35a51 51 0 0 0 74-73z" fill="#e9d4aa" stroke-width="5"/>
+    <path d="M954 201a51 51 0 0 0 69 65l72 72-41 41-72-72a51 51 0 0 0-65-70l35 34-38 38-34-35a51 51 0 0 0 74-73z" fill="#FAF9F4" stroke-width="5"/>
     <path d="M849 336h88" marker-end="url(#arrow)" stroke-width="5"/>
     <!-- Terminal -->
-    <path d="M959 408h220v126H959z" fill="#fbf9f4"/>
-    <path d="M959 438h220M981 462l14 13-14 13M1010 488h38M1070 488h69" stroke="#77766f" stroke-width="5"/>
-    <path d="M1070 488h69" stroke="#c28a35" stroke-width="5"/>
+    <path d="M959 408h220v126H959z" fill="#FAF9F4"/>
+    <path d="M959 438h220M981 462l14 13-14 13M1010 488h38M1070 488h69" stroke="#4D5F64" stroke-width="5"/>
+    <path d="M1070 488h69" stroke="#176B64" stroke-width="5"/>
     <!-- Tool results return to context -->
-    <path d="M1080 535v67H500v-91" marker-end="url(#arrow)" stroke="#77766f" stroke-width="5"/>
+    <path d="M1080 535v67H500v-91" marker-end="url(#arrow)" stroke="#4D5F64" stroke-width="5"/>
     <!-- Optional extensions, isolated by a light dashed boundary -->
-    <path d="M293 628c0-22 17-40 40-40h670c23 0 40 18 40 40v63H293z" stroke="#77766f" stroke-width="4" stroke-dasharray="10 12"/>
+    <path d="M293 628c0-22 17-40 40-40h670c23 0 40 18 40 40v63H293z" stroke="#4D5F64" stroke-width="4" stroke-dasharray="10 12"/>
     <!-- Skill: reusable handbook -->
-    <path d="M374 610c30-11 54-8 78 5v54c-24-13-48-16-78-5zM452 615c24-13 48-16 78-5v54c-30-11-54-8-78 5z" fill="#fbf9f4" stroke-width="5"/>
-    <path d="M431 616v50" stroke="#c28a35" stroke-width="5"/>
+    <path d="M374 610c30-11 54-8 78 5v54c-24-13-48-16-78-5zM452 615c24-13 48-16 78-5v54c-30-11-54-8-78 5z" fill="#FAF9F4" stroke-width="5"/>
+    <path d="M431 616v50" stroke="#176B64" stroke-width="5"/>
     <!-- MCP: connector -->
     <path d="M645 618v20M675 618v20M634 638h52v20a26 26 0 0 1-52 0zM660 684v-13" stroke-width="5"/>
-    <path d="M660 671v13" stroke="#c28a35" stroke-width="5"/>
+    <path d="M660 671v13" stroke="#176B64" stroke-width="5"/>
     <!-- Git: branch history -->
     <path d="M866 606v66M866 621c0 22 38 8 38 30M866 635c0 25-38 10-38 34" stroke-width="5"/>
-    <circle cx="866" cy="604" r="8" fill="#c28a35"/><circle cx="904" cy="652" r="8" fill="#fbf9f4"/><circle cx="828" cy="673" r="8" fill="#fbf9f4"/>
+    <circle cx="866" cy="604" r="8" fill="#176B64"/><circle cx="904" cy="652" r="8" fill="#FAF9F4"/><circle cx="828" cy="673" r="8" fill="#FAF9F4"/>
   </g>
 </svg>

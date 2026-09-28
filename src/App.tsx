@@ -42,6 +42,9 @@ export default function App() {
   });
   const routeScenes = scenesForMode(mode);
   const currentScene = routeScenes[sceneIndex];
+  const takeaway = currentScene.number === 11
+    ? 'Şema kavramsal; authentic workflow capture henüz yok.'
+    : currentScene.takeaway;
   const progress = ((sceneIndex + 1) / routeScenes.length) * 100;
 
   function selectScene(nextIndex: number, step?: number) {
@@ -218,7 +221,7 @@ export default function App() {
             <span className="scene-duration">{currentScene.duration}</span>
           </div>
           <h1 id="scene-title">{currentScene.title}</h1>
-          <p className="scene-takeaway">{currentScene.takeaway}</p>
+          <p className="scene-takeaway">{takeaway}</p>
 
           <div className="screen-content" aria-live="polite" aria-label="Açılan sunum adımları">
             <div className="screen-content-heading">

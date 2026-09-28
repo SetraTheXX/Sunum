@@ -805,28 +805,81 @@ function EngineeringAudienceVisual({ steps }: { steps: string[] }) {
   const flow = flowStep ? removeLabel(flowStep, 'Akış').split(/\s*→\s*/).filter(Boolean) : [];
   const evidence = evidenceStep ? removeLabel(evidenceStep, 'Üç kanıt noktası').split(/\s*,\s*/).filter(Boolean) : [];
   const statement = statementStep ? unquote(removeLabel(statementStep, 'Son cümle')) : '';
-  const [formula, result] = statement.split(/\s*=\s*/u);
-  const [change, proof] = (result ?? '').split(/\s*\+\s*/u);
+  const reveal = steps.length;
+  // The same mobile-menu task matures: goal → change → evidence points the process must collect. Points stay open; no result is claimed.
+  const [goal = 'Hedef', context = 'Context', plan = 'Plan', implement = 'Implement', test = 'Test', review = 'Review', verify = 'Verify', git = 'Git'] = flow;
+  const [changedFiles = 'değişen dosyalar', testResult = 'test sonucu', reviewResult = 'review sonucu'] = evidence;
+  const frameState = reveal >= 3 ? 'is-process' : 'is-missing';
+  const frameNote = reveal >= 3 ? 'sürecin parçası' : reveal === 2 ? 'tek başına yetmez' : 'henüz yok';
+  const points = [
+    { key: 'files', show: reveal >= 2, cx: 930, cy: 64, label: changedFiles, note: `${implement} · ne değişti?`, lx: 946, ly: 28 },
+    { key: 'test', show: reveal >= 3, cx: 1060, cy: 180, label: testResult, note: `${test} · komut ve çıktısı`, lx: 1076, ly: 176 },
+    { key: 'review', show: reveal >= 3, cx: 1060, cy: 318, label: reviewResult, note: `${review} · ikinci göz`, lx: 1076, ly: 314 },
+    { key: 'git', show: reveal >= 3, cx: 1060, cy: 432, label: git, note: 'izlenebilir kayıt', lx: 1076, ly: 440 },
+  ];
 
   return (
-    <div className={`engineering-audience engineering-audience--${steps.length}`} data-reveal={steps.length}>
-      {flow.length > 0 && (
-        <section aria-label="Hedeften Git'e çalışma akışı">
-          <span className="primitive-label">ÇALIŞMA AKIŞI</span>
-          <AudienceRoute items={flow} label="Hedeften Git'e sekiz adım" className="engineering-audience-route" />
-        </section>
-      )}
-      {evidence.length > 0 && (
-        <section className="engineering-audience-evidence" aria-label="Değişen dosyalar, test ve review kanıtı">
-          <span className="primitive-label">KANIT NOKTALARI</span>
-          <ol>{evidence.map((point, index) => <li key={point}><span>{String(index + 1).padStart(2, '0')}</span>{point}</li>)}</ol>
-        </section>
-      )}
-      {statement && (
-        <div className="engineering-audience-equation" aria-label={statement}>
-          <strong>{formula}</strong><span>=</span><span>{change}</span><span>+</span><strong>{proof}</strong>
-        </div>
-      )}
+    <div className={`engineering-audience engineering-audience--${reveal}`} data-reveal={reveal}>
+      <svg className="engineering-audience-system" viewBox="0 0 1200 490" role="img" aria-label={`Aynı görev: mobil menü telefonda açılmıyor; kabul koşulu telefonda menünün açılması ve masaüstünün değişmemesi. ${goal}, ${context} ve ${plan} netleşir. ${reveal >= 2 ? `${implement}: agent projede değişiklik yapar; ${changedFiles} ilk kanıt noktasıdır. ` : ''}${reveal >= 3 ? `${test}, ${review}, ${verify} ve ${git} sürecin kanıt noktalarıdır; burada sonuç gösterilmez. ` : ''}`}>
+        <g className={`engineering-audience-frame ${frameState}`}>
+          <rect x="470" y="64" width="590" height="368" rx="20" />
+          <rect className="engineering-audience-legend" x="484" y="50" width="392" height="28" />
+          <text x="496" y="71"><tspan className="engineering-audience-kicker">DOĞRULAMA KANITI</tspan><tspan className="engineering-audience-small" dx="10">{frameNote}</tspan></text>
+        </g>
+
+        <g className="engineering-audience-goal">
+          <rect x="40" y="110" width="340" height="228" rx="14" />
+          <text x="64" y="146" className="engineering-audience-kicker">{goal.toLocaleUpperCase('tr-TR')}</text>
+          <text x="64" y="186" className="engineering-audience-title">Mobil menü telefonda</text>
+          <text x="64" y="218" className="engineering-audience-title">açılmıyor.</text>
+          <path className="engineering-audience-rule" d="M64 240 H356" />
+          <text x="64" y="268" className="engineering-audience-kicker is-muted">KABUL KOŞULU</text>
+          <text x="64" y="296" className="engineering-audience-body">Telefonda menü açılır;</text>
+          <text x="64" y="322" className="engineering-audience-body">masaüstü değişmez.</text>
+        </g>
+        <g className="engineering-audience-prep">
+          <rect x="40" y="356" width="160" height="44" rx="22" />
+          <text x="120" y="385">{context}</text>
+          <rect x="220" y="356" width="160" height="44" rx="22" />
+          <text x="300" y="385">{plan}</text>
+        </g>
+
+        {reveal >= 2 && (
+          <g className="engineering-audience-change">
+            <path className="engineering-audience-flow" d="M380 224 H548 M548 224 l-13 -7 m13 7 l-13 7" />
+            <text x="425" y="212" className="engineering-audience-flow-label">agent</text>
+            <rect className="engineering-audience-project" x="556" y="124" width="300" height="200" rx="12" />
+            <text x="578" y="156" className="engineering-audience-kicker">PROJE</text>
+            <rect className="engineering-audience-line" x="578" y="176" width="220" height="10" rx="5" />
+            <rect className="engineering-audience-line is-changed" x="578" y="202" width="180" height="10" rx="5" />
+            <rect className="engineering-audience-line is-changed" x="578" y="228" width="240" height="10" rx="5" />
+            <rect className="engineering-audience-line" x="578" y="254" width="150" height="10" rx="5" />
+            <rect className="engineering-audience-line" x="578" y="280" width="200" height="10" rx="5" />
+            <text x="834" y="224" className="engineering-audience-mark">±</text>
+            <text x="706" y="354" className="engineering-audience-caption">{implement} · agent değişikliği yapar</text>
+            <path className="engineering-audience-link" d="M830 124 L930 72" />
+          </g>
+        )}
+
+        {reveal >= 3 && (
+          <g className="engineering-audience-verify">
+            <path className="engineering-audience-link" d="M856 250 L1052 184 M856 280 L1052 316" />
+            <path className="engineering-audience-loop" d="M760 441 V474 H18 V224 H32 M32 224 l-12 -7 m12 7 l-12 7" />
+            <circle className="engineering-audience-point" cx="760" cy="432" r="9" />
+            <text x="778" y="462" className="engineering-audience-point-label">{verify}</text>
+            <text x="852" y="462" className="engineering-audience-small">· kabule karşı kontrol</text>
+          </g>
+        )}
+
+        {points.filter(({ show }) => show).map(({ key, cx, cy, label, note, lx, ly }) => (
+          <g className="engineering-audience-evidence" key={key}>
+            <circle className="engineering-audience-point" cx={cx} cy={cy} r="9" />
+            <text x={lx} y={ly} className="engineering-audience-point-label">{label}</text>
+            <text x={lx} y={ly + 22} className="engineering-audience-small">{note}</text>
+          </g>
+        ))}
+      </svg>
+      <p className="engineering-audience-statement" aria-hidden={statement ? undefined : true}>{statement}</p>
     </div>
   );
 }

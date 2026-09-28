@@ -897,20 +897,37 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
 .vibe-wall-audience-statement { min-height: calc(1.2em + 13px); margin: 0; padding-top: 12px; border-top: var(--rule-accent); color: var(--color-text); font-family: var(--font-display); font-size: clamp(26px, 2.5vw, 42px); font-weight: 700; letter-spacing: -.02em; line-height: 1.2; text-align: center; }
 .vibe-wall-audience-statement:empty { border-top-color: transparent; }
 
-/* S08 — an eight-stage engineering route anchors evidence and its conclusion. */
-.engineering-audience { display: grid; gap: clamp(22px, 3.5vh, 38px); margin-top: clamp(20px, 3vh, 30px); }
-.engineering-audience > section > .primitive-label,
-.engineering-audience-evidence > .primitive-label { color: var(--color-accent); }
-.engineering-audience-route { gap: 0 clamp(10px, 1.05vw, 17px); }
-.engineering-audience-route li { min-height: 94px; }
-.engineering-audience-route li + li::before { font-size: 14px; }
-.engineering-audience-route .audience-route-name { font-size: clamp(18px, 1.15vw, 21px); }
-.engineering-audience-evidence ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(18px, 3vw, 40px); margin: 10px 0 0; padding: 0; list-style: none; }
-.engineering-audience-evidence li { display: grid; grid-template-columns: 27px minmax(0, 1fr); gap: 10px; min-width: 0; padding-top: 10px; border-top: var(--rule); color: var(--color-text); font-size: clamp(18px, 1.35vw, 21px); line-height: 1.28; }
-.engineering-audience-evidence li span { color: var(--color-oxide); font-family: var(--font-mono); font-size: 13px; }
-.engineering-audience-equation { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 12px; padding-top: 13px; border-top: var(--rule-accent); color: var(--color-text); font-family: var(--font-display); font-size: clamp(27px, 3vw, 46px); letter-spacing: -.03em; line-height: 1.1; }
-.engineering-audience-equation strong:last-child { color: var(--color-accent); }
-.engineering-audience--1 .engineering-audience-route li.is-current { border-top: var(--rule-accent); }
+/* S08 — the same task matures: goal, then change, then the evidence points the process must collect. */
+.engineering-audience { display: grid; gap: clamp(8px, 1.5vh, 16px); margin-top: clamp(12px, 2vh, 22px); }
+.engineering-audience-system { display: block; width: 100%; max-height: min(54vh, 590px); margin-inline: auto; overflow: visible; }
+.engineering-audience-system text { fill: var(--color-text); font-family: var(--font-display); }
+.engineering-audience-system .engineering-audience-kicker { fill: var(--color-accent); font-family: var(--font-mono); font-size: 18px; font-weight: 700; letter-spacing: .12em; }
+.engineering-audience-system .engineering-audience-kicker.is-muted { fill: var(--color-muted); font-size: 15px; }
+.engineering-audience-system .engineering-audience-small { fill: var(--color-muted); font-size: 17px; }
+.engineering-audience-frame > rect:first-child { fill: none; stroke-width: 2.5; }
+.engineering-audience-frame.is-missing > rect:first-child { stroke: var(--color-oxide); stroke-dasharray: 8 9; }
+.engineering-audience-frame.is-process > rect:first-child { stroke: var(--color-accent); stroke-width: 3; }
+.engineering-audience-system .engineering-audience-frame.is-missing .engineering-audience-kicker { fill: var(--color-oxide); }
+.engineering-audience-legend { fill: var(--color-background); }
+.engineering-audience-goal > rect { fill: var(--color-surface); stroke: var(--color-text); stroke-width: 2.5; }
+.engineering-audience-system .engineering-audience-title { font-size: 28px; font-weight: 750; letter-spacing: -.01em; }
+.engineering-audience-system .engineering-audience-body { font-size: 20px; }
+.engineering-audience-rule { fill: none; stroke: var(--color-rule); stroke-width: 1.5; }
+.engineering-audience-prep rect { fill: none; stroke: var(--color-accent); stroke-width: 2; }
+.engineering-audience-system .engineering-audience-prep text { fill: var(--color-accent); font-size: 19px; font-weight: 700; text-anchor: middle; }
+.engineering-audience-flow { fill: none; stroke: var(--color-text); stroke-width: 3; }
+.engineering-audience-system .engineering-audience-flow-label { fill: var(--color-muted); font-size: 18px; font-weight: 600; text-anchor: middle; }
+.engineering-audience-project { fill: var(--color-surface); stroke: var(--color-text); stroke-width: 2; }
+.engineering-audience-line { fill: var(--color-rule); }
+.engineering-audience-line.is-changed { fill: var(--color-accent); }
+.engineering-audience-system .engineering-audience-mark { fill: var(--color-accent); font-family: var(--font-mono); font-size: 26px; font-weight: 700; }
+.engineering-audience-system .engineering-audience-caption { fill: var(--color-text); font-size: 19px; font-weight: 600; text-anchor: middle; }
+.engineering-audience-link { fill: none; stroke: var(--color-accent); stroke-width: 1.5; stroke-dasharray: 4 6; }
+.engineering-audience-loop { fill: none; stroke: var(--color-accent); stroke-width: 2.5; stroke-dasharray: 8 7; }
+.engineering-audience-point { fill: var(--color-background); stroke: var(--color-accent); stroke-width: 3; }
+.engineering-audience-system .engineering-audience-point-label { font-size: 21px; font-weight: 700; }
+.engineering-audience-statement { min-height: calc(1.2 * clamp(26px, 2.5vw, 42px) + 13px); margin: 0; padding-top: 12px; border-top: var(--rule-accent); color: var(--color-text); font-family: var(--font-display); font-size: clamp(26px, 2.5vw, 42px); font-weight: 700; letter-spacing: -.02em; line-height: 1.2; text-align: center; }
+.engineering-audience-statement:empty { border-top-color: transparent; }
 
 /* S09 — one responsibility loop, with coordination as a considered choice. */
 .boundary-audience { display: grid; gap: clamp(26px, 5vh, 50px); margin-top: clamp(24px, 4vh, 42px); }
@@ -983,7 +1000,6 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
 
 @media (max-width: 1000px) {
   .audience-route--8 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .engineering-audience-route .audience-route-name { font-size: 18px; }
 }
 
 @media (max-width: 760px) {
@@ -995,7 +1011,6 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
   .audience-route--5,
   .audience-route--6 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .audience-route--8 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .engineering-audience-evidence ol { grid-template-columns: minmax(0, 1fr); }
   .orchestration-audience,
   .orchestration-audience--1,
   .orchestration-audience--2 { grid-template-columns: minmax(0, 1fr); grid-template-areas: "roles" "outcomes" "git"; }

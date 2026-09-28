@@ -202,7 +202,9 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
 .anatomy-index { padding-top: 2px; color: #8a681c; font-family: var(--font-mono); font-size: 9px; }
 .anatomy-map h3 { margin: 0; color: var(--color-text); font-family: var(--font-display); font-size: clamp(16px, 1.5vw, 19px); font-weight: 600; line-height: 1.25; }
 .anatomy-map p { margin: 4px 0 0; color: var(--color-muted); font-size: 12px; line-height: 1.4; }
-.anatomy-equation { width: fit-content; margin: 12px 0 0; padding: 8px 0 0; border-top: 1px solid var(--color-text); color: var(--color-text); font-family: var(--font-display); font-size: clamp(20px, 2.1vw, 28px); letter-spacing: -.02em; }
+.anatomy-summary { display: grid; grid-template-columns: minmax(0, 1fr) minmax(180px, 25%); gap: clamp(14px, 2vw, 24px); align-items: center; margin-top: 12px; }
+.anatomy-diagram { display: block; width: 100%; height: auto; max-height: 140px; object-fit: contain; object-position: center; }
+.anatomy-equation { width: fit-content; margin: 0; padding: 8px 0 0; border-top: 1px solid var(--color-text); color: var(--color-text); font-family: var(--font-display); font-size: clamp(20px, 2.1vw, 28px); letter-spacing: -.02em; }
 
 .scene-stage--12 h1 { margin-top: 9px; margin-bottom: 9px; font-size: clamp(29px, 3vw, 40px); }
 .scene-stage--12 .scene-takeaway { color: #55564c; }
@@ -246,6 +248,7 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
   .opening-callout { margin-top: 0; }
   .anatomy-map { column-gap: 16px; }
   .anatomy-map li { min-height: 80px; }
+  .anatomy-summary { grid-template-columns: minmax(0, 1fr) minmax(150px, 28%); gap: 12px; }
   .scene-stage--12 .final-visual { gap: 15px 20px; }
 }
 
@@ -257,6 +260,8 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
   .comparison-notes { gap: 9px; }
   .anatomy-map { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 14px; }
   .anatomy-map li { min-height: 74px; }
+  .anatomy-summary { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .anatomy-diagram { justify-self: end; width: min(100%, 240px); max-height: 138px; }
   .final-statement { grid-column: auto; font-size: 40px; }
 }
 
@@ -302,8 +307,10 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
   .scene-stage--01 .opening-callout { margin-top: 14px; }
 
   .scene-stage--07 .anatomy-intro { margin-bottom: 10px; }
+  .scene-stage--07 .anatomy-summary { grid-template-columns: minmax(0, 1fr) minmax(135px, 18%); gap: 12px; margin-top: 6px; }
+  .scene-stage--07 .anatomy-diagram { max-height: 88px; }
   .scene-stage--07 .anatomy-map li { padding-block: 8px 6px; }
-  .scene-stage--07 .anatomy-equation { margin-top: 8px; padding-top: 6px; }
+  .scene-stage--07 .anatomy-equation { padding-top: 6px; }
 }
 
 /* Phase 6 Batch A: scene-specific layouts use the approved local v2 illustrations. */

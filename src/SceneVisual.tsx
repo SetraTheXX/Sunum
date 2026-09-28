@@ -3,6 +3,7 @@ import type { Scene } from './content';
 
 const journeyArtwork = new URL('../assets/phase-4/v2/journey-v2.svg', import.meta.url).href;
 const contextDeskArtwork = new URL('../assets/phase-4/v2/context-desk-v2.svg', import.meta.url).href;
+const anatomyArtwork = new URL('../assets/phase-4/v2/agent-anatomy-v2.svg', import.meta.url).href;
 
 interface SceneVisualProps {
   scene: Scene;
@@ -397,7 +398,18 @@ function AnatomyVisual({ steps }: { steps: string[] }) {
           {renderParts(optionalParts, 'anatomy-map--optional')}
         </section>
       )}
-      {equationStep && <p className="anatomy-equation">{unquote(removeLabel(equationStep, 'Alt cümle'))}</p>}
+      {equationStep && (
+        <div className="anatomy-summary">
+          <p className="anatomy-equation">{unquote(removeLabel(equationStep, 'Alt cümle'))}</p>
+          <img
+            className="anatomy-diagram"
+            src={anatomyArtwork}
+            alt="Şematik agent anatomisi: dosyalar ve talimatlar context'e, model araçlar ve terminalle çalışır; sonuçlar context'e döner. Skill, MCP ve Git isteğe bağlıdır."
+            width="1320"
+            height="760"
+          />
+        </div>
+      )}
     </div>
   );
 }

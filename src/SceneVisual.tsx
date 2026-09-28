@@ -499,46 +499,74 @@ function JourneyAudienceVisual({ steps }: { steps: string[] }) {
 }
 
 function ContextAudienceVisual({ steps }: { steps: string[] }) {
-  const definitions = [
-    { label: 'MODEL', prefix: 'Model' },
-    { label: 'PROMPT', prefix: 'Prompt' },
-    { label: 'CONTEXT', prefix: 'Context' },
-  ].flatMap(({ label, prefix }) => {
-    const step = steps.find((candidate) => candidate.startsWith(`${prefix}:`));
-    return step ? [{ label, description: unquote(removeLabel(step, prefix)) }] : [];
-  });
   const sourceStep = steps.find((step) => step.startsWith('Context masası:'));
-  const sources = sourceStep ? removeLabel(sourceStep, 'Context masası').split(/\s*\+\s*/).filter(Boolean) : [];
+  const sources = sourceStep ? removeLabel(sourceStep, 'Context masası').split(/\s*\+\s*/).filter(Boolean).slice(1) : [];
   const limitStep = steps.find((step) => step.startsWith('Alt cümle:'));
   const limit = limitStep ? unquote(removeLabel(limitStep, 'Alt cümle')) : '';
+  const reveal = steps.length;
+  // The boundary widens as information is placed on the desk; source anchors stay fixed.
+  const boundary = reveal === 3 ? { x: 440, y: 95, width: 400, height: 280 } : reveal === 4 ? { x: 300, y: 50, width: 680, height: 380 } : { x: 262, y: 22, width: 742, height: 428 };
+  const linked = [
+    { dot: [420, 140], edge: [544, 193], label: [322, 112, 'start'] },
+    { dot: [900, 140], edge: [739, 199], label: [960, 112, 'end'] },
+    { dot: [900, 330], edge: [739, 271], label: [900, 372, 'middle'] },
+    { dot: [390, 330], edge: [541, 271], label: [390, 372, 'middle'] },
+  ] as const;
+  const visibleSources = sources.slice(0, reveal >= 5 ? 4 : reveal === 4 ? 3 : 0);
 
   return (
-    <div className={`context-audience context-audience--${steps.length}`} data-reveal={steps.length}>
-      {definitions.length > 0 && (
-        <ol className="context-audience-definitions" aria-label="Model, prompt ve context ayrımı">
-          {definitions.map(({ label, description }, index) => (
-            <li className={index === definitions.length - 1 ? 'is-current' : ''} key={label}>
-              <span className="primitive-label">{label}</span>
-              <p>{description}</p>
-            </li>
-          ))}
-        </ol>
-      )}
-      {sources.length > 0 && (
-        <section className="context-audience-workbench" aria-label="Context masasına giren kaynaklar">
-          <figure><img src={contextDeskArtwork} alt="İlgili bilgilerin çalışma masasına eklenmesini gösteren kavramsal çizim." /></figure>
-          <div className="context-audience-sources">
-            <span className="primitive-label">CONTEXT MASASI</span>
-            <ul>{sources.map((source, index) => <li key={`${source}-${index}`}>{source}</li>)}</ul>
-          </div>
-        </section>
-      )}
-      {limit && (
-        <blockquote className="context-audience-limit">
-          <span className="primitive-label">ALT CÜMLE</span>
-          <p>{limit}</p>
-        </blockquote>
-      )}
+    <div className={`context-audience context-audience--${reveal}`} data-reveal={reveal}>
+      <svg className="context-audience-system" viewBox="0 0 1200 470" role="img" aria-label={`Model: metni işleyen motor. ${reveal >= 2 ? 'Prompt: bu turdaki istek, ayrı bir girişten gelir. ' : ''}${reveal >= 3 ? 'Context: bu istekte modele sunulan bilginin sınırı. ' : ''}${visibleSources.length ? `Sınırın içine bağlanan bilgiler: ${visibleSources.join(', ')}. ` : ''}${reveal >= 5 ? 'Araç çıktısı araçla eklendi; sunulmayan bilgi sınırın dışında kalır ve görünmez.' : ''}`}>
+        {reveal >= 3 && (
+          <g className="context-audience-boundary">
+            <rect x={boundary.x} y={boundary.y} width={boundary.width} height={boundary.height} rx="18" />
+            <text x={boundary.x + 22} y={boundary.y + 7}>
+              <tspan className="context-audience-kicker">CONTEXT</tspan>
+              <tspan className="context-audience-small" dx="12">bu istekte sunulan bilgi</tspan>
+            </text>
+          </g>
+        )}
+        {reveal >= 2 && (
+          <g className="context-audience-prompt">
+            <text x="40" y="172" className="context-audience-kicker">PROMPT</text>
+            <text x="40" y="205" className="context-audience-caption">Bu turdaki istek</text>
+            <path d="M40 235 H525" />
+            <path d="M525 235 l-14 -8 m14 8 l-14 8" />
+          </g>
+        )}
+        {visibleSources.length > 0 && (
+          <g className="context-audience-sources">
+            {visibleSources.map((source, index) => {
+              const { dot, edge, label } = linked[index];
+              return (
+                <g className={index === 3 ? 'context-audience-tool' : undefined} key={source}>
+                  <path d={`M${dot[0]} ${dot[1]} L${edge[0]} ${edge[1]}`} />
+                  <circle cx={dot[0]} cy={dot[1]} r="7" />
+                  <text x={label[0]} y={label[1]} textAnchor={label[2]}>{source}</text>
+                  {index === 3 && <text x={label[0]} y={label[1] + 27} textAnchor={label[2]} className="context-audience-small">araçla eklendi</text>}
+                </g>
+              );
+            })}
+          </g>
+        )}
+        <g className="context-audience-engine">
+          <circle className="context-audience-engine-outer" cx="640" cy="235" r="105" />
+          <circle className="context-audience-engine-inner" cx="640" cy="235" r="92" />
+          <text x="640" y="229" className="context-audience-engine-name">MODEL</text>
+          <text x="640" y="260" className="context-audience-engine-detail">Metni işler, çıktı üretir</text>
+        </g>
+        {reveal >= 5 && (
+          <g className="context-audience-outside">
+            <path d="M1062 235 H1016" />
+            <path d="M1016 235 l12 -8 m-12 8 l12 8" />
+            <path d="M1030 218 l16 34" />
+            <text x="1070" y="214">Sunulmayan</text>
+            <text x="1070" y="240">bilgi</text>
+            <text x="1070" y="272" className="context-audience-outside-result">GÖRÜNMEZ</text>
+          </g>
+        )}
+      </svg>
+      <p className="context-audience-limit" aria-hidden={limit ? undefined : true}>{limit}</p>
     </div>
   );
 }

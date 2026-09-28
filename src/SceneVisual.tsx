@@ -643,31 +643,83 @@ function ComparisonAudienceVisual({ steps }: { steps: string[] }) {
 function VibeCodingAudienceVisual({ steps }: { steps: string[] }) {
   const requestStep = steps.find((step) => step.startsWith('Örnek istekler:'));
   const requests = requestStep ? removeLabel(requestStep, 'Örnek istekler').split(/\s*→\s*/).map(unquote) : [];
-  const resultsVisible = steps.some((step) => step.startsWith('Her istekten sonra'));
   const noteStep = steps.find((step) => step.startsWith('Etiket:'));
   const note = noteStep ? unquote(removeLabel(noteStep, 'Etiket')) : '';
-  const resultLabels = ['İlk sürüm görünür olur', 'Koyu tema görünür olur', 'Mobil düzen görünür olur'];
-  const visibleRequests = resultsVisible ? requests : requests.slice(0, 1);
+  const reveal = steps.length;
+  // One representative app changes in place: request, see the result, ask again.
+  const results = ['ilk görünüm ortaya çıktı', 'aynı sayfa koyu temada', 'aynı sayfa mobil düzende'];
+  const rowY = [100, 220, 340];
+  const current = Math.min(reveal, 3) - 1;
+  const mobile = reveal >= 3;
+  const frameLeft = mobile ? 700 : 480;
 
   return (
-    <div className={`vibe-coding-audience vibe-coding-audience--${steps.length}`} data-reveal={steps.length}>
-      {visibleRequests.length > 0 && (
-        <ol className="vibe-coding-audience-prompts" aria-label="Üç örnek istek ve görünür değişiklik">
-          {visibleRequests.map((request, index) => (
-            <li key={`${request}-${index}`}>
-              <span className="vibe-coding-audience-index">{String(index + 1).padStart(2, '0')}</span>
-              <blockquote>{request}</blockquote>
-              {resultsVisible && (
-                <p className="vibe-coding-audience-result">
-                  <span className="primitive-label">GÖRÜNÜR DEĞİŞİKLİK</span>
-                  {resultLabels[index]}
-                </p>
+    <div className={`vibe-coding-audience vibe-coding-audience--${reveal}`} data-reveal={reveal}>
+      <svg className="vibe-coding-audience-system" viewBox="0 0 1200 470" role="img" aria-label={`Temsili örnek uygulama üzerinde hızlı döngü: istek ver, sonucu gör, tekrar iste. ${requests.slice(0, current + 1).map((request, index) => `${request} Sonuç: ${results[index]}.`).join(' ')}`}>
+        <g className="vibe-coding-audience-loop">
+          {requests.slice(0, current + 1).map((request, index) => (
+            <g className={index === current ? 'is-current' : 'is-past'} key={request}>
+              <text x="40" y={rowY[index] - 8} className="vibe-coding-audience-index">{String(index + 1).padStart(2, '0')}</text>
+              <path className="vibe-coding-audience-marker" d={`M76 ${rowY[index] - 32} V${rowY[index] + 30}`} />
+              <text x="92" y={rowY[index] - 6} className="vibe-coding-audience-request">“{request}”</text>
+              <text x="92" y={rowY[index] + 24} className="vibe-coding-audience-result">→ {results[index]}</text>
+              {index < current && (
+                <g className="vibe-coding-audience-again">
+                  <path d={`M52 ${rowY[index] + 12} V${rowY[index] + 80} M52 ${rowY[index] + 80} l-7 -12 m7 12 l7 -12`} />
+                  <text x="92" y={rowY[index] + 66}>tekrar iste</text>
+                </g>
               )}
-            </li>
+            </g>
           ))}
-        </ol>
-      )}
-      {note && <p className="vibe-coding-audience-note">{note}</p>}
+          <path className="vibe-coding-audience-link" d={`M420 ${rowY[current]} H${frameLeft - 12} M${frameLeft - 12} ${rowY[current]} l-13 -7 m13 7 l-13 7`} />
+        </g>
+        <g className={`vibe-app${reveal >= 2 ? ' is-dark' : ''}`}>
+          {mobile ? (
+            <>
+              <rect className="vibe-app-ghost" x="480" y="40" width="680" height="390" rx="14" />
+              <text x="500" y="416" className="vibe-app-ghost-label">önceki geniş düzen</text>
+              <rect className="vibe-app-bg" x="700" y="26" width="250" height="432" rx="30" />
+              <text x="825" y="52" className="vibe-app-tag">TEMSİLİ ÖRNEK</text>
+              <text x="722" y="94" className="vibe-app-ink vibe-app-brand">Portfolyo</text>
+              <path className="vibe-app-menu" d="M906 80 H930 M906 87 H930 M906 94 H930" />
+              <text x="722" y="140" className="vibe-app-ink vibe-app-title-small">Tasarım ve kod</text>
+              <rect className="vibe-app-muted" x="722" y="156" width="200" height="9" rx="4.5" />
+              <rect className="vibe-app-muted" x="722" y="172" width="150" height="9" rx="4.5" />
+              <rect className="vibe-app-button" x="722" y="192" width="120" height="34" rx="17" />
+              <text x="782" y="214" className="vibe-app-button-text vibe-app-button-small">İletişim</text>
+              {[244, 314, 384].map((y, index) => (
+                <g key={y}>
+                  <rect className="vibe-app-tile" x="722" y={y} width="206" height="60" rx="8" />
+                  <text x="738" y={y + 37} className="vibe-app-ink vibe-app-tile-label">Proje {index + 1}</text>
+                </g>
+              ))}
+            </>
+          ) : (
+            <>
+              <rect className="vibe-app-bg" x="480" y="40" width="680" height="390" rx="14" />
+              <path className="vibe-app-divider" d="M480 80 H1160" />
+              <circle className="vibe-app-muted" cx="504" cy="60" r="5" />
+              <circle className="vibe-app-muted" cx="522" cy="60" r="5" />
+              <circle className="vibe-app-muted" cx="540" cy="60" r="5" />
+              <text x="1140" y="66" className="vibe-app-tag vibe-app-tag-end">TEMSİLİ ÖRNEK</text>
+              <text x="512" y="118" className="vibe-app-ink vibe-app-brand">Portfolyo</text>
+              {[930, 996, 1062].map((x) => <rect className="vibe-app-muted" key={x} x={x} y="106" width="50" height="10" rx="5" />)}
+              <text x="512" y="184" className="vibe-app-ink vibe-app-title">Tasarım ve kod</text>
+              <rect className="vibe-app-muted" x="512" y="204" width="360" height="12" rx="6" />
+              <rect className="vibe-app-muted" x="512" y="226" width="280" height="12" rx="6" />
+              <rect className="vibe-app-button" x="512" y="252" width="140" height="40" rx="20" />
+              <text x="582" y="278" className="vibe-app-button-text">İletişim</text>
+              {[512, 724, 936].map((x, index) => (
+                <g key={x}>
+                  <rect className="vibe-app-tile" x={x} y="316" width="192" height="92" rx="8" />
+                  <text x={x + 16} y="392" className="vibe-app-ink vibe-app-tile-label">Proje {index + 1}</text>
+                </g>
+              ))}
+            </>
+          )}
+        </g>
+      </svg>
+      <p className="vibe-coding-audience-note" aria-hidden={note ? undefined : true}>{note}</p>
     </div>
   );
 }

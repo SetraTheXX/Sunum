@@ -434,29 +434,6 @@ function OrchestrationVisual({ steps }: { steps: string[] }) {
   );
 }
 
-function AudienceRoute({
-  items,
-  activeIndex = -1,
-  className = '',
-  label,
-}: {
-  items: string[];
-  activeIndex?: number;
-  className?: string;
-  label: string;
-}) {
-  return (
-    <ol className={`audience-route audience-route--${items.length}${className ? ` ${className}` : ''}`} aria-label={label}>
-      {items.map((item, index) => (
-        <li className={index === activeIndex ? 'is-current' : ''} key={`${item}-${index}`}>
-          <span className="audience-route-index">{String(index + 1).padStart(2, '0')}</span>
-          <span className="audience-route-name">{item}</span>
-        </li>
-      ))}
-    </ol>
-  );
-}
-
 function JourneyAudienceVisual({ steps }: { steps: string[] }) {
   const headingStep = steps.find((step) => step.startsWith('Üç başlık:'));
   const noteStep = steps.find((step) => step.startsWith('Not:'));
@@ -1009,45 +986,92 @@ function ConceptualWorkflowAudienceVisual({ steps }: { steps: string[] }) {
   const toolsStep = steps.find((step) => step.startsWith('Tools /'));
   const outcomesStep = steps.find((step) => step.startsWith('FAIL →'));
   const question = questionStep ? unquote(removeLabel(questionStep, 'Soru')) : '';
+  const reveal = steps.length;
+  // Swimlanes: the same task chip changes owner lane by lane; conditional QA routes stay conditional. Conceptual, not a capture.
   const roles = flowStep ? flowStep.split(/\s*→\s*/u).filter(Boolean) : [];
-  const [toolNames = '', qaName = ''] = toolsStep ? toolsStep.split(/\s*→\s*/u) : [];
+  const [, lead = 'Lead', analystStep = 'gerektiğinde Analyst', developer = 'Developer'] = roles;
+  const analyst = analystStep.replace(/^gerektiğinde\s+/u, '');
+  const [toolNames = 'Tools / Terminal / değişiklik', qa = 'QA'] = toolsStep ? toolsStep.split(/\s*→\s*/u) : [];
   const tools = toolNames.split(/\s*\/\s*/u).filter(Boolean);
-  const outcomes = outcomesStep ? outcomesStep.split(/\s*\|\s*/u).map((outcome) => {
-    const [status, ...target] = outcome.split(/\s*→\s*/u);
-    return { status, target: target.join(' → '), failed: status?.startsWith('FAIL') ?? false };
-  }) : [];
+  const [fail = "FAIL → Developer'a dönüş", pass = 'PASS → tamamlanma / Git'] = outcomesStep ? outcomesStep.split(/\s*\|\s*/u) : [];
+  const passTarget = pass.split(/\s*→\s*/u)[1] ?? 'tamamlanma / Git';
+  const lanes = [
+    { key: 'lead', name: lead, y: 70 },
+    { key: 'analyst', name: analyst, y: 145, optional: true },
+    { key: 'developer', name: developer, y: 225 },
+    { key: 'qa', name: qa, y: 310 },
+  ];
+  const owner = reveal >= 3 ? 'qa' : reveal === 2 ? 'developer' : 'lead';
+  const chip = { lead: [300, 70], developer: [680, 225], qa: [960, 310] }[owner];
+  const caption = [
+    'Odak ürün değil, süreç: tek modele kod yazdırmaktan geliştirme sürecini agent rolleriyle işletmeye geçiş.',
+    `${lead} görevi ${developer}'a devreder; ${analyst} yalnız gerektiğinde araya girer.`,
+    `${developer} araçlarla değişikliği yapar ve işi bağımsız kontrol için ${qa}'ya bırakır.`,
+    `${qa} iki koşullu yol açar: ${fail.replace('FAIL → ', 'FAIL ise ')}, ${pass.replace('PASS → ', 'PASS ise ')}.`,
+  ][Math.min(reveal, 4) - 1];
 
   return (
-    <div className={`workflow-audience workflow-audience--${steps.length}`} data-reveal={steps.length}>
+    <div className={`workflow-audience workflow-audience--${reveal}`} data-reveal={reveal}>
       <div className="workflow-audience-concept-label" role="note">
         <span>KAVRAMSAL WORKFLOW</span>
-        <strong>AUTHENTIC Vİ3ECODE EVIDENCE YOK</strong>
+        <strong>bu görünümde gerçek Vi3ecode capture gösterilmiyor</strong>
       </div>
       {question && <blockquote className="workflow-audience-question">{question}</blockquote>}
-      {roles.length > 0 && (
-        <section className="workflow-audience-roles" aria-label="Görev ve rol akışı">
-          <span className="primitive-label">ROL AKIŞI · KAVRAMSAL ŞEMA</span>
-          <AudienceRoute items={roles} label="Görevden Developer'a rol akışı" />
-        </section>
-      )}
-      {tools.length > 0 && (
-        <section className="workflow-audience-tools" aria-label="Kavramsal Tools, Terminal, değişiklik ve QA aşaması">
-          <span className="primitive-label">ÇALIŞMA ADIMI · KAVRAMSAL</span>
-          <ol>{tools.map((tool, index) => <li key={tool}><span>{String(index + 1).padStart(2, '0')}</span>{tool}</li>)}</ol>
-          <span className="workflow-audience-tools-arrow" aria-hidden="true">→</span>
-          <strong>{qaName}</strong>
-        </section>
-      )}
-      {outcomes.length > 0 && (
-        <section className="workflow-audience-outcomes" aria-label="Kavramsal QA dönüşleri">
-          <span className="primitive-label">KAVRAMSAL QA DÖNÜŞÜ</span>
-          <ul>{outcomes.map(({ status, target, failed }) => (
-            <li className={failed ? 'is-fail' : 'is-pass'} key={status}>
-              <strong>{status}</strong><span aria-hidden="true">{failed ? '↶' : '→'}</span><p>{target}</p>
-            </li>
-          ))}</ul>
-        </section>
-      )}
+      <svg className="workflow-audience-lanes" viewBox="0 0 1200 390" role="img" aria-label={`Kavramsal workflow, gerçek kayıt değil. Aynı görev rol kulvarları arasında el değiştirir. ${reveal >= 2 ? `${lead}, gerektiğinde ${analyst} üzerinden, ${developer}'a devreder. ` : ''}${reveal >= 3 ? `${developer}: ${tools.join(', ')}; ardından ${qa}. ` : ''}${reveal >= 4 ? `Koşullu yollar: ${fail}; ${pass}.` : ''}`}>
+        {lanes.map(({ key, name, y, optional }) => (
+          <g key={key} className={`workflow-audience-lane${optional ? ' is-optional' : ''}${owner === key ? ' is-owner' : ''}`}>
+            <path d={`M170 ${y} H1180`} />
+            <text x="20" y={y + 7} className="workflow-audience-lane-name">{name.toLocaleUpperCase('tr-TR')}</text>
+            {optional && <text x="20" y={y + 29} className="workflow-audience-small">gerektiğinde</text>}
+          </g>
+        ))}
+
+        <path className="workflow-audience-path" d="M170 70 H300" />
+        {reveal >= 2 && (
+          <g>
+            <path className="workflow-audience-detour" d="M460 145 H560 V219 M560 221 l-7 -12 m7 12 l7 -12" />
+            <circle className="workflow-audience-branch" cx="460" cy="145" r="6" />
+            <text x="576" y="186" className="workflow-audience-small">araştırma / inceleme</text>
+            <path className="workflow-audience-path" d="M300 70 H460 V225 H660" />
+            <text x="448" y="186" className="workflow-audience-edge is-end">devreder</text>
+          </g>
+        )}
+        {reveal >= 3 && (
+          <g>
+            <path className="workflow-audience-path" d="M660 225 H880 V310 H960" />
+            {tools.slice(0, 3).map((tool, index) => {
+              const x = [700, 775, 850][index];
+              return (
+                <g key={tool} className="workflow-audience-tick">
+                  <circle cx={x} cy="225" r="7" />
+                  <text x={x} y="206" className="workflow-audience-small is-center is-ink">{tool}</text>
+                </g>
+              );
+            })}
+          </g>
+        )}
+        {reveal >= 4 && (
+          <g>
+            <g className="workflow-audience-fail">
+              <path d="M960 327 V364 H660 V231 M660 229 l-7 12 m7 -12 l7 12" />
+              <text x="810" y="386">{fail}</text>
+            </g>
+            <g className="workflow-audience-pass">
+              <path d="M1015 310 H1062 M1062 310 l-12 -8 m12 8 l-12 8" />
+              <rect x="1068" y="286" width="118" height="48" rx="24" />
+              <text x="1127" y="317">{passTarget.split(/\s*\/\s*/u).at(-1)?.toUpperCase()}</text>
+              <text x="1127" y="358" className="workflow-audience-small is-center">{passTarget.split(/\s*\/\s*/u)[0]}</text>
+              <text x="1038" y="292" className="workflow-audience-kicker">PASS</text>
+            </g>
+          </g>
+        )}
+
+        <g className="workflow-audience-chip">
+          <rect x={chip[0] - 55} y={chip[1] - 17} width="110" height="34" rx="17" />
+          <text x={chip[0]} y={chip[1] + 6}>GÖREV</text>
+        </g>
+      </svg>
+      <p className="workflow-audience-caption">{caption}</p>
     </div>
   );
 }

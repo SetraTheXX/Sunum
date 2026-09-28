@@ -975,40 +975,38 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
 .orchestration-audience-pass.is-traveled path { stroke-width: 6; stroke-dasharray: none; }
 .orchestration-audience-map .orchestration-audience-pass text { fill: var(--color-accent); font-family: var(--font-mono); font-size: 16px; font-weight: 700; letter-spacing: .1em; }
 .orchestration-audience-caption { min-height: calc(1.3 * clamp(18px, 1.4vw, 23px) + 12px); margin: 0; padding-top: 12px; border-top: var(--rule-accent); color: var(--color-text); font-size: clamp(18px, 1.4vw, 23px); font-weight: 600; line-height: 1.3; text-align: center; }
-/* S11 — shared QA outcome list for the conceptual workflow scene. */
-.workflow-audience-outcomes ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(14px, 2vw, 28px); margin: 10px 0 0; padding: 0; list-style: none; }
-.workflow-audience-outcomes li { display: grid; grid-template-columns: auto 24px minmax(0, 1fr); gap: 10px; align-items: baseline; min-width: 0; padding: 10px 0 0; border-top: var(--rule); }
-.workflow-audience-outcomes li.is-pass { border-top-color: var(--color-accent); }
-.workflow-audience-outcomes strong { color: var(--color-text); font-family: var(--font-mono); font-size: 16px; }
-.workflow-audience-outcomes li.is-fail > span { color: var(--color-oxide); }
-.workflow-audience-outcomes li.is-pass > span { color: var(--color-accent); }
-.workflow-audience-outcomes p { margin: 0; color: var(--color-muted); font-size: clamp(18px, 1.25vw, 20px); line-height: 1.3; }
-
-/* S11 — the full workflow remains unmistakably conceptual until authentic evidence arrives. */
-.is-audience-mode .scene-stage--11 .scene-takeaway { display: none; }
-.workflow-audience { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .88fr); grid-template-areas: "badge badge" "question question" "roles roles" "tools outcomes"; gap: clamp(13px, 2vh, 20px) clamp(22px, 4vw, 54px); margin-top: clamp(13px, 2vh, 20px); }
-.workflow-audience-concept-label { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 18px; grid-area: badge; padding: 8px 11px; border-left: var(--rule-accent); background: var(--color-surface); color: var(--color-accent); font-family: var(--font-mono); font-size: 13px; line-height: 1.35; }
+/* S11 — conceptual swimlanes: the same task changes owner; QA routes stay conditional. */
+.workflow-audience { display: grid; gap: clamp(8px, 1.4vh, 15px); margin-top: clamp(10px, 1.8vh, 20px); }
+.workflow-audience-concept-label { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 18px; padding: 8px 11px; border-left: var(--rule-accent); background: var(--color-surface); color: var(--color-accent); font-family: var(--font-mono); font-size: 13px; line-height: 1.35; }
 .workflow-audience-concept-label strong { color: var(--color-oxide); font-weight: 700; }
-.workflow-audience-question { grid-area: question; margin: 0; color: var(--color-text); font-family: var(--font-display); font-size: clamp(25px, 2.7vw, 42px); font-weight: 600; letter-spacing: -.025em; line-height: 1.1; }
-.workflow-audience-roles { grid-area: roles; min-width: 0; }
-.workflow-audience-roles > .primitive-label,
-.workflow-audience-tools > .primitive-label,
-.workflow-audience-outcomes > .primitive-label { color: var(--color-accent); }
-.workflow-audience-roles .audience-route { gap: 0 clamp(13px, 1.45vw, 22px); }
-.workflow-audience-roles .audience-route li { min-height: 68px; }
-.workflow-audience-roles .audience-route-name { font-size: clamp(18px, 1.5vw, 23px); }
-.workflow-audience-tools { grid-area: tools; display: grid; grid-template-columns: minmax(0, 1fr) 22px auto; gap: 7px 10px; align-items: center; min-width: 0; padding-top: 10px; border-top: var(--rule); }
-.workflow-audience-tools > .primitive-label { grid-column: 1 / -1; }
-.workflow-audience-tools ol { display: grid; gap: 5px; margin: 0; padding: 0; list-style: none; }
-.workflow-audience-tools li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 7px; align-items: baseline; color: var(--color-text); font-size: clamp(18px, 1.2vw, 20px); line-height: 1.24; }
-.workflow-audience-tools li span { color: var(--color-oxide); font-family: var(--font-mono); font-size: 12px; }
-.workflow-audience-tools-arrow { color: var(--color-accent); font-size: 18px; }
-.workflow-audience-tools > strong { color: var(--color-text); font-family: var(--font-display); font-size: clamp(20px, 1.7vw, 27px); }
-.workflow-audience-outcomes { grid-area: outcomes; min-width: 0; padding-top: 10px; border-top: var(--rule); }
-.workflow-audience-outcomes ul { grid-template-columns: minmax(0, 1fr); gap: 9px; }
-.workflow-audience--1 { grid-template-areas: "badge badge" "question question"; }
-.workflow-audience--2 { grid-template-areas: "badge badge" "question question" "roles roles"; }
-.workflow-audience--3 { grid-template-areas: "badge badge" "question question" "roles roles" "tools tools"; }
+.workflow-audience-question { margin: 0; color: var(--color-text); font-family: var(--font-display); font-size: clamp(25px, 2.6vw, 42px); font-weight: 650; letter-spacing: -.025em; line-height: 1.1; }
+.workflow-audience-lanes { display: block; width: 100%; max-height: min(44vh, 500px); margin-inline: auto; overflow: visible; }
+.workflow-audience-lanes text { fill: var(--color-text); font-family: var(--font-display); }
+.workflow-audience-lane path { fill: none; stroke: var(--color-rule); stroke-width: 1.5; }
+.workflow-audience-lane.is-optional path { stroke-dasharray: 6 7; }
+.workflow-audience-lanes .workflow-audience-lane-name { fill: var(--color-muted); font-family: var(--font-mono); font-size: 18px; font-weight: 700; letter-spacing: .1em; }
+.workflow-audience-lane.is-owner path { stroke: var(--color-muted); stroke-width: 2; }
+.workflow-audience-lanes .workflow-audience-lane.is-owner .workflow-audience-lane-name { fill: var(--color-accent); }
+.workflow-audience-lanes .workflow-audience-small { fill: var(--color-muted); font-size: 16px; }
+.workflow-audience-lanes .workflow-audience-small.is-center { text-anchor: middle; }
+.workflow-audience-lanes .workflow-audience-small.is-ink { fill: var(--color-text); font-weight: 600; }
+.workflow-audience-path { fill: none; stroke: var(--color-accent); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.workflow-audience-detour { fill: none; stroke: var(--color-muted); stroke-width: 2.5; stroke-dasharray: 7 7; }
+.workflow-audience-lanes .workflow-audience-edge { fill: var(--color-accent); font-size: 16px; font-weight: 600; }
+.workflow-audience-lanes .workflow-audience-edge.is-end { text-anchor: end; }
+.workflow-audience-branch { fill: var(--color-background); stroke: var(--color-muted); stroke-width: 2.5; }
+.workflow-audience-tick circle { fill: var(--color-background); stroke: var(--color-accent); stroke-width: 3; }
+.workflow-audience-fail path { fill: none; stroke: var(--color-oxide); stroke-width: 3.5; stroke-dasharray: 9 7; }
+.workflow-audience-lanes .workflow-audience-fail text { fill: var(--color-oxide); font-size: 18px; font-weight: 700; text-anchor: middle; }
+.workflow-audience-pass path { fill: none; stroke: var(--color-accent); stroke-width: 3.5; stroke-dasharray: 9 7; }
+.workflow-audience-pass rect { fill: var(--color-background); stroke: var(--color-accent); stroke-width: 2.5; stroke-dasharray: 7 6; }
+.workflow-audience-lanes .workflow-audience-pass > text:first-of-type { fill: var(--color-accent); font-size: 20px; font-weight: 750; letter-spacing: .04em; text-anchor: middle; }
+.workflow-audience-lanes .workflow-audience-kicker { fill: var(--color-accent); font-family: var(--font-mono); font-size: 14px; font-weight: 700; letter-spacing: .1em; text-anchor: middle; }
+.workflow-audience-chip rect { fill: var(--color-text); }
+.workflow-audience-lanes .workflow-audience-chip text { fill: var(--color-surface); font-family: var(--font-mono); font-size: 16px; font-weight: 700; letter-spacing: .12em; text-anchor: middle; }
+.workflow-audience-caption { min-height: calc(2.6 * clamp(17px, 1.3vw, 21px) + 12px); margin: 0; padding-top: 10px; border-top: var(--rule-accent); color: var(--color-text); font-size: clamp(17px, 1.3vw, 21px); font-weight: 600; line-height: 1.3; text-align: center; }
+
+.is-audience-mode .scene-stage--11 .scene-takeaway { display: none; }
 
 @media (max-width: 1000px) {
   .audience-route--8 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -1023,8 +1021,4 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
   .audience-route--5,
   .audience-route--6 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .audience-route--8 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .workflow-audience { grid-template-columns: minmax(0, 1fr); grid-template-areas: "badge" "question" "roles" "tools" "outcomes"; }
-  .workflow-audience--1 { grid-template-areas: "badge" "question"; }
-  .workflow-audience--2 { grid-template-areas: "badge" "question" "roles"; }
-  .workflow-audience--3 { grid-template-areas: "badge" "question" "roles" "tools"; }
 }

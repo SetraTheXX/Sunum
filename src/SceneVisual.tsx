@@ -941,27 +941,33 @@ function ConceptualWorkflowAudienceVisual({ steps }: { steps: string[] }) {
   );
 }
 
+// One task runs through the system: person → task → context → model, with parts attached by what they do for that task.
 const anatomyStageNodes = [
-  { name: 'Model', x: 350, y: 240, width: 210, height: 76, optional: false },
-  { name: 'Context', x: 350, y: 95, width: 210, height: 76, optional: false },
-  { name: 'Project files', x: 40, y: 95, width: 210, height: 76, optional: false },
-  { name: 'Instructions', x: 40, y: 240, width: 210, height: 76, optional: false },
-  { name: 'Tools', x: 690, y: 240, width: 185, height: 76, optional: false },
-  { name: 'Terminal', x: 690, y: 95, width: 185, height: 76, optional: false },
-  { name: 'Skill', x: 40, y: 420, width: 185, height: 72, optional: true },
-  { name: 'MCP', x: 365, y: 420, width: 185, height: 72, optional: true },
-  { name: 'Git', x: 690, y: 420, width: 185, height: 72, optional: true },
+  { name: 'Context', x: 390, y: 215, width: 140, height: 60 },
+  { name: 'Instructions', x: 380, y: 92, width: 160, height: 60 },
+  { name: 'Project files', x: 380, y: 345, width: 160, height: 60 },
+  { name: 'Tools', x: 760, y: 215, width: 130, height: 60 },
+  { name: 'Terminal', x: 760, y: 345, width: 130, height: 60 },
+  { name: 'Skill', x: 575, y: 92, width: 130, height: 60 },
+  { name: 'MCP', x: 935, y: 215, width: 130, height: 60 },
+  { name: 'Git', x: 215, y: 345, width: 130, height: 60 },
 ] as const;
 
 const anatomyStageEdges = [
-  { from: 'Project files', to: 'Context', path: 'M250 133 H350', optional: false },
-  { from: 'Instructions', to: 'Context', path: 'M250 278 C300 278 300 133 350 133', optional: false },
-  { from: 'Context', to: 'Model', path: 'M455 171 V240', optional: false },
-  { from: 'Model', to: 'Tools', path: 'M560 278 H690', optional: false },
-  { from: 'Tools', to: 'Terminal', path: 'M782 240 V171', optional: false },
-  { from: 'Skill', to: 'Instructions', path: 'M132 420 V316', optional: true },
-  { from: 'MCP', to: 'Tools', path: 'M458 420 C520 375 620 355 690 278', optional: true },
-  { from: 'Git', to: 'Project files', path: 'M690 456 C690 525 25 525 25 133 H40', optional: true },
+  { from: 'Sen', to: 'Görev', path: 'M190 245 H219' },
+  { from: 'Görev', to: 'Model', path: 'M345 245 H566', when: (names: Set<string>) => !names.has('Context') },
+  { from: 'Görev', to: 'Context', path: 'M345 245 H384' },
+  { from: 'Context', to: 'Model', path: 'M530 245 H566' },
+  { from: 'Instructions', to: 'Context', path: 'M460 152 V209' },
+  { from: 'Project files', to: 'Context', path: 'M460 345 V281' },
+  { from: 'Model', to: 'Tools', path: 'M688 234 H754' },
+  { from: 'Tools', to: 'Model', path: 'M760 256 H694' },
+  { from: 'Tools', to: 'Terminal', path: 'M825 275 V339' },
+  { from: 'Terminal', to: 'Project files', path: 'M760 375 H546', label: 'değişiklik', labelAt: [650, 364] },
+  { from: 'Skill', to: 'Instructions', path: 'M575 122 H546' },
+  { from: 'MCP', to: 'Tools', path: 'M935 245 H896' },
+  { from: 'Project files', to: 'Git', path: 'M380 375 H351' },
+  { from: 'Git', to: 'Sen', path: 'M215 375 H115 V277', label: 'review · onay', labelAt: [168, 430] },
 ] as const;
 
 function AnatomyAudienceVisual({
@@ -973,66 +979,85 @@ function AnatomyAudienceVisual({
   parts: Array<{ name: string; description: string; number: number; optional: boolean }>;
   equation?: string;
 }) {
-  const revealedNames = new Set(parts.map(({ name }) => name));
   const summary = Boolean(equation);
+  const names = new Set<string>(['Sen', 'Görev', ...parts.map(({ name }) => name)]);
   const currentPart = summary ? undefined : parts.at(-1);
-  const stateFor = (name: string) => !revealedNames.has(name)
-    ? 'is-pending'
-    : name === currentPart?.name ? 'is-current' : 'is-revealed';
+  const current = currentPart?.name;
+  const optionalNames = new Set(parts.filter(({ optional }) => optional).map(({ name }) => name));
+  const nodeClass = (name: string, optional = false) => `anatomy-audience-node${name === current ? ' is-current' : ''}${optional ? ' is-optional' : ''}`;
+  const intro = introduction.split(/\s*Her satıra/u)[0];
+  const [, agentLabel, workflowLabel] = (equation ?? 'Model ≠ Agent ≠ Workflow').split(/\s*≠\s*/u);
+  const modelPart = parts.find(({ name }) => name === 'Model');
+  const caption = summary
+    ? equation
+    : currentPart
+      ? `${currentPart.name} — ${currentPart.description}`
+      : intro;
 
   return (
     <div className={`anatomy-audience${summary ? ' is-summary' : ''}`} data-reveal={summary ? 11 : parts.length + 1}>
-      <p className="anatomy-audience-intro">{introduction}</p>
-      <div className="anatomy-audience-layout">
-        <svg className="anatomy-audience-map" viewBox="0 0 1000 550" role="img" aria-label="Örnek kurulum bileşenlerini ve aralarındaki ilişkileri gösteren kavramsal sistem haritası">
-          <g className="anatomy-audience-links" fill="none" strokeLinecap="square">
-            {anatomyStageEdges.map(({ from, to, path, optional }) => {
-              const visible = revealedNames.has(from) && revealedNames.has(to);
-              const active = currentPart && (currentPart.name === from || currentPart.name === to);
-              return (
-                <path
-                  key={`${from}-${to}`}
-                  d={path}
-                  className={`${visible ? 'is-revealed' : 'is-pending'}${active ? ' is-current' : ''}${optional ? ' is-optional' : ''}`}
-                />
-              );
-            })}
+      <svg className="anatomy-audience-map" viewBox="0 0 1200 490" role="img" aria-label={`Aynı görev etrafında çalışan örnek agent kurulumu. Görünen parçalar: ${[...names].join(', ')}. ${optionalNames.size ? `${[...optionalNames].join(', ')} kullanılıyorsa eklenir; zorunlu değildir. ` : ''}${summary ? `${equation}: model motor, agent onu araç ve bağlamla çalıştıran ortam, workflow insan kontrolüyle birlikte bütün süreç.` : ''}`}>
+        <defs>
+          <marker id="anatomy-audience-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path className="anatomy-audience-arrow" d="M0 0 L10 5 L0 10 z" /></marker>
+          <marker id="anatomy-audience-arrow-current" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path className="anatomy-audience-arrow is-current" d="M0 0 L10 5 L0 10 z" /></marker>
+        </defs>
+        {summary && (
+          <g className="anatomy-audience-layers">
+            <rect className="anatomy-audience-workflow" x="20" y="18" width="1160" height="462" rx="24" />
+            <rect className="anatomy-audience-legend" x="36" y="4" width="360" height="28" />
+            <text x="48" y="25"><tspan className="anatomy-audience-kicker is-workflow">{workflowLabel.toLocaleUpperCase('tr-TR')}</tspan><tspan className="anatomy-audience-small" dx="10">görev, agent ve insan kontrolü</tspan></text>
+            <rect className="anatomy-audience-agent" x="366" y="64" width="720" height="368" rx="18" />
+            <rect className="anatomy-audience-legend" x="380" y="50" width="400" height="28" />
+            <text x="392" y="71"><tspan className="anatomy-audience-kicker">{agentLabel.toLocaleUpperCase('tr-TR')}</tspan><tspan className="anatomy-audience-small" dx="10">modeli araç ve bağlamla çalıştırır</tspan></text>
           </g>
-          <g className="anatomy-audience-nodes">
-            {anatomyStageNodes.map(({ name, x, y, width, height, optional }) => {
-              const part = parts.find((candidate) => candidate.name === name);
-              const state = summary ? 'is-revealed' : stateFor(name);
-              return (
-                <g key={name} className={`anatomy-audience-node ${state}${optional ? ' is-optional' : ''}`} transform={`translate(${x} ${y})`}>
-                  <rect width={width} height={height} />
-                  {part && <text className="anatomy-audience-index" x="14" y="27">{String(part.number).padStart(2, '0')}</text>}
-                  <text className="anatomy-audience-name" x={part ? 43 : 16} y={optional ? 35 : 45}>{name}</text>
-                  {optional && part && <text className="anatomy-audience-optional" x="14" y="57">İSTEĞE BAĞLI</text>}
-                </g>
-              );
-            })}
+        )}
+        <g className="anatomy-audience-links">
+          {anatomyStageEdges.map((edge) => {
+            if (!names.has(edge.from) || !names.has(edge.to)) return null;
+            if ('when' in edge && !edge.when(names)) return null;
+            const active = current === edge.from || current === edge.to;
+            const optional = optionalNames.has(edge.from) || optionalNames.has(edge.to);
+            return (
+              <g key={`${edge.from}-${edge.to}`} className={`${active ? 'is-current' : ''}${optional ? ' is-optional' : ''}`}>
+                <path d={edge.path} />
+                {'label' in edge && <text x={edge.labelAt[0]} y={edge.labelAt[1]} className="anatomy-audience-edge-label">{edge.label}</text>}
+              </g>
+            );
+          })}
+        </g>
+        <g className="anatomy-audience-nodes">
+          <g className="anatomy-audience-node is-person">
+            <rect x="40" y="213" width="150" height="64" rx="10" />
+            <text x="115" y="243" className="anatomy-audience-name">SEN</text>
+            <text x="115" y="266" className="anatomy-audience-note">hedef ve onay</text>
           </g>
-        </svg>
-        <aside className="anatomy-audience-focus" aria-live="polite">
-          {summary ? (
-            <>
-              <span className="primitive-label">SİSTEM ÖZETİ</span>
-              <h2>{equation}</h2>
-            </>
-          ) : currentPart ? (
-            <>
-              <span className="primitive-label">{currentPart.optional ? 'İSTEĞE BAĞLI ÖRNEK' : `BİLEŞEN ${String(currentPart.number).padStart(2, '0')}`}</span>
-              <h2>{currentPart.name}</h2>
-              <p>{currentPart.description}</p>
-            </>
-          ) : (
-            <>
-              <span className="primitive-label">ÖRNEK KURULUM</span>
-              <h2>Agent bileşenleri</h2>
-            </>
+          <g className="anatomy-audience-node is-task">
+            <rect x="225" y="215" width="120" height="60" rx="10" />
+            <text x="285" y="253" className="anatomy-audience-name">GÖREV</text>
+          </g>
+          {names.has('Model') && (
+            <g className={nodeClass('Model')}>
+              <circle cx="630" cy="245" r="60" />
+              <text x="630" y="253" className="anatomy-audience-name is-model">MODEL</text>
+            </g>
           )}
-        </aside>
-      </div>
+          {anatomyStageNodes.filter(({ name }) => names.has(name)).map(({ name, x, y, width, height }) => {
+            const optional = optionalNames.has(name);
+            return (
+              <g key={name} className={nodeClass(name, optional)}>
+                <rect x={x} y={y} width={width} height={height} rx="10" />
+                <text x={x + width / 2} y={optional ? y + 28 : y + 38} className="anatomy-audience-name">{name}</text>
+                {optional && <text x={x + width / 2} y={y + 49} className="anatomy-audience-note">kullanılıyorsa</text>}
+              </g>
+            );
+          })}
+          {summary && modelPart && <text x="630" y="328" className="anatomy-audience-note">{modelPart.description}</text>}
+        </g>
+      </svg>
+      <p className={`anatomy-audience-caption${summary ? ' is-equation' : ''}`} aria-live="polite">
+        {currentPart && <span className="anatomy-audience-tag">{currentPart.optional ? 'İSTEĞE BAĞLI' : String(currentPart.number).padStart(2, '0')}</span>}
+        {caption}
+      </p>
     </div>
   );
 }

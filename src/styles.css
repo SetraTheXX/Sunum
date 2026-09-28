@@ -637,31 +637,38 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
 .opening-audience-check-item:last-child > span { color: var(--color-oxide); }
 .opening-audience-check-item p { margin: 0; color: var(--color-text); font-family: var(--font-display); font-size: clamp(22px, 2.15vw, 34px); font-weight: 600; line-height: 1.18; }
 
-/* S07 — one field map grows with its beat; only the current component carries copy. */
-.anatomy-audience { display: flex; flex-direction: column; gap: clamp(15px, 2.5vh, 26px); }
-.anatomy-audience-intro { max-width: 1120px; margin: 0; color: var(--color-muted); font-size: clamp(16px, 1.2vw, 20px); line-height: 1.35; }
-.anatomy-audience-layout { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(290px, .72fr); gap: clamp(24px, 4vw, 60px); align-items: center; }
-.anatomy-audience-map { display: block; width: 100%; height: auto; max-height: 58vh; overflow: visible; }
-.anatomy-audience-links path { stroke: var(--color-rule); stroke-width: 1.5; opacity: 0; }
-.anatomy-audience-links path.is-revealed { opacity: 1; }
-.anatomy-audience-links path.is-current { stroke: var(--color-accent); stroke-width: 2; }
-.anatomy-audience-links path.is-optional { stroke-dasharray: 5 6; }
-.anatomy-audience-node { opacity: 1; }
-.anatomy-audience-node rect { fill: var(--color-background); stroke: var(--color-rule); stroke-width: 1.5; }
-.anatomy-audience-node.is-pending { opacity: .17; }
-.anatomy-audience-node.is-revealed rect { fill: var(--color-surface); }
-.anatomy-audience-node.is-current rect { fill: var(--color-surface); stroke: var(--color-accent); stroke-width: 2.5; }
-.anatomy-audience-node.is-optional rect { stroke-dasharray: 5 5; }
-.anatomy-audience-name { fill: var(--color-text); font-family: var(--font-display); font-size: 27px; font-weight: 600; }
-.anatomy-audience-index { fill: var(--color-accent); font-family: var(--font-mono); font-size: 20px; }
-.anatomy-audience-optional { fill: var(--color-muted); font-family: var(--font-body); font-size: 23px; font-weight: 700; letter-spacing: 1px; }
-.anatomy-audience-focus { min-width: 0; padding: 10px 0 10px clamp(18px, 2.5vw, 32px); border-left: var(--rule-accent); }
-.anatomy-audience-focus .primitive-label { color: var(--color-accent); }
-.anatomy-audience-focus h2 { margin: 10px 0 0; color: var(--color-text); font-family: var(--font-display); font-size: clamp(30px, 3.6vw, 56px); font-weight: 600; letter-spacing: -.03em; line-height: 1.05; }
-.anatomy-audience-focus p { max-width: 35ch; margin: 12px 0 0; color: var(--color-muted); font-size: clamp(18px, 1.5vw, 22px); line-height: 1.35; }
-.anatomy-audience.is-summary .anatomy-audience-map { opacity: .28; }
-.anatomy-audience.is-summary .anatomy-audience-node.is-current rect { fill: var(--color-background); stroke: var(--color-rule); stroke-width: 1.5; }
-.anatomy-audience.is-summary .anatomy-audience-focus h2 { max-width: 10ch; font-size: clamp(46px, 5.7vw, 82px); }
+/* S07 — one task runs through a growing system; the final nests model, agent and workflow. */
+.anatomy-audience { display: grid; gap: clamp(8px, 1.5vh, 16px); margin-top: clamp(10px, 1.8vh, 20px); }
+.anatomy-audience-map { display: block; width: 100%; max-height: min(54vh, 590px); margin-inline: auto; overflow: visible; }
+.anatomy-audience-map text { fill: var(--color-text); font-family: var(--font-display); }
+.anatomy-audience-node rect,
+.anatomy-audience-node circle { fill: var(--color-surface); stroke: var(--color-text); stroke-width: 2; }
+.anatomy-audience-node.is-optional rect { stroke: var(--color-muted); stroke-dasharray: 6 6; }
+.anatomy-audience-node.is-person rect { stroke: var(--color-oxide); stroke-width: 3; }
+.anatomy-audience-node.is-task rect { fill: var(--color-text); stroke: var(--color-text); }
+.anatomy-audience-map .anatomy-audience-node.is-task text { fill: var(--color-surface); }
+.anatomy-audience-node.is-current rect,
+.anatomy-audience-node.is-current circle { stroke: var(--color-accent); stroke-width: 4; }
+.anatomy-audience-node.is-current.is-optional rect { stroke-dasharray: 8 5; }
+.anatomy-audience-name { font-size: 21px; font-weight: 750; text-anchor: middle; }
+.anatomy-audience-name.is-model { font-size: 26px; letter-spacing: .02em; }
+.anatomy-audience-map .anatomy-audience-note { fill: var(--color-muted); font-size: 15px; text-anchor: middle; }
+.anatomy-audience-links path { fill: none; stroke: var(--color-muted); stroke-width: 2; marker-end: url(#anatomy-audience-arrow); }
+.anatomy-audience-arrow { fill: var(--color-muted); }
+.anatomy-audience-arrow.is-current { fill: var(--color-accent); }
+.anatomy-audience-links .is-optional path { stroke-dasharray: 5 6; }
+.anatomy-audience-links .is-current path { stroke: var(--color-accent); stroke-width: 3.5; marker-end: url(#anatomy-audience-arrow-current); }
+.anatomy-audience-map .anatomy-audience-edge-label { fill: var(--color-muted); font-size: 16px; font-weight: 600; text-anchor: middle; }
+.anatomy-audience-map .is-current .anatomy-audience-edge-label { fill: var(--color-accent); }
+.anatomy-audience-workflow { fill: none; stroke: var(--color-oxide); stroke-width: 2.5; stroke-dasharray: 9 8; }
+.anatomy-audience-agent { fill: none; stroke: var(--color-accent); stroke-width: 3; }
+.anatomy-audience-legend { fill: var(--color-background); }
+.anatomy-audience-map .anatomy-audience-kicker { fill: var(--color-accent); font-family: var(--font-mono); font-size: 18px; font-weight: 700; letter-spacing: .12em; }
+.anatomy-audience-map .anatomy-audience-kicker.is-workflow { fill: var(--color-oxide); }
+.anatomy-audience-map .anatomy-audience-small { fill: var(--color-muted); font-size: 17px; }
+.anatomy-audience-caption { display: flex; gap: 14px; align-items: baseline; justify-content: center; min-height: calc(2.6 * clamp(18px, 1.35vw, 22px) + 12px); margin: 0 auto; max-width: 1100px; padding-top: 12px; border-top: var(--rule); color: var(--color-text); font-size: clamp(18px, 1.35vw, 22px); line-height: 1.3; text-align: center; }
+.anatomy-audience-tag { flex: 0 0 auto; color: var(--color-accent); font-family: var(--font-mono); font-size: .75em; font-weight: 700; letter-spacing: .1em; }
+.anatomy-audience-caption.is-equation { border-top: var(--rule-accent); font-family: var(--font-display); font-size: clamp(28px, 2.7vw, 44px); font-weight: 700; letter-spacing: -.01em; }
 
 /* S12 — answer, system parts, and the locked closing each take a new scale. */
 .final-audience { display: grid; align-content: center; gap: clamp(28px, 5vh, 58px); min-height: min(72vh, 760px); }
@@ -708,9 +715,6 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
   .opening-audience-question p { max-width: 20ch; font-size: clamp(42px, 8vw, 68px); }
   .opening-audience-form { max-height: 40vh; }
   .opening-audience-axis { margin-top: 12px; }
-  .anatomy-audience-layout { grid-template-columns: minmax(0, 1fr); }
-  .anatomy-audience-map { max-height: 42vh; }
-  .anatomy-audience-focus { padding-left: 16px; }
   .final-audience--2,
   .final-audience--3 { grid-template-columns: minmax(0, 1fr); grid-template-areas: "answer" "system" "thesis"; }
   .final-audience--2 .final-audience-system,

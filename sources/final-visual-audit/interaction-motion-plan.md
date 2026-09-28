@@ -53,3 +53,19 @@ If any future motion is proposed, its review must fill the same Purpose/Trigger/
 - If Scene 11 capture later fails to load, the fallback must be a pre-verified local authentic Plan B, C or D asset. Do not silently replace it with a schematic and call that evidence.
 - If a video codec/player is unavailable, use locally verified still frames from the same authentic source, or narrate only the conceptual workflow and report that G4/G5/G6 evidence is still absent.
 - Because Scene 01/07/11 had controlled internal scroll in the Phase 9 110%-equivalent small viewport, any future component addition in those scenes requires a fresh target viewport/reveal check before G7 evaluation.
+
+## Adopted Plan Delta — Audience mode and Golden Scene prototype (2026-09-28)
+
+This later user-directed prototype extends the 2026-09-28 audit baseline above; the earlier “no implementation” status records the state at audit time. The default presenter/editor view and the Visual Contract V2 field-manual identity remain in place. During presentation, audience mode deliberately hides the rail, route picker, wordmark, header tools, step counter, next hint, speaker notes, keyboard legend, and bottom navigation. It keeps a narrow route-progress rule, scene index, scene title where the large scene composition does not already carry it, and a small Escape exit control. This is the explicit exception to V2’s always-visible audience footer/header navigation guidance; the default view still follows V2.
+
+The header presentation control sets `view=audience` in the existing URL and requests native browser fullscreen when available. CSS audience mode remains usable if the embedded browser blocks fullscreen. `Escape` exits audience/fullscreen; Arrow keys and Space continue the current reveal, and J/K/R remain available. `mode`, `scene`, and `step` retain their existing meanings and survive audience-mode entry, reload, reveal, and scene navigation. A direct `view=audience` URL restores the visual mode after reload without forcing fullscreen without a user gesture.
+
+Only S01, S07, and S12 receive audience-specific compositions. Their existing 4 / 11 / 3 beats and copy stay in source order:
+
+- **S01:** the opening question owns the first frame; the example request joins it; the request → file change → working result path forms on the third reveal; the separate reliability questions appear on the fourth.
+- **S07:** one authored SVG map reveals the existing component names in order, brightens the active component and its described relationships, and distinguishes optional Skill/MCP/Git with dashed rules. The current component description gets the focus column. The last beat changes the focus to “Model ≠ Agent ≠ Workflow.”
+- **S12:** “EVET” is the first large answer; the six existing trust components arrive as a combined list on beat two; the locked final statement takes the dominant scale on beat three.
+
+No new beat, product claim, captured UI, separate media asset file, video, external asset, autoplay, transition, or CSS motion is added. The S07 audience map is authored inline SVG/React using V2 tokens; the existing local anatomy SVG remains the regular-view illustration. `final-system-v2.svg` is not integrated: the new final composition already carries the sourced six-part list, and the static asset would duplicate it. No loop has enough teaching value here to justify its continuous motion: S01 already advances its process under presenter control, S07 is a discrete relationship map, and S12 needs a quiet final hold. This prototype does not redesign the other nine scene visuals, close a gate, or imply rollout approval. G4/G5 stay OPEN, G6 PARTIAL / BLOCKED, G7 OPEN, and G9 OPEN.
+
+Production build, target-resolution Golden Scene render review, mode/URL/reload, reveal-order, and navigation checks remain acceptance evidence for this implementation; independent QA is required before commit/push.

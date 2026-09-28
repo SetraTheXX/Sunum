@@ -1,8 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { scenesForMode, type Scene } from './content';
 import SceneVisual from './SceneVisual';
 
 type Mode = 30 | 45 | 60;
+
+function readAudienceMode(): boolean {
+  return new URLSearchParams(window.location.search).get('view') === 'audience';
+}
+
+function writeAudienceMode(enabled: boolean) {
+  const url = new URL(window.location.href);
+  if (enabled) url.searchParams.set('view', 'audience');
+  else url.searchParams.delete('view');
+  window.history.replaceState({}, '', url);
+}
 
 function readMode(): Mode {
   const value = Number(new URLSearchParams(window.location.search).get('mode'));
@@ -34,6 +45,8 @@ function startingStep(scene: Scene) {
 
 export default function App() {
   const [mode, setMode] = useState<Mode>(readMode);
+  const [audienceMode, setAudienceMode] = useState(readAudienceMode);
+  const audienceModeRef = useRef(audienceMode);
   const [sceneIndex, setSceneIndex] = useState(() => readSceneIndex(scenesForMode(readMode()).length));
   const [visibleSteps, setVisibleSteps] = useState(() => {
     const initialMode = readMode();
@@ -46,6 +59,12 @@ export default function App() {
     ? 'Şema kavramsal; authentic workflow capture henüz yok.'
     : currentScene.takeaway;
   const progress = ((sceneIndex + 1) / routeScenes.length) * 100;
+
+  function updateAudienceMode(enabled: boolean) {
+    audienceModeRef.current = enabled;
+    setAudienceMode(enabled);
+    writeAudienceMode(enabled);
+  }
 
   function selectScene(nextIndex: number, step?: number) {
     const boundedIndex = Math.max(0, Math.min(routeScenes.length - 1, nextIndex));
@@ -96,12 +115,41 @@ export default function App() {
     writeLocation(mode, sceneIndex, step);
   }
 
+  async function toggleAudienceMode() {
+    const entering = !audienceModeRef.current;
+    updateAudienceMode(entering);
+    try {
+      if (entering && !document.fullscreenElement && document.fullscreenEnabled) {
+        await document.documentElement.requestFullscreen();
+      } else if (!entering && document.fullscreenElement) {
+        await document.exitFullscreen();
+      }
+    } catch {
+      // Keep the CSS audience view when an embedded browser blocks native fullscreen.
+    }
+  }
+
+  useEffect(() => {
+    function handleFullscreenChange() {
+      if (!document.fullscreenElement && audienceModeRef.current) updateAudienceMode(false);
+    }
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, []);
+
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
       const target = event.target;
+      if (audienceMode && event.key === 'Escape') {
+        event.preventDefault();
+        void toggleAudienceMode();
+        return;
+      }
       if (
         target instanceof HTMLElement &&
         target.closest('button, a, input, select, textarea, summary, [role="button"], [contenteditable="true"]')
+        && !(audienceMode && target.closest('.audience-exit'))
       ) {
         return;
       }
@@ -126,22 +174,10 @@ export default function App() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [mode, sceneIndex, visibleSteps, currentScene]);
-
-  async function toggleFullscreen() {
-    try {
-      if (document.fullscreenElement) {
-        await document.exitFullscreen();
-      } else if (document.fullscreenEnabled) {
-        await document.documentElement.requestFullscreen();
-      }
-    } catch {
-      // Embedded browser panels may block fullscreen requests.
-    }
-  }
+  }, [mode, sceneIndex, visibleSteps, currentScene, audienceMode]);
 
   return (
-    <div className="presentation-shell">
+    <div className={`presentation-shell${audienceMode ? ' is-audience-mode' : ''}`}>
       <aside className="scene-rail" aria-label="Sahne indeksi">
         <a className="wordmark" href="/?mode=30" aria-label="Sunum başına dön">
           <span className="wordmark-mark" aria-hidden="true">S</span>
@@ -205,7 +241,7 @@ export default function App() {
           </div>
           <div className="stage-header-actions">
             <span className="stage-counter">{String(sceneIndex + 1).padStart(2, '0')} / {String(routeScenes.length).padStart(2, '0')}</span>
-            <button className="icon-button" type="button" onClick={() => void toggleFullscreen()} aria-label="Tam ekranı aç veya kapat" title="Tam ekran">
+            <button className="icon-button" type="button" onClick={() => void toggleAudienceMode()} aria-pressed={audienceMode} aria-label={audienceMode ? 'Sunum görünümünden çık' : 'Sunum görünümüne geç'} title="Sunum görünümü · Escape ile çık">
               <span aria-hidden="true">⛶</span>
             </button>
           </div>
@@ -219,6 +255,12 @@ export default function App() {
           <div className="scene-meta">
             <span className="eyebrow">SAHNE {String(currentScene.number).padStart(2, '0')}</span>
             <span className="scene-duration">{currentScene.duration}</span>
+            {audienceMode && (
+              <span className="audience-scene-index">{String(sceneIndex + 1).padStart(2, '0')} / {String(routeScenes.length).padStart(2, '0')}</span>
+            )}
+            {audienceMode && (currentScene.number === 1 || currentScene.number === 12) && (
+              <span className="audience-scene-title">{currentScene.number === 1 ? 'Cold Open' : 'Final'}</span>
+            )}
           </div>
           <h1 id="scene-title">{currentScene.title}</h1>
           <p className="scene-takeaway">{takeaway}</p>
@@ -228,7 +270,7 @@ export default function App() {
               <span className="eyebrow">EKRANDA</span>
               <span className="step-counter">{visibleSteps} / {currentScene.screenSteps.length} adım</span>
             </div>
-            <SceneVisual scene={currentScene} visibleSteps={visibleSteps} />
+            <SceneVisual scene={currentScene} visibleSteps={visibleSteps} audienceMode={audienceMode} />
             {visibleSteps < currentScene.screenSteps.length ? (
               <p className="next-hint">Devam etmek için <kbd>→</kbd> veya <kbd>Space</kbd></p>
             ) : sceneIndex < routeScenes.length - 1 ? (
@@ -266,6 +308,17 @@ export default function App() {
           </div>
         </footer>
       </main>
+      {audienceMode && (
+        <button
+          className="audience-exit"
+          type="button"
+          aria-label="Sunum görünümünden çık (Escape)"
+          title="Sunum görünümünden çık · Esc"
+          onClick={() => void toggleAudienceMode()}
+        >
+          <span aria-hidden="true">ESC</span>
+        </button>
+      )}
     </div>
   );
 }

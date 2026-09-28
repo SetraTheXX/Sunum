@@ -8,6 +8,7 @@ const anatomyArtwork = new URL('../assets/phase-4/v2/agent-anatomy-v2.svg', impo
 interface SceneVisualProps {
   scene: Scene;
   visibleSteps: number;
+  audienceMode: boolean;
 }
 
 function removeLabel(text: string, label: string) {
@@ -37,11 +38,60 @@ function FlowDiagram({ text }: { text: string }) {
   );
 }
 
-function OpeningVisual({ steps }: { steps: string[] }) {
+function OpeningVisual({ steps, audienceMode }: { steps: string[]; audienceMode: boolean }) {
   const question = steps.find((step) => step.startsWith('Büyük soru:'));
   const request = steps.find((step) => step.startsWith('Ardından tek istek:'));
   const sequence = steps.find((step) => step.startsWith('Basit sıra:'));
   const caution = steps.find((step) => step.startsWith('Alt mesaj:'));
+
+  if (audienceMode) {
+    const questionText = question ? quotedText(removeLabel(question, 'Büyük soru')) : '';
+    const requestText = request ? quotedText(removeLabel(request, 'Ardından tek istek')) : '';
+    const sequenceParts = sequence ? removeLabel(sequence, 'Basit sıra').split(/\s*→\s*/).filter(Boolean) : [];
+    const cautionText = caution ? removeLabel(caution, 'Alt mesaj') : '';
+    const [executionQuestion, reliabilityQuestion] = cautionText.split(' ile ');
+    const separation = reliabilityQuestion?.match(/(.+?)\s+(ayrı sorulardır\.?$)/u);
+
+    return (
+      <div className={`opening-audience opening-audience--${steps.length}`} data-reveal={steps.length}>
+        {questionText && (
+          <blockquote className="opening-audience-question">
+            <span className="primitive-label">AÇILIŞ SORUSU</span>
+            <p>{questionText}</p>
+          </blockquote>
+        )}
+        {requestText && (
+          <div className="opening-audience-request">
+            <span className="primitive-label">İSTEK ÖRNEĞİ</span>
+            <blockquote>{requestText}</blockquote>
+          </div>
+        )}
+        {sequenceParts.length > 0 && (
+          <section className="opening-audience-sequence" aria-label="İstekten çalışan sonuca örnek sıra">
+            <span className="primitive-label">ÇALIŞMA SIRASI</span>
+            <ol>
+              {sequenceParts.map((part, index) => (
+                <li key={`${part}-${index}`} className={index === sequenceParts.length - 1 ? 'is-current' : ''}>
+                  <span className="opening-audience-index">{String(index + 1).padStart(2, '0')}</span>
+                  <span>{part}</span>
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
+        {cautionText && (
+          <aside className="opening-audience-check" aria-label={cautionText}>
+            <span className="primitive-label">AYRI SORULAR</span>
+            <div>
+              <p>{executionQuestion}</p>
+              <p>{separation?.[1] ? `${separation[1].charAt(0).toUpperCase()}${separation[1].slice(1)}` : reliabilityQuestion}</p>
+            </div>
+            <span className="opening-audience-separation">{separation?.[2] ?? ''}</span>
+          </aside>
+        )}
+      </div>
+    );
+  }
 
   return (
     <div className="opening-grid">
@@ -343,7 +393,103 @@ function OrchestrationVisual({ steps }: { steps: string[] }) {
   );
 }
 
-function AnatomyVisual({ steps }: { steps: string[] }) {
+const anatomyStageNodes = [
+  { name: 'Model', x: 350, y: 240, width: 210, height: 76, optional: false },
+  { name: 'Context', x: 350, y: 95, width: 210, height: 76, optional: false },
+  { name: 'Project files', x: 40, y: 95, width: 210, height: 76, optional: false },
+  { name: 'Instructions', x: 40, y: 240, width: 210, height: 76, optional: false },
+  { name: 'Tools', x: 690, y: 240, width: 185, height: 76, optional: false },
+  { name: 'Terminal', x: 690, y: 95, width: 185, height: 76, optional: false },
+  { name: 'Skill', x: 40, y: 420, width: 185, height: 72, optional: true },
+  { name: 'MCP', x: 365, y: 420, width: 185, height: 72, optional: true },
+  { name: 'Git', x: 690, y: 420, width: 185, height: 72, optional: true },
+] as const;
+
+const anatomyStageEdges = [
+  { from: 'Project files', to: 'Context', path: 'M250 133 H350', optional: false },
+  { from: 'Instructions', to: 'Context', path: 'M250 278 C300 278 300 133 350 133', optional: false },
+  { from: 'Context', to: 'Model', path: 'M455 171 V240', optional: false },
+  { from: 'Model', to: 'Tools', path: 'M560 278 H690', optional: false },
+  { from: 'Tools', to: 'Terminal', path: 'M782 240 V171', optional: false },
+  { from: 'Skill', to: 'Instructions', path: 'M132 420 V316', optional: true },
+  { from: 'MCP', to: 'Tools', path: 'M458 420 C520 375 620 355 690 278', optional: true },
+  { from: 'Git', to: 'Project files', path: 'M690 456 C690 525 25 525 25 133 H40', optional: true },
+] as const;
+
+function AnatomyAudienceVisual({
+  introduction,
+  parts,
+  equation,
+}: {
+  introduction: string;
+  parts: Array<{ name: string; description: string; number: number; optional: boolean }>;
+  equation?: string;
+}) {
+  const revealedNames = new Set(parts.map(({ name }) => name));
+  const summary = Boolean(equation);
+  const currentPart = summary ? undefined : parts.at(-1);
+  const stateFor = (name: string) => !revealedNames.has(name)
+    ? 'is-pending'
+    : name === currentPart?.name ? 'is-current' : 'is-revealed';
+
+  return (
+    <div className={`anatomy-audience${summary ? ' is-summary' : ''}`} data-reveal={summary ? 11 : parts.length + 1}>
+      <p className="anatomy-audience-intro">{introduction}</p>
+      <div className="anatomy-audience-layout">
+        <svg className="anatomy-audience-map" viewBox="0 0 1000 550" role="img" aria-label="Örnek kurulum bileşenlerini ve aralarındaki ilişkileri gösteren kavramsal sistem haritası">
+          <g className="anatomy-audience-links" fill="none" strokeLinecap="square">
+            {anatomyStageEdges.map(({ from, to, path, optional }) => {
+              const visible = revealedNames.has(from) && revealedNames.has(to);
+              const active = currentPart && (currentPart.name === from || currentPart.name === to);
+              return (
+                <path
+                  key={`${from}-${to}`}
+                  d={path}
+                  className={`${visible ? 'is-revealed' : 'is-pending'}${active ? ' is-current' : ''}${optional ? ' is-optional' : ''}`}
+                />
+              );
+            })}
+          </g>
+          <g className="anatomy-audience-nodes">
+            {anatomyStageNodes.map(({ name, x, y, width, height, optional }) => {
+              const part = parts.find((candidate) => candidate.name === name);
+              const state = summary ? 'is-revealed' : stateFor(name);
+              return (
+                <g key={name} className={`anatomy-audience-node ${state}${optional ? ' is-optional' : ''}`} transform={`translate(${x} ${y})`}>
+                  <rect width={width} height={height} />
+                  {part && <text className="anatomy-audience-index" x="14" y="27">{String(part.number).padStart(2, '0')}</text>}
+                  <text className="anatomy-audience-name" x={part ? 43 : 16} y={optional ? 35 : 45}>{name}</text>
+                  {optional && part && <text className="anatomy-audience-optional" x="14" y="57">İSTEĞE BAĞLI</text>}
+                </g>
+              );
+            })}
+          </g>
+        </svg>
+        <aside className="anatomy-audience-focus" aria-live="polite">
+          {summary ? (
+            <>
+              <span className="primitive-label">SİSTEM ÖZETİ</span>
+              <h2>{equation}</h2>
+            </>
+          ) : currentPart ? (
+            <>
+              <span className="primitive-label">{currentPart.optional ? 'İSTEĞE BAĞLI ÖRNEK' : `BİLEŞEN ${String(currentPart.number).padStart(2, '0')}`}</span>
+              <h2>{currentPart.name}</h2>
+              <p>{currentPart.description}</p>
+            </>
+          ) : (
+            <>
+              <span className="primitive-label">ÖRNEK KURULUM</span>
+              <h2>Agent bileşenleri</h2>
+            </>
+          )}
+        </aside>
+      </div>
+    </div>
+  );
+}
+
+function AnatomyVisual({ steps, audienceMode }: { steps: string[]; audienceMode: boolean }) {
   const introduction = steps[0];
   const equationStep = steps.find((step) => step.startsWith('Alt cümle:'));
   const parts = steps
@@ -362,6 +508,16 @@ function AnatomyVisual({ steps }: { steps: string[] }) {
   const exampleParts = parts.filter((part) => !part.optional);
   const optionalParts = parts.filter((part) => part.optional);
   const currentPartNumber = parts.at(-1)?.number;
+
+  if (audienceMode) {
+    return (
+      <AnatomyAudienceVisual
+        introduction={introduction ?? ''}
+        parts={parts}
+        equation={equationStep ? unquote(removeLabel(equationStep, 'Alt cümle')) : undefined}
+      />
+    );
+  }
 
   const renderParts = (items: typeof parts, className: string) => (
     <ol className={`anatomy-map ${className}`}>
@@ -414,11 +570,44 @@ function AnatomyVisual({ steps }: { steps: string[] }) {
   );
 }
 
-function FinalVisual({ steps }: { steps: string[] }) {
+function FinalVisual({ steps, audienceMode }: { steps: string[]; audienceMode: boolean }) {
   const answer = steps[0]?.split(' — ');
   const trust = steps[1]?.split(' — ');
   const finalText = steps[2]?.match(/[“"](.+?)[”"]/u)?.[1];
   const [firstLine, secondLine] = finalText?.split(', ') ?? [];
+
+  if (audienceMode) {
+    const systemParts = trust ? trust.slice(1).join(' — ').split(/\s*\+\s*/).filter(Boolean) : [];
+    return (
+      <div className={`final-audience final-audience--${steps.length}`} data-reveal={steps.length}>
+        {answer && (
+          <div className="final-audience-answer">
+            <span className="primitive-label">{unquote(answer[0])}</span>
+            <strong>{answer.slice(1).join(' — ')}</strong>
+          </div>
+        )}
+        {trust && (
+          <section className="final-audience-system" aria-label={trust.join(' ')}>
+            <span className="primitive-label">{unquote(trust[0])}</span>
+            <ol>
+              {systemParts.map((part, index) => (
+                <li key={`${part}-${index}`}>
+                  {index > 0 && <span className="final-audience-plus" aria-hidden="true">+</span>}
+                  <span>{part}</span>
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
+        {finalText && (
+          <div className="final-audience-thesis" aria-label={finalText}>
+            <span>{firstLine},</span>
+            <strong>{secondLine}</strong>
+          </div>
+        )}
+      </div>
+    );
+  }
 
   return (
     <div className="final-visual">
@@ -457,12 +646,12 @@ function GenericVisual({ steps }: { steps: string[] }) {
   );
 }
 
-export default function SceneVisual({ scene, visibleSteps }: SceneVisualProps) {
+export default function SceneVisual({ scene, visibleSteps, audienceMode }: SceneVisualProps) {
   const steps = scene.screenSteps.slice(0, visibleSteps);
 
   switch (scene.number) {
     case 1:
-      return <OpeningVisual steps={steps} />;
+      return <OpeningVisual steps={steps} audienceMode={audienceMode} />;
     case 2:
       return <EvolutionVisual steps={steps} />;
     case 3:
@@ -474,13 +663,13 @@ export default function SceneVisual({ scene, visibleSteps }: SceneVisualProps) {
     case 6:
       return <VibeWallVisual steps={steps} />;
     case 7:
-      return <AnatomyVisual steps={steps} />;
+      return <AnatomyVisual steps={steps} audienceMode={audienceMode} />;
     case 8:
       return <EngineeringVisual steps={steps} />;
     case 10:
       return <OrchestrationVisual steps={steps} />;
     case 12:
-      return <FinalVisual steps={steps} />;
+      return <FinalVisual steps={steps} audienceMode={audienceMode} />;
     default:
       return <GenericVisual steps={steps} />;
   }

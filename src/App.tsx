@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { scenesForMode, type Scene } from './content';
 import SceneVisual from './SceneVisual';
+import { getSceneVideo, withAudienceVideoStep } from './sceneVideos';
 
 type Mode = 30 | 45 | 60;
 
@@ -43,20 +44,26 @@ function startingStep(scene: Scene) {
   return Math.min(1, scene.screenSteps.length);
 }
 
+function routeScenesForMode(mode: Mode) {
+  return scenesForMode(mode).map(withAudienceVideoStep);
+}
+
 export default function App() {
   const [mode, setMode] = useState<Mode>(readMode);
   const [audienceMode, setAudienceMode] = useState(readAudienceMode);
   const audienceModeRef = useRef(audienceMode);
-  const [sceneIndex, setSceneIndex] = useState(() => readSceneIndex(scenesForMode(readMode()).length));
+  const videoPlayerRef = useRef<HTMLVideoElement | null>(null);
+  const [sceneIndex, setSceneIndex] = useState(() => readSceneIndex(routeScenesForMode(readMode()).length));
   const [visibleSteps, setVisibleSteps] = useState(() => {
     const initialMode = readMode();
-    const initialRoute = scenesForMode(initialMode);
+    const initialRoute = routeScenesForMode(initialMode);
     return readStep(initialRoute[readSceneIndex(initialRoute.length)]);
   });
-  const routeScenes = scenesForMode(mode);
+  const routeScenes = useMemo(() => routeScenesForMode(mode), [mode]);
   const currentScene = routeScenes[sceneIndex];
+  const isVideoReveal = Boolean(getSceneVideo(currentScene.number) && visibleSteps >= currentScene.screenSteps.length);
   const takeaway = currentScene.number === 11
-    ? 'Şema kavramsal; authentic workflow capture henüz yok.'
+    ? 'Şema kavramsal; yerel video gerçek workflow kaydını gösterir, çıktı doğruluğunu kanıtlamaz.'
     : currentScene.takeaway;
   const progress = ((sceneIndex + 1) / routeScenes.length) * 100;
 
@@ -76,7 +83,7 @@ export default function App() {
   }
 
   function selectMode(nextMode: Mode) {
-    const nextRoute = scenesForMode(nextMode);
+    const nextRoute = routeScenesForMode(nextMode);
     const matchingIndex = nextRoute.findIndex((scene) => scene.number === currentScene.number);
     const nextIndex = matchingIndex >= 0 ? matchingIndex : Math.min(sceneIndex, nextRoute.length - 1);
     const nextStep = Math.min(visibleSteps, nextRoute[nextIndex].screenSteps.length);
@@ -141,15 +148,32 @@ export default function App() {
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
       const target = event.target;
+      const isVideoArea = target instanceof HTMLElement && Boolean(target.closest('.scene-video-reveal'));
+      const isVideoNavigationKey = isVideoArea && (event.key === 'ArrowRight' || event.key === 'ArrowLeft');
       if (audienceMode && event.key === 'Escape') {
         event.preventDefault();
         void toggleAudienceMode();
+        return;
+      }
+      if (audienceMode && isVideoReveal && event.key === ' ') {
+        event.preventDefault();
+        if (event.repeat) return;
+        const player = videoPlayerRef.current;
+        if (player) {
+          if (player.paused) {
+            if (player.ended) player.currentTime = 0;
+            void player.play().catch(() => undefined);
+          } else {
+            player.pause();
+          }
+        }
         return;
       }
       if (
         target instanceof HTMLElement &&
         target.closest('button, a, input, select, textarea, summary, [role="button"], [contenteditable="true"]')
         && !(audienceMode && target.closest('.audience-exit'))
+        && !isVideoNavigationKey
       ) {
         return;
       }
@@ -174,7 +198,7 @@ export default function App() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [mode, sceneIndex, visibleSteps, currentScene, audienceMode]);
+  }, [mode, sceneIndex, visibleSteps, currentScene, audienceMode, isVideoReveal]);
 
   return (
     <div className={`presentation-shell${audienceMode ? ' is-audience-mode' : ''}`}>
@@ -251,7 +275,7 @@ export default function App() {
           <span style={{ width: `${progress}%` }} />
         </div>
 
-        <section className={`scene-stage scene-stage--${String(currentScene.number).padStart(2, '0')}`} key={currentScene.number}>
+        <section className={`scene-stage scene-stage--${String(currentScene.number).padStart(2, '0')}${isVideoReveal ? ' scene-stage--video' : ''}`} key={currentScene.number}>
           <div className="scene-meta">
             <span className="eyebrow">SAHNE {String(currentScene.number).padStart(2, '0')}</span>
             <span className="scene-duration">{currentScene.duration}</span>
@@ -270,7 +294,7 @@ export default function App() {
               <span className="eyebrow">EKRANDA</span>
               <span className="step-counter">{visibleSteps} / {currentScene.screenSteps.length} adım</span>
             </div>
-            <SceneVisual scene={currentScene} visibleSteps={visibleSteps} audienceMode={audienceMode} />
+            <SceneVisual scene={currentScene} visibleSteps={visibleSteps} audienceMode={audienceMode} videoPlayerRef={videoPlayerRef} />
             {visibleSteps < currentScene.screenSteps.length ? (
               <p className="next-hint">Devam etmek için <kbd>→</kbd> veya <kbd>Space</kbd></p>
             ) : sceneIndex < routeScenes.length - 1 ? (

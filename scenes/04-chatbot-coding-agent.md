@@ -2,7 +2,7 @@
 
 **Durum:** Must — 30 dakika rotası
 
-**Tahmini süre:** 3:20
+**Tahmini süre:** 3:41 (3:20 akış + 0:21 yerel video)
 
 ## Amaç
 
@@ -37,7 +37,11 @@ Burada “agent kendi başına her şeye erişebilir” demiyoruz. Bir ürün ha
 
 ## 30 dk
 
-3:20 — Yaklaşık 2:25 konuşma ve 0:55 ok/araç döngüsünü izleme. Ürün adı veya güncel özellik listesi ezberletme.
+3:41 — Yaklaşık 2:25 konuşma, 0:55 ok/araç döngüsünü izleme ve 0:21 yerel video. Ürün adı veya güncel özellik listesi ezberletme.
+
+## Yerel video adımı
+
+Son reveal'dan sonra ayrı Audience adımı açılır. Yerel ekran kaydı Space ile başlar; → ile devam edilir.
 
 ## 45 dk
 

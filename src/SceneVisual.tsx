@@ -1,5 +1,7 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
+import type { RefObject } from 'react';
 import type { Scene } from './content';
+import { getSceneVideo } from './sceneVideos';
 
 const journeyArtwork = new URL('../assets/phase-4/v2/journey-v2.svg', import.meta.url).href;
 const contextDeskArtwork = new URL('../assets/phase-4/v2/context-desk-v2.svg', import.meta.url).href;
@@ -9,6 +11,7 @@ interface SceneVisualProps {
   scene: Scene;
   visibleSteps: number;
   audienceMode: boolean;
+  videoPlayerRef: RefObject<HTMLVideoElement | null>;
 }
 
 function removeLabel(text: string, label: string) {
@@ -1377,7 +1380,102 @@ function GenericVisual({ steps }: { steps: string[] }) {
   );
 }
 
-export default function SceneVisual({ scene, visibleSteps, audienceMode }: SceneVisualProps) {
+function SceneVideoReveal({ sceneNumber, videoPlayerRef }: { sceneNumber: number; videoPlayerRef: RefObject<HTMLVideoElement | null> }) {
+  const video = getSceneVideo(sceneNumber);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [hasPlaybackError, setHasPlaybackError] = useState(false);
+
+  useEffect(() => {
+    const element = videoPlayerRef.current;
+    if (!element) return;
+
+    if (element.readyState > 0) element.currentTime = 0;
+    setIsPlaying(false);
+    setHasPlaybackError(false);
+    return () => {
+      element.pause();
+      if (element.readyState > 0) element.currentTime = 0;
+    };
+  }, [video?.src, videoPlayerRef]);
+
+  if (!video) return null;
+
+  function togglePlayback() {
+    const element = videoPlayerRef.current;
+    if (!element) return;
+    if (element.paused) {
+      if (element.ended) element.currentTime = 0;
+      void element.play().catch(() => setIsPlaying(false));
+    } else {
+      element.pause();
+      setIsPlaying(false);
+    }
+  }
+
+  return (
+    <figure className="scene-video-reveal">
+      <figcaption className="scene-video-kicker">
+        <span className="scene-video-label">{video.kicker}</span>
+        <span className="scene-video-instruction"><kbd>Space</kbd> oynat/duraklat · <kbd>→</kbd> devam</span>
+        <span className="scene-video-actions">
+          <span className="scene-video-duration">{video.duration}</span>
+          <button
+            className="scene-video-toggle"
+            type="button"
+            disabled={hasPlaybackError}
+            onClick={togglePlayback}
+            aria-label={isPlaying ? 'Videoyu duraklat' : 'Videoyu oynat'}
+          >
+            {isPlaying ? 'DURAKLAT' : 'OYNAT'}
+          </button>
+        </span>
+      </figcaption>
+      <div className="scene-video-frame">
+        <video
+          ref={videoPlayerRef}
+          className="scene-video-player"
+          src={video.src}
+          poster={video.poster}
+          muted
+          playsInline
+          preload="auto"
+          aria-label={`${video.kicker} ekran kaydı`}
+          onClick={togglePlayback}
+          onPlay={() => setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}
+          onEnded={() => setIsPlaying(false)}
+          onError={() => {
+            setIsPlaying(false);
+            setHasPlaybackError(true);
+          }}
+        />
+      </div>
+      {hasPlaybackError && <p className="scene-video-fallback" role="status">Bu cihaz klibi oynatamadı; ekrandaki yerel kareyi gösterip anlatımla devam edin.</p>}
+    </figure>
+  );
+}
+
+function SceneVideoPresenterNote({ sceneNumber }: { sceneNumber: number }) {
+  const video = getSceneVideo(sceneNumber);
+  if (!video) return null;
+
+  return (
+    <aside className="scene-video-presenter-note" role="note">
+      <span className="scene-video-label">{video.kicker}</span>
+      <span>{video.duration} · Audience görünümünde Space ile yerel kayıttan oynatılır; poster kare codec fallback'idir.</span>
+    </aside>
+  );
+}
+
+export default function SceneVisual({ scene, visibleSteps, audienceMode, videoPlayerRef }: SceneVisualProps) {
+  const video = getSceneVideo(scene.number);
+  const isVideoStep = Boolean(video && visibleSteps >= scene.screenSteps.length);
+  if (isVideoStep) {
+    return audienceMode
+      ? <SceneVideoReveal sceneNumber={scene.number} videoPlayerRef={videoPlayerRef} />
+      : <SceneVideoPresenterNote sceneNumber={scene.number} />;
+  }
+
   const steps = scene.screenSteps.slice(0, visibleSteps);
 
   switch (scene.number) {

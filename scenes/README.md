@@ -9,26 +9,26 @@ Bu klasörde PRD ve Roadmap sırasını koruyan 12 zorunlu sahne bulunur. Her do
 | 01 | Cold Open | 1:50 |
 | 02 | Nereden nereye | 1:40 |
 | 03 | Model, Prompt, Context | 3:45 |
-| 04 | Chatbot ve Coding Agent | 3:20 |
-| 05 | Vibe Coding | 2:30 |
+| 04 | Chatbot ve Coding Agent | 3:41 |
+| 05 | Vibe Coding | 2:53 |
 | 06 | Vibe Coding'in duvarı | 2:30 |
 | 07 | Agent anatomisi | 4:30 |
-| 08 | Agentic Engineering | 2:40 |
+| 08 | Agentic Engineering | 3:22 |
 | 09 | Tek agent sınırı | 0:35 |
 | 10 | Orchestration | 0:40 |
-| 11 | Vi3ecode | 4:30 |
+| 11 | Vi3ecode | 5:32 |
 | 12 | Final | 1:15 |
-|  | **Toplam kaba süre** | **29:45** |
+|  | **Toplam kaba süre (4 video adımı dahil)** | **32:13** |
 
 ## G1 içerik kontrolü
 
 - 12 sahnenin tamamı yazıldı; 30 dakika rotasındaki her biri Must.
 - Her sahnede izleyicinin alacağı tek ana fikir açıkça yazıldı.
 - Açılış, Vi3ecode'a geçiş ve final metni hazır.
-- Konuşmacı metni yaklaşık 2.420 kelime; 125 kelime/dakika varsayımıyla yaklaşık 19:22 konuşma süresi verir. Her sahneye ayrılan etkileşim, bekleme ve gerçek ekran gösterimi pencereleriyle kaba toplam 29:45 olur.
-- Bu kaba prova modeli G1 üst sınırı olan 35 dakikanın 5:15 altındadır. Henüz sunucuyla kronometre tutulmuş bir prova değildir; gerçek hız Phase 11 zamanlama provasında ölçülmelidir.
+- Konuşmacı metni yaklaşık 2.420 kelime; 125 kelime/dakika varsayımıyla yaklaşık 19:22 konuşma süresi verir. 2026-09-29'da eklenen dört yerel video adımı toplam 2:28 ekler; yeni kaba toplam 32:13'tür. Bu süre gerçek prova değildir ve PRD/G9'un ≤28 dk hedefini değiştirmez.
+- Bu kaba prova modeli G1 üst sınırı olan 35 dakikanın yaklaşık 2:47 altındadır. Henüz sunucuyla kronometre tutulmuş bir prova değildir; gerçek hız Phase 11 zamanlama provasında ölçülmelidir.
 
-Her sahnedeki konuşmacı metni ve sahne içi gösterim penceresi yukarıdaki süreye dahildir. Tahmin, canlı Vi3ecode bölümünde yalnızca mevcut arayüzde doğrulanabilen adımların gösterileceği varsayımına dayanır. Güncel ekran kanıtı Phase 5'te alınacaktır.
+Her sahnedeki konuşmacı metni, gösterim penceresi ve ilgili videolar yukarıdaki süreye dahildir. Dört video son reveal'dan sonra ayrı Audience adımıdır; Space ile başlatılır. Tahmin kronometreli değildir ve Scene 11 kaydı G4/G5 kapılarını tek başına kapatmaz.
 
 ## İçerik kapsamı
 

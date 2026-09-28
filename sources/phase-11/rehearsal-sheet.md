@@ -27,4 +27,4 @@ NOTES: ____________________________________________________________
 
 **İşaretleme:** GREEN = rahat · YELLOW = sınırda · RED = kesilmeli
 
-Scene 11 için demo bekleme süresi uydurulmaz. Authentic ekran/video henüz bulunmadığından Run 2/3'te demo gecikmesi beklenmez; Final Visual Sprint sonrasında gerçek demo timing ayrıca ölçülür.
+2026-09-29 Plan Delta'sıyla Scene 04, 05, 08 ve 11'e toplam 2:28'lik yerel video adımı eklendi; güncel eklemeli rota tahmini yaklaşık 32:13'tür. Tablodaki 26:45 hedefi ve ≤28 dk G9 kabul ölçütü değişmedi. Run 2/3 gerçek süreleri hâlâ boş; kliplerin gerçek sunumla toplam etkisi kesintisiz insan provasında ölçülmelidir.

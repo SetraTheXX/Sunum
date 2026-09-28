@@ -2,7 +2,7 @@
 
 **Durum:** Must — 30 dakika rotası
 
-**Tahmini süre:** 4:30
+**Tahmini süre:** 5:32 (4:30 akış + 1:02 yerel video)
 
 ## Amaç
 
@@ -35,7 +35,11 @@ Bu, her workflow'un doğru olduğu anlamına gelmez. Az önceki ilkeler hâlâ g
 
 ## 30 dk
 
-4:30 — Yaklaşık 1:50 konuşma ve 2:40 kavramsal workflow akışını açıklama. Bu süre ürün ekranı gösterildiği veya gerçek çalıştırma kanıtlandığı anlamına gelmez; authentic ürün kanıtı G4/G5 kapsamında ayrıca bekler.
+5:32 — Yaklaşık 1:50 konuşma, 2:40 kavramsal workflow akışını açıklama ve 1:02 yerel kayıt. Klip, G4/G5 gate'lerini tek başına kapatmaz; iki ardışık ≤28 dk prova olmadan G9 açık kalır.
+
+## Yerel video adımı
+
+Son reveal'dan sonra ayrı Audience adımı açılır. Yerel kayıt Space ile başlar; → ile devam edilir. Kayıt, kavramsal şemanın ötesinde doğruluk veya gate kanıtı sayılmaz.
 
 ## 45 dk
 

@@ -2,7 +2,7 @@
 
 **Durum:** Must — 30 dakika rotası
 
-**Tahmini süre:** 2:30
+**Tahmini süre:** 2:53 (2:30 akış + 0:23 yerel video)
 
 ## Amaç
 
@@ -32,7 +32,11 @@ Vibe coding'i küçümsemek istemiyorum. Keşfetmek, öğrenmek, prototip çıka
 
 ## 30 dk
 
-2:30 — Yaklaşık 1:45 konuşma ve 0:45 üç istek/sonuç geçişi. İlk hızın olumlu tarafını açıkça teslim et; eksik kontrolleri bir sonraki sahneye bırak.
+2:53 — Yaklaşık 1:45 konuşma, 0:45 üç istek/sonuç geçişi ve 0:23 yerel video. İlk hızın olumlu tarafını açıkça teslim et; eksik kontrolleri bir sonraki sahneye bırak.
+
+## Yerel video adımı
+
+Son reveal'dan sonra ayrı Audience adımı açılır. Yerel ekran kaydı Space ile başlar; → ile devam edilir. Kayıt test/build kanıtı değildir.
 
 ## 45 dk
 

@@ -6,7 +6,7 @@
 
 ## Süre bütçesi
 
-PRD hedefi 26–28 dakika ve 2–4 dakika soru/nefes/teknik gecikme payıdır. Sahne kaynaklarındaki mevcut kaba sürelerin toplamı 29:45'tir; bu toplam kronometreli prova değildir. Aşağıdaki hedefler kısa Cold Open'ı koruyup ana öğretim başlıklarına süre ayıran Phase 11A planlamasıdır.
+PRD hedefi 26–28 dakika ve 2–4 dakika soru/nefes/teknik gecikme payıdır. Dört yerel klip eklenmeden önce sahne kaynak tahminlerinin toplamı 29:45'ti; bu toplam kronometreli prova değildir. Kullanıcının 2026-09-29 Plan Delta'sı sonrası kliplerin 148,4 saniyesi eklenir ve güncel tahmini toplam yaklaşık 32:13 olur. Aşağıdaki hedef/hard-max tablosu PRD hedefini koruyan Phase 11A planıdır; kullanıcı süre aşımını kabul etse de G9 eşiği değişmedi.
 
 | Scene | Başlık | Hedef süre | Hard max | Risk |
 |---|---|---:|---:|---|
@@ -24,7 +24,7 @@ PRD hedefi 26–28 dakika ve 2–4 dakika soru/nefes/teknik gecikme payıdır. S
 | 12 | Final: Model değil, sistem | 1:00 | 1:05 | Orta — 45–75 saniyelik final aralığında; bileşenleri tekrar saymak son duraklamayı uzatabilir. |
 | **Toplam** |  | **26:45** | **28:00** | Target sürede 3:15, hard max'ta 2:00 soru/nefes/teknik buffer kalır. |
 
-**Scene 11 sınırı:** 4:15 hedef / 4:20 hard max; 5 dakikanın altında kalır. Authentic ekran/video henüz olmadığı için canlı demo, yükleme veya kayıt bekleme süresi bütçeye eklenmedi. Burada yalnız workflow ana fikri anlatılır.
+**Scene 11 sınırı:** Tablodaki 4:15 hedef / 4:20 hard max, video entegrasyonundan önceki gate bütçesidir. 2026-09-29'da 1:02'lik yerel workflow kaydı son reveal'dan sonra ayrı Audience adımı olarak eklendi; sahnenin yeni kaynak tahmini 5:32 oldu. Klip, kavramsal workflow'un ötesinde G4/G5 kanıtı sayılmaz ve G9 eşiğini değiştirmez.
 
 **Hard max yorumu:** Sahne hard max'larının toplamı 28:00'dır. Run 2'de bir sahne hard max'ı aşarsa önce o sahnenin risk notundaki açıklama/örnekleri gözden geçir; ana eğitim omurgasını kesme. Bütçe planlanmıştır, gerçek performans kanıtı değildir.
 

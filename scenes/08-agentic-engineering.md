@@ -2,7 +2,7 @@
 
 **Durum:** Must — 30 dakika rotası
 
-**Tahmini süre:** 2:40
+**Tahmini süre:** 3:22 (2:40 akış + 0:42 yerel video)
 
 ## Amaç
 
@@ -36,7 +36,11 @@ Bu sıranın kullanıcıya sağladığı şey izlenebilirliktir: neyi hedefledi�
 
 ## 30 dk
 
-2:40 — Yaklaşık 2:00 konuşma ve 0:40 akışı/kanıt noktalarını gösterme. Testin sınırını belirt ve “bitti” cümlesini kabul kanıtıyla ilişkilendir. Araç veya test çıktısı uydurma.
+3:22 — Yaklaşık 2:00 konuşma, 0:40 akışı/kanıt noktalarını gösterme ve 0:42 yerel video. Testin sınırını belirt ve “bitti” cümlesini kabul kanıtıyla ilişkilendir. Araç veya test çıktısı uydurma.
+
+## Yerel video adımı
+
+Son reveal'dan sonra ayrı Audience adımı açılır. Yerel ekran kaydı Space ile başlar; → ile devam edilir.
 
 ## 45 dk
 

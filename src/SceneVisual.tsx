@@ -1290,14 +1290,15 @@ function FinalVisual({ steps, audienceMode }: { steps: string[]; audienceMode: b
     const rawAnswer = answer ? answer.slice(1).join(' — ') : '';
     const shortAnswer = rawAnswer ? rawAnswer.charAt(0) + rawAnswer.slice(1).toLocaleLowerCase('tr-TR') : '';
     // Audience brief: the model core with Context, Tools, Test, Review and İnsan; Skills stays in the PRD/presenter text.
+    // Reveal 3 renders only the closing line: no diagram, node or line is kept behind it.
     const sourceParts = trust ? trust.slice(1).join(' — ').split(/\s*\+\s*/).filter(Boolean) : [];
     const pick = (name: string) => sourceParts.find((part) => part === name) ?? name;
     const parts = [
-      { name: pick('Context'), note: 'sunulan bilgi', x: 230, y: 70, edge: 'M538 177 L400 102' },
-      { name: pick('Tools'), note: 'işlem yapar', x: 800, y: 70, edge: 'M662 177 L800 102' },
-      { name: pick('Review'), note: 'ikinci göz', x: 230, y: 320, edge: 'M538 243 L400 352' },
-      { name: pick('Test'), note: 'kanıt üretir', x: 800, y: 320, edge: 'M662 243 L800 352' },
-      { name: pick('İnsan'), note: 'hedef · onay', x: 515, y: 330, edge: 'M600 280 V330' },
+      { name: pick('Context'), note: 'sunulan bilgi', x: 190, y: 50, edge: 'M531 158 L400 88' },
+      { name: pick('Tools'), note: 'işlem yapar', x: 800, y: 50, edge: 'M669 158 L800 88' },
+      { name: pick('Review'), note: 'ikinci göz', x: 190, y: 300, edge: 'M537 240 L400 338' },
+      { name: pick('Test'), note: 'kanıt üretir', x: 800, y: 300, edge: 'M663 240 L800 338' },
+      { name: pick('İnsan'), note: 'hedef · onay', x: 495, y: 318, edge: 'M600 273 V318' },
     ];
     return (
       <div className={`final-audience final-audience--${reveal}`} data-reveal={reveal}>
@@ -1311,19 +1312,19 @@ function FinalVisual({ steps, audienceMode }: { steps: string[]; audienceMode: b
               <strong>{shortAnswer}</strong>
             </div>
           )}
-          {reveal >= 2 && (
-            <svg className="final-audience-system" viewBox="0 0 1200 420" role="img" aria-hidden={reveal >= 3 ? true : undefined} aria-label={reveal >= 3 ? undefined : `Tek sistem: merkezde model; ${parts.map(({ name }) => name).join(', ')} ona bağlanır.`}>
-              <rect className="final-audience-boundary" x="150" y="20" width="900" height="386" rx="24" />
-              <rect className="final-audience-legend" x="166" y="6" width="112" height="28" />
-              <text x="180" y="27" className="final-audience-kicker">SİSTEM</text>
+          {reveal === 2 && (
+            <svg className="final-audience-system" viewBox="0 0 1200 420" role="img" aria-label={`Tek sistem: merkezde model; ${parts.map(({ name }) => name).join(', ')} ona bağlanır.`}>
+              <rect className="final-audience-boundary" x="100" y="14" width="1000" height="394" rx="24" />
+              <rect className="final-audience-legend" x="114" y="0" width="124" height="28" />
+              <text x="128" y="21" className="final-audience-kicker">SİSTEM</text>
               {parts.map(({ name, edge }) => <path key={`${name}-edge`} className="final-audience-link" d={edge} />)}
-              <circle className="final-audience-core" cx="600" cy="210" r="70" />
-              <text x="600" y="218" className="final-audience-core-name">MODEL</text>
+              <circle className="final-audience-core" cx="600" cy="195" r="78" />
+              <text x="600" y="206" className="final-audience-core-name">MODEL</text>
               {parts.map(({ name, note, x, y }) => (
                 <g key={name} className="final-audience-part">
-                  <rect x={x} y={y} width="170" height="64" rx="12" />
-                  <text x={x + 85} y={y + 29} className="final-audience-part-name">{name}</text>
-                  <text x={x + 85} y={y + 51} className="final-audience-part-note">{note}</text>
+                  <rect x={x} y={y} width="210" height="76" rx="12" />
+                  <text x={x + 105} y={y + 34} className="final-audience-part-name">{name}</text>
+                  <text x={x + 105} y={y + 59} className="final-audience-part-note">{note}</text>
                 </g>
               ))}
             </svg>

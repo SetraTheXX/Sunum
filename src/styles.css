@@ -672,30 +672,28 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
 
 /* S12 — light V2 finale: answer, one system around the model core, then the closing line over its faint trace. */
 .is-audience-mode .scene-stage--12 .screen-content { background: none; color: var(--color-text); }
-.final-audience { display: grid; grid-template-rows: auto minmax(0, 1fr); gap: clamp(8px, 1.6vh, 18px); min-height: min(68vh, 720px); margin-top: clamp(10px, 2vh, 22px); }
+.final-audience { display: grid; grid-template-rows: auto minmax(0, 1fr); gap: clamp(8px, 1.6vh, 18px); min-height: min(62vh, 660px); margin-top: clamp(8px, 1.6vh, 18px); }
 .final-audience-recap { min-height: calc(1.3 * clamp(18px, 1.5vw, 24px) + 11px); margin: 0; padding-bottom: 10px; border-bottom: var(--rule); color: var(--color-muted); font-size: clamp(18px, 1.5vw, 24px); line-height: 1.3; }
 .final-audience-recap strong { margin-left: 8px; color: var(--color-accent); font-family: var(--font-display); font-weight: 700; }
 .final-audience-recap[aria-hidden="true"] { visibility: hidden; }
 .final-audience-stage { display: grid; grid-template-areas: "stack"; place-items: center; min-height: 0; }
 .final-audience-stage > * { grid-area: stack; min-width: 0; }
+.final-audience--1 .final-audience-answer { align-self: start; margin-top: clamp(20px, 7vh, 88px); }
 .final-audience-answer { display: grid; gap: clamp(10px, 2vh, 20px); justify-items: center; padding-top: clamp(14px, 2.4vh, 26px); border-top: var(--rule-accent); text-align: center; }
-.final-audience-answer p { margin: 0; color: var(--color-text); font-family: var(--font-display); font-size: clamp(28px, 2.9vw, 48px); font-weight: 650; letter-spacing: -.02em; line-height: 1.1; }
-.final-audience-answer strong { color: var(--color-accent); font-family: var(--font-display); font-size: clamp(56px, 6vw, 104px); font-weight: 700; letter-spacing: -.035em; line-height: 1; }
-.final-audience-system { display: block; width: 100%; max-height: min(54vh, 580px); overflow: visible; }
+.final-audience-answer p { margin: 0; color: var(--color-text); font-family: var(--font-display); font-size: clamp(32px, 3.4vw, 58px); font-weight: 650; letter-spacing: -.02em; line-height: 1.1; }
+.final-audience-answer strong { color: var(--color-accent); font-family: var(--font-display); font-size: clamp(68px, 7.2vw, 124px); font-weight: 700; letter-spacing: -.035em; line-height: 1; }
+.final-audience-system { display: block; width: 100%; max-height: min(58vh, 640px); overflow: visible; }
 .final-audience-system text { fill: var(--color-text); font-family: var(--font-display); }
 .final-audience-boundary { fill: none; stroke: var(--color-accent); stroke-width: 2.5; }
 .final-audience-legend { fill: var(--color-background); }
 .final-audience-system .final-audience-kicker { fill: var(--color-accent); font-family: var(--font-mono); font-size: 19px; font-weight: 700; letter-spacing: .14em; }
 .final-audience-link { fill: none; stroke: var(--color-accent); stroke-width: 2.5; }
 .final-audience-core { fill: var(--color-surface); stroke: var(--color-text); stroke-width: 3; }
-.final-audience-system .final-audience-core-name { font-size: 28px; font-weight: 750; letter-spacing: .03em; text-anchor: middle; }
+.final-audience-system .final-audience-core-name { font-size: 32px; font-weight: 750; letter-spacing: .03em; text-anchor: middle; }
 .final-audience-part rect { fill: var(--color-surface); stroke: var(--color-text); stroke-width: 2; }
-.final-audience-system .final-audience-part-name { font-size: 23px; font-weight: 700; text-anchor: middle; }
-.final-audience-system .final-audience-part-note { fill: var(--color-muted); font-size: 16px; text-anchor: middle; }
-.final-audience--3 .final-audience-system { opacity: .2; }
-.final-audience--3 .final-audience-system text,
-.final-audience--3 .final-audience-legend { display: none; }
-.final-audience-thesis { position: relative; z-index: 1; display: grid; gap: clamp(10px, 1.8vh, 18px); justify-items: center; text-align: center; }
+.final-audience-system .final-audience-part-name { font-size: 28px; font-weight: 700; text-anchor: middle; }
+.final-audience-system .final-audience-part-note { fill: var(--color-muted); font-size: 19px; text-anchor: middle; }
+.final-audience-thesis { display: grid; gap: clamp(10px, 1.8vh, 18px); justify-items: center; text-align: center; }
 .final-audience-thesis p { display: grid; margin: 0; color: var(--color-text); font-family: var(--font-display); font-size: clamp(50px, 5.6vw, 100px); font-weight: 700; letter-spacing: -.04em; line-height: .98; }
 .final-audience-thesis strong { color: var(--color-accent); font-weight: 700; }
 .final-audience-thesis small { padding-top: clamp(8px, 1.4vh, 14px); border-top: var(--rule-accent); color: var(--color-muted); font-size: clamp(18px, 1.4vw, 23px); line-height: 1.3; }

@@ -1,52 +1,38 @@
-# 04 — Chatbot ve Coding Agent
+# 04 — Chatbot ve Kodlama Ajanı
 
-**Durum:** Must — 30 dakika rotası
+## Ana fikir
 
-**Tahmini süre:** 3:41 (3:20 akış + 0:21 yerel video)
-
-## Amaç
-
-Sohbet cevabı ile proje araçlarını kullanıp sonuçları tekrar değerlendiren agent döngüsünü ayırt etmek.
+Sohbet cevabı ile araç kullanıp sonucu yeniden değerlendiren ajan döngüsünü ayırt etmek.
 
 ## İzleyicinin bu sahneden çıkarken anlayacağı tek şey
 
-Bu sunumda “coding agent”, modelin araç kullanıp sonuçları yeni adıma taşıdığı bir çalışma döngüsüdür.
+Kodlama ajanı (coding agent), modelin araç kullanıp sonucu bir sonraki adıma taşıdığı çalışma döngüsüdür.
 
 ## Ekranda
 
 - Chatbot: Sen → Model → Cevap
-- Coding agent: Sen → Agent/Harness → Model → Araç → Sonuç → tekrar değerlendirme
+- Kodlama ajanı: Sen → Ajan ortamı → Model → Araç → Sonuç → yeniden değerlendirme
 - Araç örnekleri: dosya oku/değiştir, terminal komutu çalıştır
-- Alt not: “Model ≠ onu projede çalıştıran coding-agent ortamı”
+- Alt not: “Model aynı; onu projede çalıştıran ortam farklı.”
 
 ## Konuşmacı
 
-“Chatbot'ta tipik akış şudur: Bir soru gönderirim, model bir yanıt üretir. Bu çok kullanışlıdır; kod önerebilir veya ne yapmam gerektiğini anlatabilir. Coding agent dediğimiz düzende, modelden gelen karar araçlara aktarılabilir. Agent projedeki dosyaları okuyabilir, izin verilen bir değişikliği yapabilir, terminalde komut çalıştırabilir ve sonucu tekrar context'e alabilir. Model de yeni sonucu görüp devam edip etmeyeceğine karar verir.
+Adım 1 — Chatbot: “Soruyu soruyorum, model cevap veriyor. Cevap bana dönüyor; kopyalayıp projeye uygulayan benim.”
 
-Bu sunumda coding agent'ı böyle bir araç döngüsü etrafında tanımlıyorum. Ürünler bu terimleri ve sınırları farklı adlandırabilir; model ile çalışma ortamını ayırma fikri ise burada önemli. Ortamın dosya erişimi, terminali ve talimatları vardır; bunlar hangi işlerin yapılabildiğini ve hangi sınırların geçerli olduğunu belirler. Bu çevreyi açıklarken “harness” sözcüğünü kullanacağız: burada modelin çevresindeki çalışma, araç ve agent ortamı için kullandığımız pratik bir terim; her ürün için tek ve resmî bir kategori iddiası değil. Model bir parça; agent çalışma döngüsü, context, araçlar ve kuralların birlikte çalıştığı düzendir.
+Adım 2 — Kodlama ajanı: “Aynı istek bu kez bir ajan ortamına gidiyor. Model bir araç çağırıyor, araç projede değişiklik yapıyor, sonuç modele dönüyor ve model bir sonraki adıma karar veriyor. Hedef, izin ve son kontrol hâlâ bizde.”
 
-Örnek olarak Claude model ailesinin adı, Claude Code ise agentic coding tool'dur; GPT bir model ailesini, Codex ise kod üzerinde çalışan agent ürün ve araçlarını anlatır. Codex adı model adlarında da geçebildiği için bunu katı bir marka sınıflandırması gibi ezberlemeyelim. Önemli olan burada hangi parçanın model, hangisinin projede çalışan ortam olduğunu sormak. Bugün marka yarıştırmayacağız; ortak çalışma biçimine odaklanacağız.”
+Adım 3 — Araçlar: “Dosya okumak, dosyayı değiştirmek, terminalde komut çalıştırmak. Ajan yalnızca izin verilen araçlarla ve izin verilen sınırlar içinde çalışır.”
 
-“Şemadaki okları takip edelim. Kullanıcı hedef verir; çalışma ortamı projeyi hazırlar ve modele gerekli bağlamı iletir. Model bir cevap ya da araç çağrısı üretir. Bir araç çağrısı varsa ortam onu çalıştırır ve sonucu geri iletir. Sonuç, bir sonraki kararın girdisi olur. Döngü görev tamamlanana, sınırına ulaşana veya insan müdahalesi gerekene kadar sürebilir. Bir sohbet arayüzünde de arka planda araçlar bulunabilir; belirleyici olan düğmenin adı değil, bu döngünün nasıl kurulduğudur.
+Adım 4 — Ayrım: “Model aynı olabilir; farkı onu projede çalıştıran ortam yaratıyor. Bu ortama İngilizcede harness da deniyor. Örneğin Claude bir model ailesi, Claude Code onu projede çalıştıran araç; GPT bir model ailesi, Codex kod üzerinde çalışan ajan aracı. Burada marka karşılaştırmıyoruz; hangi parçanın model, hangisinin ortam olduğuna bakıyoruz.”
 
-Burada “agent kendi başına her şeye erişebilir” demiyoruz. Bir ürün hangi dosyalara ve komutlara erişim tanıyorsa agent'ın yapabildiği de o sınırlar içindedir. Kod yazma önerisi veren bir sohbet yanıtı, dosyaya uygulanmış değişiklikle aynı şey değildir. Tersine, araç çağrısı yapmak da değişikliğin doğru olduğunu kanıtlamaz. Bu nedenle ilerleyen sahnelerde hem agent'ın yeteneklerini hem de onu çevreleyen kontrol adımlarını konuşacağız.”
+## Video
+
+Adım 5 — Video açılınca kısa bir cümle kur, sonra Space ile başlat (yaklaşık 21 saniye, sessiz).
+
+Oynarken: “Klasik sohbet akışı: isteği yazıyorum, kod cevap olarak geliyor. Kopyalıyorum, yeni bir dosyaya yapıştırıp index.html olarak kaydediyorum, tarayıcıda açıyorum. Her adımı taşıyan benim.”
+
+Bitince: “Sohbet bana kodu verdi; projeye taşıyan ben oldum. Şimdi bu taşıma işini araca bıraktığımızda ne olduğuna bakalım.” → ile devam et.
 
 ## Geçiş
 
-“Bu araç döngüsünden önceki hızlı ve eğlenceli başlangıca bakalım: fikirden ilk çalışan arayüze.”
-
-## 30 dk
-
-3:41 — Yaklaşık 2:25 konuşma, 0:55 ok/araç döngüsünü izleme ve 0:21 yerel video. Ürün adı veya güncel özellik listesi ezberletme.
-
-## Yerel video adımı
-
-Son reveal'dan sonra ayrı Audience adımı açılır. Yerel ekran kaydı Space ile başlar; → ile devam edilir.
-
-## 45 dk
-
-Phase 1 kapsamı dışında; ek içerik yazılmadı.
-
-## 60 dk
-
-Phase 1 kapsamı dışında; ek içerik yazılmadı.
+“İşi araca bıraktığımız en hızlı ve en eğlenceli hâlle başlayalım: fikirden ilk çalışan ekrana.”

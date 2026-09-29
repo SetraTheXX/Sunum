@@ -1,16 +1,12 @@
-# 01 — Cold Open: AI gerçekten uygulama yapabilir mi?
+# 01 — Açılış: AI ile gerçekten uygulama yapılabilir mi?
 
-**Durum:** Must — 30 dakika rotası
+## Ana fikir
 
-**Tahmini süre:** 1:50
-
-## Amaç
-
-Öğrencinin bildiği “AI'a bir şey sor ve cevap al” deneyiminden sunumun ana sorusuna geçmek.
+Herkesin bildiği “AI'a sor, cevap al” deneyiminden sunumun asıl sorusuna geçmek.
 
 ## İzleyicinin bu sahneden çıkarken anlayacağı tek şey
 
-AI çalışan bir başlangıç üretebilir; tek başına çalışıyor görünmesi güvenilir olduğu anlamına gelmez.
+AI çalışan bir başlangıç üretebilir; ama çalışıyor görünmesi güvenilir olduğu anlamına gelmez.
 
 ## Ekranda
 
@@ -21,20 +17,16 @@ AI çalışan bir başlangıç üretebilir; tek başına çalışıyor görünme
 
 ## Konuşmacı
 
-“AI ile gerçekten uygulama yapılabilir mi? Bugün bu soruya bir ürün demosuyla değil, nasıl çalıştığını adım adım açarak cevap vereceğim. Bir araca ‘bir uygulama yap’ dediğimizde ekranda çalışan bir başlangıç görebiliriz. Bu heyecan verici; teknik eşiği düşürüyor ve fikri hızlıca deneyebiliyoruz. Ama ekranın açılması yalnızca ilk soruya cevap verir: Bir şey üretildi mi? Doğru davranıyor mu, başka bir yeri bozdu mu, değişiklik anlaşılır ve geri alınabilir mi? Bunlar ayrı kontroller. Önce model ve context'i ayıracağız, sonra agent'ın dosya ve araçlarla nasıl çalıştığını göreceğiz. Son bölümde bu parçaların bir takım workflow'unda nasıl bir araya geldiğine bakıp baştaki soruya döneceğiz. Siz de bir AI aracıyla yaptığınız son denemeyi düşünün: Ekranda bir sonuç gördüğünüz an, o sonucun doğru olduğuna dair elinizde ne vardı? Bu soru birazdan anlatacağım her bölümün arka planında kalacak. Burada başarı ya da başarısızlık hikâyesi anlatmıyoruz; hangi soruların cevabını bir çalışma sistemiyle arayabileceğimizi konuşuyoruz.”
+Adım 1 — Soruyu sor ve bir an bekle: “AI ile gerçekten uygulama yapılabilir mi?” Cevabı hemen verme.
+
+Adım 2 — “Bir araca ‘bir uygulama yap’ dediğimizde çoğu zaman gerçekten çalışan bir şey çıkıyor. Bu heyecan verici; bir fikri denemenin eşiği hiç bu kadar düşük olmamıştı.”
+
+Adım 3 — “Sıra basit: istek, dosyada değişiklik, çalışan sonuç. Buraya kadarı kolay kısım.”
+
+Adım 4 — “Ama iki ayrı soru var: Çalışıyor mu? Doğru ve güvenilir mi? Ekranın açılması yalnızca ilkine cevap veriyor. Bugün ikincisine nasıl cevap aradığımızı konuşacağız.”
+
+Yol haritası: önce model ile bağlamı ayıracağız, sonra ajanın dosya ve araçlarla nasıl çalıştığını göreceğiz, en sonda da bunların bir ekip düzeninde nasıl birleştiğine bakacağız.
 
 ## Geçiş
 
-“Bu sonuca ulaşmak için kullandığımız etkileşim biçimi zaman içinde nasıl değişti? Önce o yolu görelim.”
-
-## 30 dk
-
-1:50 — Yaklaşık 1:10 konuşma ve 0:40 soru/duraklama ile üç aşamalı akış. Açılışta ürün vaadi veya başarı metriği kullanma.
-
-## 45 dk
-
-Phase 1 kapsamı dışında; ek içerik yazılmadı.
-
-## 60 dk
-
-Phase 1 kapsamı dışında; ek içerik yazılmadı.
+“Önce bu araçlarla çalışma biçimimizin nereden nereye geldiğine bakalım.”

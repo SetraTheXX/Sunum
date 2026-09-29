@@ -89,23 +89,16 @@ button:focus-visible, a:focus-visible, summary:focus-visible {
 .wordmark { display: flex; align-items: center; gap: 11px; color: var(--ink); text-decoration: none; font-size: 12px; font-weight: 800; letter-spacing: .08em; line-height: 1.35; }
 .wordmark-mark { display: grid; width: 34px; height: 34px; place-items: center; border: var(--rule); font-family: var(--font-display); font-size: 20px; font-weight: 700; }
 .eyebrow { color: var(--muted); font-size: var(--type-label); font-weight: 700; letter-spacing: .12em; }
-.mode-picker { padding: var(--space-6) 0 var(--space-4); border-bottom: var(--rule); }
-.mode-options { display: flex; gap: 6px; margin-top: 10px; }
-.mode-option { min-width: 63px; padding: 8px 10px; border: 1px solid transparent; border-radius: var(--radius-control); background: transparent; cursor: pointer; font-size: var(--type-label); font-weight: 700; }
-.mode-option span { margin-left: 3px; color: var(--muted); font-size: 12px; font-weight: 500; }
-.mode-option:hover { border-color: var(--color-rule); }
-.mode-option.is-selected { border-color: var(--ink); background: var(--paper-light); }
-.mode-note { margin: 10px 0 0; color: var(--color-muted); font-size: var(--type-detail); line-height: 1.45; }
 
-.scene-list { display: flex; flex: 1; flex-direction: column; gap: 3px; min-height: 0; padding-top: var(--space-6); overflow-y: auto; }
-.scene-list-heading { display: flex; justify-content: space-between; padding: 0 8px 9px; color: var(--muted); font-size: 12px; }
-.scene-link { display: grid; grid-template-columns: 25px minmax(0, 1fr) auto; gap: 7px; align-items: baseline; width: 100%; min-height: 36px; padding: 7px 8px; border: 0; border-left: 2px solid transparent; background: transparent; color: var(--color-muted); text-align: left; cursor: pointer; }
+.scene-list { display: flex; flex: 1; flex-direction: column; gap: 2px; min-height: 0; margin-top: var(--space-6); padding-top: var(--space-4); border-top: var(--rule); overflow-y: auto; }
+.scene-list-heading { display: block; padding: 0 8px 8px; font-size: 12px; }
+.scene-link { display: grid; grid-template-columns: 24px minmax(0, 1fr) 14px; gap: 6px; align-items: baseline; width: 100%; min-height: 34px; padding: 7px 8px; border: 0; border-left: 2px solid transparent; background: transparent; color: var(--color-muted); text-align: left; cursor: pointer; }
 .scene-link:hover { background: var(--paper-light); color: var(--ink); }
 .scene-link.is-active { border-left-color: var(--accent); background: var(--paper-light); color: var(--ink); }
 .scene-link-number { color: var(--color-muted); font-family: var(--font-mono); font-size: 12px; }
-.scene-link-title { overflow: hidden; font-size: 12px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
-.scene-link-time { color: var(--color-muted); font-family: var(--font-mono); font-size: 11px; }
-.rail-footer { display: flex; flex-wrap: wrap; gap: 8px 12px; padding-top: 14px; border-top: var(--rule); color: var(--muted); font-size: 12px; }
+.scene-link.is-active .scene-link-number { color: var(--color-accent); }
+.scene-link-title { font-size: 13px; font-weight: 600; line-height: 1.3; overflow-wrap: break-word; }
+.scene-link-video { color: var(--color-accent); font-size: 9px; text-align: right; }
 
 kbd { display: inline-grid; min-width: 20px; min-height: 20px; place-items: center; padding: 1px 4px; border: var(--rule); border-radius: var(--radius-control); background: var(--color-surface); color: var(--color-text); font-family: var(--font-mono); font-size: 12px; }
 
@@ -115,14 +108,14 @@ kbd { display: inline-grid; min-width: 20px; min-height: 20px; place-items: cent
 .route-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
 .stage-header-actions { display: flex; align-items: center; gap: 14px; }
 .stage-counter { color: var(--muted); font-family: var(--font-mono); font-size: 14px; }
-.icon-button { display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid transparent; border-radius: var(--radius-control); background: transparent; color: var(--color-muted); font-size: 22px; cursor: pointer; }
-.icon-button:hover { border-color: var(--line); background: var(--paper-light); }
+.fullscreen-button { display: flex; align-items: center; gap: 7px; min-height: 34px; padding: 0 12px; border: var(--rule); border-radius: var(--radius-control); background: var(--paper-light); color: var(--color-text); font-size: 13px; font-weight: 600; cursor: pointer; }
+.fullscreen-button span { color: var(--color-accent); font-size: 17px; line-height: 1; }
+.fullscreen-button:hover { border-color: var(--color-accent); }
 .progress-track { height: 2px; background: var(--color-rule); }
 .progress-track span { display: block; height: 100%; background: var(--accent); }
 
 .scene-stage { flex: 1; width: min(100%, 1030px); margin: 0 auto; padding: clamp(30px, 5vh, 54px) 0 22px; }
 .scene-meta { display: flex; align-items: center; gap: 13px; }
-.scene-duration { color: var(--muted); font-family: var(--font-mono); font-size: 12px; }
 h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); font-size: var(--type-title); font-weight: 600; letter-spacing: -.025em; line-height: 1.08; }
 .scene-takeaway { max-width: 850px; margin: 0; color: var(--color-muted); font-family: var(--font-body); font-size: var(--type-body); line-height: 1.5; }
 .screen-content { margin-top: clamp(24px, 4vh, 40px); padding-top: 17px; border-top: 1px solid var(--line); }
@@ -142,7 +135,10 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
 .notes-body { max-width: 800px; padding: 0 0 12px; font-size: var(--type-detail); line-height: 1.65; }
 .notes-body p { margin: 0 0 12px; white-space: pre-line; }
 .notes-body strong { color: var(--ink); }
-.purpose-note { color: var(--color-muted); }
+.notes-lead { color: var(--color-text); }
+.notes-video { margin: 4px 0 12px; padding: 10px 0 0 12px; border-left: var(--rule-accent); }
+.notes-label { display: block; margin-bottom: 6px; color: var(--color-accent) !important; font-size: var(--type-label); letter-spacing: .1em; text-transform: uppercase; }
+.notes-transition { padding-top: 10px; border-top: var(--rule); }
 
 .stage-footer { display: flex; align-items: center; justify-content: space-between; gap: 15px; min-height: 70px; border-top: var(--rule); }
 .keyboard-legend { display: flex; flex-wrap: wrap; gap: 8px 13px; color: var(--color-muted); font-size: 12px; }
@@ -208,18 +204,12 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
 .anatomy-equation { width: fit-content; margin: 0; padding: 8px 0 0; border-top: 1px solid var(--color-text); color: var(--color-text); font-family: var(--font-display); font-size: clamp(20px, 2.1vw, 28px); letter-spacing: -.02em; }
 
 .scene-stage--12 h1 { margin-top: 9px; margin-bottom: 9px; font-size: clamp(29px, 3vw, 40px); }
-.scene-stage--12 .scene-takeaway { color: var(--color-muted); }
-.scene-stage--12 .screen-content { margin-top: var(--space-6); padding: 22px clamp(18px, 3vw, 34px) 18px; border: 0; background: var(--color-inverse-surface); color: var(--color-inverse-text); }
-.scene-stage--12 .screen-content .eyebrow,
-.scene-stage--12 .step-counter { color: var(--color-inverse-muted); }
 .scene-stage--12 .final-visual { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 17px 34px; align-items: start; margin-top: 15px; }
 .final-answer, .final-support { min-width: 0; padding: 0 0 13px; border-bottom: var(--rule-width) solid var(--color-inverse-rule); }
 .final-answer p, .final-support p { margin: 0 0 7px; color: var(--color-inverse-muted); font-family: var(--font-display); font-size: clamp(16px, 1.7vw, 21px); }
 .final-answer strong, .final-support strong { display: block; color: var(--color-inverse-text); font-size: clamp(13px, 1.35vw, 16px); font-weight: 500; line-height: 1.5; }
 .final-statement { grid-column: 1 / -1; display: block; padding-top: 4px; color: var(--color-inverse-text); font-family: var(--font-display); font-size: clamp(39px, 5vw, 68px); letter-spacing: -.045em; line-height: 1; }
 .final-statement strong { color: var(--color-inverse-accent); font-weight: 600; }
-.scene-stage--12 .next-hint.is-finale { color: var(--color-inverse-accent); }
-.scene-stage--12 .next-hint kbd { border-color: var(--color-inverse-rule); background: var(--color-inverse-surface); color: var(--color-inverse-text); }
 
 /* Reusable primitives for later scenes; screenshot content is supplied by callers. */
 .screenshot-annotation { min-width: 0; margin: 0; }
@@ -278,11 +268,7 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
   .scene-rail { min-height: auto; padding: 12px 14px; border-right: 0; border-bottom: 1px solid var(--line); }
   .wordmark { font-size: 10px; }
   .wordmark-mark { width: 29px; height: 29px; }
-  .mode-picker { padding: 12px 0 0; border-bottom: 0; }
-  .mode-picker > .eyebrow { display: none; }
-  .mode-options { margin-top: 0; }
-  .mode-option { padding: 6px 8px; }
-  .scene-list, .rail-footer { display: none; }
+  .scene-list { display: none; }
   .stage { min-height: calc(100vh - 112px); padding-inline: 18px; }
   h1 { font-size: 38px; }
   .stage-footer { align-items: flex-end; padding-block: 12px; }
@@ -457,7 +443,6 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
 .orchestration-git-note .primitive-label { color: var(--color-oxide); }
 .orchestration-git-note p { margin: 0; color: var(--color-muted); font-size: var(--type-detail); line-height: 1.45; }
 
-.scene-stage--11 .scene-takeaway { padding-left: 12px; border-left: 2px solid var(--color-attention); color: var(--color-attention); }
 
 @media (min-width: 821px) and (min-height: 801px) {
   .scene-stage--07 { padding-top: 32px; }
@@ -1029,4 +1014,106 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
   .audience-route--5,
   .audience-route--6 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .audience-route--8 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Presenter view: the same final visuals as the audience view, scaled to the space left under title, notes and controls. */
+@media (min-width: 821px) {
+  .presentation-shell:not(.is-audience-mode) {
+    --presenter-visual: max(260px, calc(100vh - 410px));
+    height: 100vh;
+    min-height: 0;
+  }
+  .presentation-shell:not(.is-audience-mode) .scene-rail { height: 100vh; min-height: 0; }
+  .presentation-shell:not(.is-audience-mode) .stage { height: 100vh; min-height: 0; overflow: hidden; }
+  .presentation-shell:not(.is-audience-mode) .stage-header,
+  .presentation-shell:not(.is-audience-mode) .progress-track,
+  .presentation-shell:not(.is-audience-mode) .stage-footer { flex: 0 0 auto; }
+  .presentation-shell:not(.is-audience-mode) .stage-footer { min-height: 60px; }
+  .presentation-shell:not(.is-audience-mode) .scene-stage { width: min(100%, 1240px); min-height: 0; overflow-y: auto; padding: 20px 0 10px; }
+  .presentation-shell:not(.is-audience-mode) .scene-stage h1 { margin: 6px 0 8px; font-size: clamp(28px, 2.4vw, 44px); }
+  .presentation-shell:not(.is-audience-mode) .scene-stage .scene-takeaway { font-size: clamp(15px, 1.1vw, 18px); line-height: 1.4; }
+  .presentation-shell:not(.is-audience-mode) .screen-content { margin-top: 14px; padding-top: 10px; }
+  .presentation-shell:not(.is-audience-mode) .next-hint { margin-top: 8px; }
+  .presentation-shell:not(.is-audience-mode) .speaker-notes { margin-top: 8px; }
+  .presentation-shell:not(.is-audience-mode) .speaker-notes summary { padding-block: 7px; }
+
+  .presentation-shell:not(.is-audience-mode) .opening-audience { height: var(--presenter-visual); margin-top: 6px; }
+  .presentation-shell:not(.is-audience-mode) .opening-audience-question p { font-size: clamp(38px, 3.6vw, 64px); }
+  .presentation-shell:not(.is-audience-mode) .opening-audience-story { gap: clamp(10px, 2vh, 24px); }
+
+  .presentation-shell:not(.is-audience-mode) .journey-audience { gap: 8px; margin-top: 8px; }
+  .presentation-shell:not(.is-audience-mode) .journey-audience-task { padding-bottom: 8px; }
+  .presentation-shell:not(.is-audience-mode) .journey-audience-task p { font-size: clamp(22px, 1.9vw, 34px); }
+  .presentation-shell:not(.is-audience-mode) .journey-audience-stage { padding-block: clamp(6px, 1vh, 14px); }
+  .presentation-shell:not(.is-audience-mode) .journey-audience-name h2 { font-size: clamp(26px, 2.2vw, 40px); }
+  .presentation-shell:not(.is-audience-mode) .journey-audience-work p { margin-top: 3px; font-size: clamp(14px, 1vw, 18px); }
+  .presentation-shell:not(.is-audience-mode) .journey-audience-result { font-size: clamp(15px, 1.05vw, 19px); }
+
+  .presentation-shell:not(.is-audience-mode) .context-audience,
+  .presentation-shell:not(.is-audience-mode) .comparison-audience,
+  .presentation-shell:not(.is-audience-mode) .vibe-coding-audience,
+  .presentation-shell:not(.is-audience-mode) .vibe-wall-audience,
+  .presentation-shell:not(.is-audience-mode) .engineering-audience,
+  .presentation-shell:not(.is-audience-mode) .boundary-audience,
+  .presentation-shell:not(.is-audience-mode) .orchestration-audience,
+  .presentation-shell:not(.is-audience-mode) .workflow-audience,
+  .presentation-shell:not(.is-audience-mode) .anatomy-audience,
+  .presentation-shell:not(.is-audience-mode) .final-audience { gap: 8px; margin-top: 8px; }
+  .presentation-shell:not(.is-audience-mode) .context-audience-system,
+  .presentation-shell:not(.is-audience-mode) .comparison-audience-system,
+  .presentation-shell:not(.is-audience-mode) .vibe-coding-audience-system,
+  .presentation-shell:not(.is-audience-mode) .orchestration-audience-map,
+  .presentation-shell:not(.is-audience-mode) .final-audience-system { max-height: calc(var(--presenter-visual) - 60px); }
+  .presentation-shell:not(.is-audience-mode) .vibe-wall-audience-system,
+  .presentation-shell:not(.is-audience-mode) .engineering-audience-system,
+  .presentation-shell:not(.is-audience-mode) .anatomy-audience-map { max-height: calc(var(--presenter-visual) - 76px); }
+  .presentation-shell:not(.is-audience-mode) .boundary-audience-system { max-height: calc(var(--presenter-visual) - 130px); }
+  .presentation-shell:not(.is-audience-mode) .workflow-audience-lanes { max-height: calc(var(--presenter-visual) - 165px); }
+  .presentation-shell:not(.is-audience-mode) .vibe-wall-audience-statement,
+  .presentation-shell:not(.is-audience-mode) .engineering-audience-statement,
+  .presentation-shell:not(.is-audience-mode) .boundary-audience-balance { min-height: 0; font-size: clamp(22px, 1.9vw, 34px); }
+  .presentation-shell:not(.is-audience-mode) .boundary-audience-question,
+  .presentation-shell:not(.is-audience-mode) .workflow-audience-question { font-size: clamp(22px, 1.9vw, 34px); }
+  .presentation-shell:not(.is-audience-mode) .anatomy-audience-caption.is-equation { font-size: clamp(24px, 2vw, 36px); }
+  .presentation-shell:not(.is-audience-mode) .final-audience { min-height: 0; height: calc(var(--presenter-visual) - 12px); }
+  .presentation-shell:not(.is-audience-mode) .final-audience--1 .final-audience-answer { margin-top: clamp(10px, 3vh, 40px); }
+  .presentation-shell:not(.is-audience-mode) .final-audience-answer strong { font-size: clamp(56px, 5vw, 100px); }
+  .presentation-shell:not(.is-audience-mode) .final-audience-thesis p { font-size: clamp(44px, 4.2vw, 84px); }
+
+  .presentation-shell:not(.is-audience-mode) .scene-video-reveal { width: min(100%, calc((var(--presenter-visual) - 34px) * 16 / 9)); margin-inline: auto; }
+  .presentation-shell:not(.is-audience-mode) .scene-video-instruction { display: none; }
+}
+@media (min-width: 821px) {
+  .presentation-shell:not(.is-audience-mode) .scene-video-label { font-size: 13px; }
+}
+
+/* Audience video: size the 16:9 frame by the available height so it never scrolls or runs under the ESC control. */
+.is-audience-mode .scene-video-reveal { width: min(100%, calc((100dvh - 110px) * 16 / 9)); margin-inline: auto; }
+
+/* Presenter: S02's three rows scale with height on short or zoomed screens. */
+@media (min-width: 821px) {
+  .presentation-shell:not(.is-audience-mode) .journey-audience-stage { grid-template-columns: minmax(120px, .17fr) minmax(0, .61fr) minmax(160px, .22fr); gap: clamp(12px, 1.8vw, 30px); }
+  .presentation-shell:not(.is-audience-mode) .journey-audience-name h2 { font-size: clamp(22px, 3.6vh, 40px); }
+  .presentation-shell:not(.is-audience-mode) .journey-audience-work p { font-size: clamp(13px, 1.9vh, 18px); line-height: 1.25; }
+  .presentation-shell:not(.is-audience-mode) .journey-audience-work span { font-size: 10px; }
+  .presentation-shell:not(.is-audience-mode) .journey-audience-result { font-size: clamp(14px, 2vh, 19px); }
+  .presentation-shell:not(.is-audience-mode) .journey-audience-note p { font-size: clamp(13px, 1.9vh, 17px); }
+}
+
+/* Presenter: S01's story column is sized by the available height so later reveals stay inside their row. */
+@media (min-width: 821px) {
+  .presentation-shell:not(.is-audience-mode) .opening-audience-story { gap: clamp(8px, 1.6vh, 24px); }
+  .presentation-shell:not(.is-audience-mode) .opening-audience-question p { max-width: 16ch; margin-top: 6px; font-size: clamp(28px, 6vh, 64px); }
+  .presentation-shell:not(.is-audience-mode) .opening-audience--2 .opening-audience-question p,
+  .presentation-shell:not(.is-audience-mode) .opening-audience--3 .opening-audience-question p,
+  .presentation-shell:not(.is-audience-mode) .opening-audience--4 .opening-audience-question p { max-width: 26ch; font-size: clamp(16px, 2.6vh, 34px); }
+  .presentation-shell:not(.is-audience-mode) .opening-audience-request { padding-top: 6px; }
+  .presentation-shell:not(.is-audience-mode) .opening-audience-request p { max-width: 20ch; margin-top: 4px; font-size: clamp(22px, 4.2vh, 52px); }
+  .presentation-shell:not(.is-audience-mode) .opening-audience--3 .opening-audience-request p { font-size: clamp(20px, 3.6vh, 46px); }
+  .presentation-shell:not(.is-audience-mode) .opening-audience--4 .opening-audience-request p { font-size: clamp(18px, 3vh, 40px); }
+  .presentation-shell:not(.is-audience-mode) .opening-audience-check { gap: 4px; padding-top: 6px; }
+  .presentation-shell:not(.is-audience-mode) .opening-audience-check-item p { font-size: clamp(15px, 2.6vh, 32px); }
+  .presentation-shell:not(.is-audience-mode) .opening-audience-axis { padding-top: 8px; }
+  .presentation-shell:not(.is-audience-mode) .opening-audience-axis span { gap: 3px; font-size: clamp(15px, 2.4vh, 28px); }
+  .presentation-shell:not(.is-audience-mode) .opening-audience-axis small { font-size: 12px; }
 }

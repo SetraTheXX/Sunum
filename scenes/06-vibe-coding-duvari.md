@@ -1,47 +1,29 @@
-# 06 — Vibe Coding'in duvarı
+# 06 — Vibe Coding’in Duvarı
 
-**Durum:** Must — 30 dakika rotası
+## Ana fikir
 
-**Tahmini süre:** 2:30
-
-## Amaç
-
-Prototipten güvenilir yazılıma geçerken görünür çalışan ekranın cevaplamadığı soruları açmak.
+Çalışan bir ekranın cevaplamadığı soruları görünür kılmak.
 
 ## İzleyicinin bu sahneden çıkarken anlayacağı tek şey
 
-“Çalışıyor” gözlemi, tek başına doğru, güvenli veya sürdürülebilir olduğuna kanıt değildir.
+Çalışıyor görünmesi; doğru, güvenli ya da sürdürülebilir olduğunu tek başına göstermez.
 
 ## Ekranda
 
 - Büyük ifade: “ÇALIŞIYOR ≠ DOĞRU YAPILDI”
-- Sorular: Hangi dosya değişti? Test edildi mi? Başka özellik etkilendi mi? Değişiklik gözden geçirildi mi?
+- Sorular: Güvenli mi? Başka bir yeri bozdu mu? Gerçekten istenen şey mi? Test edildi mi? İncelendi mi?
 - İki ayrı işaret: “Görünen sonuç” / “Doğrulama kanıtı”
 
 ## Konuşmacı
 
-“Diyelim ki yeni ekran açıldı ve ilk bakışta istediğimiz gibi duruyor. Harika: görünür bir sonuç aldık. Ama buradan henüz hangi dosyaların değiştiğini, eski bir akışın bozulup bozulmadığını, sınır durumlarının denenip denenmediğini veya değişikliği başka birinin inceleyip incelemediğini çıkaramayız.
+Adım 1 — “Sayfa açıldı, çalışıyor. Harika: görünen bir sonucumuz var.”
 
-Bunlar her prototipte mutlaka bir sorun var demek değil. Sadece çalışan bir ekranın bize verdiği kanıt sınırlı demek. Bir feature eklerken login bozulabilir; bir form yalnızca boş olmayan alanlarda çalışabilir; eklenen paket projeye gereksiz yük getirebilir. Bu sorular örnek risklerdir, burada gerçek bir projede yaşanmış bug iddiası yok. Birisi ‘bitti’ dediğinde, hangi kontrolleri yaptığını sormak bu yüzden değerli.
+Adım 2 — Soruları tek tek oku: “Güvenli mi? Başka bir yeri bozdu mu? Yapılan değişiklik gerçekten istediğimiz şey mi? Test edildi mi? Birisi inceledi mi? Ekrana bakarak bunların hiçbirine cevap veremiyoruz.”
 
-Vibe coding'in fikirleri hızlıca görünür kılma gücü değerli; her prototipi ağır bir sürece sokmak gerekmiyor. İş güvenilirlik, bakım veya daha geniş kullanım gerektirmeye başladığında değişiklikleri görünür kılacak ve riske uygun biçimde sınayacak kontroller ekleriz. Böylece vibe coding'i kötü ilan etmeden, ilk hızını daha güvenilir geliştirmeye bağlarız.”
+Adım 3 — “Çalışıyor olması, doğru yapıldığı anlamına gelmez. Bu vibe coding'e karşı bir slogan değil; her prototipin sorunlu olduğunu da söylemiyor. Sadece çalışan bir ekranın verdiği kanıtın sınırlı olduğunu hatırlatıyor.”
 
-“Duvara çarpmak illa büyük bir felaketle karşılaşmak değildir. Bazen yalnızca ekranda görünmeyen bir durumdur: menü klavyeyle açılıyor mu, form boş girişte ne yapıyor, yeni görünüm küçük ekranda taşıyor mu? Bu soruları sormak, testlerin ve review'un işe yaradığı yerleri gösterir. Her cevap için test otomasyonu kurmak şart olmayabilir; bazılarını elle kontrol ederiz, bazıları için otomatik test yazarız. Ama kontrol yöntemini seçtiğimizi bilmek gerekir.
-
-Bir başka soru da değişikliğin kapsamıdır. Dosya farkı bize neyin değiştiğini gösterebilir; test çıktısı belirli koşullarda ne olduğunu söyler; review ise tasarım ve bakım açısından ikinci bir değerlendirme sunar. Hiçbiri tek başına mutlak garanti değildir, birlikte daha iyi kanıt oluştururlar. Bu yüzden “çalışıyor ≠ doğru yapıldı” cümlesi vibe coding karşıtı bir slogan değil. İlk gözlemi korurken, güven için hangi ek kanıtların gerektiğini hatırlatan bir sınırdır.”
+Somut örnek: “Menü klavyeyle açılıyor mu? Form boş girişte ne yapıyor? Yeni tasarım küçük ekranda taşıyor mu? Dosya farkı neyin değiştiğini, test belirli koşullarda ne olduğunu, kod incelemesi de tasarımın mantıklı olup olmadığını gösterir. Hiçbiri tek başına garanti değil; birlikte güven oluştururlar.”
 
 ## Geçiş
 
-“Bu duvarı aşmak için agent'ın kaputunu açalım: modelin çevresinde hangi parçalar var?”
-
-## 30 dk
-
-2:30 — Yaklaşık 2:00 konuşma ve 0:30 soruları sırayla açma. Her soru için çözüm anlatma, doğrulama ihtiyacını vurgula.
-
-## 45 dk
-
-Phase 1 kapsamı dışında; ek içerik yazılmadı.
-
-## 60 dk
-
-Phase 1 kapsamı dışında; ek içerik yazılmadı.
+“Bu duvarı aşmak için ajanın kaputunu açalım: modelin çevresinde hangi parçalar var?”

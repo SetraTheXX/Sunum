@@ -1,38 +1,43 @@
-# Sıfırdan Agentic Yazılım Geliştirme — Sunum
+# Model Değil, Sistem — Sıfırdan Agentic Yazılım Geliştirme Sunumu
 
-Bu depo, PRD ve Roadmap'te tanımlanan etkileşimli sunum projesidir. **Güncel faz, tamamlanan işler ve kalite kapıları [Roadmap](Sifirdan_Agentic_Yazilim_Gelistirme_Sunum_Roadmap.md) üzerinden izlenir.** 45/60 dakikalık ek içerikler Phase 12'ye bırakılmıştır.
+AI ile uygulama geliştirmeyi sohbetten ajan takımına kadar anlatan, 12 sahnelik etkileşimli sunum. Dört sahnede kısa, sessiz ekran kayıtları vardır.
 
 ## Kaynak belgeler
 
 - [PRD](Sifirdan_Agentic_Yazilim_Gelistirme_Sunum_PRD.md)
-- [Roadmap](Sifirdan_Agentic_Yazilim_Gelistirme_Sunum_Roadmap.md)
+- [Roadmap](Sifirdan_Agentic_Yazilim_Gelistirme_Sunum_Roadmap.md) — kalite kapıları ve açık işler
 - [Görsel ilkeler](DESIGN_PRINCIPLES.md)
-- [12 sahnelik Phase 1 rota](scenes/README.md)
-- [Phase 1 kaynak ve iddia kaydı](sources/phase-1-source-register.md)
+- [Sunum akışı ve sahne dosyaları](scenes/README.md)
+- [Konuşma rehberi](FINAL_KONUSMA_AKISI.md)
+- [Kaynak ve iddia kaydı](sources/phase-1-source-register.md)
 
-## Yerel kullanım
+## Çalıştırma
 
-### Yerel sunum uygulaması
-
-Bağımlılıkları kur ve geliştirme sunucusunu başlat:
+Node.js ve npm gerekir.
 
 ```powershell
 npm install
-npm run dev
+npm run dev        # geliştirme sunucusu
+npm run build      # tsc --noEmit ve üretim build'i (dist/)
+npm run preview    # dist/ klasörünü yerelde sunar
 ```
 
-Vite'ın yazdırdığı localhost adresini aç. Üretim çıktısını doğrulamak için `npm run build` çalıştır; istersen `npm run preview` ile build'i yerel olarak görüntüle. Sunucuları `Ctrl+C` ile durdur.
+Vite'ın yazdırdığı localhost adresini aç; sunucuyu `Ctrl+C` ile durdur. Build'de yalnız yerel dosyalar kullanılır; harici CDN veya ağ isteği yoktur.
 
-Sahne metinleri `scenes/` altındaki Phase 1 belgelerinden yerel olarak okunur. `/?mode=30` ana rotayı açar. 45/60 seçicileri bu iskelette görünür; yalnızca 30 dakikalık çekirdek sahneler hazırdır, uzun rota ekleri henüz yoktur. Sunum kontrolleri: `→`/`Space` adım veya sahne ilerletir, `←` geri alır; `J`/`K` sahne değiştirir, `R` geçerli sahneyi baştan açar. İndeks ve ekran kontrolleri de kullanılabilir.
+## Sunum kontrolleri
+
+- İki görünüm var: **Presenter** (sahne listesi, ekrandaki içerik, konuşmacı notları) ve **tam ekran sunum**. Sağ üstteki **Tam ekran** düğmesi sunuma geçer, `Esc` geri döner.
+- `→` / `Space` sonraki adım veya sahne, `←` geri, `J` / `K` sonraki / önceki sahne, `R` sahnenin başı.
+- Video adımlarında (Scene 04, 05, 08, 11) video durmuş başlar; `Space` oynatır / duraklatır, `→` sonraki sahneye geçer. Adımdan çıkınca video durup başa döner. Video oynatılamazsa aynı kayıttan alınmış kare gösterilir.
+- Adres çubuğu konumu tutar: `/?scene=4&step=5` doğrudan o adımı açar, `&view=audience` tam ekran görünümünü açar. Eski `?mode=30/45/60` bağlantıları tek rotaya yönlenir.
 
 ## Klasörler
 
-- scenes/ — 30 dakikalık anlatının 12 sahnesi
-- `sources/` — kaynak materyaller
+- `scenes/` — 12 sahnenin metni ve konuşmacı notları
+- `src/` — React uygulaması
+- `assets/` — yerel görseller, video posterleri ve sunum videoları
+- `sources/` — kaynak materyaller ve denetim kayıtları
 - `transcripts/` — transkriptler
 - `screenshots/` — temizlenmiş referans ekran görüntüleri
-- `assets/` — yerel görsel ve medya varlıkları
 
-## Kapsam
-
-Güncel kapsam ve tamamlanma durumu [Roadmap](Sifirdan_Agentic_Yazilim_Gelistirme_Sunum_Roadmap.md) içinde tutulur. 45/60 dakikalık ek içerikler Phase 12'ye bırakılmıştır. Çalışma kuralları için [AGENTS.md](AGENTS.md) dosyasına bak.
+Çalışma kuralları için [AGENTS.md](AGENTS.md) dosyasına bak.

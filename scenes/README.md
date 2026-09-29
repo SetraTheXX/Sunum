@@ -1,53 +1,30 @@
-# Phase 1 — 30 dakikalık sahne rotası
+# Sunum akışı
 
-Bu klasörde PRD ve Roadmap sırasını koruyan 12 zorunlu sahne bulunur. Her dosya amaç, tek ana fikir, ekranda gösterilecek içerik, konuşmacı metni, geçiş ve 30 dakika süre alanlarını içerir. 45/60 alanları yalnızca faz kapsamı notudur; bu süreler için genişletme yazılmadı.
+Bu klasördeki 12 dosya sunumun tek kaynağıdır. Uygulama başlıkları, ekrandaki adımları ve konuşmacı notlarını buradan okur. Scene 04, 05, 08 ve 11'de son adımdan sonra bir video adımı gelir.
 
-## Sıra ve kaba süre
+## Dosya yapısı
 
-| # | Sahne | Süre |
-|---:|---|---:|
-| 01 | Cold Open | 1:50 |
-| 02 | Nereden nereye | 1:40 |
-| 03 | Model, Prompt, Context | 3:45 |
-| 04 | Chatbot ve Coding Agent | 3:41 |
-| 05 | Vibe Coding | 2:53 |
-| 06 | Vibe Coding'in duvarı | 2:30 |
-| 07 | Agent anatomisi | 4:30 |
-| 08 | Agentic Engineering | 3:22 |
-| 09 | Tek agent sınırı | 0:35 |
-| 10 | Orchestration | 0:40 |
-| 11 | Vi3ecode | 5:32 |
-| 12 | Final | 1:15 |
-|  | **Toplam kaba süre (4 video adımı dahil)** | **32:13** |
+- `# NN — Başlık`: sahne başlığı
+- `## Ana fikir`: konuşmacı notlarının başındaki kısa hatırlatma
+- `## İzleyicinin bu sahneden çıkarken anlayacağı tek şey`: başlığın altındaki cümle
+- `## Ekranda`: sırayla açılan adımlar. Görseller adımları öneklerinden tanır (`Bağlam masası:`, `Araç örnekleri:` gibi); öneki veya adım sayısını değiştirirken ilgili görseli de kontrol et.
+- `## Konuşmacı`: adım adım konuşma notları
+- `## Video`: video adımında ne zaman başlatılacağı, oynarken ve bitince ne söyleneceği
+- `## Geçiş`: sonraki sahneye bağlayan cümle
 
-## G1 içerik kontrolü
+## Sahneler
 
-- 12 sahnenin tamamı yazıldı; 30 dakika rotasındaki her biri Must.
-- Her sahnede izleyicinin alacağı tek ana fikir açıkça yazıldı.
-- Açılış, Vi3ecode'a geçiş ve final metni hazır.
-- Konuşmacı metni yaklaşık 2.420 kelime; 125 kelime/dakika varsayımıyla yaklaşık 19:22 konuşma süresi verir. 2026-09-29'da eklenen dört yerel video adımı toplam 2:28 ekler; yeni kaba toplam 32:13'tür. Bu süre gerçek prova değildir ve PRD/G9'un ≤28 dk hedefini değiştirmez.
-- Bu kaba prova modeli G1 üst sınırı olan 35 dakikanın yaklaşık 2:47 altındadır. Henüz sunucuyla kronometre tutulmuş bir prova değildir; gerçek hız Phase 11 zamanlama provasında ölçülmelidir.
+1. [Açılış: AI ile gerçekten uygulama yapılabilir mi?](01-cold-open.md)
+2. [Nereden nereye?](02-nereden-nereye.md)
+3. [Model, Prompt ve Bağlam](03-model-prompt-context.md)
+4. [Chatbot ve Kodlama Ajanı](04-chatbot-coding-agent.md) — video
+5. [Vibe Coding: Hızlı Prototipleme](05-vibe-coding.md) — video
+6. [Vibe Coding’in Duvarı](06-vibe-coding-duvari.md)
+7. [Ajanın Anatomisi](07-agent-anatomisi.md)
+8. [Ajan Tabanlı Mühendislik](08-agentic-engineering.md) — video
+9. [Tek Ajanın Sınırı](09-tek-agent-siniri.md)
+10. [Orkestrasyon](10-orchestration.md)
+11. [Tek Ajandan Ajan Takımına](11-vi3ecode.md) — video
+12. [Model Değil, Sistem](12-final.md)
 
-Her sahnedeki konuşmacı metni, gösterim penceresi ve ilgili videolar yukarıdaki süreye dahildir. Dört video son reveal'dan sonra ayrı Audience adımıdır; Space ile başlatılır. Tahmin kronometreli değildir ve Scene 11 kaydı G4/G5 kapılarını tek başına kapatmaz.
-
-## İçerik kapsamı
-
-- Must: bu klasördeki 12 sahnenin 30 dakika rotası.
-- Optional: Phase 1'de aktif rotaya eklenmiş optional içerik yok.
-- Model efor ayrıntısı, compaction, permission derinliği, paralel worktree ve ek ürün karşılaştırmaları bu sürüme eklenmedi.
-- Ürün/arayüz iddialarının dayanağı ve açık kaynak boşlukları [kaynak kaydında](../sources/phase-1-source-register.md) izlenir.
-
-## Sahne dosyaları
-
-1. [Cold Open](01-cold-open.md)
-2. [Nereden nereye](02-nereden-nereye.md)
-3. [Model, Prompt, Context](03-model-prompt-context.md)
-4. [Chatbot ve Coding Agent](04-chatbot-coding-agent.md)
-5. [Vibe Coding](05-vibe-coding.md)
-6. [Vibe Coding'in duvarı](06-vibe-coding-duvari.md)
-7. [Agent anatomisi](07-agent-anatomisi.md)
-8. [Agentic Engineering](08-agentic-engineering.md)
-9. [Tek agent sınırı](09-tek-agent-siniri.md)
-10. [Orchestration](10-orchestration.md)
-11. [Vi3ecode](11-vi3ecode.md)
-12. [Final](12-final.md)
+Konuşurken bakılacak kısa rehber: [FINAL_KONUSMA_AKISI.md](../FINAL_KONUSMA_AKISI.md). Ürün ve arayüz iddialarının dayanağı [kaynak kaydında](../sources/phase-1-source-register.md) tutulur.

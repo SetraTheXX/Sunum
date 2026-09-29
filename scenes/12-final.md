@@ -1,39 +1,27 @@
-# 12 — Final: Model değil, sistem
+# 12 — Model Değil, Sistem
 
-**Durum:** Must — 30 dakika rotası
+## Ana fikir
 
-**Tahmini süre:** 1:15
-
-## Amaç
-
-Sunumu ilk soruya döndürüp PRD'de kilitlenen son mesajla tamamlamak.
+Sunumu ilk soruya döndürüp ana mesajla kapatmak.
 
 ## İzleyicinin bu sahneden çıkarken anlayacağı tek şey
 
-AI uygulama geliştirmeye yardım edebilir; güvenilir sonuç modelle birlikte çalışan sistem ve insan kontrolü ister.
+AI uygulama geliştirmeye yardım edebilir; güvenilir sonuç, modelin çevresindeki sistemi ve insan kontrolünü ister.
 
 ## Ekranda
 
 1. “AI ile uygulama yapılabilir mi?” — EVET.
-2. “Güvenilir yazılım için?” — Context + Tools + Skills + Test + Review + İnsan
+2. “Güvenilir yazılım için?” — Bağlam + Araçlar + Test + İnceleme + İnsan
 3. Final: “MODEL DEĞİL, SİSTEM.”
 
 ## Konuşmacı
 
-“Baştaki soruya dönelim: AI ile uygulama yapılabilir mi? Evet. Peki güvenilir yazılım yalnızca bir modelden mi çıkar? Hayır. Bu sunumun zihinsel modeli, modelin çevresinde doğru context'i, araçları, tekrar kullanılabilir yöntemleri, test ve review'u, insan kontrolünü birlikte düşünmek. Yazılım geliştirme bitmedi; bu anlatımın bugüne dair öğretici çerçevesiyle, soyutlama seviyesi yükseliyor. Bunu geleceğe ilişkin kesin bir tahmin olarak değil, burada anlattığımız iş akışının özeti olarak söylüyorum. Bir isteğin ne olduğunu söylemek, gerekli bilginin modele ulaşmasını sağlamak, araç kullanımına sınır çizmek ve sonucu kontrol etmek birlikte çalışır. Bazen görev için tek bir model yeterlidir; bazen doğru araçlar veya birkaç uzman rolü sürece yardım eder. Her durumda işin kabul edilip edilmeyeceğine dair insan sorumluluğu sürer. Çıktının etkisi büyüdükçe kontrolün de görünür olması gerekir. Ana mesaj şu:”
+Adım 1 — “Baştaki soruya dönelim: AI ile uygulama yapılabilir mi? Evet.” Kısa bir duraklama.
+
+Adım 2 — “Peki güvenilir yazılım yalnızca bir modelden mi çıkar? Hayır. Modelin çevresinde doğru bağlam, araçlar, tekrar kullanılabilir yöntemler, test, kod incelemesi ve insan kontrolü birlikte çalışıyor. Bazen tek model yeter, bazen birkaç rol gerekir. Ama işi kabul etme sorumluluğu her durumda insanda.”
+
+Adım 3 — Son cümleyi söyle ve sus: “Model değil, sistem.”
 
 ## Geçiş
 
-Sonraki sahne yok. Final ekranı kısa bir sessizlikle bırak ve sunumu bitir.
-
-## 30 dk
-
-1:15 — Yaklaşık 0:50 konuşma ve 0:25 son ekran/duraklama. İlk soruya net cevap ver, bileşenleri kısa göster ve son cümleyi tek başına bırak.
-
-## 45 dk
-
-Phase 1 kapsamı dışında; ek içerik yazılmadı.
-
-## 60 dk
-
-Phase 1 kapsamı dışında; ek içerik yazılmadı.
+Sonraki sahne yok. Son ekranı birkaç saniye bırak, sonra teşekkür et ve soruları al.

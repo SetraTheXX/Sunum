@@ -12,3 +12,8 @@ dist/
 coverage/
 .vite/
 *.log
+
+# Vercel project link and the final offline backup stay out of git
+.vercel/
+backup/
+Sunum-final-backup.zip

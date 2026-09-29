@@ -795,6 +795,10 @@ Video entegrasyonu öncesi sahne kaynak tahminlerinin toplamı 29:45'ti; bu kron
 
 Kullanıcı isteğiyle final sprint için planlanan yerel video entegrasyonu şimdi başlatıldı. Scene 04, 05, 08 ve 11'in son reveal'ından sonra sessiz, başlangıçta duraklatılmış bir Audience video adımı gelir; Space oynatır/duraklatır, → ve ← rota gezinmesini sürdürür, adımdan çıkınca oynatma durur ve video başa döner. Dört mevcut MP4 toplam 148,4 saniyedir (~2:28); yeni tahmin 29:45 + 2:28 = yaklaşık 32:13. PRD'de tanımlanan yaklaşık 24–30 ana anlatı beat'i değişmez; uygulamadaki 48 reveal adımına dört video adımı eklenerek rota 52 duruma çıkar. Kullanıcı süre aşımını kabul etti. PRD'deki 26–28 dk prova hedefi ve 28 dk hard max değiştirilmedi; iki ardışık tam prova ≤28 dk olmadan G9 **OPEN** kalır ve güncel tahmin nedeniyle risk altındadır. Bu medya entegrasyonu tek başına G4/G5/G7/G9 kapılarını kapatmaz.
 
+### Plan Delta — final sunum cilası ve tek rota (2026-09-29)
+
+Kullanıcı kararıyla Audience görünümündeki 12 sahne ve dört video adımı final sunumdur. 30/45/60 dk mod seçici kaldırıldı; eski `?mode=` bağlantıları tek rotaya normalize edilir. Presenter "EKRANDA" alanı Audience ile aynı görsel bileşenleri ve video oynatıcıyı kullanır. Sahne başlıkları, ekran metinleri ve konuşmacı notları final Türkçe terminolojiyle yeniden yazıldı; konuşma rehberi [FINAL_KONUSMA_AKISI.md](FINAL_KONUSMA_AKISI.md) içindedir. Bu turda süre optimizasyonu kapsam dışıdır; PRD'deki süre hedefi ve G9 ölçütü değiştirilmedi, G9 **OPEN** kalır. G4/G5/G6/G7 durumlarına dokunulmadı.
+
 Run 1 otomatik gezinme smoke-check'idir; yüksek sesli insan anlatımı veya süre ölçümü yapılmadı. **Phase 11A — PASS / Phase 11B — DEFERRED / PENDING:** gerçek insan provası final visual entegrasyonu ve G7 projector/browser QA tamamlanana kadar ertelendi. Bu kayıt provaya başlama talebi değildir. **G9 OPEN** kalır; iki ardışık gerçek prova ≤28 dakika olmadan PASS verilmez. G4/G5 OPEN, G6 PARTIAL / BLOCKED ve G7 OPEN durumlarına dokunulmadı.
 
 ## Pre-production'dan final package/preflight'a yürütme sırası

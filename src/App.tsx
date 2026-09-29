@@ -1,9 +1,10 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { scenesForMode, type Scene } from './content';
+import { useEffect, useRef, useState } from 'react';
+import { scenes, type Scene } from './content';
 import SceneVisual from './SceneVisual';
-import { getSceneVideo, withAudienceVideoStep } from './sceneVideos';
+import { getSceneVideo, withVideoStep } from './sceneVideos';
 
-type Mode = 30 | 45 | 60;
+const routeScenes = scenes.map(withVideoStep);
+const notesStorageKey = 'sunum-notes-open';
 
 function readAudienceMode(): boolean {
   return new URLSearchParams(window.location.search).get('view') === 'audience';
@@ -16,9 +17,20 @@ function writeAudienceMode(enabled: boolean) {
   window.history.replaceState({}, '', url);
 }
 
-function readMode(): Mode {
-  const value = Number(new URLSearchParams(window.location.search).get('mode'));
-  return value === 45 || value === 60 ? value : 30;
+// Older links carried ?mode=30/45/60; the final deck has one route, so the parameter is dropped.
+function normalizeLegacyMode() {
+  const url = new URL(window.location.href);
+  if (!url.searchParams.has('mode')) return;
+  url.searchParams.delete('mode');
+  window.history.replaceState({}, '', url);
+}
+
+function readNotesOpen(): boolean {
+  try {
+    return window.localStorage.getItem(notesStorageKey) === '1';
+  } catch {
+    return false;
+  }
 }
 
 function readSceneIndex(routeLength: number): number {
@@ -32,9 +44,9 @@ function readStep(scene: Scene): number {
   return Math.min(value, scene.screenSteps.length);
 }
 
-function writeLocation(mode: Mode, sceneIndex: number, step: number) {
+function writeLocation(sceneIndex: number, step: number) {
   const url = new URL(window.location.href);
-  url.searchParams.set('mode', String(mode));
+  url.searchParams.delete('mode');
   url.searchParams.set('scene', String(sceneIndex + 1));
   url.searchParams.set('step', String(step));
   window.history.replaceState({}, '', url);
@@ -44,28 +56,30 @@ function startingStep(scene: Scene) {
   return Math.min(1, scene.screenSteps.length);
 }
 
-function routeScenesForMode(mode: Mode) {
-  return scenesForMode(mode).map(withAudienceVideoStep);
-}
-
 export default function App() {
-  const [mode, setMode] = useState<Mode>(readMode);
   const [audienceMode, setAudienceMode] = useState(readAudienceMode);
   const audienceModeRef = useRef(audienceMode);
   const videoPlayerRef = useRef<HTMLVideoElement | null>(null);
-  const [sceneIndex, setSceneIndex] = useState(() => readSceneIndex(routeScenesForMode(readMode()).length));
-  const [visibleSteps, setVisibleSteps] = useState(() => {
-    const initialMode = readMode();
-    const initialRoute = routeScenesForMode(initialMode);
-    return readStep(initialRoute[readSceneIndex(initialRoute.length)]);
-  });
-  const routeScenes = useMemo(() => routeScenesForMode(mode), [mode]);
+  const [sceneIndex, setSceneIndex] = useState(() => readSceneIndex(routeScenes.length));
+  const [visibleSteps, setVisibleSteps] = useState(() => readStep(routeScenes[readSceneIndex(routeScenes.length)]));
+  const [notesOpen, setNotesOpen] = useState(readNotesOpen);
   const currentScene = routeScenes[sceneIndex];
   const isVideoReveal = Boolean(getSceneVideo(currentScene.number) && visibleSteps >= currentScene.screenSteps.length);
-  const takeaway = currentScene.number === 11
-    ? 'Şema kavramsal; yerel video gerçek workflow kaydını gösterir, çıktı doğruluğunu kanıtlamaz.'
-    : currentScene.takeaway;
+  const isLastState = sceneIndex === routeScenes.length - 1 && visibleSteps >= currentScene.screenSteps.length;
   const progress = ((sceneIndex + 1) / routeScenes.length) * 100;
+
+  useEffect(() => {
+    normalizeLegacyMode();
+  }, []);
+
+  function updateNotesOpen(open: boolean) {
+    setNotesOpen(open);
+    try {
+      window.localStorage.setItem(notesStorageKey, open ? '1' : '0');
+    } catch {
+      // Notes still toggle for this session when storage is unavailable.
+    }
+  }
 
   function updateAudienceMode(enabled: boolean) {
     audienceModeRef.current = enabled;
@@ -79,25 +93,14 @@ export default function App() {
     const boundedStep = Math.max(0, Math.min(routeScenes[boundedIndex].screenSteps.length, requestedStep));
     setSceneIndex(boundedIndex);
     setVisibleSteps(boundedStep);
-    writeLocation(mode, boundedIndex, boundedStep);
-  }
-
-  function selectMode(nextMode: Mode) {
-    const nextRoute = routeScenesForMode(nextMode);
-    const matchingIndex = nextRoute.findIndex((scene) => scene.number === currentScene.number);
-    const nextIndex = matchingIndex >= 0 ? matchingIndex : Math.min(sceneIndex, nextRoute.length - 1);
-    const nextStep = Math.min(visibleSteps, nextRoute[nextIndex].screenSteps.length);
-    setMode(nextMode);
-    setSceneIndex(nextIndex);
-    setVisibleSteps(nextStep);
-    writeLocation(nextMode, nextIndex, nextStep);
+    writeLocation(boundedIndex, boundedStep);
   }
 
   function next() {
     if (visibleSteps < currentScene.screenSteps.length) {
       const nextStep = visibleSteps + 1;
       setVisibleSteps(nextStep);
-      writeLocation(mode, sceneIndex, nextStep);
+      writeLocation(sceneIndex, nextStep);
       return;
     }
     if (sceneIndex < routeScenes.length - 1) selectScene(sceneIndex + 1);
@@ -107,7 +110,7 @@ export default function App() {
     if (visibleSteps > startingStep(currentScene)) {
       const previousStep = visibleSteps - 1;
       setVisibleSteps(previousStep);
-      writeLocation(mode, sceneIndex, previousStep);
+      writeLocation(sceneIndex, previousStep);
       return;
     }
     if (sceneIndex > 0) {
@@ -119,7 +122,7 @@ export default function App() {
   function resetScene() {
     const step = startingStep(currentScene);
     setVisibleSteps(step);
-    writeLocation(mode, sceneIndex, step);
+    writeLocation(sceneIndex, step);
   }
 
   async function toggleAudienceMode() {
@@ -155,7 +158,7 @@ export default function App() {
         void toggleAudienceMode();
         return;
       }
-      if (audienceMode && isVideoReveal && event.key === ' ') {
+      if (isVideoReveal && event.key === ' ') {
         event.preventDefault();
         if (event.repeat) return;
         const player = videoPlayerRef.current;
@@ -198,43 +201,18 @@ export default function App() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [mode, sceneIndex, visibleSteps, currentScene, audienceMode, isVideoReveal]);
+  }, [sceneIndex, visibleSteps, currentScene, audienceMode, isVideoReveal]);
 
   return (
     <div className={`presentation-shell${audienceMode ? ' is-audience-mode' : ''}`}>
-      <aside className="scene-rail" aria-label="Sahne indeksi">
-        <a className="wordmark" href="/?mode=30" aria-label="Sunum başına dön">
+      <aside className="scene-rail" aria-label="Sahne listesi">
+        <a className="wordmark" href="/" aria-label="Sunum başına dön">
           <span className="wordmark-mark" aria-hidden="true">S</span>
           <span>MODEL DEĞİL,<br />SİSTEM.</span>
         </a>
 
-        <div className="mode-picker" aria-label="Sunum süresi modu">
-          <span className="eyebrow">ROTA</span>
-          <div className="mode-options">
-            {([30, 45, 60] as const).map((option) => (
-              <button
-                key={option}
-                type="button"
-                className={`mode-option${mode === option ? ' is-selected' : ''}`}
-                aria-pressed={mode === option}
-                onClick={() => selectMode(option)}
-              >
-                {option}<span>dk</span>
-              </button>
-            ))}
-          </div>
-          {mode !== 30 && (
-            <p className="mode-note" role="status">
-              {mode} dk ek içerikleri henüz hazır değil. Şimdilik 30 dk çekirdek rota gösteriliyor.
-            </p>
-          )}
-        </div>
-
         <nav className="scene-list" aria-label="Sahneler">
-          <div className="scene-list-heading">
-            <span className="eyebrow">İÇİNDEKİLER</span>
-            <span>{routeScenes.length}</span>
-          </div>
+          <span className="eyebrow scene-list-heading">SAHNELER</span>
           {routeScenes.map((scene, index) => (
             <button
               key={scene.number}
@@ -245,28 +223,22 @@ export default function App() {
             >
               <span className="scene-link-number">{String(scene.number).padStart(2, '0')}</span>
               <span className="scene-link-title">{scene.title}</span>
-              <span className="scene-link-time">{scene.duration}</span>
+              {getSceneVideo(scene.number) && <span className="scene-link-video" title="Video içerir" aria-label="video içerir">▶</span>}
             </button>
           ))}
         </nav>
-
-        <div className="rail-footer" aria-label="Klavye ipuçları">
-          <span><kbd>→</kbd> adım</span>
-          <span><kbd>J</kbd> sahne</span>
-          <span><kbd>R</kbd> baştan</span>
-        </div>
       </aside>
 
       <main className="stage" aria-labelledby="scene-title">
         <header className="stage-header">
           <div className="route-label">
             <span className="route-dot" aria-hidden="true" />
-            30 DAKİKALIK ÇEKİRDEK ROTA
+            SUNUM AKIŞI
           </div>
           <div className="stage-header-actions">
             <span className="stage-counter">{String(sceneIndex + 1).padStart(2, '0')} / {String(routeScenes.length).padStart(2, '0')}</span>
-            <button className="icon-button" type="button" onClick={() => void toggleAudienceMode()} aria-pressed={audienceMode} aria-label={audienceMode ? 'Sunum görünümünden çık' : 'Sunum görünümüne geç'} title="Sunum görünümü · Escape ile çık">
-              <span aria-hidden="true">⛶</span>
+            <button className="fullscreen-button" type="button" onClick={() => void toggleAudienceMode()} aria-pressed={audienceMode} title="Tam ekran sunum · Esc ile çık">
+              <span aria-hidden="true">⛶</span> Tam ekran
             </button>
           </div>
         </header>
@@ -278,56 +250,63 @@ export default function App() {
         <section className={`scene-stage scene-stage--${String(currentScene.number).padStart(2, '0')}${isVideoReveal ? ' scene-stage--video' : ''}`} key={currentScene.number}>
           <div className="scene-meta">
             <span className="eyebrow">SAHNE {String(currentScene.number).padStart(2, '0')}</span>
-            <span className="scene-duration">{currentScene.duration}</span>
             {audienceMode && (
               <span className="audience-scene-index">{String(sceneIndex + 1).padStart(2, '0')} / {String(routeScenes.length).padStart(2, '0')}</span>
             )}
             {audienceMode && (currentScene.number === 1 || currentScene.number === 12) && (
-              <span className="audience-scene-title">{currentScene.number === 1 ? 'Cold Open' : 'Final'}</span>
+              <span className="audience-scene-title">{currentScene.number === 1 ? 'Açılış' : 'Final'}</span>
             )}
           </div>
           <h1 id="scene-title">{currentScene.title}</h1>
-          <p className="scene-takeaway">{takeaway}</p>
+          <p className="scene-takeaway">{currentScene.takeaway}</p>
 
-          <div className="screen-content" aria-live="polite" aria-label="Açılan sunum adımları">
+          <div className="screen-content" aria-live="polite" aria-label="Ekrandaki içerik">
             <div className="screen-content-heading">
               <span className="eyebrow">EKRANDA</span>
-              <span className="step-counter">{visibleSteps} / {currentScene.screenSteps.length} adım</span>
+              <span className="step-counter">{isVideoReveal ? 'Video' : `Adım ${visibleSteps} / ${currentScene.screenSteps.length}`}</span>
             </div>
-            <SceneVisual scene={currentScene} visibleSteps={visibleSteps} audienceMode={audienceMode} videoPlayerRef={videoPlayerRef} />
-            {visibleSteps < currentScene.screenSteps.length ? (
-              <p className="next-hint">Devam etmek için <kbd>→</kbd> veya <kbd>Space</kbd></p>
-            ) : sceneIndex < routeScenes.length - 1 ? (
-              <p className="next-hint">Sonraki sahne için <kbd>→</kbd> veya <kbd>Space</kbd></p>
+            <SceneVisual scene={currentScene} visibleSteps={visibleSteps} videoPlayerRef={videoPlayerRef} />
+            {isVideoReveal ? (
+              <p className="next-hint"><kbd>Space</kbd> videoyu oynatır / duraklatır · <kbd>→</kbd> sonraki sahne</p>
+            ) : visibleSteps < currentScene.screenSteps.length ? (
+              <p className="next-hint"><kbd>→</kbd> sonraki adım</p>
+            ) : !isLastState ? (
+              <p className="next-hint"><kbd>→</kbd> sonraki sahne</p>
             ) : (
-              <p className="next-hint is-finale">30 dakikalık rota tamamlandı.</p>
+              <p className="next-hint is-finale">Sunumun sonu.</p>
             )}
           </div>
 
-          <details className="speaker-notes">
-            <summary>Sunucu notları</summary>
+          <details className="speaker-notes" open={notesOpen} onToggle={(event) => updateNotesOpen(event.currentTarget.open)}>
+            <summary>Konuşmacı notları</summary>
             <div className="notes-body">
-              {currentScene.purpose && <p className="purpose-note"><strong>Amaç:</strong> {currentScene.purpose}</p>}
+              {currentScene.purpose && <p className="notes-lead"><strong>Ana fikir:</strong> {currentScene.purpose}</p>}
               {currentScene.speakerNotes.map((note, index) => <p key={index}>{note}</p>)}
-              {currentScene.transition && <p><strong>Geçiş:</strong> {currentScene.transition}</p>}
+              {currentScene.videoNotes.length > 0 && (
+                <div className="notes-video">
+                  <strong className="notes-label">Video</strong>
+                  {currentScene.videoNotes.map((note, index) => <p key={index}>{note}</p>)}
+                </div>
+              )}
+              {currentScene.transition && <p className="notes-transition"><strong>Geçiş:</strong> {currentScene.transition}</p>}
             </div>
           </details>
         </section>
 
         <footer className="stage-footer">
-          <div className="keyboard-legend">
-            <span><kbd>←</kbd> geri</span>
-            <span><kbd>→</kbd> ilerle / aç</span>
-            <span><kbd>J</kbd> sonraki sahne</span>
-            <span><kbd>K</kbd> önceki sahne</span>
-            <span><kbd>R</kbd> sahneyi sıfırla</span>
+          <div className="keyboard-legend" aria-label="Klavye kısayolları">
+            <span><kbd>←</kbd><kbd>→</kbd> adım</span>
+            <span><kbd>J</kbd><kbd>K</kbd> sahne</span>
+            <span><kbd>R</kbd> sahne başı</span>
+            <span><kbd>Space</kbd> video</span>
+            <span><kbd>Esc</kbd> tam ekrandan çık</span>
           </div>
           <div className="stage-actions">
             <button className="nav-button" type="button" onClick={previous} disabled={sceneIndex === 0 && visibleSteps <= startingStep(currentScene)}>
               <span aria-hidden="true">←</span> Geri
             </button>
-            <button className="nav-button nav-button-primary" type="button" onClick={next} disabled={sceneIndex === routeScenes.length - 1 && visibleSteps >= currentScene.screenSteps.length}>
-              {visibleSteps < currentScene.screenSteps.length ? 'Adımı aç' : 'Sonraki sahne'} <span aria-hidden="true">→</span>
+            <button className="nav-button nav-button-primary" type="button" onClick={next} disabled={isLastState}>
+              {visibleSteps < currentScene.screenSteps.length ? 'Sonraki adım' : 'Sonraki sahne'} <span aria-hidden="true">→</span>
             </button>
           </div>
         </footer>
@@ -336,8 +315,8 @@ export default function App() {
         <button
           className="audience-exit"
           type="button"
-          aria-label="Sunum görünümünden çık (Escape)"
-          title="Sunum görünümünden çık · Esc"
+          aria-label="Tam ekrandan çık (Esc)"
+          title="Tam ekrandan çık · Esc"
           onClick={() => void toggleAudienceMode()}
         >
           <span aria-hidden="true">ESC</span>

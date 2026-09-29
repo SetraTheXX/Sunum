@@ -1,12 +1,11 @@
 export interface Scene {
   number: number;
   title: string;
-  duration: string;
-  required: boolean;
   purpose: string;
   takeaway: string;
   screenSteps: string[];
   speakerNotes: string[];
+  videoNotes: string[];
   transition: string;
 }
 
@@ -79,27 +78,26 @@ function contentBlocks(lines: string[]): string[] {
 
 function parseScene(markdown: string): Scene {
   const titleMatch = markdown.match(/^#\s+(\d{2})\s+[—-]\s+(.+)$/m);
-  const statusMatch = markdown.match(/^\*\*Durum:\*\*\s*(.+)$/m);
-  const durationMatch = markdown.match(/^\*\*Tahmini süre:\*\*\s*(.+)$/m);
   if (!titleMatch) throw new Error('Sahne belgesinde numaralı başlık bulunamadı.');
 
   const sections = sectionsOf(markdown);
   const section = (name: string) => sections.get(name) ?? [];
   const plainText = (name: string) => contentBlocks(section(name)).join(' ');
-  const speakerText = section('Konuşmacı').join('\n').trim();
+  const paragraphs = (name: string) => section(name)
+    .join('\n')
+    .trim()
+    .split(/\n\s*\n/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
 
   return {
     number: Number(titleMatch[1]),
     title: titleMatch[2].trim(),
-    duration: durationMatch?.[1].trim() ?? '—',
-    required: statusMatch?.[1].startsWith('Must') ?? true,
-    purpose: plainText('Amaç'),
+    purpose: plainText('Ana fikir'),
     takeaway: plainText('İzleyicinin bu sahneden çıkarken anlayacağı tek şey'),
     screenSteps: contentBlocks(section('Ekranda')),
-    speakerNotes: speakerText
-      .split(/\n\s*\n/)
-      .map((paragraph) => paragraph.trim())
-      .filter(Boolean),
+    speakerNotes: paragraphs('Konuşmacı'),
+    videoNotes: paragraphs('Video'),
     transition: plainText('Geçiş'),
   };
 }
@@ -108,10 +106,6 @@ export const scenes = Object.entries(markdownFiles)
   .map(([, markdown]) => parseScene(markdown))
   .sort((left, right) => left.number - right.number);
 
-export function scenesForMode(mode: 30 | 45 | 60): Scene[] {
-  return mode === 30 ? scenes.filter((scene) => scene.required) : scenes;
-}
-
 if (scenes.length !== 12 || scenes.some((scene, index) => scene.number !== index + 1)) {
-  throw new Error('30 dakikalık rota, 01–12 arasındaki 12 sahneyi içermelidir.');
+  throw new Error('Sunum akışı, 01–12 arasındaki 12 sahneyi içermelidir.');
 }

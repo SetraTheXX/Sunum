@@ -118,7 +118,56 @@ Bu aileler içerik/reveal sırasını değiştirmez; tam sıra Scene 01 → 12 o
 - Her 12 sahne ve bütün reveal'lar gerçek render'da 1366×768 ile 1920×1080; %100 ve gerçek browser toolbar %110 zoom'da test edilir. Fullscreen/native chrome ayrı kaydedilir. Emüle viewport PNG'si native zoom veya fiziksel sınıf/projektör testi yerine geçmez.
 - Başlık, kritik gövde, diyagram, footer ve kontroller kırpılmaz; page-level istemsiz scroll olmaz. Gerekli metin min boyutları yukarıdaki tokenlardır; kritik bilgi dipnota taşınmaz. Her sahne ailesi için en yoğun reveal ayrıca kontrol edilir.
 - CSS/JS, font (sistem font fallback'i dahil), SVG/PNG ve kabul edilen video yerel paketlenir. CDN, Google Fonts/runtime font, remote image, analytics/telemetry ve ağ gerektiren player yoktur. Video varsa autoplay yok; codec/oynatma başarısızlığında aynı authentic kaynaktan privacy-reviewed yerel still fallback veya açıkça “kavramsal anlatım / kanıt yok” seçilir.
-- Reveal ve scene navigation kullanıcı kontrollüdür. V2 başlangıçta motion eklemez. Sonradan önerilen her motion için Purpose, Trigger, Duration, Fallback ve reduced-motion davranışı yazılır; offline ve navigation QA geçmeden eklenmez.
+- Reveal ve scene navigation kullanıcı kontrollüdür. V2 başlangıçta motion eklemedi; 2026-10-01 Plan Delta'sıyla kontrollü motion başladı (aşağıdaki Motion kayıtları). Önerilen her motion için Purpose, Trigger, Duration, Fallback ve reduced-motion davranışı yazılır; offline ve navigation QA geçmeden eklenmez.
+
+### Motion kayıtları (v2, 2026-10-01)
+
+Ortak kurallar `src/motion.ts` ve `src/styles.css` (`.motion-enter`) içindedir: sahne içinde yalnız tek adımlık ileri reveal'da yeni grup hareket eder. Sahne girişi (kinetik başlık ve görselin girişi) yalnız sahneye ileri yönde, ilk adımında girilince oynar: →, J veya sahne listesinde sonraki bir sahne. İlk açılış, reload, ← / Geri, K, sahne listesinde önceki bir sahne ve R tamamlanmış hali anında gösterir. Sonraki adım `motion-enter` sınıfını kaldırır ve çalışan Web Animations'ı iptal eder; böylece hızlı gezinme son duruma oturur. Hareket bitince ekran durağandır.
+
+**Scene 03 — Model, Prompt ve Bağlam (pilot, "daha cesur" revizyonu 2026-10-01)**
+
+| Alan | Kayıt |
+|---|---|
+| Purpose | Modelin sabit kaldığını, isteğin dışarıdan modele ulaştığını ve bağlamın sunulan bilgiyle genişlediğini göstermek; kullanıcı pilotu "daha cesur" istedi. |
+| Trigger | Sahneye ileri yönde ilk adımda girmek (Scene 02'den →, J veya sahne listesinden; K ve ← ile geri dönüşte oynamaz): başlık kelime kelime blur/ölçekten netleşir, model 0.85→1 ölçekle girer ve teal glow bir kez yanıp sakinleşir, aura belirir. → ile tek adım ileri: R2 prompt çizgisi çizilir, üzerinde bir paket akar, varışta modelin glow'u kısa nabız atar. R3 bağlam sınırı modelden spring ile (%4 overshoot) açılır. R4 üç kaynak sahne kenarlarından uçup gelir, bağlantı çizilir, modele değdiği noktada halka nabzı atar; sınır ve aura (arka katman, daha az hareket: parallax) genişler. R5 yalnız araç çıktısı ve sağdan "Sunulmayan bilgi / GÖRÜNMEZ" girer. Model reveal'lar boyunca yerinden oynamaz. |
+| Duration | Başlık 420 ms + 90 ms stagger (≤690 ms); model girişi 560 ms, glow 900 ms; paket 180–700 ms; sınır spring 420 ms; aura 640 ms; kaynak uçuşu 340 ms (+60 ms stagger), çizgi 300 ms, nabız 300 ms. Ölçülen en uzun reveal 900 ms; döngü yok, sonra ekran durağan. |
+| Fallback | Son durumun durağan SVG'si her zaman DOM'dadır; paket ve nabız halkaları dinlenmede görünmez (opacity 0). Sonraki adım sınıfları kaldırıp Web Animations'ı iptal eder; reload, Geri, R ve sahneye geri dönüş animasyonsuz son hali açar. |
+| Reduced-motion | `prefers-reduced-motion: reduce` iken bütün CSS animasyonları kapatılır, FLIP/aura çalıştırılmaz; başlık ve her reveal anında son haliyle görünür. |
+| Sınır | Glow/aura düşük opaklıkta tek teal tonudur (neon, gradient mesh veya sürekli nabız değil); son hallerde okunurluk 1920×1080 ve 1366×768'de kontrol edildi. |
+
+**Scene 01, 02, 04–12 — ortak motor (`src/sceneMotion.ts`, 2026-10-01)**
+
+Scene 03'ün dili kalan sahnelere tek bir motorla uygulanır; her sahne bileşenine ayrı ayrı animasyon kodu yazılmaz. Her commit sonrası görsel bir önceki hal ile karşılaştırılır:
+
+- **Yeni reveal:** Önceden olmayan öğeler sahne merkezine göre en yakın kenardan %6 overshoot'la gelir (420 ms, ≤70 ms stagger, en fazla 8 kademe). İçlerindeki çizgiler çizilir (360 ms); uzun çizgide tek bir paket akar (480 ms); küçük noktalar varışta bir kez nabız atar (240 ms).
+- **Spring "nefes":** Kalıp yer değiştiren öğeler eski yerlerinden %5 overshoot'la yerine oturur (460 ms).
+- **Durum değişimi:** Sınıfı değişen çizgide paket akar; sınıfı değişen küçük grup (aktif istasyon gibi) bir kez büyüyüp oturur. Sahnenin yarısından büyük gruplar nabız atmaz.
+- **Aura ve parallax:** Görselin arkasında sabit, düşük opaklıkta tek teal ton vardır; her ileri adımda öndeki öğelerden daha az ve daha yavaş itilir (640 ms).
+- **Sahne girişi:** Kinetik başlık bütün sahnelerde çalışır; kelime gecikmesi toplam ≤280 ms olacak şekilde ölçeklenir. Görselin en büyük parçası 0.86→1 ölçekle, diğerleri kısa uçuşla girer.
+
+| Sahne | Purpose | Trigger ve vurgu |
+|---|---|---|
+| 01 Açılış | Tek isteğin yapıya dönüşmesini hissettirmek. | İstek çizgisi forma çizilir; yapılmış yüz, iki soru ve 01-02-03 ekseni sırayla kenardan gelir. |
+| 02 Nereden nereye? | Aynı görevin üç çalışma biçimini yan yana kurmak. | Her yeni çalışma biçimi kenardan gelir; mevcut sütunlar yer açarken spring ile kayar. |
+| 04 Chatbot ve Kodlama Ajanı | Cevabın insana dönmesi ile aracın projeye uzanması farkı. | Ajan şeridi alttan gelir, akış çizgileri çizilir, uzun yolda paket akar. Video adımı değişmez. |
+| 05 Hızlı Prototipleme | Aynı uygulamanın açık → koyu → mobil dönüşümü. | Koyu tema yalnız ileri adımda 420 ms renk geçişiyle gelir; mobil düzen kenardan gelir, eski geniş düzen kesikli iz olarak kalır. Video adımı değişmez. |
+| 06 Vibe Coding'in Duvarı | Uygulama sabit, sorular etrafında açılır. | Uygulama yerinde kalır; beş soru kendi kenarından gelir, çizgileri uygulamaya çizilir, uçlar nabız atar; ardından kanıt çerçevesi gelir. |
+| 07 Ajanın Anatomisi | Her parçanın göreve bağlanması. | Yeni düğüm kenardan gelir, bağlantısı çizilir; mevcut düğümler gerekirse spring ile kayar. |
+| 08 Ajan Tabanlı Mühendislik | Kanıtların hedefe bağlanması. | Değişiklik ve kanıt noktaları sağdan gelir; bağlantılar ve hedefe dönen doğrulama döngüsü çizilir, döngüde paket akar. Video adımı değişmez. |
+| 09 Tek Ajanın Sınırı | Üç sorumluluğun tek ajanda toplanması. | Girişte ajan çekirdeği ölçekle gelir; denge notu ikinci adımda gelir. |
+| 10 Orkestrasyon | Görev izinin Lead → Developer → QA akışı ve koşullu yollar. | Yolu katedilen hatlarda paket akar, aktif istasyon bir kez nabız atar; FAIL ve PASS yolları ayrı ayrı çizilir. |
+| 11 Ajan Takımı | Görev çipinin kulvarlar arasında taşınması. | Çip eski kulvarından yenisine spring ile taşınır; yeni yol çizilir, üzerinde paket akar; koşullu FAIL/PASS ayrı gelir. Video adımı değişmez. |
+| 12 Final | Parçaların birleşmesi, sonra kalkması ve final cümlesi. | Reveal 2'de parçalar kenarlardan merkeze doğru gelir. Reveal 3'te sistemin bir kopyası dağılarak kalkar (480 ms); final cümlesi iki parça halinde blur/ölçekten netleşir (≤820 ms). |
+
+Ortak alanlar (bütün satırlar için):
+
+| Alan | Kayıt |
+|---|---|
+| Duration | Ölçülen en uzun reveal 900 ms; sonsuz döngü yok, hareket bitince ekran durağan. |
+| Fallback | Son hal her zaman DOM'dadır; paket kopyaları ve Scene 12 çıkış kopyası iş bitince ya da sonraki gezinmede silinir. Sonraki commit çalışan her animasyonu iptal eder; hızlı gezinme son hale oturur. Yalnız ileri adımda ve ileri sahne girişinde oynar; Geri, K, R, reload ve listede önceki sahne animasyonsuzdur. Scene 05 renk geçişi de yalnız ileri adımda (`data-motion="step"`) açıktır. |
+| Reduced-motion | Motor hiç animasyon başlatmaz, renk geçişleri ve CSS animasyonları kapatılır; her hal anında görünür. |
+| Video | Scene 04/05/08/11 video adımı, oynatıcı, Space davranışı ve poster/fallback motorun dışındadır. |
+| Sınır | Motion yalnız hareket ve opaklık kullanır; içerik, sıra, metin ve son hal değişmez. Glow/aura düşük opaklıkta tek teal tondur (neon değil). |
 
 ### Authentic capture, privacy ve kanıt sınırı
 

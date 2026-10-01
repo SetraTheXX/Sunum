@@ -17,3 +17,7 @@ coverage/
 .vercel/
 backup/
 Sunum-final-backup.zip
+
+# Live demo working copy (recreated by demo/reset.ps1; has its own git repo)
+demo/app/
+demo/app-team/

@@ -1,9 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
+import type { CSSProperties } from 'react';
 import { scenes, type Scene } from './content';
 import SceneVisual from './SceneVisual';
 import { getSceneVideo, withVideoStep } from './sceneVideos';
+import { getLiveDemo } from './liveDemo';
 
 const routeScenes = scenes.map(withVideoStep);
+// Every scene uses the bold entrance (kinetic title + visual entrance) when entered forward.
+const kineticScenes = new Set(scenes.map((scene) => scene.number));
 const notesStorageKey = 'sunum-notes-open';
 
 function readAudienceMode(): boolean {
@@ -63,8 +67,13 @@ export default function App() {
   const [sceneIndex, setSceneIndex] = useState(() => readSceneIndex(routeScenes.length));
   const [visibleSteps, setVisibleSteps] = useState(() => readStep(routeScenes[readSceneIndex(routeScenes.length)]));
   const [notesOpen, setNotesOpen] = useState(readNotesOpen);
+  const [demoCopied, setDemoCopied] = useState(false);
+  // Set only when a later scene is entered forward at its first reveal (→, J, scene list);
+  // going back (K, ←, earlier scene in the list), any step, R or reload clears it.
+  const [sceneEntry, setSceneEntry] = useState(false);
   const currentScene = routeScenes[sceneIndex];
   const isVideoReveal = Boolean(getSceneVideo(currentScene.number) && visibleSteps >= currentScene.screenSteps.length);
+  const liveDemo = getLiveDemo(currentScene.number);
   const isLastState = sceneIndex === routeScenes.length - 1 && visibleSteps >= currentScene.screenSteps.length;
   const progress = ((sceneIndex + 1) / routeScenes.length) * 100;
 
@@ -93,12 +102,14 @@ export default function App() {
     const boundedStep = Math.max(0, Math.min(routeScenes[boundedIndex].screenSteps.length, requestedStep));
     setSceneIndex(boundedIndex);
     setVisibleSteps(boundedStep);
+    setSceneEntry(boundedIndex > sceneIndex && boundedStep === startingStep(routeScenes[boundedIndex]));
     writeLocation(boundedIndex, boundedStep);
   }
 
   function next() {
     if (visibleSteps < currentScene.screenSteps.length) {
       const nextStep = visibleSteps + 1;
+      setSceneEntry(false);
       setVisibleSteps(nextStep);
       writeLocation(sceneIndex, nextStep);
       return;
@@ -109,6 +120,7 @@ export default function App() {
   function previous() {
     if (visibleSteps > startingStep(currentScene)) {
       const previousStep = visibleSteps - 1;
+      setSceneEntry(false);
       setVisibleSteps(previousStep);
       writeLocation(sceneIndex, previousStep);
       return;
@@ -121,9 +133,27 @@ export default function App() {
 
   function resetScene() {
     const step = startingStep(currentScene);
+    setSceneEntry(false);
     setVisibleSteps(step);
     writeLocation(sceneIndex, step);
   }
+
+  async function copyDemoUrl(url: string) {
+    try {
+      await navigator.clipboard.writeText(url);
+    } catch {
+      // Clipboard API unavailable: fall back to a temporary selection.
+      const field = document.createElement('textarea');
+      field.value = url;
+      document.body.append(field);
+      field.select();
+      document.execCommand('copy');
+      field.remove();
+    }
+    setDemoCopied(true);
+  }
+
+  useEffect(() => setDemoCopied(false), [sceneIndex, visibleSteps]);
 
   async function toggleAudienceMode() {
     const entering = !audienceModeRef.current;
@@ -153,12 +183,22 @@ export default function App() {
       const target = event.target;
       const isVideoArea = target instanceof HTMLElement && Boolean(target.closest('.scene-video-reveal'));
       const isVideoNavigationKey = isVideoArea && (event.key === 'ArrowRight' || event.key === 'ArrowLeft');
+      // Focus stays on a scene-list button after a click; route keys still drive the deck from there.
+      // Space and Enter keep their native button behaviour.
+      // The live demo buttons behave the same way, so the deck keeps moving after "Aç" or "Kopyala".
+      const isRouteKeyButton = target instanceof HTMLElement && Boolean(target.closest('.scene-link, .live-demo-bar'));
+      const isRouteKey = isRouteKeyButton
+        && !event.ctrlKey && !event.metaKey && !event.altKey
+        && ['ArrowRight', 'ArrowLeft', 'j', 'k', 'r'].includes(event.key.length === 1 ? event.key.toLowerCase() : event.key);
       if (audienceMode && event.key === 'Escape') {
         event.preventDefault();
         void toggleAudienceMode();
         return;
       }
-      if (isVideoReveal && event.key === ' ') {
+      // Space on a focused scene-list button keeps its native "select scene" click, even on a video step.
+      // On the live demo bar Space still plays the fallback video.
+      const isSceneLink = target instanceof HTMLElement && Boolean(target.closest('.scene-link'));
+      if (isVideoReveal && event.key === ' ' && !isSceneLink) {
         event.preventDefault();
         if (event.repeat) return;
         const player = videoPlayerRef.current;
@@ -177,6 +217,7 @@ export default function App() {
         target.closest('button, a, input, select, textarea, summary, [role="button"], [contenteditable="true"]')
         && !(audienceMode && target.closest('.audience-exit'))
         && !isVideoNavigationKey
+        && !isRouteKey
       ) {
         return;
       }
@@ -257,7 +298,22 @@ export default function App() {
               <span className="audience-scene-title">{currentScene.number === 1 ? 'Açılış' : 'Final'}</span>
             )}
           </div>
-          <h1 id="scene-title">{currentScene.title}</h1>
+          {kineticScenes.has(currentScene.number) ? (
+            <h1
+              id="scene-title"
+              className={`kinetic-title${sceneEntry ? ' motion-title-enter' : ''}`}
+              style={{ '--stagger': `${Math.min(90, 280 / Math.max(1, currentScene.title.split(' ').length - 1))}ms` } as CSSProperties}
+            >
+              {currentScene.title.split(' ').map((word, index) => (
+                <Fragment key={index}>
+                  {index > 0 && ' '}
+                  <span style={{ '--word': index } as CSSProperties}>{word}</span>
+                </Fragment>
+              ))}
+            </h1>
+          ) : (
+            <h1 id="scene-title">{currentScene.title}</h1>
+          )}
           <p className="scene-takeaway">{currentScene.takeaway}</p>
 
           <div className="screen-content" aria-live="polite" aria-label="Ekrandaki içerik">
@@ -265,7 +321,17 @@ export default function App() {
               <span className="eyebrow">EKRANDA</span>
               <span className="step-counter">{isVideoReveal ? 'Video' : `Adım ${visibleSteps} / ${currentScene.screenSteps.length}`}</span>
             </div>
-            <SceneVisual scene={currentScene} visibleSteps={visibleSteps} videoPlayerRef={videoPlayerRef} />
+            <SceneVisual scene={currentScene} visibleSteps={visibleSteps} videoPlayerRef={videoPlayerRef} sceneEntry={sceneEntry && kineticScenes.has(currentScene.number)} />
+            {isVideoReveal && !audienceMode && liveDemo && (
+              <aside className="live-demo-bar" aria-label="Canlı demo">
+                <span className="live-demo-kicker">CANLI DEMO</span>
+                <span className="live-demo-tool">{liveDemo.tool}</span>
+                <code className="live-demo-url">{liveDemo.url}</code>
+                <button type="button" className="live-demo-action" onClick={() => window.open(liveDemo.url, '_blank', 'noopener')}>Aç</button>
+                <button type="button" className="live-demo-action" onClick={() => void copyDemoUrl(liveDemo.url)} aria-live="polite">{demoCopied ? 'Kopyalandı' : 'Kopyala'}</button>
+                <span className="live-demo-fallback">Aksarsa: sunuma dön → <kbd>Space</kbd> · klip bitince <kbd>→</kbd></span>
+              </aside>
+            )}
             {isVideoReveal ? (
               <p className="next-hint"><kbd>Space</kbd> videoyu oynatır / duraklatır · <kbd>→</kbd> sonraki sahne</p>
             ) : visibleSteps < currentScene.screenSteps.length ? (
@@ -286,6 +352,12 @@ export default function App() {
                 <div className="notes-video">
                   <strong className="notes-label">Video</strong>
                   {currentScene.videoNotes.map((note, index) => <p key={index}>{note}</p>)}
+                </div>
+              )}
+              {currentScene.liveDemo.length > 0 && (
+                <div className="notes-video notes-live-demo">
+                  <strong className="notes-label">Canlı demo</strong>
+                  {currentScene.liveDemo.map((note, index) => <p key={index}>{note}</p>)}
                 </div>
               )}
               {currentScene.transition && <p className="notes-transition"><strong>Geçiş:</strong> {currentScene.transition}</p>}

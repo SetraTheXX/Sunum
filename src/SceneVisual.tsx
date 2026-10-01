@@ -1,12 +1,16 @@
-import { useEffect, useState } from 'react';
-import type { RefObject } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import type { CSSProperties, RefObject } from 'react';
 import type { Scene } from './content';
 import { getSceneVideo } from './sceneVideos';
+import { enterClass, prefersReducedMotion, useBoxMorph, useDepthShift, useEnteringReveal } from './motion';
+import { useSceneMotion } from './sceneMotion';
 
 interface SceneVisualProps {
   scene: Scene;
   visibleSteps: number;
   videoPlayerRef: RefObject<HTMLVideoElement | null>;
+  /** True when the scene was just entered at its first reveal by navigation (not reload). */
+  sceneEntry?: boolean;
 }
 
 function removeLabel(text: string, label: string) {
@@ -157,65 +161,94 @@ function JourneyAudienceVisual({ steps }: { steps: string[] }) {
   );
 }
 
-function ContextAudienceVisual({ steps }: { steps: string[] }) {
+function ContextAudienceVisual({ steps, sceneEntry }: { steps: string[]; sceneEntry: boolean }) {
   const sourceStep = steps.find((step) => step.startsWith('Bağlam masası:'));
   const sources = sourceStep ? removeLabel(sourceStep, 'Bağlam masası').split(/\s*\+\s*/).filter(Boolean).slice(1) : [];
   const limitStep = steps.find((step) => step.startsWith('Alt cümle:'));
   const limit = limitStep ? unquote(removeLabel(limitStep, 'Alt cümle')) : '';
   const reveal = steps.length;
   // The boundary widens as information is placed on the desk; source anchors stay fixed.
-  const boundary = reveal === 3 ? { x: 440, y: 95, width: 400, height: 280 } : reveal === 4 ? { x: 300, y: 50, width: 680, height: 380 } : { x: 262, y: 22, width: 742, height: 428 };
+  // Before reveal 3 the boundary hugs the model, so its first appearance grows out of the engine.
+  const boundary = reveal < 3 ? { x: 535, y: 130, width: 210, height: 210 } : reveal === 3 ? { x: 440, y: 95, width: 400, height: 280 } : reveal === 4 ? { x: 300, y: 50, width: 680, height: 380 } : { x: 262, y: 22, width: 742, height: 428 };
+  const stepEntering = useEnteringReveal(reveal);
+  // Arriving at the scene's first reveal by navigation plays the model's entrance; reload does not.
+  const entering = sceneEntry && reveal === 1 ? 1 : stepEntering;
+  const { rectRef, labelRef } = useBoxMorph<SVGRectElement, SVGTextElement>(boundary, entering);
+  const auraRef = useDepthShift<SVGGElement>(entering);
+  // Sources fly in from the nearest stage edge before their link is drawn to the model.
   const linked = [
-    { dot: [420, 140], edge: [544, 193], label: [322, 112, 'start'] },
-    { dot: [900, 140], edge: [739, 199], label: [960, 112, 'end'] },
-    { dot: [900, 330], edge: [739, 271], label: [900, 372, 'middle'] },
-    { dot: [390, 330], edge: [541, 271], label: [390, 372, 'middle'] },
+    { dot: [420, 140], edge: [544, 193], label: [322, 112, 'start'], from: [-150, -60] },
+    { dot: [900, 140], edge: [739, 199], label: [960, 112, 'end'], from: [150, -60] },
+    { dot: [900, 330], edge: [739, 271], label: [900, 372, 'middle'], from: [150, 60] },
+    { dot: [390, 330], edge: [541, 271], label: [390, 372, 'middle'], from: [-150, 60] },
   ] as const;
   const visibleSources = sources.slice(0, reveal >= 5 ? 4 : reveal === 4 ? 3 : 0);
 
   return (
     <div className={`context-audience context-audience--${reveal}`} data-reveal={reveal}>
       <svg className="context-audience-system" viewBox="0 0 1200 470" role="img" aria-label={`Model: metni işleyen motor. ${reveal >= 2 ? 'Prompt: bu turdaki istek, ayrı bir girişten gelir. ' : ''}${reveal >= 3 ? 'Bağlam: bu istekte modele sunulan bilginin sınırı. ' : ''}${visibleSources.length ? `Sınırın içine bağlanan bilgiler: ${visibleSources.join(', ')}. ` : ''}${reveal >= 5 ? 'Araç çıktısı araçla eklendi; sunulmayan bilgi sınırın dışında kalır ve görünmez.' : ''}`}>
+        <defs>
+          <radialGradient id="context-aura-fill">
+            <stop offset="0" stopColor="#176B64" stopOpacity=".16" />
+            <stop offset=".55" stopColor="#176B64" stopOpacity=".06" />
+            <stop offset="1" stopColor="#176B64" stopOpacity="0" />
+          </radialGradient>
+          <filter id="context-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="9" />
+          </filter>
+        </defs>
+        <g ref={auraRef} className="context-audience-aura">
+          <ellipse cx="640" cy="235" rx={150 + reveal * 70} ry={110 + reveal * 26} fill="url(#context-aura-fill)" />
+        </g>
         {reveal >= 3 && (
-          <g className="context-audience-boundary">
-            <rect x={boundary.x} y={boundary.y} width={boundary.width} height={boundary.height} rx="18" />
-            <text x={boundary.x + 22} y={boundary.y + 7}>
+          <g className={`context-audience-boundary${enterClass(entering, 3)}`}>
+            <rect ref={rectRef} x={boundary.x} y={boundary.y} width={boundary.width} height={boundary.height} rx="18" />
+            <text ref={labelRef} x={boundary.x + 22} y={boundary.y + 7}>
               <tspan className="context-audience-kicker">BAĞLAM</tspan>
               <tspan className="context-audience-small" dx="12">bu istekte sunulan bilgi</tspan>
             </text>
           </g>
         )}
         {reveal >= 2 && (
-          <g className="context-audience-prompt">
+          <g className={`context-audience-prompt${enterClass(entering, 2)}`}>
             <text x="40" y="172" className="context-audience-kicker">PROMPT</text>
             <text x="40" y="205" className="context-audience-caption">Bu turdaki istek</text>
-            <path d="M40 235 H525" />
-            <path d="M525 235 l-14 -8 m14 8 l-14 8" />
+            <path className="motion-line" pathLength={1} d="M40 235 H525" />
+            <path className="motion-after-line" d="M525 235 l-14 -8 m14 8 l-14 8" />
+            <path className="motion-packet" pathLength={1} d="M40 235 H530" />
           </g>
         )}
         {visibleSources.length > 0 && (
           <g className="context-audience-sources">
             {visibleSources.map((source, index) => {
-              const { dot, edge, label } = linked[index];
+              const { dot, edge, label, from } = linked[index];
               return (
-                <g className={index === 3 ? 'context-audience-tool' : undefined} key={source}>
-                  <path d={`M${dot[0]} ${dot[1]} L${edge[0]} ${edge[1]}`} />
-                  <circle cx={dot[0]} cy={dot[1]} r="7" />
-                  <text x={label[0]} y={label[1]} textAnchor={label[2]}>{source}</text>
-                  {index === 3 && <text x={label[0]} y={label[1] + 27} textAnchor={label[2]} className="context-audience-small">araçla eklendi</text>}
+                <g
+                  className={`${index === 3 ? 'context-audience-tool' : ''}${enterClass(entering, index === 3 ? 5 : 4)}`.trim() || undefined}
+                  key={source}
+                  style={{ '--from-x': `${from[0]}px`, '--from-y': `${from[1]}px`, '--order': index === 3 ? 0 : index } as CSSProperties}
+                >
+                  <path className="motion-line" pathLength={1} d={`M${dot[0]} ${dot[1]} L${edge[0]} ${edge[1]}`} />
+                  <g className="motion-fly">
+                    <circle cx={dot[0]} cy={dot[1]} r="7" />
+                    <text x={label[0]} y={label[1]} textAnchor={label[2]}>{source}</text>
+                    {index === 3 && <text x={label[0]} y={label[1] + 27} textAnchor={label[2]} className="context-audience-small">araçla eklendi</text>}
+                  </g>
+                  <circle className="motion-pulse" cx={edge[0]} cy={edge[1]} r="12" />
                 </g>
               );
             })}
           </g>
         )}
-        <g className="context-audience-engine">
+        <g className={`context-audience-engine${enterClass(entering, 1)}`}>
+          <circle className="context-audience-engine-glow" cx="640" cy="235" r="108" filter="url(#context-glow)" />
           <circle className="context-audience-engine-outer" cx="640" cy="235" r="105" />
           <circle className="context-audience-engine-inner" cx="640" cy="235" r="92" />
           <text x="640" y="229" className="context-audience-engine-name">MODEL</text>
           <text x="640" y="260" className="context-audience-engine-detail">Metni işler, çıktı üretir</text>
         </g>
         {reveal >= 5 && (
-          <g className="context-audience-outside">
+          <g className={`context-audience-outside${enterClass(entering, 5)}`}>
             <path d="M1062 235 H1016" />
             <path d="M1016 235 l12 -8 m-12 8 l12 8" />
             <path d="M1030 218 l16 34" />
@@ -911,6 +944,7 @@ function FinalVisual({ steps }: { steps: string[] }) {
   const [firstLine, secondLine] = finalText?.split(', ') ?? [];
 
   const reveal = steps.length;
+  const stageRef = useFinalExit(reveal);
   const question = answer ? unquote(answer[0]) : '';
   const rawAnswer = answer ? answer.slice(1).join(' — ') : '';
   const shortAnswer = rawAnswer ? rawAnswer.charAt(0) + rawAnswer.slice(1).toLocaleLowerCase('tr-TR') : '';
@@ -930,7 +964,7 @@ function FinalVisual({ steps }: { steps: string[] }) {
       <p className="final-audience-recap" aria-hidden={reveal === 2 ? undefined : true}>
         {question} <strong>{shortAnswer}</strong>
       </p>
-      <div className="final-audience-stage">
+      <div className="final-audience-stage" ref={stageRef}>
         {reveal === 1 && (
           <div className="final-audience-answer">
             <p>{question}</p>
@@ -955,7 +989,7 @@ function FinalVisual({ steps }: { steps: string[] }) {
           </svg>
         )}
         {reveal >= 3 && finalText && (
-          <div className="final-audience-thesis" aria-label={finalText}>
+          <div className="final-audience-thesis" aria-label={finalText} data-motion-skip>
             <p><span>{firstLine},</span><strong>{secondLine}</strong></p>
             <small>Güvenilir sonuç, modelden çok sistemi ister.</small>
           </div>
@@ -963,6 +997,49 @@ function FinalVisual({ steps }: { steps: string[] }) {
       </div>
     </div>
   );
+}
+
+/**
+ * Scene 12, reveal 2 → 3: the system diagram is removed from the DOM, so a detached copy of it is kept and,
+ * on that forward step only, its parts scatter outward and fade while the final sentence arrives.
+ * The copy is removed when the animation ends or the next navigation cancels it.
+ */
+function useFinalExit(reveal: number) {
+  const stageRef = useRef<HTMLDivElement | null>(null);
+  const snapshot = useRef<Element | null>(null);
+  const entering = useEnteringReveal(reveal);
+
+  useLayoutEffect(() => {
+    const stage = stageRef.current;
+    const ghost = snapshot.current;
+    snapshot.current = stage?.querySelector('.final-audience-system')?.cloneNode(true) as Element | null ?? null;
+    if (!stage || !ghost || entering !== 3 || prefersReducedMotion()) return;
+    ghost.setAttribute('aria-hidden', 'true');
+    ghost.classList.add('final-audience-ghost');
+    stage.prepend(ghost);
+    const options = { duration: 480, easing: 'cubic-bezier(.4, 0, .2, 1)', fill: 'forwards' as FillMode };
+    const animations: Animation[] = [ghost.animate([{ opacity: 1 }, { opacity: 0 }], options)];
+    ghost.querySelectorAll<SVGGraphicsElement>('.final-audience-part').forEach((part) => {
+      const box = part.getBBox();
+      const dx = box.x + box.width / 2 - 600;
+      const dy = box.y + box.height / 2 - 195;
+      const length = Math.hypot(dx, dy) || 1;
+      animations.push(part.animate([{ transform: 'none' }, { transform: `translate(${(dx / length) * 140}px, ${(dy / length) * 90}px)` }], options));
+    });
+    const core = ghost.querySelector<SVGElement>('.final-audience-core');
+    if (core) {
+      core.style.transformBox = 'fill-box';
+      core.style.transformOrigin = 'center';
+      animations.push(core.animate([{ transform: 'none' }, { transform: 'scale(.6)' }], options));
+    }
+    animations[0].onfinish = () => ghost.remove();
+    return () => {
+      animations.forEach((animation) => animation.cancel());
+      ghost.remove();
+    };
+  }, [reveal, entering]);
+
+  return stageRef;
 }
 
 function GenericVisual({ steps }: { steps: string[] }) {
@@ -1053,21 +1130,32 @@ function SceneVideoReveal({ sceneNumber, videoPlayerRef }: { sceneNumber: number
   );
 }
 
-export default function SceneVisual({ scene, visibleSteps, videoPlayerRef }: SceneVisualProps) {
+export default function SceneVisual({ scene, visibleSteps, videoPlayerRef, sceneEntry = false }: SceneVisualProps) {
   const video = getSceneVideo(scene.number);
-  if (video && visibleSteps >= scene.screenSteps.length) {
+  const isVideoStep = Boolean(video && visibleSteps >= scene.screenSteps.length);
+  // Scene 03 keeps its bespoke pilot motion; video steps keep the player untouched.
+  const { rootRef, mode } = useSceneMotion<HTMLDivElement>(visibleSteps, sceneEntry, scene.number !== 3 && !isVideoStep);
+  if (isVideoStep) {
     return <SceneVideoReveal sceneNumber={scene.number} videoPlayerRef={videoPlayerRef} />;
   }
+  if (scene.number === 3) return <ContextAudienceVisual steps={scene.screenSteps.slice(0, visibleSteps)} sceneEntry={sceneEntry} />;
 
-  const steps = scene.screenSteps.slice(0, visibleSteps);
+  return (
+    <div className="scene-motion" ref={rootRef} data-motion={mode || undefined}>
+      <div className="scene-aura" aria-hidden="true" />
+      <div className="scene-motion-frame">
+        <SceneVisualBody scene={scene} steps={scene.screenSteps.slice(0, visibleSteps)} />
+      </div>
+    </div>
+  );
+}
 
+function SceneVisualBody({ scene, steps }: { scene: Scene; steps: string[] }) {
   switch (scene.number) {
     case 1:
       return <OpeningVisual steps={steps} />;
     case 2:
       return <JourneyAudienceVisual steps={steps} />;
-    case 3:
-      return <ContextAudienceVisual steps={steps} />;
     case 4:
       return <ComparisonAudienceVisual steps={steps} />;
     case 5:

@@ -137,6 +137,13 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
 .notes-body strong { color: var(--ink); }
 .notes-lead { color: var(--color-text); }
 .notes-video { margin: 4px 0 12px; padding: 10px 0 0 12px; border-left: var(--rule-accent); }
+/* Presenter-only live demo bar on the Scene 05/08/11 video step (never rendered in the audience view). */
+.live-demo-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-top: 10px; padding: 6px 10px; border: 1px dashed var(--color-accent); border-radius: 8px; color: var(--color-text); font-size: var(--type-label); }
+.live-demo-kicker { color: var(--color-accent); font-family: var(--font-mono); font-weight: 700; letter-spacing: .1em; }
+.live-demo-url { font-family: var(--font-mono); }
+.live-demo-action { min-height: 28px; padding: 3px 12px; border: 1px solid var(--color-accent); border-radius: 6px; background: var(--color-surface); color: var(--color-accent); font: inherit; font-weight: 700; cursor: pointer; }
+.live-demo-action:hover, .live-demo-action:focus-visible { background: var(--color-accent); color: var(--color-accent-ink); }
+.live-demo-fallback { margin-left: auto; color: var(--color-muted); }
 .notes-label { display: block; margin-bottom: 6px; color: var(--color-accent) !important; font-size: var(--type-label); letter-spacing: .1em; text-transform: uppercase; }
 .notes-transition { padding-top: 10px; border-top: var(--rule); }
 
@@ -718,6 +725,63 @@ h1 { max-width: 900px; margin: 14px 0 16px; font-family: var(--font-display); fo
 @media (prefers-reduced-motion: reduce) {
   .is-audience-mode *, .is-audience-mode *::before, .is-audience-mode *::after { scroll-behavior: auto; }
 }
+
+/* Reveal motion (src/motion.ts): one-shot, only on the newly revealed group; ends at the static state.
+   Budget per reveal <= ~900 ms; nothing loops. The next step removes the classes, which cancels it. */
+.motion-enter { animation: motion-enter 220ms cubic-bezier(.2, 0, 0, 1) both; }
+.motion-enter .motion-line { stroke-dasharray: 1; animation: motion-draw 380ms cubic-bezier(.4, 0, .2, 1) both; }
+.motion-enter .motion-after-line { animation: motion-fade 160ms 320ms ease-out both; }
+@keyframes motion-enter { from { opacity: 0; transform: translateY(6px); } }
+@keyframes motion-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes motion-fade { from { opacity: 0; } }
+
+/* Kinetic title: words sharpen out of blur and scale with a 90 ms stagger (<= 690 ms). */
+.kinetic-title span { display: inline-block; transform-origin: 0 80%; }
+.motion-title-enter span { animation: title-word 420ms cubic-bezier(.16, 1, .3, 1) calc(var(--word) * var(--stagger, 90ms)) both; }
+.scene-stage:has(.motion-title-enter) .scene-takeaway { animation: motion-fade 280ms 360ms ease-out both; }
+@keyframes title-word { from { opacity: 0; filter: blur(10px); transform: translateY(.32em) scale(1.14); } }
+
+/* Scene 03: model entrance, packet, sources from the edges, static aura. */
+.context-audience-aura, .context-audience-engine { transform-box: fill-box; transform-origin: center; }
+.context-audience-boundary rect { vector-effect: non-scaling-stroke; }
+.context-audience-engine-glow { fill: none; stroke: var(--color-accent); stroke-width: 12; opacity: .14; }
+.context-audience-engine.motion-enter { animation: engine-in 560ms cubic-bezier(.34, 1.45, .64, 1) both; }
+.context-audience-engine.motion-enter .context-audience-engine-glow { animation: glow-ignite 900ms ease-out both; }
+.context-audience-system:has(.context-audience-prompt.motion-enter) .context-audience-engine-glow { animation: glow-pulse 260ms 640ms ease-out both; }
+.context-audience-system:has(.context-audience-sources .motion-enter) .context-audience-engine-glow { animation: glow-pulse 260ms 560ms ease-out both; }
+.motion-packet { fill: none; stroke: var(--color-accent); stroke-width: 9; stroke-linecap: round; stroke-dasharray: .1 2; opacity: 0; }
+.motion-enter .motion-packet { animation: packet-run 520ms 180ms cubic-bezier(.5, 0, .3, 1) both; }
+.context-audience-sources .motion-enter { animation: none; }
+.motion-enter .motion-fly { animation: fly-in 340ms cubic-bezier(.16, 1, .3, 1) calc(var(--order) * 60ms) both; }
+.context-audience-sources .motion-enter .motion-line { animation-delay: calc(220ms + var(--order) * 60ms); animation-duration: 300ms; }
+.motion-pulse { fill: none; stroke: var(--color-accent); stroke-width: 2.5; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.motion-enter .motion-pulse { animation: pulse-ring 300ms calc(480ms + var(--order) * 60ms) ease-out forwards; }
+.context-audience-outside.motion-enter { animation: from-right 320ms 120ms cubic-bezier(.16, 1, .3, 1) both; }
+@keyframes engine-in { from { opacity: 0; transform: scale(.85); } }
+@keyframes glow-ignite { 0% { opacity: 0; } 45% { opacity: .55; } 100% { opacity: .14; } }
+@keyframes glow-pulse { 50% { opacity: .5; } }
+@keyframes packet-run { 0% { opacity: 1; stroke-dashoffset: .1; } 85% { opacity: 1; } 100% { opacity: 0; stroke-dashoffset: -1; } }
+@keyframes fly-in { from { opacity: 0; transform: translate(var(--from-x), var(--from-y)); } }
+@keyframes pulse-ring { from { opacity: .8; transform: scale(.4); } to { opacity: 0; transform: scale(2.2); } }
+@keyframes from-right { from { opacity: 0; transform: translateX(60px); } }
+
+/* Shared scene motion (src/sceneMotion.ts): wrapper is layout-neutral; the aura is a static back layer. */
+.screen-content { position: relative; isolation: isolate; }
+.scene-motion, .scene-motion-frame { display: contents; }
+.scene-aura { position: absolute; z-index: -1; inset: 8% 10% 4%; pointer-events: none; background: radial-gradient(closest-side, rgb(23 107 100 / .09), rgb(23 107 100 / .035) 55%, transparent); }
+.scene-motion-packet { fill: none !important; stroke: var(--color-accent) !important; stroke-width: 8 !important; stroke-linecap: round; opacity: 0; pointer-events: none; }
+/* Scene 12: the scattering system copy and the kinetic final sentence (only on the forward step to reveal 3). */
+.final-audience-ghost { pointer-events: none; }
+[data-motion="step"] .final-audience-thesis p > * { display: inline-block; animation: title-word 460ms cubic-bezier(.16, 1, .3, 1) 220ms backwards; }
+[data-motion="step"] .final-audience-thesis p > strong { animation-delay: 360ms; }
+[data-motion="step"] .final-audience-thesis small { animation: motion-fade 280ms 560ms ease-out backwards; }
+/* Scene 05: light → dark recolours in place, only on a forward step. */
+[data-motion="step"] .vibe-app :is(rect, circle, path, text) { transition: fill 420ms ease, stroke 420ms ease; }
+@media (prefers-reduced-motion: reduce) {
+  .motion-enter, .motion-enter *, .motion-title-enter *, .scene-stage .scene-takeaway, .context-audience-system *, .final-audience-thesis * { animation: none !important; }
+  [data-motion] * { transition: none !important; }
+}
+
 
 /* Remaining scenes: each Audience reveal reshapes a scene-specific field composition. */
 .audience-route {

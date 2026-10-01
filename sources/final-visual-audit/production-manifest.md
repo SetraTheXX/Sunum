@@ -31,7 +31,7 @@
 
 ## Beat envanteri (48/48)
 
-**Alanlar:** Amaç ve izleyicinin anlaması her satırda ayrı belirtilir. `R/C` React/CSS; `SVG` yerel v2 asset; `CAP/VID` gerçek capture/video; `I` mevcut kullanıcı etkileşimi; `M` ek otomatik motion; `AI` generated visual; `O` offline değerlendirmesidir. Her beat'te capture/video gerekmediği açıkça yazılmışsa kavramsal çizim product evidence sayılmaz. Tüm 48 satırda AI visual = 0, ek motion = yok/0 ms, reveal mevcut Next/Prev ve klavye/URL state'iyle kullanıcı tarafından tetiklenir; yerel build'de remote font/CDN/image/telemetry gözlemlenmedi. Planlanan capture/video'lar sonradan yalnız yerel asset olarak eklenebilir.
+**Alanlar:** Amaç ve izleyicinin anlaması her satırda ayrı belirtilir. `R/C` React/CSS; `SVG` yerel v2 asset; `CAP/VID` gerçek capture/video; `I` mevcut kullanıcı etkileşimi; `M` ek otomatik motion; `AI` generated visual; `O` offline değerlendirmesidir. Her beat'te capture/video gerekmediği açıkça yazılmışsa kavramsal çizim product evidence sayılmaz. Tüm 48 satırda AI visual = 0, ek motion = yok/0 ms, reveal mevcut Next/Prev ve klavye/URL state'iyle kullanıcı tarafından tetiklenir; yerel build'de remote font/CDN/image/telemetry gözlemlenmedi. Planlanan capture/video'lar sonradan yalnız yerel asset olarak eklenebilir. **Güncelleme (2026-10-01):** "ek motion = yok/0 ms" kararı Roadmap'teki v2 kontrollü motion Plan Delta'sıyla değişti; Scene 03 pilotu ve kayıtları [DESIGN_PRINCIPLES.md](../../DESIGN_PRINCIPLES.md) içindedir.
 
 | Beat | Pedagojik amaç → izleyicinin çıkarması gereken anlam | PRD ilişkisi / açık not | Üretim yolu ve neden (R/C, SVG, CAP/VID, AI) | I / M / offline riski |
 |---|---|---|---|---|

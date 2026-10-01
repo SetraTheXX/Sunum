@@ -801,6 +801,10 @@ Kullanıcı kararıyla Audience görünümündeki 12 sahne ve dört video adım�
 
 Run 1 otomatik gezinme smoke-check'idir; yüksek sesli insan anlatımı veya süre ölçümü yapılmadı. **Phase 11A — PASS / Phase 11B — DEFERRED / PENDING:** gerçek insan provası final visual entegrasyonu ve G7 projector/browser QA tamamlanana kadar ertelendi. Bu kayıt provaya başlama talebi değildir. **G9 OPEN** kalır; iki ardışık gerçek prova ≤28 dakika olmadan PASS verilmez. G4/G5 OPEN, G6 PARTIAL / BLOCKED ve G7 OPEN durumlarına dokunulmadı.
 
+### Plan Delta — v2 kontrollü motion ve canlı demo hazırlığı (2026-10-01)
+
+Sunumun ertelenmesi ve hocanın canlı örnek isteğiyle, `v1-sunum-final` tag'li final sürümün (`f4eebf6`) üzerine `feat/v2-motion` branch'inde kontrollü motion ve ileride canlı demo hazırlığı ekleniyor. Tek rota, 12 sahne, 52 durum ve dört video korunur; süre optimizasyonu eklenmez. [Production manifest](sources/final-visual-audit/production-manifest.md)'teki "ek motion = yok/0 ms" kararı bu kapsamla güncellenir: motion yalnız yeni reveal'ı hareketlendirir (giriş 180–240 ms, çizgi 300–450 ms, görev devri ≤600 ms), sonsuz döngü yoktur, →/←/J/K/R çalışan hareketi iptal edip son duruma geçer, reload ve `prefers-reduced-motion` tamamlanmış hali anında gösterir. Ek runtime bağımlılığı ve CDN yok (CSS + inline SVG + Web Animations API). Her motion adayı [DESIGN_PRINCIPLES.md](DESIGN_PRINCIPLES.md) içinde Purpose/Trigger/Duration/Fallback/reduced-motion ile kaydedilir; ilk pilot Scene 03'tür. Canlı demo sırası Scene 05 üretim, Scene 08 kontrol, Scene 11 rol devridir; mevcut videolar fallback olarak kalır. "Avenox" referansı doğrulanamadı; çalışma varsayımı güçlü tipografi ve kontrollü ritimdir. Yeni build sonrası USB/ZIP paketi yeniden üretilip ayrıca kontrol edilmelidir. G4/G5 OPEN, G6 PARTIAL / BLOCKED, G7 OPEN ve G9 OPEN durumları değişmez.
+
 ## Pre-production'dan final package/preflight'a yürütme sırası
 
 1. **Pre-production / content completion:** 30 dakikalık çekirdek rota, içerik, claim'ler ve speaker notes tamamlayıp kilitle.

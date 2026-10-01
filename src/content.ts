@@ -6,6 +6,7 @@ export interface Scene {
   screenSteps: string[];
   speakerNotes: string[];
   videoNotes: string[];
+  liveDemo: string[];
   transition: string;
 }
 
@@ -98,6 +99,7 @@ function parseScene(markdown: string): Scene {
     screenSteps: contentBlocks(section('Ekranda')),
     speakerNotes: paragraphs('Konuşmacı'),
     videoNotes: paragraphs('Video'),
+    liveDemo: paragraphs('Canlı demo'),
     transition: plainText('Geçiş'),
   };
 }

@@ -26,3 +26,29 @@
 - Scope remains limited to an official product example of the task checklist. It is not evidence of this project's live session, a code diff, test result, or Vi3ecode workflow.
 - **Required slide caption:** “Anthropic resmî ürün örneği, 2025 — bu proje oturumu değildir.”
 - **G4 remains open:** Codex task/files/terminal/diff/test evidence and Vi3ecode P0 screenshots are still missing. Do not present this image as proof for those items.
+
+## Vi3ecode user-provided screen recording (2026-09-28)
+
+- Raw recording: `F:/Vi3ecode kısmı ve örnek gösterim.mp4` (448.91 s, 1920×1080, 60 fps); original retained.
+- Initial Scene 11 export (42.08 s) used the same “Vibe coding...” thread for the request and result; it was superseded and removed during draft cleanup.
+- Privacy treatment covers the workspace tabs, left project/account panel, and Windows taskbar. Native 16:9 scale is preserved without zoom, crop, or speed changes.
+- The visible Lead summary says repository source files were not available, so Developer created `index.html` from scratch. It reports task add/complete/delete and localStorage checks; QA reports responsive checks and explicitly says no screenshot was captured because the browser panel was hidden. Keep this limitation with any narration; do not present the app as an integrated repo change or visual QA pass.
+- A contact sheet and selected frames were reviewed; custom media check found 0 failures and one optional subtitle warning. This was not a full frame-by-frame privacy audit, offline playback test, or rehearsal.
+- **G4 remains open.** This draft alone does not close G4/G5/G6, and no change to G7/G9 status is claimed. User approval and presentation integration are pending.
+
+## Superseded Vi3ecode intermediate model-configuration draft (2026-09-28)
+
+- Intermediate v3 export (49.117 s, 1920×1080, 59.898 fps) first added the role/model settings view; it was superseded and removed in the current cut below.
+- Cut order from the same “Vibe coding...” thread: role/model settings 00:54–01:01, request 01:12–01:28, result and app preview 05:48–06:14. This is an edited excerpt, not a continuous run; no unrelated thread is combined.
+- The settings view shows Lead, Analyst, Developer and QA selection plus the Engine field. The captured value is GPT-6-Luna · Default · Max for the visible roles; do not claim different models were assigned.
+- The full-frame privacy mask is aligned at (0,0): workspace tabs, left project/account rail and taskbar are covered. Native 16:9 remains; no zoom, crop or speed-up.
+- Source caveats remain visible: repo files were not available, Developer created index.html from scratch, QA did not capture a browser screenshot, and tool errors are not edited into a success-only narrative.
+- The v3 custom check reports 0 failures and 1 optional warning for missing subtitles; contact sheet and selected frames were visually reviewed. Offline playback and rehearsal are still pending. G4 remains open.
+
+## Vi3ecode recording — current Scene 11 cut (2026-09-28)
+
+- Current export: assets/video-drafts/scene-11-vi3ecode-draft-20260928.mp4 (62.116 s, 1920×1080, 59.936 fps, H.264/AAC stereo). This replaces and supersedes the earlier 42.08 s and 49.12 s drafts, which were removed during draft cleanup.
+- Cut order, all from the same “Vibe coding...” thread: role/model settings 00:54–01:01; request and work starting 01:12–01:35; QA/result and app preview 05:42–06:14. The long wait is skipped; the clip is not continuous.
+- The role settings show Lead, Analyst, Developer and QA selection with Engine set to GPT-6-Luna · Default · Max in the captured states. Do not claim the roles used different models.
+- The aligned full-frame privacy mask covers workspace tabs, the left project/account rail and Windows taskbar. Native 16:9 is preserved without zoom/crop/speed-up. Errors and the QA screenshot limitation remain visible.
+- Custom media check: 0 failed, one optional missing-subtitles warning. A 16-frame contact sheet and selected frames were reviewed. Offline playback and rehearsal are pending; G4 remains open.

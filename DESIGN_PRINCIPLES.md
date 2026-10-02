@@ -157,7 +157,7 @@ Scene 03'ün dili kalan sahnelere tek bir motorla uygulanır; her sahne bileşen
 | 09 Tek Ajanın Sınırı | Üç sorumluluğun tek ajanda toplanması. | Girişte ajan çekirdeği ölçekle gelir; denge notu ikinci adımda gelir. |
 | 10 Orkestrasyon | Görev izinin Lead → Developer → QA akışı ve koşullu yollar. | Yolu katedilen hatlarda paket akar, aktif istasyon bir kez nabız atar; FAIL ve PASS yolları ayrı ayrı çizilir. |
 | 11 Ajan Takımı | Görev çipinin kulvarlar arasında taşınması. | Çip eski kulvarından yenisine spring ile taşınır; yeni yol çizilir, üzerinde paket akar; koşullu FAIL/PASS ayrı gelir. Video adımı değişmez. |
-| 12 Final | Parçaların birleşmesi, sonra kalkması ve final cümlesi. | Reveal 2'de parçalar kenarlardan merkeze doğru gelir. Reveal 3'te sistemin bir kopyası dağılarak kalkar (480 ms); final cümlesi iki parça halinde blur/ölçekten netleşir (≤820 ms). |
+| 12 Final | Parçaların birleşmesi, bu sunumun kendi Git kaydıyla kanıt, sonra final cümlesi. | Reveal 2'de parçalar kenarlardan merkeze gelir. Reveal 3 (kanıt, `src/GitEvidence.tsx`): sistem kopyası dağılarak kalkar (480 ms); sayaçlar 0'dan gerçek değere sayar (700 ms), biriken satır çizgisi çizilir (700 ms), commit noktaları zaman sırasıyla belirir (≤680 ms), `v1-sunum-final` ve `v2-motion-demo` bayrakları zamanlarında gelir, iki gerçek diff satırı kayarak girer; ölçülen en uzun 900 ms. Veri `scripts/git-history.mjs` ile `git log`'dan üretilir (e-posta yok). Reveal 4: final cümlesi iki parça halinde netleşir. |
 
 Ortak alanlar (bütün satırlar için):
 
@@ -171,6 +171,8 @@ Ortak alanlar (bütün satırlar için):
 
 ### Authentic capture, privacy ve kanıt sınırı
 
+- V3 Scene 08/11 replay: gerçek Codex App / Vi3ecode kaydından yerel MP4 (24,5 / 34 sn). Odaklı, 600 ms sınırlı zoom; okunabilir Türkçe açıklamalar, kişisel ekran çevresi maskesi. Space kullanıcı başlatır; oklar bölümleri seçer. Reload son karede durur, çıkışta medya durur. Reduced-motion’da çevre CSS hareketi kapalı; video kullanıcı isteğiyle oynar. Presenter/Audience aynı bileşeni kullanır. Dört eski video ve redakte metin JSON’ları korunur. Resmî linkler yalnız Presenter’dadır.
+
 - Ürün iddiasını destekleyen capture gerçek Codex/Vi3ecode arayüzünden, gerçek oturum/iş akışından alınır; kaynak, tarih, görünen ürün sürümü/tarayıcı ve ilgili scene claim'i kaydedilir. UI'ı HTML/CSS/SVG ile taklit etmek, AI ile üretmek, outcome/label değiştirmek veya promo/simulation sayfasını gerçek workflow diye göstermek yasaktır.
 - Capture öncesi izin ve kapsam doğrulanır. Token, credential, e-posta, kişi/kurum/branch/repo özel bilgisi, müşteri verisi, özel dosya yolu, bildirim ve ilgisiz sekmeler kırpılır/bulanıklaştırılır. Redakte edilmiş kopya gözle incelenir, yerel tutulur ve offline açılma/oynama denetiminden geçer; hassas orijinal public evidence paketine alınmaz.
 - Sunumun Phase 9 QA PNG'leri sunum render'ı kanıtıdır; authentic ürün kanıtı değildir. Bunlar tek başına G4/G5/G6'yı ve emüle ölçümler G7'yi kapatmaz. Scene 11'de capture/fallback yoksa içerik kavramsal olarak işaretlenir ve ilgili gate'ler açık kalır.
@@ -178,3 +180,5 @@ Ortak alanlar (bütün satırlar için):
 ### Öncelik ve uygulama kapısı
 
 DESIGN_PRINCIPLES V2, kalan scene-specific görsel sprint için yönlendirme sözleşmesidir. Sprint 1 global shell/token katmanını uyguladı; bu dar kapsamlı uygulama build ve iki çözünürlükte 24/24 regression kontrolüyle QA PASS aldı. PASS yalnızca bu shell/token değişikliğine ilişkindir; tüm V2 sözleşmesinin sahnelere uygulanması, production asset/capture üretimi, authentic evidence veya gate sonucu değildir. Roadmap sırası içinde manifest kapsamındaki asset üretimi/entegrasyonu, authentic evidence, projector/browser QA ve ilgili gate'ler ayrı kanıtla tamamlanır.
+
+V3 kısa kayıt rotası: Scene 08 Adım 4 ve Scene 11 Adım 5 ana rotanın son adımlarıdır. 53 durum; uzun kayıtlar Presenter’dan açıkça seçilen fallback olarak korunur. Dönüş aynı adıma yapılır; Audience görünümünde seçim düğmesi yoktur.

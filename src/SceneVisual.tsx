@@ -4,6 +4,9 @@ import type { Scene } from './content';
 import { getSceneVideo } from './sceneVideos';
 import { enterClass, prefersReducedMotion, useBoxMorph, useDepthShift, useEnteringReveal } from './motion';
 import { useSceneMotion } from './sceneMotion';
+import GitEvidence from './GitEvidence';
+import { getReplay } from './replays';
+import TranscriptReplay from './TranscriptReplay';
 
 interface SceneVisualProps {
   scene: Scene;
@@ -11,6 +14,7 @@ interface SceneVisualProps {
   videoPlayerRef: RefObject<HTMLVideoElement | null>;
   /** True when the scene was just entered at its first reveal by navigation (not reload). */
   sceneEntry?: boolean;
+  fallbackVideo?: boolean;
 }
 
 function removeLabel(text: string, label: string) {
@@ -940,16 +944,17 @@ function AnatomyVisual({ steps }: { steps: string[] }) {
 function FinalVisual({ steps }: { steps: string[] }) {
   const answer = steps[0]?.split(' — ');
   const trust = steps[1]?.split(' — ');
-  const finalText = steps[2]?.match(/[“"](.+?)[”"]/u)?.[1];
+  const finalText = steps.find((step) => step.startsWith('Final:'))?.match(/[“"](.+?)[”"]/u)?.[1];
   const [firstLine, secondLine] = finalText?.split(', ') ?? [];
 
   const reveal = steps.length;
   const stageRef = useFinalExit(reveal);
+  const entering = useEnteringReveal(reveal);
   const question = answer ? unquote(answer[0]) : '';
   const rawAnswer = answer ? answer.slice(1).join(' — ') : '';
   const shortAnswer = rawAnswer ? rawAnswer.charAt(0) + rawAnswer.slice(1).toLocaleLowerCase('tr-TR') : '';
   // The model core with Bağlam, Araçlar, Test, İnceleme and İnsan; reusable methods are covered in the speaker notes.
-  // Reveal 3 renders only the closing line: no diagram, node or line is kept behind it.
+  // Reveal 3 is the evidence: this deck's own Git history. Reveal 4 renders only the closing line.
   const sourceParts = trust ? trust.slice(1).join(' — ').split(/\s*\+\s*/).filter(Boolean) : [];
   const pick = (name: string) => sourceParts.find((part) => part === name) ?? name;
   const parts = [
@@ -988,7 +993,8 @@ function FinalVisual({ steps }: { steps: string[] }) {
             ))}
           </svg>
         )}
-        {reveal >= 3 && finalText && (
+        {reveal === 3 && <GitEvidence animate={entering === 3 && !prefersReducedMotion()} />}
+        {reveal >= 4 && finalText && (
           <div className="final-audience-thesis" aria-label={finalText} data-motion-skip>
             <p><span>{firstLine},</span><strong>{secondLine}</strong></p>
             <small>Güvenilir sonuç, modelden çok sistemi ister.</small>
@@ -1109,6 +1115,7 @@ function SceneVideoReveal({ sceneNumber, videoPlayerRef }: { sceneNumber: number
         <video
           ref={videoPlayerRef}
           className="scene-video-player"
+          tabIndex={-1}
           src={video.src}
           poster={video.poster}
           muted
@@ -1130,11 +1137,14 @@ function SceneVideoReveal({ sceneNumber, videoPlayerRef }: { sceneNumber: number
   );
 }
 
-export default function SceneVisual({ scene, visibleSteps, videoPlayerRef, sceneEntry = false }: SceneVisualProps) {
+export default function SceneVisual({ scene, visibleSteps, videoPlayerRef, sceneEntry = false, fallbackVideo = false }: SceneVisualProps) {
   const video = getSceneVideo(scene.number);
-  const isVideoStep = Boolean(video && visibleSteps >= scene.screenSteps.length);
+  const isVideoStep = Boolean(video && (fallbackVideo || (!getReplay(scene.number) && visibleSteps >= scene.screenSteps.length)));
+  const replay = getReplay(scene.number);
+  const isReplayStep = Boolean(replay && !fallbackVideo && visibleSteps === scene.screenSteps.length);
   // Scene 03 keeps its bespoke pilot motion; video steps keep the player untouched.
-  const { rootRef, mode } = useSceneMotion<HTMLDivElement>(visibleSteps, sceneEntry, scene.number !== 3 && !isVideoStep);
+  const { rootRef, mode } = useSceneMotion<HTMLDivElement>(visibleSteps, sceneEntry, scene.number !== 3 && !isVideoStep && !isReplayStep);
+  if (isReplayStep && replay) return <TranscriptReplay key={replay.id} replay={replay} />;
   if (isVideoStep) {
     return <SceneVideoReveal sceneNumber={scene.number} videoPlayerRef={videoPlayerRef} />;
   }

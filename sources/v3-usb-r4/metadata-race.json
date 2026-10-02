@@ -1,0 +1,1513 @@
+{
+  "cases": [
+    {
+      "scene": 8,
+      "early": true,
+      "iteration": 0,
+      "initial": {
+        "time": 0,
+        "ready": 0
+      },
+      "final": {
+        "time": 2.299895,
+        "paused": false,
+        "ready": 4,
+        "ended": false,
+        "error": null,
+        "ui": "true"
+      },
+      "events": [
+        {
+          "event": "play",
+          "ms": 239,
+          "time": 0,
+          "paused": false,
+          "ready": 0,
+          "network": 2,
+          "buffered": [],
+          "error": null
+        },
+        {
+          "event": "waiting",
+          "ms": 296,
+          "time": 0,
+          "paused": false,
+          "ready": 0,
+          "network": 2,
+          "buffered": [],
+          "error": null
+        },
+        {
+          "event": "loadedmetadata",
+          "ms": 905.1999999992549,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "playing",
+          "ms": 935.2999999998137,
+          "time": 0.002173,
+          "paused": false,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "waiting",
+          "ms": 1129.7999999998137,
+          "time": 0.194895,
+          "paused": false,
+          "ready": 2,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "playing",
+          "ms": 1130.5999999996275,
+          "time": 0.196236,
+          "paused": false,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "waiting",
+          "ms": 1442.5999999996275,
+          "time": 0.508018,
+          "paused": false,
+          "ready": 2,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "playing",
+          "ms": 1459.2999999998137,
+          "time": 0.508205,
+          "paused": false,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "scene": 8,
+      "early": true,
+      "iteration": 1,
+      "initial": {
+        "time": 0,
+        "ready": 0
+      },
+      "final": {
+        "time": 1.806031,
+        "paused": false,
+        "ready": 4,
+        "ended": false,
+        "error": null,
+        "ui": "true"
+      },
+      "events": [
+        {
+          "event": "play",
+          "ms": 246.80000000074506,
+          "time": 0,
+          "paused": false,
+          "ready": 0,
+          "network": 2,
+          "buffered": [],
+          "error": null
+        },
+        {
+          "event": "waiting",
+          "ms": 248,
+          "time": 0,
+          "paused": false,
+          "ready": 0,
+          "network": 2,
+          "buffered": [],
+          "error": null
+        },
+        {
+          "event": "loadedmetadata",
+          "ms": 1370.300000000745,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "playing",
+          "ms": 1400.1000000005588,
+          "time": 0.004069,
+          "paused": false,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "waiting",
+          "ms": 1808.5,
+          "time": 0.411164,
+          "paused": false,
+          "ready": 2,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "playing",
+          "ms": 1810,
+          "time": 0.411281,
+          "paused": false,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "scene": 8,
+      "early": true,
+      "iteration": 2,
+      "initial": {
+        "time": 0,
+        "ready": 0
+      },
+      "final": {
+        "time": 2.254042,
+        "paused": false,
+        "ready": 2,
+        "ended": false,
+        "error": null,
+        "ui": "true"
+      },
+      "events": [
+        {
+          "event": "play",
+          "ms": 180.8999999994412,
+          "time": 0,
+          "paused": false,
+          "ready": 0,
+          "network": 2,
+          "buffered": [],
+          "error": null
+        },
+        {
+          "event": "waiting",
+          "ms": 182.79999999981374,
+          "time": 0,
+          "paused": false,
+          "ready": 0,
+          "network": 2,
+          "buffered": [],
+          "error": null
+        },
+        {
+          "event": "loadedmetadata",
+          "ms": 875,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "playing",
+          "ms": 904.0999999996275,
+          "time": 0.002415,
+          "paused": false,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "waiting",
+          "ms": 1560.5999999996275,
+          "time": 0.6578,
+          "paused": false,
+          "ready": 2,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "playing",
+          "ms": 1560.8999999994412,
+          "time": 0.657959,
+          "paused": false,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "waiting",
+          "ms": 2360.5,
+          "time": 1.456195,
+          "paused": false,
+          "ready": 2,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "playing",
+          "ms": 2363.5999999996275,
+          "time": 1.45638,
+          "paused": false,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "waiting",
+          "ms": 3162,
+          "time": 2.254042,
+          "paused": false,
+          "ready": 2,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "scene": 8,
+      "early": false,
+      "iteration": 0,
+      "initial": {
+        "time": 24.4,
+        "ready": 4
+      },
+      "final": {
+        "time": 2.922772,
+        "paused": false,
+        "ready": 4,
+        "ended": false,
+        "error": null,
+        "ui": "true"
+      },
+      "events": [
+        {
+          "event": "loadedmetadata",
+          "ms": 179.09999999962747,
+          "time": 0,
+          "paused": true,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeking",
+          "ms": 180.79999999981374,
+          "time": 24.4,
+          "paused": true,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeked",
+          "ms": 285.20000000018626,
+          "time": 24.4,
+          "paused": true,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeking",
+          "ms": 299.90000000037253,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "play",
+          "ms": 300,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "waiting",
+          "ms": 304.20000000018626,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeked",
+          "ms": 394.5,
+          "time": 0.0004,
+          "paused": false,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "playing",
+          "ms": 394.59999999962747,
+          "time": 0.000449,
+          "paused": false,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "scene": 8,
+      "early": false,
+      "iteration": 1,
+      "initial": {
+        "time": 24.4,
+        "ready": 4
+      },
+      "final": {
+        "time": 3.008361,
+        "paused": false,
+        "ready": 4,
+        "ended": false,
+        "error": null,
+        "ui": "true"
+      },
+      "events": [
+        {
+          "event": "loadedmetadata",
+          "ms": 163.5,
+          "time": 0,
+          "paused": true,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeking",
+          "ms": 165.70000000018626,
+          "time": 24.4,
+          "paused": true,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeked",
+          "ms": 272.5,
+          "time": 24.4,
+          "paused": true,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeking",
+          "ms": 285.5,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "play",
+          "ms": 285.6000000005588,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "waiting",
+          "ms": 288.5,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeked",
+          "ms": 299.90000000037253,
+          "time": 0.000333,
+          "paused": false,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "playing",
+          "ms": 299.90000000037253,
+          "time": 0.000385,
+          "paused": false,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "scene": 8,
+      "early": false,
+      "iteration": 2,
+      "initial": {
+        "time": 24.4,
+        "ready": 4
+      },
+      "final": {
+        "time": 3.008548,
+        "paused": false,
+        "ready": 4,
+        "ended": false,
+        "error": null,
+        "ui": "true"
+      },
+      "events": [
+        {
+          "event": "loadedmetadata",
+          "ms": 158.5,
+          "time": 0,
+          "paused": true,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeking",
+          "ms": 160.09999999962747,
+          "time": 24.4,
+          "paused": true,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeked",
+          "ms": 276.20000000018626,
+          "time": 24.4,
+          "paused": true,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeking",
+          "ms": 294.59999999962747,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "play",
+          "ms": 294.79999999981374,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "waiting",
+          "ms": 296.3999999994412,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeked",
+          "ms": 298.09999999962747,
+          "time": 0.000226,
+          "paused": false,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "playing",
+          "ms": 298.09999999962747,
+          "time": 0.000284,
+          "paused": false,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              24.5
+            ]
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "scene": 11,
+      "early": true,
+      "iteration": 0,
+      "initial": {
+        "time": 0,
+        "ready": 0
+      },
+      "final": {
+        "time": 2.273875,
+        "paused": false,
+        "ready": 4,
+        "ended": false,
+        "error": null,
+        "ui": "true"
+      },
+      "events": [
+        {
+          "event": "play",
+          "ms": 185.69999999925494,
+          "time": 0,
+          "paused": false,
+          "ready": 0,
+          "network": 2,
+          "buffered": [],
+          "error": null
+        },
+        {
+          "event": "waiting",
+          "ms": 187.3999999994412,
+          "time": 0,
+          "paused": false,
+          "ready": 0,
+          "network": 2,
+          "buffered": [],
+          "error": null
+        },
+        {
+          "event": "loadedmetadata",
+          "ms": 900,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              12.379
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "playing",
+          "ms": 933.0999999996275,
+          "time": 0.005538,
+          "paused": false,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              12.379
+            ]
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "scene": 11,
+      "early": true,
+      "iteration": 1,
+      "initial": {
+        "time": 0,
+        "ready": 0
+      },
+      "final": {
+        "time": 2.191142,
+        "paused": false,
+        "ready": 4,
+        "ended": false,
+        "error": null,
+        "ui": "true"
+      },
+      "events": [
+        {
+          "event": "play",
+          "ms": 180.59999999962747,
+          "time": 0,
+          "paused": false,
+          "ready": 0,
+          "network": 2,
+          "buffered": [],
+          "error": null
+        },
+        {
+          "event": "waiting",
+          "ms": 182.40000000037253,
+          "time": 0,
+          "paused": false,
+          "ready": 0,
+          "network": 2,
+          "buffered": [],
+          "error": null
+        },
+        {
+          "event": "loadedmetadata",
+          "ms": 978.2999999998137,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "playing",
+          "ms": 1009.5999999996275,
+          "time": 0.005366,
+          "paused": false,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ]
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "scene": 11,
+      "early": true,
+      "iteration": 2,
+      "initial": {
+        "time": 0,
+        "ready": 0
+      },
+      "final": {
+        "time": 2.26618,
+        "paused": false,
+        "ready": 4,
+        "ended": false,
+        "error": null,
+        "ui": "true"
+      },
+      "events": [
+        {
+          "event": "play",
+          "ms": 196.09999999962747,
+          "time": 0,
+          "paused": false,
+          "ready": 0,
+          "network": 2,
+          "buffered": [],
+          "error": null
+        },
+        {
+          "event": "waiting",
+          "ms": 197.69999999925494,
+          "time": 0,
+          "paused": false,
+          "ready": 0,
+          "network": 2,
+          "buffered": [],
+          "error": null
+        },
+        {
+          "event": "loadedmetadata",
+          "ms": 915.0999999996275,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "playing",
+          "ms": 952.2999999998137,
+          "time": 0.011621,
+          "paused": false,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ]
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "scene": 11,
+      "early": false,
+      "iteration": 0,
+      "initial": {
+        "time": 33.9,
+        "ready": 4
+      },
+      "final": {
+        "time": 3.008038,
+        "paused": false,
+        "ready": 4,
+        "ended": false,
+        "error": null,
+        "ui": "true"
+      },
+      "events": [
+        {
+          "event": "loadedmetadata",
+          "ms": 182.29999999981374,
+          "time": 0,
+          "paused": true,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeking",
+          "ms": 184.79999999981374,
+          "time": 33.9,
+          "paused": true,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeked",
+          "ms": 417.29999999981374,
+          "time": 33.9,
+          "paused": true,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeking",
+          "ms": 433.5,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "play",
+          "ms": 433.59999999962747,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "waiting",
+          "ms": 436.29999999981374,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeked",
+          "ms": 444.29999999981374,
+          "time": 0.002771,
+          "paused": false,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              34
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "playing",
+          "ms": 444.29999999981374,
+          "time": 0.002849,
+          "paused": false,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              34
+            ]
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "scene": 11,
+      "early": false,
+      "iteration": 1,
+      "initial": {
+        "time": 33.9,
+        "ready": 4
+      },
+      "final": {
+        "time": 3.013528,
+        "paused": false,
+        "ready": 4,
+        "ended": false,
+        "error": null,
+        "ui": "true"
+      },
+      "events": [
+        {
+          "event": "loadedmetadata",
+          "ms": 174.40000000037253,
+          "time": 0,
+          "paused": true,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeking",
+          "ms": 176.5,
+          "time": 33.9,
+          "paused": true,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeked",
+          "ms": 409.40000000037253,
+          "time": 33.9,
+          "paused": true,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeking",
+          "ms": 431.29999999981374,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "play",
+          "ms": 431.5,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "waiting",
+          "ms": 433.5,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeked",
+          "ms": 435.79999999981374,
+          "time": 0.0003,
+          "paused": false,
+          "ready": 3,
+          "network": 2,
+          "buffered": [
+            [
+              0,
+              19.69
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "playing",
+          "ms": 436,
+          "time": 0.000384,
+          "paused": false,
+          "ready": 3,
+          "network": 2,
+          "buffered": [
+            [
+              0,
+              19.69
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "scene": 11,
+      "early": false,
+      "iteration": 2,
+      "initial": {
+        "time": 33.9,
+        "ready": 4
+      },
+      "final": {
+        "time": 3.01111,
+        "paused": false,
+        "ready": 4,
+        "ended": false,
+        "error": null,
+        "ui": "true"
+      },
+      "events": [
+        {
+          "event": "loadedmetadata",
+          "ms": 174.40000000037253,
+          "time": 0,
+          "paused": true,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeking",
+          "ms": 177.1000000005588,
+          "time": 33.9,
+          "paused": true,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeked",
+          "ms": 412.79999999981374,
+          "time": 33.9,
+          "paused": true,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeking",
+          "ms": 429.79999999981374,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "play",
+          "ms": 430,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "waiting",
+          "ms": 431.6000000005588,
+          "time": 0,
+          "paused": false,
+          "ready": 1,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              19.69
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "seeked",
+          "ms": 434.20000000018626,
+          "time": 0.00039,
+          "paused": false,
+          "ready": 3,
+          "network": 2,
+          "buffered": [
+            [
+              0,
+              19.69
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "playing",
+          "ms": 434.29999999981374,
+          "time": 0.000474,
+          "paused": false,
+          "ready": 3,
+          "network": 2,
+          "buffered": [
+            [
+              0,
+              19.69
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "waiting",
+          "ms": 3086.600000000559,
+          "time": 2.651249,
+          "paused": false,
+          "ready": 2,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              34
+            ]
+          ],
+          "error": null
+        },
+        {
+          "event": "playing",
+          "ms": 3087.600000000559,
+          "time": 2.651378,
+          "paused": false,
+          "ready": 4,
+          "network": 1,
+          "buffered": [
+            [
+              0,
+              34
+            ]
+          ],
+          "error": null
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "browser": "154.0.4258.48"
+}

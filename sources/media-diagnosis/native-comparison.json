@@ -1,0 +1,530 @@
+[
+  {
+    "scene": 8,
+    "kind": "app",
+    "rate": 4,
+    "events": [
+      {
+        "event": "waiting",
+        "ms": 470.70000000018626,
+        "time": 0,
+        "paused": false,
+        "ready": 1,
+        "buffered": [
+          [
+            0,
+            24.5
+          ]
+        ]
+      },
+      {
+        "event": "playing",
+        "ms": 472.20000000018626,
+        "time": 0.001268,
+        "paused": false,
+        "ready": 4,
+        "buffered": [
+          [
+            0,
+            24.5
+          ]
+        ]
+      },
+      {
+        "event": "waiting",
+        "ms": 534.2999999998137,
+        "time": 0.247256,
+        "paused": false,
+        "ready": 2,
+        "buffered": [
+          [
+            0,
+            24.5
+          ]
+        ]
+      },
+      {
+        "event": "playing",
+        "ms": 535.2000000001863,
+        "time": 0.247676,
+        "paused": false,
+        "ready": 4,
+        "buffered": [
+          [
+            0,
+            24.5
+          ]
+        ]
+      },
+      {
+        "event": "waiting",
+        "ms": 1135.2000000001863,
+        "time": 2.540788,
+        "paused": false,
+        "ready": 2,
+        "buffered": [
+          [
+            0,
+            24.5
+          ]
+        ]
+      },
+      {
+        "event": "playing",
+        "ms": 1135.7000000001863,
+        "time": 2.541192,
+        "paused": false,
+        "ready": 4,
+        "buffered": [
+          [
+            0,
+            24.5
+          ]
+        ]
+      },
+      {
+        "event": "pause",
+        "ms": 6639.100000000559,
+        "time": 24.5,
+        "paused": true,
+        "ready": 4,
+        "buffered": [
+          [
+            0,
+            24.5
+          ]
+        ]
+      },
+      {
+        "event": "ended",
+        "ms": 6639.299999999814,
+        "time": 24.5,
+        "paused": true,
+        "ready": 4,
+        "buffered": [
+          [
+            0,
+            24.5
+          ]
+        ]
+      }
+    ],
+    "final": {
+      "time": 24.5,
+      "paused": true,
+      "ready": 4,
+      "error": null
+    }
+  },
+  {
+    "scene": 8,
+    "kind": "native",
+    "rate": 4,
+    "events": [
+      {
+        "event": "waiting",
+        "ms": 53.90000000037253,
+        "time": 0,
+        "paused": false,
+        "ready": 1,
+        "buffered": [
+          [
+            0,
+            24.5
+          ]
+        ]
+      },
+      {
+        "event": "playing",
+        "ms": 493.40000000037253,
+        "time": 0.0012,
+        "paused": false,
+        "ready": 4,
+        "buffered": [
+          [
+            0,
+            24.5
+          ]
+        ]
+      },
+      {
+        "event": "waiting",
+        "ms": 627.7999999998137,
+        "time": 0.538216,
+        "paused": false,
+        "ready": 2,
+        "buffered": [
+          [
+            0,
+            24.5
+          ]
+        ]
+      },
+      {
+        "event": "playing",
+        "ms": 701.7000000001863,
+        "time": 0.538872,
+        "paused": false,
+        "ready": 4,
+        "buffered": [
+          [
+            0,
+            24.5
+          ]
+        ]
+      },
+      {
+        "event": "waiting",
+        "ms": 823.2000000001863,
+        "time": 1.023472,
+        "paused": false,
+        "ready": 2,
+        "buffered": [
+          [
+            0,
+            24.5
+          ]
+        ]
+      },
+      {
+        "event": "playing",
+        "ms": 839.6000000005588,
+        "time": 1.024068,
+        "paused": false,
+        "ready": 4,
+        "buffered": [
+          [
+            0,
+            24.5
+          ]
+        ]
+      },
+      {
+        "event": "waiting",
+        "ms": 983.2000000001863,
+        "time": 1.597424,
+        "paused": false,
+        "ready": 2,
+        "buffered": [
+          [
+            0,
+            24.5
+          ]
+        ]
+      },
+      {
+        "event": "playing",
+        "ms": 1088.2000000001863,
+        "time": 1.598572,
+        "paused": false,
+        "ready": 4,
+        "buffered": [
+          [
+            0,
+            24.5
+          ]
+        ]
+      },
+      {
+        "event": "waiting",
+        "ms": 1379.1000000005588,
+        "time": 2.76098,
+        "paused": false,
+        "ready": 2,
+        "buffered": [
+          [
+            0,
+            24.5
+          ]
+        ]
+      }
+    ],
+    "final": {
+      "time": 2.76098,
+      "paused": false,
+      "ready": 2,
+      "error": null
+    }
+  },
+  {
+    "scene": 11,
+    "kind": "app",
+    "rate": 4,
+    "events": [
+      {
+        "event": "waiting",
+        "ms": 523.7000000001863,
+        "time": 0,
+        "paused": false,
+        "ready": 1,
+        "buffered": [
+          [
+            0,
+            19.69
+          ],
+          [
+            29,
+            34
+          ]
+        ]
+      },
+      {
+        "event": "playing",
+        "ms": 550.6000000005588,
+        "time": 0.001924,
+        "paused": false,
+        "ready": 3,
+        "buffered": [
+          [
+            0,
+            19.69
+          ],
+          [
+            29,
+            34
+          ]
+        ]
+      },
+      {
+        "event": "waiting",
+        "ms": 1145,
+        "time": 2.15216,
+        "paused": false,
+        "ready": 2,
+        "buffered": [
+          [
+            0,
+            34
+          ]
+        ]
+      },
+      {
+        "event": "playing",
+        "ms": 1145.4000000003725,
+        "time": 2.152636,
+        "paused": false,
+        "ready": 4,
+        "buffered": [
+          [
+            0,
+            34
+          ]
+        ]
+      }
+    ],
+    "final": {
+      "time": 31.744288,
+      "paused": false,
+      "ready": 4,
+      "error": null
+    }
+  },
+  {
+    "scene": 11,
+    "kind": "native",
+    "rate": 4,
+    "events": [
+      {
+        "event": "waiting",
+        "ms": 55.200000000186265,
+        "time": 0,
+        "paused": false,
+        "ready": 4,
+        "buffered": [
+          [
+            0,
+            19.69
+          ]
+        ]
+      },
+      {
+        "event": "playing",
+        "ms": 56.09999999962747,
+        "time": 0,
+        "paused": false,
+        "ready": 4,
+        "buffered": [
+          [
+            0,
+            34
+          ]
+        ]
+      },
+      {
+        "event": "waiting",
+        "ms": 134.79999999981374,
+        "time": 0.265296,
+        "paused": false,
+        "ready": 2,
+        "buffered": [
+          [
+            0,
+            34
+          ]
+        ]
+      },
+      {
+        "event": "playing",
+        "ms": 136.59999999962747,
+        "time": 0.265756,
+        "paused": false,
+        "ready": 4,
+        "buffered": [
+          [
+            0,
+            34
+          ]
+        ]
+      },
+      {
+        "event": "waiting",
+        "ms": 412.29999999981374,
+        "time": 1.36614,
+        "paused": false,
+        "ready": 2,
+        "buffered": [
+          [
+            0,
+            34
+          ]
+        ]
+      },
+      {
+        "event": "playing",
+        "ms": 441.29999999981374,
+        "time": 1.366628,
+        "paused": false,
+        "ready": 4,
+        "buffered": [
+          [
+            0,
+            34
+          ]
+        ]
+      },
+      {
+        "event": "waiting",
+        "ms": 1037.2000000001863,
+        "time": 3.731484,
+        "paused": false,
+        "ready": 2,
+        "buffered": [
+          [
+            0,
+            34
+          ]
+        ]
+      },
+      {
+        "event": "playing",
+        "ms": 1194.2999999998137,
+        "time": 3.732104,
+        "paused": false,
+        "ready": 4,
+        "buffered": [
+          [
+            0,
+            34
+          ]
+        ]
+      },
+      {
+        "event": "waiting",
+        "ms": 1355.2999999998137,
+        "time": 4.375304,
+        "paused": false,
+        "ready": 2,
+        "buffered": [
+          [
+            0,
+            34
+          ]
+        ]
+      },
+      {
+        "event": "playing",
+        "ms": 1365.7999999998137,
+        "time": 4.376076,
+        "paused": false,
+        "ready": 4,
+        "buffered": [
+          [
+            0,
+            34
+          ]
+        ]
+      },
+      {
+        "event": "waiting",
+        "ms": 1623.8999999994412,
+        "time": 5.407028,
+        "paused": false,
+        "ready": 2,
+        "buffered": [
+          [
+            0,
+            34
+          ]
+        ]
+      },
+      {
+        "event": "playing",
+        "ms": 1685.0999999996275,
+        "time": 5.4079,
+        "paused": false,
+        "ready": 4,
+        "buffered": [
+          [
+            0,
+            34
+          ]
+        ]
+      },
+      {
+        "event": "waiting",
+        "ms": 2470.2999999998137,
+        "time": 8.374712,
+        "paused": false,
+        "ready": 2,
+        "buffered": [
+          [
+            0,
+            34
+          ]
+        ]
+      },
+      {
+        "event": "playing",
+        "ms": 2485.399999999441,
+        "time": 8.375256,
+        "paused": false,
+        "ready": 4,
+        "buffered": [
+          [
+            0,
+            34
+          ]
+        ]
+      },
+      {
+        "event": "waiting",
+        "ms": 2589.5,
+        "time": 8.7905,
+        "paused": false,
+        "ready": 2,
+        "buffered": [
+          [
+            0,
+            34
+          ]
+        ]
+      }
+    ],
+    "final": {
+      "time": 8.7905,
+      "paused": false,
+      "ready": 2,
+      "error": null
+    }
+  }
+]

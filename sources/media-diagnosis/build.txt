@@ -1,0 +1,29 @@
+
+> agentic-yazilim-sunumu@0.1.0 prebuild
+> node scripts/git-history.mjs
+
+git-history: 41 commits, +17325 −2447, 133 files, 2 milestones.
+
+> agentic-yazilim-sunumu@0.1.0 build
+> tsc --noEmit && vite build
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 38 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                                 0.50 kB │ gzip:   0.32 kB
+dist/assets/scene-08-codex-app-poster-llCOGm9S.png             41.38 kB
+dist/assets/scene-05-codex-cli-poster-Dlxauh1u.png             95.76 kB
+dist/assets/scene-04-chatbot-poster-BV7HO9U7.png              108.97 kB
+dist/assets/scene-11-vi3ecode-poster-DWefUzfK.png             135.16 kB
+dist/assets/scene08-real-final-20261002-DMWWLlhQ.mp4        1,039.29 kB
+dist/assets/scene-04-chatbot-final-20260928-B3x1jesE.mp4    1,423.03 kB
+dist/assets/scene11-real-readable-20261002-F2Bu27wq.mp4     1,810.58 kB
+dist/assets/scene-08-codex-app-draft-20260928-DxyYpCHL.mp4  2,347.88 kB
+dist/assets/scene-05-codex-cli-draft-20260928-C12AScNB.mp4  4,022.36 kB
+dist/assets/scene-11-vi3ecode-draft-20260928-DhtVGJoX.mp4   6,365.35 kB
+dist/assets/index-B5Lfn8t1.css                                 91.47 kB │ gzip:  15.33 kB
+dist/assets/index-DcywSNX1.js                                 347.60 kB │ gzip: 106.21 kB
+
+✓ built in 340ms

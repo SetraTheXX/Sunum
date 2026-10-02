@@ -1,0 +1,435 @@
+{
+  "privacy": {
+    "scene08.json": {
+      "email": 0,
+      "user_path": 0,
+      "secret": 0
+    },
+    "scene11.json": {
+      "email": 0,
+      "user_path": 0,
+      "secret": 0
+    }
+  },
+  "replays": [
+    "8: complete browser playback 24.5s PASS (4x)",
+    "11: complete browser playback 34s PASS (4x)",
+    "presenter-8: Space, arrows, reload, reduced-motion, exit PASS",
+    "presenter-11: Space, arrows, reload, reduced-motion, exit PASS",
+    "audience-8: Space, arrows, reload, reduced-motion, exit PASS",
+    "audience-11: Space, arrows, reload, reduced-motion, exit PASS"
+  ],
+  "videos": [
+    "presenter-4: Space/body/button/click, arrows, scene-list focus PASS",
+    "presenter-5: Space/body/button/click, arrows, scene-list focus PASS",
+    "presenter-8: Space/body/button/click, arrows, scene-list focus PASS",
+    "presenter-11: Space/body/button/click, arrows, scene-list focus PASS",
+    "audience-4: Space/body/button/click, arrows PASS",
+    "audience-5: Space/body/button/click, arrows PASS",
+    "audience-8: Space/body/button/click, arrows PASS",
+    "audience-11: Space/body/button/click, arrows PASS"
+  ],
+  "routes": {
+    "presenter": 53,
+    "audience": 53
+  },
+  "screenshots": [
+    "screenshots\\fallback-route\\scene-8-presenter-1920.png",
+    "screenshots\\fallback-route\\scene-8-presenter-1366.png",
+    "screenshots\\fallback-route\\scene-11-presenter-1920.png",
+    "screenshots\\fallback-route\\scene-11-presenter-1920-qa-constraint.png",
+    "screenshots\\fallback-route\\scene-11-presenter-1366.png",
+    "screenshots\\fallback-route\\scene-11-presenter-1366-qa-constraint.png",
+    "screenshots\\fallback-route\\scene-8-audience-1920.png",
+    "screenshots\\fallback-route\\scene-8-audience-1366.png",
+    "screenshots\\fallback-route\\scene-11-audience-1920.png",
+    "screenshots\\fallback-route\\scene-11-audience-1920-qa-constraint.png",
+    "screenshots\\fallback-route\\scene-11-audience-1366.png",
+    "screenshots\\fallback-route\\scene-11-audience-1366-qa-constraint.png"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "verticalLayout": [
+    {
+      "scene": 8,
+      "view": "presenter",
+      "width": 1920,
+      "failures": [],
+      "bounds": {
+        ".transcript-replay": {
+          "top": 198.703125,
+          "bottom": 732.5,
+          "clipTop": 68,
+          "clipBottom": 1020
+        },
+        ".replay-player": {
+          "top": 291.703125,
+          "bottom": 680.5,
+          "clipTop": 68,
+          "clipBottom": 1020
+        },
+        ".replay-track": {
+          "top": 259.703125,
+          "bottom": 285.703125,
+          "clipTop": 68,
+          "clipBottom": 1020
+        },
+        ".replay-source": {
+          "top": 686.5,
+          "bottom": 704.5,
+          "clipTop": 68,
+          "clipBottom": 1020
+        },
+        ".replay-controls": {
+          "top": 710.5,
+          "bottom": 732.5,
+          "clipTop": 68,
+          "clipBottom": 1020
+        },
+        ".official-demo-links": {
+          "top": 782.5,
+          "bottom": 798.5,
+          "clipTop": 68,
+          "clipBottom": 1020
+        },
+        ".fallback-bar": {
+          "top": 738.5,
+          "bottom": 772.5,
+          "clipTop": 68,
+          "clipBottom": 1020
+        },
+        ".speaker-notes summary": {
+          "top": 807.5,
+          "bottom": 840.5,
+          "clipTop": 68,
+          "clipBottom": 1020
+        }
+      }
+    },
+    {
+      "scene": 8,
+      "view": "presenter",
+      "width": 1366,
+      "failures": [],
+      "bounds": {
+        ".transcript-replay": {
+          "top": 182.421875,
+          "bottom": 595.890625,
+          "clipTop": 68,
+          "clipBottom": 708
+        },
+        ".replay-player": {
+          "top": 267.421875,
+          "bottom": 543.890625,
+          "clipTop": 68,
+          "clipBottom": 708
+        },
+        ".replay-track": {
+          "top": 235.421875,
+          "bottom": 261.421875,
+          "clipTop": 68,
+          "clipBottom": 708
+        },
+        ".replay-source": {
+          "top": 549.890625,
+          "bottom": 567.890625,
+          "clipTop": 68,
+          "clipBottom": 708
+        },
+        ".replay-controls": {
+          "top": 573.890625,
+          "bottom": 595.890625,
+          "clipTop": 68,
+          "clipBottom": 708
+        },
+        ".official-demo-links": {
+          "top": 645.890625,
+          "bottom": 661.890625,
+          "clipTop": 68,
+          "clipBottom": 708
+        },
+        ".fallback-bar": {
+          "top": 601.890625,
+          "bottom": 635.890625,
+          "clipTop": 68,
+          "clipBottom": 708
+        },
+        ".speaker-notes summary": {
+          "top": 670.890625,
+          "bottom": 703.890625,
+          "clipTop": 68,
+          "clipBottom": 708
+        }
+      }
+    },
+    {
+      "scene": 11,
+      "view": "presenter",
+      "width": 1920,
+      "failures": [],
+      "bounds": {
+        ".transcript-replay": {
+          "top": 198.703125,
+          "bottom": 732.5,
+          "clipTop": 68,
+          "clipBottom": 1020
+        },
+        ".replay-player": {
+          "top": 291.703125,
+          "bottom": 680.5,
+          "clipTop": 68,
+          "clipBottom": 1020
+        },
+        ".replay-track": {
+          "top": 259.703125,
+          "bottom": 285.703125,
+          "clipTop": 68,
+          "clipBottom": 1020
+        },
+        ".replay-source": {
+          "top": 686.5,
+          "bottom": 704.5,
+          "clipTop": 68,
+          "clipBottom": 1020
+        },
+        ".replay-controls": {
+          "top": 710.5,
+          "bottom": 732.5,
+          "clipTop": 68,
+          "clipBottom": 1020
+        },
+        ".official-demo-links": {
+          "top": 782.5,
+          "bottom": 798.5,
+          "clipTop": 68,
+          "clipBottom": 1020
+        },
+        ".fallback-bar": {
+          "top": 738.5,
+          "bottom": 772.5,
+          "clipTop": 68,
+          "clipBottom": 1020
+        },
+        ".speaker-notes summary": {
+          "top": 807.5,
+          "bottom": 840.5,
+          "clipTop": 68,
+          "clipBottom": 1020
+        }
+      }
+    },
+    {
+      "scene": 11,
+      "view": "presenter",
+      "width": 1366,
+      "failures": [],
+      "bounds": {
+        ".transcript-replay": {
+          "top": 182.421875,
+          "bottom": 595.890625,
+          "clipTop": 68,
+          "clipBottom": 708
+        },
+        ".replay-player": {
+          "top": 267.421875,
+          "bottom": 543.890625,
+          "clipTop": 68,
+          "clipBottom": 708
+        },
+        ".replay-track": {
+          "top": 235.421875,
+          "bottom": 261.421875,
+          "clipTop": 68,
+          "clipBottom": 708
+        },
+        ".replay-source": {
+          "top": 549.890625,
+          "bottom": 567.890625,
+          "clipTop": 68,
+          "clipBottom": 708
+        },
+        ".replay-controls": {
+          "top": 573.890625,
+          "bottom": 595.890625,
+          "clipTop": 68,
+          "clipBottom": 708
+        },
+        ".official-demo-links": {
+          "top": 645.890625,
+          "bottom": 661.890625,
+          "clipTop": 68,
+          "clipBottom": 708
+        },
+        ".fallback-bar": {
+          "top": 601.890625,
+          "bottom": 635.890625,
+          "clipTop": 68,
+          "clipBottom": 708
+        },
+        ".speaker-notes summary": {
+          "top": 670.890625,
+          "bottom": 703.890625,
+          "clipTop": 68,
+          "clipBottom": 708
+        }
+      }
+    },
+    {
+      "scene": 8,
+      "view": "audience",
+      "width": 1920,
+      "failures": [],
+      "bounds": {
+        ".transcript-replay": {
+          "top": 261.96875,
+          "bottom": 994.5625,
+          "clipTop": 0,
+          "clipBottom": 1080
+        },
+        ".replay-player": {
+          "top": 372.96875,
+          "bottom": 934.5625,
+          "clipTop": 0,
+          "clipBottom": 1080
+        },
+        ".replay-track": {
+          "top": 328.96875,
+          "bottom": 360.96875,
+          "clipTop": 0,
+          "clipBottom": 1080
+        },
+        ".replay-source": {
+          "top": 944.5625,
+          "bottom": 962.5625,
+          "clipTop": 0,
+          "clipBottom": 1080
+        },
+        ".replay-controls": {
+          "top": 972.5625,
+          "bottom": 994.5625,
+          "clipTop": 0,
+          "clipBottom": 1080
+        }
+      }
+    },
+    {
+      "scene": 8,
+      "view": "audience",
+      "width": 1366,
+      "failures": [],
+      "bounds": {
+        ".transcript-replay": {
+          "top": 161.140625,
+          "bottom": 723.5,
+          "clipTop": 0,
+          "clipBottom": 768
+        },
+        ".replay-player": {
+          "top": 264.140625,
+          "bottom": 663.5,
+          "clipTop": 0,
+          "clipBottom": 768
+        },
+        ".replay-track": {
+          "top": 220.140625,
+          "bottom": 252.140625,
+          "clipTop": 0,
+          "clipBottom": 768
+        },
+        ".replay-source": {
+          "top": 673.5,
+          "bottom": 691.5,
+          "clipTop": 0,
+          "clipBottom": 768
+        },
+        ".replay-controls": {
+          "top": 701.5,
+          "bottom": 723.5,
+          "clipTop": 0,
+          "clipBottom": 768
+        }
+      }
+    },
+    {
+      "scene": 11,
+      "view": "audience",
+      "width": 1920,
+      "failures": [],
+      "bounds": {
+        ".transcript-replay": {
+          "top": 245.46875,
+          "bottom": 978.0625,
+          "clipTop": 0,
+          "clipBottom": 1080
+        },
+        ".replay-player": {
+          "top": 356.46875,
+          "bottom": 918.0625,
+          "clipTop": 0,
+          "clipBottom": 1080
+        },
+        ".replay-track": {
+          "top": 312.46875,
+          "bottom": 344.46875,
+          "clipTop": 0,
+          "clipBottom": 1080
+        },
+        ".replay-source": {
+          "top": 928.0625,
+          "bottom": 946.0625,
+          "clipTop": 0,
+          "clipBottom": 1080
+        },
+        ".replay-controls": {
+          "top": 956.0625,
+          "bottom": 978.0625,
+          "clipTop": 0,
+          "clipBottom": 1080
+        }
+      }
+    },
+    {
+      "scene": 11,
+      "view": "audience",
+      "width": 1366,
+      "failures": [],
+      "bounds": {
+        ".transcript-replay": {
+          "top": 163.65625,
+          "bottom": 726.015625,
+          "clipTop": 0,
+          "clipBottom": 768
+        },
+        ".replay-player": {
+          "top": 266.65625,
+          "bottom": 666.015625,
+          "clipTop": 0,
+          "clipBottom": 768
+        },
+        ".replay-track": {
+          "top": 222.65625,
+          "bottom": 254.65625,
+          "clipTop": 0,
+          "clipBottom": 768
+        },
+        ".replay-source": {
+          "top": 676.015625,
+          "bottom": 694.015625,
+          "clipTop": 0,
+          "clipBottom": 768
+        },
+        ".replay-controls": {
+          "top": 704.015625,
+          "bottom": 726.015625,
+          "clipTop": 0,
+          "clipBottom": 768
+        }
+      }
+    }
+  ],
+  "verticalNegativeControl": "Oversized video correctly rejected",
+  "fallbackReturn": [
+    "8: Space selection, left/right, explicit return, reload PASS",
+    "11: Space selection, left/right, explicit return, reload PASS"
+  ]
+}

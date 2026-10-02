@@ -1,0 +1,83 @@
+{
+ "legacyMode": "normalized",
+ "route_presenter": 55,
+ "route_audience": 55,
+ "staleHits": {
+  "presenter:(4, 1)": [
+   " Ajanı  Kodlama ajanı (coding agent), modelin araç kullanıp "
+  ],
+  "presenter:(4, 2)": [
+   " Ajanı  Kodlama ajanı (coding agent), modelin araç kullanıp "
+  ],
+  "presenter:(4, 3)": [
+   " Ajanı  Kodlama ajanı (coding agent), modelin araç kullanıp "
+  ],
+  "presenter:(4, 4)": [
+   " Ajanı  Kodlama ajanı (coding agent), modelin araç kullanıp "
+  ],
+  "presenter:(4, 5)": [
+   " Ajanı  Kodlama ajanı (coding agent), modelin araç kullanıp "
+  ],
+  "presenter:(8, 1)": [
+   "ik  Ajan tabanlı mühendislik (agentic engineering): her deği"
+  ],
+  "presenter:(8, 2)": [
+   "ik  Ajan tabanlı mühendislik (agentic engineering): her deği"
+  ],
+  "presenter:(8, 3)": [
+   "ik  Ajan tabanlı mühendislik (agentic engineering): her deği"
+  ],
+  "presenter:(8, 4)": [
+   "ik  Ajan tabanlı mühendislik (agentic engineering): her deği"
+  ],
+  "presenter:(8, 5)": [
+   "ik  Ajan tabanlı mühendislik (agentic engineering): her deği"
+  ],
+  "presenter:(12, 3)": [
+   "ontent… 91d6f34 scenes/08-agentic-engineering.md · İnceleme:"
+  ],
+  "audience:(4, 1)": [
+   " Ajanı  Kodlama ajanı (coding agent), modelin araç kullanıp "
+  ],
+  "audience:(4, 2)": [
+   " Ajanı  Kodlama ajanı (coding agent), modelin araç kullanıp "
+  ],
+  "audience:(4, 3)": [
+   " Ajanı  Kodlama ajanı (coding agent), modelin araç kullanıp "
+  ],
+  "audience:(4, 4)": [
+   " Ajanı  Kodlama ajanı (coding agent), modelin araç kullanıp "
+  ],
+  "audience:(8, 1)": [
+   "ik  Ajan tabanlı mühendislik (agentic engineering): her deği"
+  ],
+  "audience:(8, 2)": [
+   "ik  Ajan tabanlı mühendislik (agentic engineering): her deği"
+  ],
+  "audience:(8, 3)": [
+   "ik  Ajan tabanlı mühendislik (agentic engineering): her deği"
+  ],
+  "audience:(8, 4)": [
+   "ik  Ajan tabanlı mühendislik (agentic engineering): her deği"
+  ],
+  "audience:(12, 3)": [
+   "    ) { 91d6f34 scenes/08-agentic-engineering.md · İnceleme:"
+  ]
+ },
+ "JKR_reload": "ok",
+ "videos": {
+  "presenter-4": "ok",
+  "presenter-5": "ok",
+  "presenter-8": "ok",
+  "presenter-11": "ok",
+  "audience-4": "ok",
+  "audience-5": "ok",
+  "audience-8": "ok",
+  "audience-11": "ok"
+ },
+ "endedRestart": "ok",
+ "escape_fullscreenButton": "ok",
+ "fallback": "Video bu cihazda oynatılamadı; ekrandaki kareyle anlatmaya devam edin.",
+ "externalRequests": [],
+ "pageErrors": []
+}

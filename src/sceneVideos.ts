@@ -40,7 +40,7 @@ export function getSceneVideo(sceneNumber: number) {
 
 export function withVideoStep(scene: Scene): Scene {
   const video = getSceneVideo(scene.number);
-  return video
+  return video && scene.number !== 8 && scene.number !== 11
     ? { ...scene, screenSteps: [...scene.screenSteps, video.kicker] }
     : scene;
 }

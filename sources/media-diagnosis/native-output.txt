@@ -1,0 +1,4 @@
+8 app {'time': 24.5, 'paused': True, 'ready': 4, 'error': None} waiting 3
+8 native {'time': 2.76098, 'paused': False, 'ready': 2, 'error': None} waiting 5
+11 app {'time': 31.744288, 'paused': False, 'ready': 4, 'error': None} waiting 2
+11 native {'time': 8.7905, 'paused': False, 'ready': 2, 'error': None} waiting 8

@@ -1,0 +1,39 @@
+{
+  "file": "assets/replays/scene11-real-v2-20261002.mp4",
+  "format": "mov,mp4,m4a,3gp,3g2,mj2",
+  "duration": 34.0,
+  "size_bytes": 2214568,
+  "bitrate": 521074,
+  "video": {
+    "codec": "h264",
+    "profile": "High",
+    "width": 1920,
+    "height": 1080,
+    "display_aspect": "16:9",
+    "fps": 30.0,
+    "r_frame_rate": "30/1",
+    "avg_frame_rate": "30/1",
+    "variable_frame_rate_suspected": false,
+    "pix_fmt": "yuvj420p",
+    "bit_depth": 8,
+    "hdr": false,
+    "hdr_signal": false,
+    "hdr_format": null,
+    "dolby_vision": null,
+    "color_space": "bt470bg",
+    "color_primaries": null,
+    "color_transfer": null,
+    "color_range": "pc",
+    "rotation": 0,
+    "nb_frames": 1020,
+    "bitrate": 517863
+  },
+  "audio": null,
+  "subtitle_streams": 0,
+  "data_streams": 0,
+  "chapters": [],
+  "tags": {
+    "comment": "Made with Remotion 4.0.532"
+  },
+  "subtitle_stream_details": []
+}

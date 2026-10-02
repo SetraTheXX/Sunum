@@ -1,0 +1,79 @@
+{
+  "cases": [
+    {
+      "iteration": 0,
+      "scene": 8,
+      "kind": "short",
+      "spaceViewsReturnExit": "PASS"
+    },
+    {
+      "iteration": 0,
+      "scene": 8,
+      "kind": "fallback",
+      "spaceViewsReturnExit": "PASS"
+    },
+    {
+      "iteration": 0,
+      "scene": 11,
+      "kind": "short",
+      "spaceViewsReturnExit": "PASS"
+    },
+    {
+      "iteration": 0,
+      "scene": 11,
+      "kind": "fallback",
+      "spaceViewsReturnExit": "PASS"
+    },
+    {
+      "iteration": 1,
+      "scene": 8,
+      "kind": "short",
+      "spaceViewsReturnExit": "PASS"
+    },
+    {
+      "iteration": 1,
+      "scene": 8,
+      "kind": "fallback",
+      "spaceViewsReturnExit": "PASS"
+    },
+    {
+      "iteration": 1,
+      "scene": 11,
+      "kind": "short",
+      "spaceViewsReturnExit": "PASS"
+    },
+    {
+      "iteration": 1,
+      "scene": 11,
+      "kind": "fallback",
+      "spaceViewsReturnExit": "PASS"
+    },
+    {
+      "iteration": 2,
+      "scene": 8,
+      "kind": "short",
+      "spaceViewsReturnExit": "PASS"
+    },
+    {
+      "iteration": 2,
+      "scene": 8,
+      "kind": "fallback",
+      "spaceViewsReturnExit": "PASS"
+    },
+    {
+      "iteration": 2,
+      "scene": 11,
+      "kind": "short",
+      "spaceViewsReturnExit": "PASS"
+    },
+    {
+      "iteration": 2,
+      "scene": 11,
+      "kind": "fallback",
+      "spaceViewsReturnExit": "PASS"
+    }
+  ],
+  "errors": [],
+  "browser": "154.0.4258.48",
+  "pendingPlayCancel": "PASS"
+}

@@ -3,7 +3,11 @@
 Ezber metni değil; sahne başında bir bakışta hatırlamak için. Ayrıntılı notlar Presenter görünümünde, **Konuşmacı notları** altında.
 
 **Kontroller:** `→` / `Space` ilerle · `←` geri · `J` / `K` sahne · `R` sahne başı · `Esc` tam ekrandan çık
-**Video adımları:** 04, 05, 08, 11. Video durmuş açılır → önce bir cümle kur → `Space` → bitince `→`.
+**Video adımları:** Scene 04 Adım 5, Scene 05 Adım 4, Scene 08/11 uzun kayıtları ana rota adımı değildir; Presenter’dan fallback olarak seçilir. Video durmuş açılır → önce bir cümle kur → `Space` → bitince `→`.
+
+**Replay:** Scene 08 Adım 4 (Codex App, 24,5 sn), Scene 11 Adım 5 (Vi3ecode, 34 sn). Space oynat/duraklat; oklar bölümleri seçer, uçlarda sunuma devam eder. Reload son karede durur.
+
+**53 durumlu ana rota:** Kısa klip bitince → sonraki sahne. Uzun kayıt yalnız Presenter’daki “Uzun kaydı aç (fallback)” düğmesiyle seçilir. Bitince “Ana rotaya dön” veya ←/→ seçimden önceki adıma döndürür; ardından → ile rotaya devam et. Kısa ve uzun sürümü art arda izletmek varsayılan akış değildir.
 
 **Ana soru:** Çalışıyor mu? ≠ Doğru ve güvenilir mi?
 **Son cümle:** Model değil, sistem.
@@ -71,7 +75,8 @@ Ezber metni değil; sahne başında bir bakışta hatırlamak için. Ayrıntıl�
 - **Ana fikir:** Her değişiklik kanıtıyla birlikte ilerler.
 - **Adımlar:** Hedef + kabul koşulu → ajan uygular, değişen dosyalar → test, inceleme, doğrula, Git → “İlerleme = değişiklik + doğrulanabilir kanıt.”
 - **Vurgu:** Ajanın “bitti” demesi kanıt değil.
-- **Video (~42 sn):** `Space` → “Masaüstü ajan: görev, repo ve araçlarla çalışma, özet, sonunda ürettiği video.”
+- **Replay (Adım 4, 24,5 sn):** “Tek ajan: gerçek Codex App isteği, dosya/komut işlemi, ajanın kontrol özeti ve üretilen videonun izlenmesi. Bağımsız test çıktısı değil.”
+- **İsteğe bağlı uzun fallback (~42 sn):** `Space` → “Masaüstü ajan: görev, repo ve araçlarla çalışma, özet, sonunda ürettiği video.”
 - **Bitince:** “Özet de bir iddia; içeriği ayrıca kontrol ederiz. Kanıt noktaları bu yüzden var.” → `→`
 - **Geçiş:** “Planlayan, yapan ve kontrol eden hep aynı ajan mı olmalı?”
 
@@ -93,13 +98,14 @@ Ezber metni değil; sahne başında bir bakışta hatırlamak için. Ayrıntıl�
 - **Ana fikir:** Roller ayrılınca aynı görev planlanır, uygulanır ve bağımsız kontrol edilir.
 - **Adımlar:** soru → Lead devreder → Developer araçlarla uygular → QA: FAIL geri, PASS Git. “Şema kavramsal; gerçek kaydı şimdi gösteriyorum.”
 - **Açıklama (kısa):** Vi3ecode benim ürünüm değil; Berk geliştiriyor, ben topluluk tarafındayım. Kullandığım iş akışı olduğu için örnek.
-- **Video (~62 sn):** `Space` → “Rol ayarları (hepsi aynı model; ayrım rollerde) → görev → bekleme kesildi → QA raporu ve önizleme.”
+- **Replay (Adım 5, 34 sn):** “Gerçek Vi3ecode: Lead Developer ve QA’ya paralel iş devreder; Developer sonucu, QA kontrolü ve screenshot kısıtı görünür. Model ataması uydurulmaz.”
+- **İsteğe bağlı uzun fallback (~62 sn):** `Space` → “Rol ayarları (ekranda kaydedilen değer; rol başına ayrı model iddiası yok) → görev → bekleme kesildi → QA raporu ve önizleme.”
 - **Dürüst not:** QA ekran görüntüsü alamadığını yazıyor; hatalar olduğu gibi duruyor.
 - **Bitince:** “Tek modelin cevabı değil; planlayan, uygulayan ve kontrol eden bir süreç.” → `→`
 - **Geçiş:** “Baştaki soruya dönelim.”
 
 ## 12 — Model Değil, Sistem
 
-- **Adımlar:** “AI ile uygulama yapılabilir mi?” — Evet. → Güvenilir yazılım için: bağlam, araçlar, test, inceleme, insan. → Son cümle.
+- **Adımlar:** “AI ile uygulama yapılabilir mi?” — Evet. → Güvenilir yazılım için: bağlam, araçlar, test, inceleme, insan. → Bu sunumun gerçek Git kaydı ve iki diff. → Son cümle.
 - **Söyle:** “Bazen tek model yeter, bazen birkaç rol. Ama işi kabul etme sorumluluğu her durumda insanda.”
 - **Kapanış:** “Model değil, sistem.” Sus, birkaç saniye bekle; teşekkür et, soruları al.

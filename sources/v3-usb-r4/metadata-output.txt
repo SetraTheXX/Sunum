@@ -1,0 +1,12 @@
+8 True 0 {'time': 2.299895, 'paused': False, 'ready': 4, 'ended': False, 'error': None, 'ui': 'true'}
+8 True 1 {'time': 1.806031, 'paused': False, 'ready': 4, 'ended': False, 'error': None, 'ui': 'true'}
+8 True 2 {'time': 2.254042, 'paused': False, 'ready': 2, 'ended': False, 'error': None, 'ui': 'true'}
+8 False 0 {'time': 2.922772, 'paused': False, 'ready': 4, 'ended': False, 'error': None, 'ui': 'true'}
+8 False 1 {'time': 3.008361, 'paused': False, 'ready': 4, 'ended': False, 'error': None, 'ui': 'true'}
+8 False 2 {'time': 3.008548, 'paused': False, 'ready': 4, 'ended': False, 'error': None, 'ui': 'true'}
+11 True 0 {'time': 2.273875, 'paused': False, 'ready': 4, 'ended': False, 'error': None, 'ui': 'true'}
+11 True 1 {'time': 2.191142, 'paused': False, 'ready': 4, 'ended': False, 'error': None, 'ui': 'true'}
+11 True 2 {'time': 2.26618, 'paused': False, 'ready': 4, 'ended': False, 'error': None, 'ui': 'true'}
+11 False 0 {'time': 3.008038, 'paused': False, 'ready': 4, 'ended': False, 'error': None, 'ui': 'true'}
+11 False 1 {'time': 3.013528, 'paused': False, 'ready': 4, 'ended': False, 'error': None, 'ui': 'true'}
+11 False 2 {'time': 3.01111, 'paused': False, 'ready': 4, 'ended': False, 'error': None, 'ui': 'true'}

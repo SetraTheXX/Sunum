@@ -1,0 +1,112 @@
+[
+  {
+    "scene": 8,
+    "failures": [
+      ".transcript-replay",
+      ".replay-player",
+      ".replay-source",
+      ".replay-controls",
+      ".official-demo-links",
+      ".speaker-notes summary"
+    ],
+    "bounds": {
+      ".transcript-replay": {
+        "top": 221.421875,
+        "bottom": 783.78125,
+        "clipTop": 68,
+        "clipBottom": 708
+      },
+      ".replay-player": {
+        "top": 324.421875,
+        "bottom": 723.78125,
+        "clipTop": 68,
+        "clipBottom": 708
+      },
+      ".replay-track": {
+        "top": 280.421875,
+        "bottom": 312.421875,
+        "clipTop": 68,
+        "clipBottom": 708
+      },
+      ".replay-source": {
+        "top": 733.78125,
+        "bottom": 751.78125,
+        "clipTop": 68,
+        "clipBottom": 708
+      },
+      ".replay-controls": {
+        "top": 761.78125,
+        "bottom": 783.78125,
+        "clipTop": 68,
+        "clipBottom": 708
+      },
+      ".official-demo-links": {
+        "top": 793.78125,
+        "bottom": 809.78125,
+        "clipTop": 68,
+        "clipBottom": 708
+      },
+      ".speaker-notes summary": {
+        "top": 848.78125,
+        "bottom": 881.78125,
+        "clipTop": 68,
+        "clipBottom": 708
+      }
+    }
+  },
+  {
+    "scene": 11,
+    "failures": [
+      ".transcript-replay",
+      ".replay-player",
+      ".replay-source",
+      ".replay-controls",
+      ".official-demo-links",
+      ".speaker-notes summary"
+    ],
+    "bounds": {
+      ".transcript-replay": {
+        "top": 221.421875,
+        "bottom": 783.78125,
+        "clipTop": 68,
+        "clipBottom": 708
+      },
+      ".replay-player": {
+        "top": 324.421875,
+        "bottom": 723.78125,
+        "clipTop": 68,
+        "clipBottom": 708
+      },
+      ".replay-track": {
+        "top": 280.421875,
+        "bottom": 312.421875,
+        "clipTop": 68,
+        "clipBottom": 708
+      },
+      ".replay-source": {
+        "top": 733.78125,
+        "bottom": 751.78125,
+        "clipTop": 68,
+        "clipBottom": 708
+      },
+      ".replay-controls": {
+        "top": 761.78125,
+        "bottom": 783.78125,
+        "clipTop": 68,
+        "clipBottom": 708
+      },
+      ".official-demo-links": {
+        "top": 793.78125,
+        "bottom": 809.78125,
+        "clipTop": 68,
+        "clipBottom": 708
+      },
+      ".speaker-notes summary": {
+        "top": 848.78125,
+        "bottom": 881.78125,
+        "clipTop": 68,
+        "clipBottom": 708
+      }
+    }
+  }
+]

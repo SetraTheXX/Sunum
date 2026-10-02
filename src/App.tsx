@@ -4,8 +4,9 @@ import { scenes, type Scene } from './content';
 import SceneVisual from './SceneVisual';
 import { getSceneVideo, withVideoStep } from './sceneVideos';
 import { getLiveDemo } from './liveDemo';
+import { getReplay, withReplayStep } from './replays';
 
-const routeScenes = scenes.map(withVideoStep);
+const routeScenes = scenes.map(withVideoStep).map(withReplayStep);
 // Every scene uses the bold entrance (kinetic title + visual entrance) when entered forward.
 const kineticScenes = new Set(scenes.map((scene) => scene.number));
 const notesStorageKey = 'sunum-notes-open';
@@ -68,11 +69,13 @@ export default function App() {
   const [visibleSteps, setVisibleSteps] = useState(() => readStep(routeScenes[readSceneIndex(routeScenes.length)]));
   const [notesOpen, setNotesOpen] = useState(readNotesOpen);
   const [demoCopied, setDemoCopied] = useState(false);
+  const [fallbackVideo, setFallbackVideo] = useState(false);
   // Set only when a later scene is entered forward at its first reveal (→, J, scene list);
   // going back (K, ←, earlier scene in the list), any step, R or reload clears it.
   const [sceneEntry, setSceneEntry] = useState(false);
   const currentScene = routeScenes[sceneIndex];
-  const isVideoReveal = Boolean(getSceneVideo(currentScene.number) && visibleSteps >= currentScene.screenSteps.length);
+  const isVideoReveal = Boolean(getSceneVideo(currentScene.number) && (fallbackVideo || (!getReplay(currentScene.number) && visibleSteps >= currentScene.screenSteps.length)));
+  const isReplayReveal = Boolean(getReplay(currentScene.number) && !fallbackVideo && visibleSteps === currentScene.screenSteps.length);
   const liveDemo = getLiveDemo(currentScene.number);
   const isLastState = sceneIndex === routeScenes.length - 1 && visibleSteps >= currentScene.screenSteps.length;
   const progress = ((sceneIndex + 1) / routeScenes.length) * 100;
@@ -97,6 +100,7 @@ export default function App() {
   }
 
   function selectScene(nextIndex: number, step?: number) {
+    setFallbackVideo(false);
     const boundedIndex = Math.max(0, Math.min(routeScenes.length - 1, nextIndex));
     const requestedStep = step ?? startingStep(routeScenes[boundedIndex]);
     const boundedStep = Math.max(0, Math.min(routeScenes[boundedIndex].screenSteps.length, requestedStep));
@@ -107,6 +111,7 @@ export default function App() {
   }
 
   function next() {
+    if (fallbackVideo) { setFallbackVideo(false); return; }
     if (visibleSteps < currentScene.screenSteps.length) {
       const nextStep = visibleSteps + 1;
       setSceneEntry(false);
@@ -118,6 +123,7 @@ export default function App() {
   }
 
   function previous() {
+    if (fallbackVideo) { setFallbackVideo(false); return; }
     if (visibleSteps > startingStep(currentScene)) {
       const previousStep = visibleSteps - 1;
       setSceneEntry(false);
@@ -132,6 +138,7 @@ export default function App() {
   }
 
   function resetScene() {
+    setFallbackVideo(false);
     const step = startingStep(currentScene);
     setSceneEntry(false);
     setVisibleSteps(step);
@@ -181,12 +188,12 @@ export default function App() {
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
       const target = event.target;
-      const isVideoArea = target instanceof HTMLElement && Boolean(target.closest('.scene-video-reveal'));
+      const isVideoArea = target instanceof HTMLElement && Boolean(target.closest('.scene-video-reveal, .transcript-replay'));
       const isVideoNavigationKey = isVideoArea && (event.key === 'ArrowRight' || event.key === 'ArrowLeft');
       // Focus stays on a scene-list button after a click; route keys still drive the deck from there.
       // Space and Enter keep their native button behaviour.
       // The live demo buttons behave the same way, so the deck keeps moving after "Aç" or "Kopyala".
-      const isRouteKeyButton = target instanceof HTMLElement && Boolean(target.closest('.scene-link, .live-demo-bar'));
+      const isRouteKeyButton = target instanceof HTMLElement && Boolean(target.closest('.scene-link, .live-demo-bar, .transcript-replay, .fallback-bar'));
       const isRouteKey = isRouteKeyButton
         && !event.ctrlKey && !event.metaKey && !event.altKey
         && ['ArrowRight', 'ArrowLeft', 'j', 'k', 'r'].includes(event.key.length === 1 ? event.key.toLowerCase() : event.key);
@@ -198,7 +205,8 @@ export default function App() {
       // Space on a focused scene-list button keeps its native "select scene" click, even on a video step.
       // On the live demo bar Space still plays the fallback video.
       const isSceneLink = target instanceof HTMLElement && Boolean(target.closest('.scene-link'));
-      if (isVideoReveal && event.key === ' ' && !isSceneLink) {
+      const isFallbackAction = target instanceof HTMLElement && Boolean(target.closest('.fallback-bar button'));
+      if (isVideoReveal && event.key === ' ' && !isSceneLink && !isFallbackAction) {
         event.preventDefault();
         if (event.repeat) return;
         const player = videoPlayerRef.current;
@@ -288,7 +296,7 @@ export default function App() {
           <span style={{ width: `${progress}%` }} />
         </div>
 
-        <section className={`scene-stage scene-stage--${String(currentScene.number).padStart(2, '0')}${isVideoReveal ? ' scene-stage--video' : ''}`} key={currentScene.number}>
+        <section className={`scene-stage scene-stage--${String(currentScene.number).padStart(2, '0')}${isVideoReveal ? ' scene-stage--video' : ''}${isReplayReveal ? ' scene-stage--replay' : ''}${fallbackVideo ? ' scene-stage--fallback' : ''}`} key={currentScene.number}>
           <div className="scene-meta">
             <span className="eyebrow">SAHNE {String(currentScene.number).padStart(2, '0')}</span>
             {audienceMode && (
@@ -319,9 +327,28 @@ export default function App() {
           <div className="screen-content" aria-live="polite" aria-label="Ekrandaki içerik">
             <div className="screen-content-heading">
               <span className="eyebrow">EKRANDA</span>
-              <span className="step-counter">{isVideoReveal ? 'Video' : `Adım ${visibleSteps} / ${currentScene.screenSteps.length}`}</span>
+              <span className="step-counter">{isVideoReveal ? 'Video' : isReplayReveal ? 'Oturum replay' : `Adım ${visibleSteps} / ${currentScene.screenSteps.length}`}</span>
             </div>
-            <SceneVisual scene={currentScene} visibleSteps={visibleSteps} videoPlayerRef={videoPlayerRef} sceneEntry={sceneEntry && kineticScenes.has(currentScene.number)} />
+            <SceneVisual scene={currentScene} visibleSteps={visibleSteps} videoPlayerRef={videoPlayerRef} fallbackVideo={fallbackVideo} sceneEntry={sceneEntry && kineticScenes.has(currentScene.number)} />
+            {!audienceMode && getReplay(currentScene.number) && (
+              <aside className="fallback-bar live-demo-bar" aria-label="Uzun kayıt fallback">
+                <span>Uzun kayıt · {getSceneVideo(currentScene.number)?.duration} · isteğe bağlı</span>
+                <button className="live-demo-action" onClick={() => {
+                  setSceneEntry(false);
+                  setFallbackVideo(!fallbackVideo);
+                  requestAnimationFrame(() => videoPlayerRef.current?.focus());
+                }}>
+                  {fallbackVideo ? 'Ana rotaya dön' : 'Uzun kaydı aç (fallback)'}
+                </button>
+              </aside>
+            )}
+            {!audienceMode && (currentScene.number === 8 || currentScene.number === 11) && (
+              <aside className="official-demo-links" aria-label="Resmî demolar">
+                <span>Resmî demo (internet gerekir)</span>
+                <a href="https://github.com/anthropics/claude-code/blob/main/demo.gif" target="_blank" rel="noopener noreferrer">Anthropic · Claude Code ↗</a>
+                <a href="https://openai.com/index/introducing-the-codex-app/" target="_blank" rel="noopener noreferrer">OpenAI · Codex App ↗</a>
+              </aside>
+            )}
             {isVideoReveal && !audienceMode && liveDemo && (
               <aside className="live-demo-bar" aria-label="Canlı demo">
                 <span className="live-demo-kicker">CANLI DEMO</span>
@@ -332,8 +359,10 @@ export default function App() {
                 <span className="live-demo-fallback">Aksarsa: sunuma dön → <kbd>Space</kbd> · klip bitince <kbd>→</kbd></span>
               </aside>
             )}
-            {isVideoReveal ? (
-              <p className="next-hint"><kbd>Space</kbd> videoyu oynatır / duraklatır · <kbd>→</kbd> sonraki sahne</p>
+            {isReplayReveal ? (
+              <p className="next-hint"><kbd>Space</kbd> replay oynat / duraklat · <kbd>←</kbd> <kbd>→</kbd> kesit · uçlarda sunuma devam</p>
+            ) : isVideoReveal ? (
+              <p className="next-hint"><kbd>Space</kbd> videoyu oynatır / duraklatır · <kbd>→</kbd> {fallbackVideo ? 'ana rotaya dön' : 'sonraki sahne'}</p>
             ) : visibleSteps < currentScene.screenSteps.length ? (
               <p className="next-hint"><kbd>→</kbd> sonraki adım</p>
             ) : !isLastState ? (

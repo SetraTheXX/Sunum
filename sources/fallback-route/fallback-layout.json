@@ -1,0 +1,26 @@
+[
+  {
+    "scene": 8,
+    "width": 1366,
+    "notesBottom": 688.09375,
+    "stageBottom": 708
+  },
+  {
+    "scene": 11,
+    "width": 1366,
+    "notesBottom": 688.09375,
+    "stageBottom": 708
+  },
+  {
+    "scene": 8,
+    "width": 1920,
+    "notesBottom": 1018.6875,
+    "stageBottom": 1020
+  },
+  {
+    "scene": 11,
+    "width": 1920,
+    "notesBottom": 1018.6875,
+    "stageBottom": 1020
+  }
+]

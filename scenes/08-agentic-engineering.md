@@ -24,9 +24,13 @@ Adım 3 — Kanıt: “Sonra test: komut ve çıktısı. Sonra kod incelemesi: i
 
 Adım 3 sonu (ekrandaki son cümle) — “İlerleme, değişiklik artı doğrulanabilir kanıt. Küçük bir işte bazı adımlar birleşebilir, ama doğrulama ihtiyacı kaybolmaz. Ajanın ‘bitti’ demesi, kanıt toplama sorumluluğunu ortadan kaldırmaz.”
 
+Adım 4 — Replay (24,5 saniye): “Gerçek Codex App kaydı: kullanıcı repoyu inceleyip sessiz bir Remotion sunumu istiyor; tek ajan dosya ve komutlarla çalışıyor, kontrol özetini bildiriyor, ardından oluşturulan video açılıyor. Lint/TypeScript satırları ajanın özeti; bağımsız test stdout’u veya SecureCheck doğruluk kanıtı değil.”
+
+Replay kontrolü: Space baştan oynat/duraklat; ←/→ kayıt bölümlerini seçer, uçlarda sunuma devam eder. Reload son karede durur. Bitince → Scene 09’a geçer. Uzun kayıt ana rotada yoktur; yalnız Presenter’daki “Uzun kaydı aç (fallback)” düğmesiyle seçilir. “Ana rotaya dön” veya ←/→ aynı adıma döndürür; sonra → sonraki sahneye geçer.
+
 ## Video
 
-Adım 4 — Video açılınca Space ile başlat (yaklaşık 42 saniye, sessiz). En uzun ikinci klip; acele etme.
+İsteğe bağlı uzun fallback — Presenter’dan seçilen video açılınca Space ile başlat (yaklaşık 42 saniye, sessiz). En uzun ikinci klip; acele etme.
 
 Oynarken: “Burada masaüstü bir kodlama ajanına görev veriyorum. Prompt'u yazıyorum, ajan repo ve araçlarla çalışmaya başlıyor, bitince ne yaptığını özetliyor. Sonunda ürettiği videoyu izliyoruz.”
 
@@ -34,7 +38,7 @@ Bitince: “Ajan işi bitirdi ve özetledi. Ama o özet de bir iddia; içeriğin
 
 ## Canlı demo
 
-Adım 4'te videonun yerine kullanılır; süre en fazla 3 dakika. Araç: Codex App, çalışma klasörü olarak demo\app seçilir; prompt'taki “bu klasör” demo\app'tir ve git diff orada çalışır. Bu, Scene 05'te yapılan değişikliğin kontrolüdür; arada reset yapılmaz. Scene 05'te hiçbir dosya değişmediyse kontrol edilecek bir şey yoktur: doğrudan videoya geç.
+Adım 4 kısa klibin yerine kullanılır; süre en fazla 3 dakika. Araç: Codex App, çalışma klasörü olarak demo\app seçilir; prompt'taki “bu klasör” demo\app'tir ve git diff orada çalışır. Bu, Scene 05'te yapılan değişikliğin kontrolüdür; arada reset yapılmaz. Scene 05'te hiçbir dosya değişmediyse kontrol edilecek bir şey yoktur: doğrudan videoya geç.
 
 Prompt: “Bu klasördeki son değişikliği kontrol et; bu klasör sitenin köküdür ve bütün yollar ona göredir. Önce bu klasörde git diff ile neyin değiştiğini göster. Sonra aşağıdaki her kabul maddesini ayrı ayrı yaz: kontrol ettiysen nasıl kontrol ettiğini ve sonucunu, kontrol edemediysen ‘kontrol edilmedi’ yaz. Dosyalarda değişiklik yapma; commit veya push yapma. Kabul koşulu: 720 piksel ve altında başlıkta bir Menü düğmesi (hamburger) görünsün; düğmeye Tab ile gelinebilsin; menü kapalıyken gizli menü bağlantıları Tab ile odak almasın, menü açıkken Tab bağlantılara ilerlesin; tıklama, Enter ve Space menüyü açıp kapatsın; menü açıkken Esc menüyü kapatıp odağı düğmeye döndürsün; düğmenin aria-expanded değeri açık/kapalı durumu göstersin ve aria-controls menüyü işaret etsin; 720 pikselden geniş ekranda düğme görünmesin ve masaüstü menüsü değişmesin; yeni bağımlılık, CDN veya dış istek eklenmesin.”
 
@@ -50,7 +54,7 @@ Sonra tarayıcıda telefon genişliğinde kendin dene: Tab ile düğmeye gel, En
 
 Başarısızlık işaretleri: oturum veya ağ hatası; 90 saniyede ilk çıktı yok; ajan dosya değiştirmeye kalkıyor; diff boş ya da beklenmedik dosyalar değişmiş; toplam 2,5 dakikayı geçti.
 
-Videoya geçiş: “Canlı ortam burada takıldı; aynı tür bir görevin daha önce kaydettiğim halini göstereyim. Önemli olan ajanın ne iddia ettiği değil, hangi kanıtı gösterdiği.” Sunum penceresine dön, Space ile klibi başlat; klip bitince → ile devam et.
+Videoya geçiş: “Canlı ortam burada takıldı; aynı tür bir görevin daha önce kaydettiğim halini göstereyim. Önemli olan ajanın ne iddia ettiği değil, hangi kanıtı gösterdiği.” Sunum penceresine dön, Adım 4’e dön; Presenter’dan “Uzun kaydı aç (fallback)” düğmesini seç, Space ile klibi başlat. Bitince “Ana rotaya dön” veya → ile Adım 4’e dön; ardından → sonraki sahneye geç.
 
 ## Geçiş
 

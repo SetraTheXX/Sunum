@@ -57,22 +57,29 @@ powershell -ExecutionPolicy Bypass -File demo\serve.ps1 -Folder app-team
 # Değişikliği görmek için: git -C demo\app diff   ya da   git -C demo\app-team diff
 ```
 
-Sunumda Presenter görünümünde Scene 05, 08 ve 11'in video adımında "CANLI DEMO" notu çıkar. Buradaki düğmeler o sahnenin demo adresini (05 ve 08: 5500, 11: 5501) yeni sekmede açar ya da panoya kopyalar. Audience görünümünde bu not yoktur.
+Sunumda Presenter görünümünde Scene 05 video adımında, Scene 08/11 seçilmiş uzun fallback görünümünde "CANLI DEMO" notu çıkar. Buradaki düğmeler o sahnenin demo adresini (05 ve 08: 5500, 11: 5501) yeni sekmede açar ya da panoya kopyalar. Audience görünümünde bu not yoktur.
 
 ## Runbook: Scene 05 → 08 → 11
 
 Üç demo aynı işi izler: önce üretim, sonra aynı değişikliğin kontrolü, sonra aynı görevin rollerle en baştan yapılması. Tam prompt metinleri ve söylenecekler sahne dosyalarının `## Canlı demo` bölümündedir ve Presenter'ın konuşmacı notlarında görünür.
 
-| Sahne | Araç ve kopya | Görev | Süre bütçesi | Videoya geç |
+| Sahne / video adımı | Araç ve kopya | Görev | Süre bütçesi | Videoya geç |
 |---|---|---|---|---|
 | 05 · üretim | Codex CLI · `demo\app` | Telefonda çalışan Menü düğmesini ekle (kabul koşulunun tamamı) | ≤3 dk | 2 dk'da dosya değişmediyse ya da 2,5 dk geçtiyse |
-| 08 · kontrol | Codex App · `demo\app` | Scene 05'in değişikliğini `git diff` ve madde madde kontrolle raporla; dosya değiştirme | ≤3 dk | 05'te dosya değişmediyse, 90 sn'de ilk çıktı yoksa ya da 2,5 dk geçtiyse |
-| 11 · rol devri | Vi3ecode · `demo\app-team` | Aynı görev en baştan: Lead → (gerekirse Analyst) → Developer → QA, her devir açıkça yazılı; QA FAIL ise Developer'a dönüş | ≤4 dk (görevi Adım 1'de gönder) | Adım 5'te QA'ya ulaşılmadıysa ya da 4 dk geçtiyse |
+| 08 · kontrol · Adım 4 | Codex App · `demo\app` | Scene 05'in değişikliğini `git diff` ve madde madde kontrolle raporla; dosya değiştirme | ≤3 dk | 05'te dosya değişmediyse, 90 sn'de ilk çıktı yoksa ya da 2,5 dk geçtiyse |
+| 11 · rol devri · Adım 5 | Vi3ecode · `demo\app-team` | Aynı görev en baştan: Lead → (gerekirse Analyst) → Developer → QA, her devir açıkça yazılı; QA FAIL ise Developer'a dönüş | ≤4 dk (görevi Adım 1'de gönder) | Adım 5'te QA'ya ulaşılmadıysa ya da 4 dk geçtiyse |
 
 - **Konuşma gözleme bağlıdır.** Sonucu önceden söyleme; ekranda ne görünüyorsa onu oku: dosya adları, diff, rollerin devir mesajları, QA'nın kararı ve gerekçesi. Sayfayı yenileyip kendin de dene ve gördüğünü söyle.
 - **Sonuç garanti değildir.** Ajan çıktısı her çalıştırmada farklıdır. FAIL ya da "kontrol edilmedi" gelirse saklanmaz; anlatının parçası yapılır.
 - **Başarısızlık işaretleri:** oturum veya ağ hatası, çözülmeyen izin istemi, beklenen sürede çıktı yok, sayfa bozuk, süre bütçesi aşıldı.
 - **Videoya geçiş:** Cümleyi söyle ("Canlı ortam bugün bizimle değil; aynı akışın daha önce kaydettiğim halini göstereyim."), **sunum penceresine dön → Space ile klibi başlat; klip bitince → ile devam et.** Videolar farklı görevlerin kayıtlarıdır; canlı demonun sonucu gibi anlatılmaz.
+
+### Replay ve video sırası
+
+- Scene 08: Adım 4 gerçek Codex App ekran replay’i (24,5 sn): istek → değişiklik → ajanın kontrol özeti → çıktı izleme. Uzun kayıt Presenter’dan seçilen fallback; ana rotada ek adım yok.
+- Scene 11: Adım 5 gerçek Vi3ecode ekran replay’i (34 sn): roller → istek → Lead → Developer → QA → önizleme. Lead’in devri paraleldir; screenshot kısıtı korunur. Uzun kayıt Presenter’dan seçilen fallback; ana rotada ek adım yok.
+- Replay: Space baştan oynat/duraklat; ←/→ kayıt bölümlerini seçer. Reload son karede durur; uçlarda sunuma devam eder. Toplam 58,5 sn. Scene 11’in 4 dk bütçesine replay dahildir. Aynı kaynaktan gelen uzun fallback’i ayrıca izletmek zorunlu değildir. Oynatma açılmazsa bölümleri konuşma notundan anlatıp Presenter’dan uzun fallback’i seç.
+- Fallback öncesi video adımını kontrol et: Scene 05 Adım 4, Scene 08 Adım 4, Scene 11 Adım 5; uzun kayıt için Presenter’dan “Uzun kaydı aç (fallback)” seç. Replay'de Space videoyu değil replay'i başlatır. İnternet gerektiren resmî bağlantılar çevrimdışı video fallback'i değildir.
 
 ### Prova ve sunum öncesi kontrol listesi
 
@@ -82,12 +89,12 @@ Sunumda Presenter görünümünde Scene 05, 08 ve 11'in video adımında "CANLI 
 - [ ] İki sunucu açık; `http://localhost:5500/` ve `http://localhost:5501/` telefon genişliğinde açılıyor, menüye ulaşılamıyor; masaüstünde menü yan yana.
 - [ ] Ekran büyütme: terminal yazı tipi ≥20 pt; Codex App ve Vi3ecode %125–150 zoom; tarayıcı demosu okunuyor.
 - [ ] Ekran gizliliği: bildirimler kapalı; ilgisiz sekme, hesap adı, token veya özel dosya yolu görünmüyor.
-- [ ] Fallback denendi: sunum penceresine dönüş, Space ile Scene 05/08/11 klibi oynuyor, klip bitince → sonraki sahneye geçiyor.
+- [ ] Fallback denendi: sunum penceresine dönüş, Space ile Scene 05/08/11 klibi oynuyor, uzun fallback bitince → aynı ana rota adımına dönüyor, bir sonraki → sonraki sahneye geçiyor.
 - [ ] Kronometre: her demo için süre bütçesi not edildi.
 - [ ] Prova bitince `demo\reset.ps1` yeniden çalıştırıldı.
 
 ## Canlı demo yapılamazsa: video fallback
 
 - **USB veya okul bilgisayarında canlı demo yapılamaz.** Orada ajan aracı, hesap girişi ve internet bulunmayabilir. `Start-Sunum.bat` yalnız sunumu açar, demo ortamını kurmaz.
-- Bu durumda ya da demoda bir aksaklık olursa: **sunum penceresine dön → Space ile video adımındaki klibi başlat; klip bitince → ile devam et** (Scene 05, 08, 11). Videolar gerçek kayıtlardır ve çevrimdışı oynar.
+- Bu durumda ya da demoda bir aksaklık olursa: **sunum penceresine dön → Scene 05’te Space; Scene 08/11’de Presenter’dan uzun fallback’i seçip Space ile başlat; klip bitince → ile ana rotaya dön ve → ile devam et** (Scene 05, 08, 11). Videolar gerçek kayıtlardır ve çevrimdışı oynar.
 - Videolar bu demo uygulamasının değil, farklı görevlerin kayıtlarıdır. Canlı demonun sonucu gibi anlatılmamalıdır.

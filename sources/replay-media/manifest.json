@@ -1,0 +1,99 @@
+{
+  "branch": "feat/v3-wow",
+  "deckStates": 55,
+  "clips": [
+    {
+      "scene": 8,
+      "tool": "Codex App",
+      "source": "assets/video-drafts/scene-08-codex-app-draft-20260928.mp4",
+      "sourceSHA256": "05179feb4efa9d3f05f446fd3d2254b11997326e1a5673de9b883e4b20870f6e",
+      "rawSource": "F:/Codex app Videosu.mp4",
+      "rawPreserved": true,
+      "rawBytes": 32177927,
+      "segmentsInDraftSeconds": [
+        {
+          "in": 2.5,
+          "out": 8
+        },
+        {
+          "freezeAt": 13.9,
+          "duration": 5,
+          "label": "Değişiklik"
+        },
+        {
+          "freezeAt": 13.9,
+          "duration": 4,
+          "label": "Kontrol özeti"
+        },
+        {
+          "in": 19,
+          "out": 29
+        }
+      ],
+      "output": "assets/replays/scene08-real-final-20261002.mp4",
+      "outputSHA256": "35b48769f7ce54bad20210d5c755548d95a0fa913cc3a707df3c2bbd875ba6f3",
+      "outputBytes": 1039293,
+      "duration": 24.5
+    },
+    {
+      "scene": 11,
+      "tool": "Vi3ecode",
+      "source": "assets/video-drafts/scene-11-vi3ecode-draft-20260928.mp4",
+      "sourceSHA256": "a5ec92a6699d012eb7b25249b3c1528c33445372de4662395b13631c044ad125",
+      "rawSource": "F:/Vi3ecode kısmı ve örnek gösterim.mp4",
+      "rawPreserved": true,
+      "rawBytes": 289434830,
+      "segmentsInDraftSeconds": [
+        {
+          "in": 0,
+          "out": 5
+        },
+        {
+          "in": 12,
+          "out": 18
+        },
+        {
+          "freezeAt": 38,
+          "duration": 6,
+          "label": "Lead"
+        },
+        {
+          "freezeAt": 43,
+          "duration": 5,
+          "label": "Developer"
+        },
+        {
+          "freezeAt": 49,
+          "duration": 3.5,
+          "label": "QA işlev kontrolü",
+          "crop": [
+            435,
+            343,
+            505,
+            90
+          ]
+        },
+        {
+          "freezeAt": 49,
+          "duration": 3.5,
+          "label": "QA screenshot kısıtı",
+          "crop": [
+            435,
+            489,
+            505,
+            60
+          ]
+        },
+        {
+          "in": 53,
+          "out": 58
+        }
+      ],
+      "output": "assets/replays/scene11-real-readable-20261002.mp4",
+      "outputSHA256": "0995bc0d66770ae066743b1d70090cfd0a8b82b3aa492b5b04b5c9f03529f68c",
+      "outputBytes": 1810586,
+      "duration": 34
+    }
+  ],
+  "packageUpdated": false
+}

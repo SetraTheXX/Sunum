@@ -1,0 +1,6 @@
+Model Değil, Sistem — sunum (Vercel production)
+
+https://sunum-model-degil-sistem.vercel.app
+
+Giriş gerekmez. Tam ekran sunum için sağ üstteki "Tam ekran" düğmesi; çıkmak için Esc.
+Doğrudan tam ekran görünüm: https://sunum-model-degil-sistem.vercel.app/?view=audience

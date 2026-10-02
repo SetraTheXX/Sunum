@@ -1,0 +1,125 @@
+{
+  "zip": "Sunum-v3-usb-20261002-r4-53-verified.zip",
+  "sha256": "1b05832a17a5f6b2a7471879f6d6b781dc651ffdbe0d1f035b09cd5265e578ca",
+  "bytes": 47563831,
+  "entries": 80,
+  "archiveCRC": "PASS",
+  "extractedHashes": "PASS",
+  "base": "http://localhost:8001",
+  "routes": {
+    "presenter": 53,
+    "audience": 53
+  },
+  "videos": [
+    {
+      "view": "presenter",
+      "scene": 4,
+      "src": "http://localhost:8001/assets/scene-04-chatbot-final-20260928-B3x1jesE.mp4",
+      "poster": "http://localhost:8001/assets/scene-04-chatbot-poster-BV7HO9U7.png",
+      "range206": "PASS",
+      "playPause": "PASS"
+    },
+    {
+      "view": "presenter",
+      "scene": 5,
+      "src": "http://localhost:8001/assets/scene-05-codex-cli-draft-20260928-C12AScNB.mp4",
+      "poster": "http://localhost:8001/assets/scene-05-codex-cli-poster-Dlxauh1u.png",
+      "range206": "PASS",
+      "playPause": "PASS"
+    },
+    {
+      "view": "presenter",
+      "scene": 8,
+      "src": "http://localhost:8001/assets/scene-08-codex-app-draft-20260928-DxyYpCHL.mp4",
+      "poster": "http://localhost:8001/assets/scene-08-codex-app-poster-llCOGm9S.png",
+      "range206": "PASS",
+      "playPause": "PASS"
+    },
+    {
+      "view": "presenter",
+      "scene": 11,
+      "src": "http://localhost:8001/assets/scene-11-vi3ecode-draft-20260928-DhtVGJoX.mp4",
+      "poster": "http://localhost:8001/assets/scene-11-vi3ecode-poster-DWefUzfK.png",
+      "range206": "PASS",
+      "playPause": "PASS"
+    },
+    {
+      "view": "audience",
+      "scene": 4,
+      "src": "http://localhost:8001/assets/scene-04-chatbot-final-20260928-B3x1jesE.mp4",
+      "poster": "http://localhost:8001/assets/scene-04-chatbot-poster-BV7HO9U7.png",
+      "range206": "PASS",
+      "playPause": "PASS"
+    },
+    {
+      "view": "audience",
+      "scene": 5,
+      "src": "http://localhost:8001/assets/scene-05-codex-cli-draft-20260928-C12AScNB.mp4",
+      "poster": "http://localhost:8001/assets/scene-05-codex-cli-poster-Dlxauh1u.png",
+      "range206": "PASS",
+      "playPause": "PASS"
+    },
+    {
+      "view": "audience",
+      "scene": 8,
+      "src": "http://localhost:8001/assets/scene-08-codex-app-draft-20260928-DxyYpCHL.mp4",
+      "poster": "http://localhost:8001/assets/scene-08-codex-app-poster-llCOGm9S.png",
+      "range206": "PASS",
+      "playPause": "PASS"
+    },
+    {
+      "view": "audience",
+      "scene": 11,
+      "src": "http://localhost:8001/assets/scene-11-vi3ecode-draft-20260928-DhtVGJoX.mp4",
+      "poster": "http://localhost:8001/assets/scene-11-vi3ecode-poster-DWefUzfK.png",
+      "range206": "PASS",
+      "playPause": "PASS"
+    }
+  ],
+  "replays": [
+    {
+      "view": "presenter",
+      "scene": 8,
+      "src": "http://localhost:8001/assets/scene08-real-final-20261002-DMWWLlhQ.mp4",
+      "duration": 24.5,
+      "range206": "PASS",
+      "playPause": "PASS"
+    },
+    {
+      "view": "presenter",
+      "scene": 11,
+      "src": "http://localhost:8001/assets/scene11-real-readable-20261002-F2Bu27wq.mp4",
+      "duration": 34,
+      "range206": "PASS",
+      "playPause": "PASS"
+    },
+    {
+      "view": "audience",
+      "scene": 8,
+      "src": "http://localhost:8001/assets/scene08-real-final-20261002-DMWWLlhQ.mp4",
+      "duration": 24.5,
+      "range206": "PASS",
+      "playPause": "PASS"
+    },
+    {
+      "view": "audience",
+      "scene": 11,
+      "src": "http://localhost:8001/assets/scene11-real-readable-20261002-F2Bu27wq.mp4",
+      "duration": 34,
+      "range206": "PASS",
+      "playPause": "PASS"
+    }
+  ],
+  "errors": [],
+  "failedResponses": [],
+  "externalPageRequests": [],
+  "launcherHashes": "PASS",
+  "blockProbe": "PASS",
+  "metaFinal": "PASS: both real diff references present",
+  "fallbackReturn": [
+    "presenter-8: same step then next scene PASS",
+    "presenter-11: same step then next scene PASS",
+    "audience-8: same step then next scene PASS",
+    "audience-11: same step then next scene PASS"
+  ]
+}

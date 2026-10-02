@@ -1,0 +1,21 @@
+{
+  "fourOriginalVideos": {
+    "scene-04-chatbot-final-20260928.mp4": {
+      "sha256": "9657c72a40de18b56cb526e54964fc8567c63f439dc29b2de3b9651491d8708f",
+      "matches_previous_USB": true
+    },
+    "scene-05-codex-cli-draft-20260928.mp4": {
+      "sha256": "cda152d16368f6043b21010c5b9c97c2a0c45cd6717df1dce18ccdfb165d72da",
+      "matches_previous_USB": true
+    },
+    "scene-08-codex-app-draft-20260928.mp4": {
+      "sha256": "05179feb4efa9d3f05f446fd3d2254b11997326e1a5673de9b883e4b20870f6e",
+      "matches_previous_USB": true
+    },
+    "scene-11-vi3ecode-draft-20260928.mp4": {
+      "sha256": "a5ec92a6699d012eb7b25249b3c1528c33445372de4662395b13631c044ad125",
+      "matches_previous_USB": true
+    }
+  },
+  "USB_unchanged_sha256": "343eb091548c616a8078444382ebc23495477cf0f448da9cc0c26595d55cef43"
+}

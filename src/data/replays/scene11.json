@@ -1,0 +1,114 @@
+{
+  "id": "scene11",
+  "title": "Rol devri: QA bulur, Developer düzeltir, QA doğrular",
+  "source": {
+    "tool": "Vi3ecode · Lead, Developer ve QA rolleri (Claude Code)",
+    "date": "2026-10-01",
+    "session": "Lead oturumu (JSONL, ~2 MB) ve Developer oturumu (JSONL, ~12 MB), bu sunumun deposu",
+    "excerpts": [
+      {
+        "session": "~/AppData/Roaming/com.vi3ecode.desktop/engine-accounts/profiles/[profil]/claude/projects/[Sunum]/0fba68a7-c148-4130-891f-58b4d53eb89c.jsonl",
+        "bytesAtInspection": 12250621,
+        "rowsZeroBased": [
+          1083,
+          1104
+        ],
+        "utc": [
+          "2026-10-01T18:56:58Z",
+          "2026-10-01T18:57:20Z"
+        ]
+      },
+      {
+        "session": "~/AppData/Roaming/com.vi3ecode.desktop/engine-accounts/profiles/[profil]/claude/projects/[Sunum]/f63f7caf-389c-4db2-83b3-65d5e42f2d1c.jsonl",
+        "bytesAtInspection": 2172598,
+        "rowsZeroBased": [
+          193,
+          205
+        ],
+        "utc": [
+          "2026-10-01T18:56:59Z",
+          "2026-10-01T18:58:30Z"
+        ]
+      }
+    ]
+  },
+  "note": "Gerçek oturumlardan kısaltılmıştır. QA sonuçları Lead oturumuna iletilmiş görev mesajlarıdır; bağımsız QA ham oturumu değildir. Diff işaretleri gerçek Edit old_string/new_string girdilerinden türetilmiştir; … çıkarılan bölümdür.",
+  "events": [
+    {
+      "role": "QA",
+      "kind": "result",
+      "label": "Kontrol sonucu · 1 madde FAIL",
+      "durationMs": 9000,
+      "lines": [
+        "Dev README:20 eşik ifadesini “720 px ve altında” olarak düzeltmeli; Lead Analyst runbook incelemesini başlatmalı. Diğer istenen kontroller PASS."
+      ]
+    },
+    {
+      "role": "Lead",
+      "kind": "plan",
+      "label": "Yönlendirme",
+      "durationMs": 10000,
+      "lines": [
+        "Canlı demo kontrolleri: Bir madde dışında hepsi PASS. `demo/README.md:20` satırındaki ekran genişliği eşiğinin \"720 px ve altında\" olarak düzeltilmesi gerekiyor. Developer şu an paralel çalışıyor ve bu düzeltmeyi yapıyor; …"
+      ]
+    },
+    {
+      "role": "Developer",
+      "kind": "command",
+      "label": "Bağlam: satırı oku",
+      "durationMs": 9000,
+      "lines": [
+        "Read demo/README.md (satır 18–21)",
+        "20  Masaüstünde üst menü (Projeler, Hizmetler, Hakkında, İletişim) görünür. Ekran 720 px'ten darsa menü gizlenir ve yerine hiçbir şey gelmez: …"
+      ]
+    },
+    {
+      "role": "Developer",
+      "kind": "diff",
+      "label": "Değişiklik · demo/README.md",
+      "durationMs": 9000,
+      "lines": [
+        "-… Ekran 720 px'ten darsa menü gizlenir …",
+        "+… Ekran 720 px ve altındaysa menü gizlenir …"
+      ]
+    },
+    {
+      "role": "Developer",
+      "kind": "command",
+      "label": "Kontrol: eski ifade kaldı mı?",
+      "durationMs": 7000,
+      "lines": [
+        "Grep \"720 ?px'ten dar|720 pikselden dar\"  {demo/**,scenes/**}",
+        "No matches found"
+      ]
+    },
+    {
+      "role": "Developer",
+      "kind": "result",
+      "label": "Developer raporu",
+      "durationMs": 11000,
+      "lines": [
+        "`demo/README.md`'nin 20. satırını düzelttim: artık \"Ekran 720 px ve altındaysa menü gizlenir\" yazıyor. Bu, şablondaki `@media (max-width: 720px)` kuralıyla ve kabul koşulunun 1. maddesiyle aynı eşik."
+      ]
+    },
+    {
+      "role": "QA",
+      "kind": "result",
+      "label": "Bağımsız doğrulama · PASS",
+      "durationMs": 9000,
+      "lines": [
+        "README eşik düzeltmesi bağımsız doğrulandı; açık QA maddesi kapandı, Analyst runbook incelemesini başlatabilirsin."
+      ]
+    },
+    {
+      "role": "Lead",
+      "kind": "result",
+      "label": "Kapanış ve sonraki devir",
+      "durationMs": 10000,
+      "lines": [
+        "`demo/README.md:20` satırındaki eşik düzeltmesi bağımsız olarak doğrulandı; QA'da açık madde kalmadı. Sırada Analyst'in runbook incelemesi var.",
+        "@handoff analyst: `feat/v2-motion` branch'inde, salt okunur çalış. …"
+      ]
+    }
+  ]
+}

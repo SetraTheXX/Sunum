@@ -1,0 +1,13 @@
+{
+  "allAllowlistedFilesExist": true,
+  "demoRunbookDependencies": [
+    "demo/README.md",
+    "demo/reset.ps1",
+    "demo/serve.ps1",
+    "demo/template/index.html",
+    "demo/template/styles.css"
+  ],
+  "mutableDemoCopiesExcluded": true,
+  "replayDurationsAligned": true,
+  "packageNotCreated": "Independent package QA acceptance pending"
+}

@@ -1,0 +1,112 @@
+{
+  "files": [
+    {
+      "path": "dist/assets/index--kKfUc8C.css",
+      "bytes": 91015,
+      "sha256": "85758b936c5b0ad2fef5865552297a01fb75c456d7dce029a197aa32b1cc5f49"
+    },
+    {
+      "path": "dist/assets/index-DyjsdtaT.js",
+      "bytes": 346169,
+      "sha256": "22fd6351fa08ba08f8a53545ea3c98d2b8baebb1d422e8e3ffaaa205327a98f1"
+    },
+    {
+      "path": "dist/assets/scene-04-chatbot-final-20260928-B3x1jesE.mp4",
+      "bytes": 1423034,
+      "sha256": "9657c72a40de18b56cb526e54964fc8567c63f439dc29b2de3b9651491d8708f"
+    },
+    {
+      "path": "dist/assets/scene-04-chatbot-poster-BV7HO9U7.png",
+      "bytes": 108976,
+      "sha256": "ec18484883550f666f3374be329b7693a49cd8b334d99c4a677400e89b801328"
+    },
+    {
+      "path": "dist/assets/scene-05-codex-cli-draft-20260928-C12AScNB.mp4",
+      "bytes": 4022363,
+      "sha256": "cda152d16368f6043b21010c5b9c97c2a0c45cd6717df1dce18ccdfb165d72da"
+    },
+    {
+      "path": "dist/assets/scene-05-codex-cli-poster-Dlxauh1u.png",
+      "bytes": 95768,
+      "sha256": "3268c066fc4060b4e656e8095604f5c1015c901b3bc781ba218be83c9a9182cd"
+    },
+    {
+      "path": "dist/assets/scene-08-codex-app-draft-20260928-DxyYpCHL.mp4",
+      "bytes": 2347887,
+      "sha256": "05179feb4efa9d3f05f446fd3d2254b11997326e1a5673de9b883e4b20870f6e"
+    },
+    {
+      "path": "dist/assets/scene-08-codex-app-poster-llCOGm9S.png",
+      "bytes": 41384,
+      "sha256": "fea69da42b8e8d54f083e4a47dbb713c6031679fae34e0516ae5f4a1bd578a95"
+    },
+    {
+      "path": "dist/assets/scene-11-vi3ecode-draft-20260928-DhtVGJoX.mp4",
+      "bytes": 6365356,
+      "sha256": "a5ec92a6699d012eb7b25249b3c1528c33445372de4662395b13631c044ad125"
+    },
+    {
+      "path": "dist/assets/scene-11-vi3ecode-poster-DWefUzfK.png",
+      "bytes": 135160,
+      "sha256": "db6c72c3a1a63e73ce1cdb7275cdb2b47cd606a3686f90740277d5f7c227e969"
+    },
+    {
+      "path": "dist/assets/scene08-real-final-20261002-DMWWLlhQ.mp4",
+      "bytes": 1039293,
+      "sha256": "35b48769f7ce54bad20210d5c755548d95a0fa913cc3a707df3c2bbd875ba6f3"
+    },
+    {
+      "path": "dist/assets/scene11-real-readable-20261002-F2Bu27wq.mp4",
+      "bytes": 1810586,
+      "sha256": "0995bc0d66770ae066743b1d70090cfd0a8b82b3aa492b5b04b5c9f03529f68c"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 503,
+      "sha256": "23aed52e1c7cb44dad5dbe893dce48873e3835fa3af728a4f1f4f946b6fa2737"
+    }
+  ],
+  "unusedJsCss": 0,
+  "localMedia": [
+    {
+      "path": "dist/assets/scene-04-chatbot-final-20260928-B3x1jesE.mp4",
+      "status": 206
+    },
+    {
+      "path": "dist/assets/scene-04-chatbot-poster-BV7HO9U7.png",
+      "status": 200
+    },
+    {
+      "path": "dist/assets/scene-05-codex-cli-draft-20260928-C12AScNB.mp4",
+      "status": 206
+    },
+    {
+      "path": "dist/assets/scene-05-codex-cli-poster-Dlxauh1u.png",
+      "status": 200
+    },
+    {
+      "path": "dist/assets/scene-08-codex-app-draft-20260928-DxyYpCHL.mp4",
+      "status": 206
+    },
+    {
+      "path": "dist/assets/scene-08-codex-app-poster-llCOGm9S.png",
+      "status": 200
+    },
+    {
+      "path": "dist/assets/scene-11-vi3ecode-draft-20260928-DhtVGJoX.mp4",
+      "status": 206
+    },
+    {
+      "path": "dist/assets/scene-11-vi3ecode-poster-DWefUzfK.png",
+      "status": 200
+    },
+    {
+      "path": "dist/assets/scene08-real-final-20261002-DMWWLlhQ.mp4",
+      "status": 206
+    },
+    {
+      "path": "dist/assets/scene11-real-readable-20261002-F2Bu27wq.mp4",
+      "status": 206
+    }
+  ]
+}

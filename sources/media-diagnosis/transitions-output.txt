@@ -1,0 +1,1 @@
+PASS: 12 repeated short/fallback cycles; Space, Presenter/Audience same video, return, chapters, scene exit, pending play cancellation

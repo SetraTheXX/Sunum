@@ -1,0 +1,48 @@
+{
+  "privacy": {
+    "scene08.json": {
+      "email": 0,
+      "user_path": 0,
+      "secret": 0
+    },
+    "scene11.json": {
+      "email": 0,
+      "user_path": 0,
+      "secret": 0
+    }
+  },
+  "replays": [
+    "8: complete timed playback 79.0s PASS (virtual clock)",
+    "11: complete timed playback 74.0s PASS (virtual clock)",
+    "presenter-8: Space, arrows, reload, reduced-motion, exit PASS",
+    "presenter-11: Space, arrows, reload, reduced-motion, exit PASS",
+    "audience-8: Space, arrows, reload, reduced-motion, exit PASS",
+    "audience-11: Space, arrows, reload, reduced-motion, exit PASS"
+  ],
+  "videos": [
+    "presenter-4: Space/body/button/click, arrows, scene-list focus PASS",
+    "presenter-5: Space/body/button/click, arrows, scene-list focus PASS",
+    "presenter-8: Space/body/button/click, arrows, scene-list focus PASS",
+    "presenter-11: Space/body/button/click, arrows, scene-list focus PASS",
+    "audience-4: Space/body/button/click, arrows PASS",
+    "audience-5: Space/body/button/click, arrows PASS",
+    "audience-8: Space/body/button/click, arrows PASS",
+    "audience-11: Space/body/button/click, arrows PASS"
+  ],
+  "routes": {
+    "presenter": 55,
+    "audience": 55
+  },
+  "screenshots": [
+    "screenshots\\v3\\scene-8-presenter-1920.png",
+    "screenshots\\v3\\scene-8-presenter-1366.png",
+    "screenshots\\v3\\scene-11-presenter-1920.png",
+    "screenshots\\v3\\scene-11-presenter-1366.png",
+    "screenshots\\v3\\scene-8-audience-1920.png",
+    "screenshots\\v3\\scene-8-audience-1366.png",
+    "screenshots\\v3\\scene-11-audience-1920.png",
+    "screenshots\\v3\\scene-11-audience-1366.png"
+  ],
+  "errors": [],
+  "externalRequests": []
+}

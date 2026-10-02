@@ -29,6 +29,8 @@ Vite'ın yazdırdığı localhost adresini aç; sunucuyu `Ctrl+C` ile durdur. Bu
 - İki görünüm var: **Presenter** (sahne listesi, ekrandaki içerik, konuşmacı notları) ve **tam ekran sunum**. Sağ üstteki **Tam ekran** düğmesi sunuma geçer, `Esc` geri döner.
 - `→` / `Space` sonraki adım veya sahne, `←` geri, `J` / `K` sonraki / önceki sahne, `R` sahnenin başı.
 - Video adımlarında (Scene 04, 05, 08, 11) video durmuş başlar; `Space` oynatır / duraklatır, `→` sonraki sahneye geçer. Adımdan çıkınca video durup başa döner. Video oynatılamazsa aynı kayıttan alınmış kare gösterilir.
+- Scene 08/11 ekran replay’leri: gerçek Codex App 24,5 sn (Adım 4) / Vi3ecode 34 sn (Adım 5). Space oynat/duraklat, oklar kayıt bölümleri; reload son karede durur. Ana rota 53 durum. Uzun kayıtlar normal ileri gezinmede yoktur; Presenter’daki “Uzun kaydı aç (fallback)” seçimiyle açılır, “Ana rotaya dön” veya ←/→ aynı adıma döndürür. Resmî bağlantılar yalnız Presenter’da, internet gerektirir. Eski dosyalar korunur. Kabul edilmiş accepted-r3 USB paketi önceki 55 durumlu sürümdür ve bu değişiklikle güncellenmedi.
+- V3 kontrolü: açık preview üzerinde `python scripts/verify-replay-media.py`; Python Playwright ve yerel Edge gerekir. Kaynak/kesit sınırları ve QA devri: [Güncel replay ve QA kanıt kaydı](sources/replay-media/README.md).
 - Adres çubuğu konumu tutar: `/?scene=4&step=5` doğrudan o adımı açar, `&view=audience` tam ekran görünümünü açar. Eski `?mode=30/45/60` bağlantıları tek rotaya yönlenir.
 
 ## Klasörler

@@ -1,0 +1,113 @@
+{
+  "id": "scene08",
+  "title": "Tek ajan: istekten kanıta",
+  "source": {
+    "tool": "Claude Code · Vi3ecode Developer rolü",
+    "date": "2026-10-01",
+    "session": "Developer oturumu (JSONL, ~12 MB), bu sunumun deposu",
+    "excerpts": [
+      {
+        "session": "~/AppData/Roaming/com.vi3ecode.desktop/engine-accounts/profiles/[profil]/claude/projects/[Sunum]/0fba68a7-c148-4130-891f-58b4d53eb89c.jsonl",
+        "bytesAtInspection": 12250621,
+        "rowsZeroBased": [
+          297,
+          319
+        ],
+        "utc": [
+          "2026-10-01T16:28:49Z",
+          "2026-10-01T16:32:08Z"
+        ]
+      }
+    ]
+  },
+  "note": "Gerçek oturumdan kısaltılmıştır. Plan bölümü düzenleme girdisindeki gerçek kod yorumudur; ayrı bir plan mesajı değildir. … çıkarılan bölümü gösterir; kullanıcı yolu ~ ile maskelenmiştir.",
+  "events": [
+    {
+      "role": "İstek",
+      "kind": "request",
+      "label": "Görev",
+      "durationMs": 9000,
+      "lines": [
+        "Scene 04’ten K ile Scene 03’e geri dönüşte giriş animasyonunu kapat; DESIGN_PRINCIPLES ortak kurallarını güncel giriş davranışıyla hizala, ardından bağımsız QA’ya geri gönder."
+      ]
+    },
+    {
+      "role": "Developer",
+      "kind": "plan",
+      "label": "Plan · gerçek düzenleme girdisindeki açıklama",
+      "durationMs": 7000,
+      "lines": [
+        "// Set only when a later scene is entered forward at its first reveal (→, J, scene list);",
+        "// going back (K, ←, earlier scene in the list), any step, R or reload clears it."
+      ]
+    },
+    {
+      "role": "Developer",
+      "kind": "command",
+      "label": "Bağlam: ilgili satırı bul",
+      "durationMs": 10000,
+      "lines": [
+        "~/…/Sunum $ grep -n \"setSceneEntry(boundedIndex\\|Set only when\" src/App.tsx; …",
+        "69:  // Set only when a scene is entered at its first reveal by navigation; any later step, R or reload clears it.",
+        "101:    setSceneEntry(boundedIndex !== sceneIndex && boundedStep === startingStep(routeScenes[boundedIndex]));"
+      ]
+    },
+    {
+      "role": "Developer",
+      "kind": "diff",
+      "label": "Değişiklik · src/App.tsx",
+      "durationMs": 13000,
+      "lines": [
+        "-  // Set only when a scene is entered at its first reveal by navigation; any later step, R or reload clears it.",
+        "+  // Set only when a later scene is entered forward at its first reveal (→, J, scene list);",
+        "+  // going back (K, ←, earlier scene in the list), any step, R or reload clears it.",
+        "-    setSceneEntry(boundedIndex !== sceneIndex && boundedStep === startingStep(routeScenes[boundedIndex]));",
+        "+    setSceneEntry(boundedIndex > sceneIndex && boundedStep === startingStep(routeScenes[boundedIndex]));"
+      ]
+    },
+    {
+      "role": "Developer",
+      "kind": "command",
+      "label": "Build",
+      "durationMs": 7000,
+      "lines": [
+        "~/…/Sunum $ … npm run build 2>&1 | tail -1",
+        "✓ built in 207ms"
+      ]
+    },
+    {
+      "role": "Developer",
+      "kind": "command",
+      "label": "Test: geri ve ileri dönüş",
+      "durationMs": 14000,
+      "lines": [
+        "$ PYTHONIOENCODING=utf-8 python sunum-v2-entry-test.py",
+        "K_from_4          {'url': '?scene=3&step=1', 'title': False, 'enter': 0, 'running': 0}",
+        "Left_from_4       {'url': '?scene=3&step=5', 'title': False, 'enter': 0, 'running': 0}",
+        "J_from_2          {'url': '?scene=3&step=1', 'title': True, 'enter': 1, 'running': 8}",
+        "list_back_from_4  {'url': '?scene=3&step=1', 'title': False, 'enter': 0, 'running': 0}",
+        "…"
+      ]
+    },
+    {
+      "role": "Developer",
+      "kind": "result",
+      "label": "Ara sonuç",
+      "durationMs": 8000,
+      "lines": [
+        "Scene 04'ten K, ← ve sahne listesiyle geri dönüşte animasyon 0; ileri girişte (J, →, liste) oynuyor. Önceki motion testini ve tam regresyonu yeniden çalıştırıyorum."
+      ]
+    },
+    {
+      "role": "Developer",
+      "kind": "output",
+      "label": "Regresyon",
+      "durationMs": 11000,
+      "lines": [
+        "no-preference settled-violations [] maxEnd 900 errors []",
+        "reduce settled-violations [] maxEnd 0 errors []",
+        "{'legacyMode': 'normalized', 'route_presenter': 52, 'route_audience': 52, … 'JKR_reload': 'ok', 'videos': {'presenter-4': 'ok', … 'audience-11': 'ok'}, … 'externalRequests': [], 'pageErrors': []}"
+      ]
+    }
+  ]
+}

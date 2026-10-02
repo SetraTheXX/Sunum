@@ -1,0 +1,12 @@
+8 True 0 {'time': 24.5, 'paused': True, 'ready': 4, 'ended': True, 'error': None, 'ui': 'false'}
+8 True 1 {'time': 24.5, 'paused': True, 'ready': 4, 'ended': True, 'error': None, 'ui': 'false'}
+8 True 2 {'time': 24.5, 'paused': True, 'ready': 4, 'ended': True, 'error': None, 'ui': 'false'}
+8 False 0 {'time': 3.010967, 'paused': False, 'ready': 4, 'ended': False, 'error': None, 'ui': 'true'}
+8 False 1 {'time': 2.936791, 'paused': False, 'ready': 4, 'ended': False, 'error': None, 'ui': 'true'}
+8 False 2 {'time': 2.972744, 'paused': False, 'ready': 4, 'ended': False, 'error': None, 'ui': 'true'}
+11 True 0 {'time': 34, 'paused': True, 'ready': 4, 'ended': True, 'error': None, 'ui': 'false'}
+11 True 1 {'time': 34, 'paused': True, 'ready': 4, 'ended': True, 'error': None, 'ui': 'false'}
+11 True 2 {'time': 34, 'paused': True, 'ready': 4, 'ended': True, 'error': None, 'ui': 'false'}
+11 False 0 {'time': 2.977996, 'paused': False, 'ready': 4, 'ended': False, 'error': None, 'ui': 'true'}
+11 False 1 {'time': 2.875276, 'paused': False, 'ready': 4, 'ended': False, 'error': None, 'ui': 'true'}
+11 False 2 {'time': 2.949907, 'paused': False, 'ready': 4, 'ended': False, 'error': None, 'ui': 'true'}
